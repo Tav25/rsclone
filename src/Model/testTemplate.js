@@ -2,11 +2,6 @@ import Database from './Database';
 
 const container = document.querySelector('#container');
 
-// const input0 = document.createElement('input');
-// input0.type = 'text';
-// input0.size = '45';
-// input0.style.display = 'inline';
-
 const output = document.createElement('textarea');
 output.cols = '78';
 output.rows = '35';
