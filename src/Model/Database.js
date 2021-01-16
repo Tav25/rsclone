@@ -6,9 +6,8 @@ export default class Database {
   }
 
   async getAll(collection) {
-    const { baseURL } = this;
     const response = await axios({
-      baseURL,
+      baseURL: this.baseURL,
       url: collection,
     });
 
@@ -19,9 +18,8 @@ export default class Database {
   }
 
   async getOne(collection, id) {
-    const { baseURL } = this;
     const response = await axios({
-      baseURL,
+      baseURL: this.baseURL,
       url: `${collection}/${id}`,
     });
 
@@ -32,13 +30,12 @@ export default class Database {
   }
 
   async create(collection, id, documentData) {
-    const { baseURL } = this;
     const data = {};
     data.id = id;
     data.content = documentData;
     const response = await axios({
       method: 'post',
-      baseURL,
+      baseURL: this.baseURL,
       url: `/${collection}`,
       data,
     });
@@ -50,13 +47,12 @@ export default class Database {
   }
 
   async update(collection, id, documentData) {
-    const { baseURL } = this;
     const data = {};
     data.id = id;
     data.content = documentData;
     const response = await axios({
       method: 'put',
-      baseURL,
+      baseURL: this.baseURL,
       url: `/${collection}/${id}`,
       data,
     });
@@ -68,10 +64,9 @@ export default class Database {
   }
 
   async delete(collection, id) {
-    const { baseURL } = this;
     const response = await axios({
       method: 'delete',
-      baseURL,
+      baseURL: this.baseURL,
       url: `/${collection}/${id}`,
     });
 

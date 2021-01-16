@@ -1,4 +1,4 @@
-import Database from './Database';
+import Database from './Model/Database';
 
 const container = document.querySelector('#container');
 
@@ -63,8 +63,8 @@ container.append(
   deleteButton,
 );
 
-input1.value = 'maps';
-input2.value = '4';
+input1.value = 'test';
+input2.value = '1';
 input3.value = 'test message';
 
 const database = new Database();
