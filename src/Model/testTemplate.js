@@ -1,6 +1,6 @@
 import Database from './Database';
 
-const main = document.querySelector('.main');
+const container = document.querySelector('#container');
 
 // const input0 = document.createElement('input');
 // input0.type = 'text';
@@ -17,18 +17,18 @@ output.style.display = 'block';
 
 const input1 = document.createElement('input');
 input1.type = 'text';
-input1.size = '50';
+input1.size = '44';
 input1.style.display = 'inline';
 
 const input2 = document.createElement('input');
 input2.type = 'text';
-input2.size = '21';
+input2.size = '17';
 input2.style.display = 'inline';
 
 const input3 = document.createElement('input');
 input3.type = 'text';
-input3.size = '76';
-input3.style.display = 'block';
+input3.size = '69';
+input3.style.display = 'inline';
 
 const getListButton = document.createElement('button');
 const getButton = document.createElement('button');
@@ -42,12 +42,25 @@ postButton.innerText = 'Add document';
 updateButton.innerText = 'Update document';
 deleteButton.innerText = 'Delete document';
 
-main.append(
+const collectionElem = document.createElement('span');
+collectionElem.textContent = 'Collection: ';
+const idElem = document.createElement('span');
+idElem.textContent = ' id: ';
+const messageElem = document.createElement('span');
+messageElem.textContent = 'Message: ';
+const br = document.createElement('br');
+const br1 = document.createElement('br');
+
+container.append(
   output,
-  // input0,
+  collectionElem,
   input1,
+  idElem,
   input2,
+  br,
+  messageElem,
   input3,
+  br1,
   getListButton,
   getButton,
   postButton,
@@ -55,7 +68,6 @@ main.append(
   deleteButton,
 );
 
-// input0.value = 'https://levendor-tav25-rsclone.herokuapp.com/';
 input1.value = 'maps';
 input2.value = '4';
 input3.value = 'test message';
