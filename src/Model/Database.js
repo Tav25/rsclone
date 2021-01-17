@@ -11,7 +11,7 @@ export default class Database {
       url: collection,
     });
 
-    if (response.status === 200) {
+    if ((/20\d/).test(response.status)) {
       return JSON.stringify(response.data, null, 2);
     }
     return `Ошибка HTTP: ${response.status}`;
@@ -23,7 +23,7 @@ export default class Database {
       url: `${collection}/${id}`,
     });
 
-    if (response.status === 200) {
+    if ((/20\d/).test(response.status)) {
       return JSON.stringify(response.data, null, 2);
     }
     return `Ошибка HTTP: ${response.status}`;
@@ -40,7 +40,7 @@ export default class Database {
       data,
     });
 
-    if (response.status === 200) {
+    if ((/20\d/).test(response.status)) {
       return this.getAll(collection);
     }
     return `Ошибка HTTP: ${response.status}`;
@@ -57,7 +57,7 @@ export default class Database {
       data,
     });
 
-    if (response.status === 200) {
+    if ((/20\d/).test(response.status)) {
       return this.getAll(collection);
     }
     return `Ошибка HTTP: ${response.status}`;
