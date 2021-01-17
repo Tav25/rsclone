@@ -14,6 +14,7 @@ export default class Database {
     });
 
     if ((/20\d/).test(String(response.status))) {
+      console.log(response.data);
       return JSON.stringify(response.data, null, 2);
     }
     return `Ошибка HTTP: ${response.status}`;

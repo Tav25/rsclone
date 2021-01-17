@@ -1,13 +1,16 @@
 export type TItem = {
+  id: number;
   name: string;
   icon: string;
+  imagePath: string;
   isEquippable: boolean;
   isConsumable: boolean;
   isUsable: boolean;
   isQuestItem: boolean;
   restoredHealth?: number;
   damage?: number;
-  ammo?: number;
+  currentAmmo?: number;
+  maxAmmo: number;
   range?: number;
   cost?: number;
 }
