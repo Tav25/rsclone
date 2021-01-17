@@ -1,3 +1,5 @@
+import { TItem } from '../Types/types';
+
 export default class Item {
   name: string;
   icon: string;
@@ -6,12 +8,12 @@ export default class Item {
   isUsable: boolean;
   isQuestItem: boolean;
 
-  constructor(itemObject: any) {
+  constructor(itemObject: TItem) {
     this.name = itemObject.name;
     this.icon = itemObject.icon;
-    this.isEquippable = itemObject.equippable;
-    this.isConsumable = itemObject.consumable;
-    this.isUsable = itemObject.usable;
-    this.isQuestItem = itemObject.quest;
+    this.isEquippable = itemObject.isEquippable;
+    this.isConsumable = itemObject.isConsumable;
+    this.isUsable = itemObject.isUsable;
+    this.isQuestItem = itemObject.isQuestItem;
   }
 }
