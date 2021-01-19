@@ -7,7 +7,7 @@ export default class Database {
     this.baseURL = 'https://levendor-tav25-rsclone.herokuapp.com/';
   }
 
-  async getAll(collection: string): Promise<string> {
+  async getAll(collection: string): Promise<any> {
     const response = await axios({
       baseURL: this.baseURL,
       url: collection,
@@ -20,14 +20,15 @@ export default class Database {
     return `Ошибка HTTP: ${response.status}`;
   }
 
-  async getOne(collection: string, id: string): Promise<string> {
+  async getOne(collection: string, id: string): Promise<any> {
     const response = await axios({
       baseURL: this.baseURL,
       url: `${collection}/${id}`,
     });
 
     if ((/20\d/).test(String(response.status))) {
-      return JSON.stringify(response.data, null, 2);
+      // return JSON.stringify(response.data, null, 2);
+      return response.data;
     }
     return `Ошибка HTTP: ${response.status}`;
   }
