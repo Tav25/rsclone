@@ -2,7 +2,6 @@ export type TItem = {
   id: number;
   name: string;
   icon: string;
-  imagePath: string;
   isEquippable: boolean;
   isConsumable: boolean;
   isUsable: boolean;
