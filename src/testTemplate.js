@@ -1,4 +1,4 @@
-import Database from './Model/Database';
+import Database from './Model/Database.ts';
 
 const container = document.querySelector('#testContainer');
 
