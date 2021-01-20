@@ -1,4 +1,5 @@
 import Database from './Model/Database.ts';
+import User from './Model/user/User.ts';
 
 const container = document.querySelector('#testContainer');
 
@@ -30,12 +31,14 @@ const getButton = document.createElement('button');
 const postButton = document.createElement('button');
 const updateButton = document.createElement('button');
 const deleteButton = document.createElement('button');
+const testButton = document.createElement('button');
 
 getListButton.innerText = 'Get list';
 getButton.innerText = 'Get document';
 postButton.innerText = 'Add document';
 updateButton.innerText = 'Update document';
 deleteButton.innerText = 'Delete document';
+testButton.innerText = 'test';
 
 const collectionElem = document.createElement('span');
 collectionElem.textContent = 'Collection: ';
@@ -61,30 +64,42 @@ container.append(
   postButton,
   updateButton,
   deleteButton,
+  testButton,
 );
 
-input1.value = 'test';
+input1.value = 'userProfiles';
 input2.value = '1';
 input3.value = 'test message';
 
 const database = new Database();
+const user = new User(database);
 
 getListButton.addEventListener('click', async () => {
-  output.value = await database.getAll(input1.value);
+  const response = await database.getAll(input1.value);
+  output.value = JSON.stringify(response, null, 2);
 });
 
 getButton.addEventListener('click', async () => {
-  output.value = await database.getOne(input1.value, input2.value);
+  const response = await database.getOne(input1.value, input2.value);
+  output.value = JSON.stringify(response, null, 2);
 });
 
 postButton.addEventListener('click', async () => {
-  output.value = await database.create(input1.value, input2.value, input3.value);
+  const response = await database.create(input1.value, input2.value, input3.value);
+  output.value = JSON.stringify(response, null, 2);
 });
 
 updateButton.addEventListener('click', async () => {
-  output.value = await database.update(input1.value, input2.value, input3.value);
+  const response = await database.update(input1.value, input2.value, input3.value);
+  output.value = JSON.stringify(response, null, 2);
 });
 
 deleteButton.addEventListener('click', async () => {
-  output.value = await database.delete(input1.value, input2.value);
+  const response = await database.delete(input1.value, input2.value);
+  output.value = JSON.stringify(response, null, 2);
+});
+
+testButton.addEventListener('click', async () => {
+  const response = await user.getUserList();
+  output.value = JSON.stringify(response, null, 2);
 });
