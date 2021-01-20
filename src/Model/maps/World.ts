@@ -9,8 +9,8 @@ export default class World {
   locationsNumber: number;
   startTime: number;
 
-  constructor() {
-    this.database = new Database();
+  constructor(database: Database) {
+    this.database = database;
     this.player = new MainCharacter();
   }
 
