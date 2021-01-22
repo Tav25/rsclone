@@ -33,7 +33,7 @@ export default class Database {
     return `Ошибка HTTP: ${response.status}`;
   }
 
-  async create(collection: string, id: string, documentData: string): Promise<any> {
+  async create(collection: string, id: string, documentData: any): Promise<any> {
     const data = {
       id: id,
       content:documentData,
@@ -51,7 +51,7 @@ export default class Database {
     return `Ошибка HTTP: ${response.status}`;
   }
 
-  async update(collection: string, id: string, documentData: string): Promise<any> {
+  async update(collection: string, id: string, documentData: any): Promise<any> {
     const data = {
       id: id,
       content:documentData,

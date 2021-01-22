@@ -1,5 +1,5 @@
 import Database from './Model/Database.ts';
-import User from './Model/user/User.ts';
+import Model from './Model/Model.ts';
 
 const container = document.querySelector('#testContainer');
 
@@ -72,7 +72,6 @@ input2.value = '1';
 input3.value = 'test message';
 
 const database = new Database();
-const user = new User(database);
 
 getListButton.addEventListener('click', async () => {
   const response = await database.getAll(input1.value);
@@ -99,7 +98,7 @@ deleteButton.addEventListener('click', async () => {
   output.value = JSON.stringify(response, null, 2);
 });
 
-testButton.addEventListener('click', async () => {
-  const response = await user.getUserList();
-  output.value = JSON.stringify(response, null, 2);
-});
+// testButton.addEventListener('click', async () => {
+//   const response = await user.getUserList();
+//   output.value = JSON.stringify(response, null, 2);
+// });

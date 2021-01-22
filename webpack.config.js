@@ -24,6 +24,9 @@ module.exports = {
     hot: true,
     port: 4200,
   },
+  resolve: {
+    extensions: ['.js', '.ts'],
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HTMLWebpackPlugin({

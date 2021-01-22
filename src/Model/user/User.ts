@@ -4,20 +4,16 @@ export default class User {
   name: string;
   statistics: Statistics;
   savedGames: any[];
+  savesNumber: number;
 
-  constructor(statistics: Statistics = new Statistics(), savedGames: any[] = []) {
-    this.name = 'John Doe';
-    this.statistics = statistics;
-    this.savedGames = savedGames;
+  constructor(name: string = 'John Doe', statistics?: Statistics, savedGames?: any[]) {
+    this.name = name;
+    this.statistics = statistics ? statistics : new Statistics();
+    this.savedGames = savedGames ? savedGames : [];
+    this.savesNumber = this.savedGames.length;
   }
 
   getUserName(): string {
     return this.name;
-  }
-
-  setUserName(name: string): boolean {
-    if ((/[\/|\\|\.|\"|\$|\*|\<|\>|\:|\||\?]/).test(name) || name === '' || name.startsWith('system.') || name.length >= 120) return false;
-    this.name = name;
-    return true;
   }
 }
