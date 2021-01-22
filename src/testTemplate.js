@@ -26,19 +26,19 @@ input3.type = 'text';
 input3.size = '69';
 input3.style.display = 'inline';
 
+const getAllButton = document.createElement('button');
 const getListButton = document.createElement('button');
 const getButton = document.createElement('button');
 const postButton = document.createElement('button');
 const updateButton = document.createElement('button');
 const deleteButton = document.createElement('button');
-const testButton = document.createElement('button');
 
+getAllButton.innerText = 'Get all';
 getListButton.innerText = 'Get list';
 getButton.innerText = 'Get document';
 postButton.innerText = 'Add document';
 updateButton.innerText = 'Update document';
 deleteButton.innerText = 'Delete document';
-testButton.innerText = 'test';
 
 const collectionElem = document.createElement('span');
 collectionElem.textContent = 'Collection: ';
@@ -59,22 +59,27 @@ container.append(
   messageElem,
   input3,
   br1,
+  getAllButton,
   getListButton,
   getButton,
   postButton,
   updateButton,
   deleteButton,
-  testButton,
 );
 
 input1.value = 'userProfiles';
-input2.value = '1';
+input2.value = 'levendor';
 input3.value = 'test message';
 
 const database = new Database();
 
-getListButton.addEventListener('click', async () => {
+getAllButton.addEventListener('click', async () => {
   const response = await database.getAll(input1.value);
+  output.value = JSON.stringify(response, null, 2);
+});
+
+getListButton.addEventListener('click', async () => {
+  const response = await database.getList(input1.value, input2.value);
   output.value = JSON.stringify(response, null, 2);
 });
 
@@ -97,8 +102,3 @@ deleteButton.addEventListener('click', async () => {
   const response = await database.delete(input1.value, input2.value);
   output.value = JSON.stringify(response, null, 2);
 });
-
-// testButton.addEventListener('click', async () => {
-//   const response = await user.getUserList();
-//   output.value = JSON.stringify(response, null, 2);
-// });

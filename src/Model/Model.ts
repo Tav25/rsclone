@@ -37,17 +37,27 @@ export default class Model {
   async saveGame(gameName: string, location: string, coordinates: number[], direction: string) {
     this.world.getFinishTime();
     this.world.mainCharacter.setPosition(location, coordinates, direction);
+
     const savedGame = {
       id: gameName,
       world: this.world,
     };
+
     await this.database.create('savedGames', this.user.name, savedGame);
-    // const savesNumber = await this.database.getAll
-    this.user.savesNumber += 1;
+
+    const savesNumber = await this.getSavedGamesList();
+
+    this.user.savesNumber = savesNumber.length;
     const userInfo = {
       statistics: this.user.statistics,
       savesNumber: this.user.savesNumber,
     };
+
     await this.database.update('userProfiles', this.user.name, userInfo);
+  }
+
+  async getSavedGamesList() {
+    const savedGamesList = await this.database.getList('savedGames', this.user.name);
+    return savedGamesList;
   }
 }

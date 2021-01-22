@@ -28,6 +28,19 @@ export default class Database {
 
     if ((/20\d/).test(String(response.status))) {
       // return JSON.stringify(response.data, null, 2);
+      return response.data[0];
+    }
+    return `Ошибка HTTP: ${response.status}`;
+  }
+
+  async getList(collection: string, id: string): Promise<any> {
+    const response = await axios({
+      baseURL: this.baseURL,
+      url: `${collection}/${id}`,
+    });
+
+    if ((/20\d/).test(String(response.status))) {
+      // return JSON.stringify(response.data, null, 2);
       return response.data;
     }
     return `Ошибка HTTP: ${response.status}`;
