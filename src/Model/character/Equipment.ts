@@ -16,7 +16,7 @@ export default class Equipment {
   }
 
   equipWeapon(itemObject: TItem): void {
-    this.equippedWeapon = itemObject;
+    if (itemObject.isEquippable) this.equippedWeapon = itemObject;
   }
 
   removeWeapon(): void {

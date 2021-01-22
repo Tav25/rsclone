@@ -1,3 +1,4 @@
+import { TItem } from "../../Types/types";
 import Equipment from "./Equipment";
 import Health from "./Health";
 import Inventory from "./Inventory";
@@ -15,7 +16,7 @@ export default class MainCharacter {
     this.equipment = new Equipment();
   }
 
-  setCoordinates(location: string, coordinates: number[], direction: string): void {
+  setPosition(location: string, coordinates: number[], direction: string): void {
     this.position = new Position(location, coordinates, direction);
   }
 
@@ -29,7 +30,15 @@ export default class MainCharacter {
   }
 
   isNoAmmo(): boolean {
-    const currentAmmo: number = this.equipment.getCurrentAmmo();
-    return currentAmmo <= 0 ? true : false;
+    return this.equipment.getCurrentAmmo() <= 0 ? true : false;
+  }
+
+  shot() {
+    this.equipment.releaseAmmo();
+    if (this.isNoAmmo()) this.equipment.removeWeapon();
+  }
+
+  hit(enemyWeapon: TItem) {
+    this.health.damageHealth(enemyWeapon);
   }
 }
