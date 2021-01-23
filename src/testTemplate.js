@@ -1,5 +1,5 @@
 import Database from './Model/Database.ts';
-import Model from './Model/Model.ts';
+// import Model from './Model/Model.ts';
 
 const container = document.querySelector('#testContainer');
 

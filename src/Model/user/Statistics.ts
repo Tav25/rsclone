@@ -13,7 +13,7 @@ export default class Statistics {
     this.loseCount = 0;
   }
 
-  getStatistics() {
+  getStatistics(): Statistics {
     return this;
   }
 

@@ -8,11 +8,10 @@ export default class World {
   locations: Location[];
   locationsNumber: number;
   startTime: number;
-  currentTime = 0;
+  elapsedTime: number;
 
   constructor(database: Database) {
     this.database = database;
-    this.mainCharacter = new MainCharacter();
   }
 
   async init(worldId: string) {
@@ -21,11 +20,15 @@ export default class World {
     this.locations = this.world.locations;
     this.locationsNumber = this.locations.length;
     this.startTime = Date.now();
+    this.elapsedTime = 0;
   }
 
-  getFinishTime(): number {
+  setCurrentTime(): void {
+    this.startTime = Date.now();
+  }
+
+  setFinishTime(): void {
     const finishTime: number = Date.now();
-    this.currentTime += finishTime - this.startTime;
-    return this.currentTime;
+    this.elapsedTime += finishTime - this.startTime;
   }
 }
