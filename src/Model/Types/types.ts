@@ -1,5 +1,5 @@
-import Position from "../Model/character/Position"
-import World from "../Model/maps/World"
+import Position from "../character/Position"
+import World from "../maps/World"
 
 export type TItem = {
   id: number;
