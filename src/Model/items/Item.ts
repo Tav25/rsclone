@@ -1,3 +1,4 @@
+import { TIMEOUT } from 'dns';
 import { TItem } from '../Types/types';
 
 export default class Item {
@@ -9,5 +10,8 @@ export default class Item {
     this.id = itemObject.id;
     this.name = itemObject.name;
     this.icon = itemObject.icon;
+    this.getItem = () => itemObject;
   }
+
+  getItem(): void {};
 }
