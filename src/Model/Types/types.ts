@@ -28,6 +28,8 @@ export type TObject = {
   isKeyNeededToOpen?: boolean;
   isTriggerNeededToOpen?: boolean;
   returnedItem?: TItem;
+  returnedItems1?: TItem[];
+  returnedItems2?: TItem[];
   itemToActivate?: TItem;
   triggerToActivate?: TObject;
   triggered?: boolean;
