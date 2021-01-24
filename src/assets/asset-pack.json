@@ -7,7 +7,7 @@
                 "key": "animations"
             },
             {
-                "url": "src/assets/scene/Arrows.js",
+                "url": "src/View/Arrows.js",
                 "type": "script",
                 "key": "Arrows"
             },
@@ -18,7 +18,7 @@
                 "key": "atlas"
             },
             {
-                "url": "src/assets/scene/components/ComponentAnim.js",
+                "url": "src/View/components/ComponentAnim.js",
                 "type": "script",
                 "key": "ComponentAnim"
             },
@@ -28,7 +28,7 @@
                 "key": "EventComponent"
             },
             {
-                "url": "src/assets/scene/components/EventComponent.js",
+                "url": "src/View/components/EventComponent.js",
                 "type": "script",
                 "key": "EventComponent"
             },
@@ -49,14 +49,9 @@
                 "key": "junks"
             },
             {
-                "url": "src/assets/scene/leftMenu.js",
+                "url": "src/View/leftMenu.js",
                 "type": "script",
                 "key": "leftMenu"
-            },
-            {
-                "url": "src/assets/logo.png",
-                "type": "image",
-                "key": "logo"
             },
             {
                 "url": "src/assets/image/mainFrame.png",
@@ -89,7 +84,7 @@
                 "key": "map5"
             },
             {
-                "url": "src/assets/scene/Maps.js",
+                "url": "src/View/Maps.js",
                 "type": "script",
                 "key": "Maps"
             },
@@ -100,7 +95,7 @@
                 "key": "medkits"
             },
             {
-                "url": "src/assets/scene/openTopMenu.js",
+                "url": "src/View/openTopMenu.js",
                 "type": "script",
                 "key": "openTopMenu"
             },
@@ -111,17 +106,17 @@
                 "key": "persons"
             },
             {
-                "url": "src/assets/scene/components/Physics.js",
+                "url": "src/View/components/Physics.js",
                 "type": "script",
                 "key": "Physics"
             },
             {
-                "url": "src/assets/scene/components/PhysicsBody.js",
+                "url": "src/View/components/PhysicsBody.js",
                 "type": "script",
                 "key": "PhysicsBody"
             },
             {
-                "url": "src/assets/scene/Player.js",
+                "url": "src/View/Player.js",
                 "type": "script",
                 "key": "Player"
             },
@@ -132,44 +127,39 @@
                 "key": "questitems"
             },
             {
-                "url": "src/assets/scene/RectangleForMenu.js",
+                "url": "src/View/RectangleForMenu.js",
                 "type": "script",
                 "key": "RectangleForMenu"
             },
             {
-                "url": "src/assets/scene/Scene1.js",
+                "url": "src/View/Scene1.js",
                 "type": "sceneFile",
                 "key": "Scene1"
             },
             {
-                "url": "src/assets/scene/Scene2.js",
+                "url": "src/View/Scene2.js",
                 "type": "sceneFile",
                 "key": "Scene2"
             },
             {
-                "url": "src/assets/scene/Scene3.js",
+                "url": "src/View/Scene3.js",
                 "type": "sceneFile",
                 "key": "Scene3"
             },
             {
-                "url": "src/assets/scene/Scene4.js",
+                "url": "src/View/Scene4.js",
                 "type": "sceneFile",
                 "key": "Scene4"
             },
             {
-                "url": "src/assets/scene/Scene5.js",
+                "url": "src/View/Scene5.js",
                 "type": "sceneFile",
                 "key": "Scene5"
             },
             {
-                "url": "src/assets/scene/Scene6.js",
+                "url": "src/View/Scene6.js",
                 "type": "sceneFile",
                 "key": "Scene6"
-            },
-            {
-                "url": "src/assets/scene/SceneDelete.js",
-                "type": "sceneFile",
-                "key": "SceneDelete"
             },
             {
                 "url": "src/assets/image/sprites.png",
@@ -177,7 +167,7 @@
                 "key": "sprites"
             },
             {
-                "url": "src/assets/scene/topMenuText.js",
+                "url": "src/View/topMenuText.js",
                 "type": "script",
                 "key": "topMenuText"
             },
