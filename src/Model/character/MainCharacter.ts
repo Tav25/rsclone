@@ -1,4 +1,4 @@
-import { TItem } from "../Types/types";
+import { TItem } from "../types/types";
 import Equipment from "./Equipment";
 import Health from "./Health";
 import Inventory from "./Inventory";

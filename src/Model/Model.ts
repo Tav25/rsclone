@@ -2,7 +2,7 @@ import Database from './Database';
 import User from './user/User';
 import World from './maps/World';
 import Position from './character/Position';
-import { TSavedGame } from './Types/types';
+import { TSavedGame } from './types/types';
 
 export default class Model {
   database: Database;

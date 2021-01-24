@@ -1,8 +1,7 @@
-import { TIMEOUT } from 'dns';
-import { TItem } from '../Types/types';
+import { TItem } from '../types/types';
 
 export default class Item {
-  id: number;
+  id: string;
   name: string;
   icon: string;
 

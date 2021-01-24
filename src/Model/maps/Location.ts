@@ -1,4 +1,4 @@
-import { TObject } from "../Types/types";
+import { TObject } from "../types/types";
 
 export default class Location {
   name: string;

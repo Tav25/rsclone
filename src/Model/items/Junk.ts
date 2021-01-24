@@ -1,5 +1,5 @@
 import Item from './Item';
-import { TItem } from '../Types/types';
+import { TItem } from '../types/types';
 
 export default class Junk extends Item {
   isTradable: boolean;

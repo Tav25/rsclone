@@ -1,4 +1,4 @@
-import { TItem, TObject } from "../Types/types";
+import { TItem, TObject } from "../types/types";
 import CommonObject from "./CommonObject";
 
 export default class Door extends CommonObject{

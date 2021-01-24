@@ -1,9 +1,9 @@
-import { TObject } from "../Types/types";
+import { TObject } from "../types/types";
 import Position from "../character/Position";
 
 export default class CommonObject {
   position: Position;
-  id: number;
+  id: string;
   name: string;
   icon: string;
 

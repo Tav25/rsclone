@@ -1,5 +1,5 @@
 import Item from './Item';
-import { TItem } from '../Types/types';
+import { TItem } from '../types/types';
 
 export default class QuestItem extends Item {
   isQuestItem: boolean;

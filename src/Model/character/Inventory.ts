@@ -1,4 +1,4 @@
-import { TItem } from '../Types/types';
+import { TItem } from '../types/types';
 
 export default class Inventory {
   itemList: TItem[];
@@ -18,7 +18,7 @@ export default class Inventory {
     this.inventorySize += 1;
   }
 
-  removeItem(id: number): void {
+  removeItem(id: string): void {
     const removedItemIndex: number = this.itemList.findIndex((item) => item.id === id);
     this.itemList.splice(removedItemIndex, 1);
     this.inventorySize -= 1;

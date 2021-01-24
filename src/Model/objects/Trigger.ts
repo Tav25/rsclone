@@ -1,5 +1,5 @@
 import CommonObject from './CommonObject';
-import { TItem, TObject } from '../Types/types';
+import { TItem, TObject } from '../types/types';
 
 export default class Trigger extends CommonObject{
   isKeyNeededToOpen: boolean;
