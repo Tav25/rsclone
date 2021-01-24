@@ -18,6 +18,12 @@
                 "key": "atlas"
             },
             {
+                "atlasURL": "src/assets/atlas/atlasPersonsObject.json",
+                "textureURL": "src/assets/atlas/atlasPersonsObject.png",
+                "type": "atlas",
+                "key": "atlasPersonsObject"
+            },
+            {
                 "url": "src/View/components/ComponentAnim.js",
                 "type": "script",
                 "key": "ComponentAnim"
@@ -119,6 +125,11 @@
                 "url": "src/View/Player.js",
                 "type": "script",
                 "key": "Player"
+            },
+            {
+                "url": "src/View/ObjectOnTheScene.js",
+                "type": "script",
+                "key": "ObjectOnTheScene"
             },
             {
                 "atlasURL": "src/assets/atlas/questitems.json",

@@ -14,12 +14,13 @@ class Scene2 extends Phaser.Scene {
     /* START-USER-CTR-CODE */
     this.mainMap = 'map1';
     /* END-USER-CTR-CODE */
-    console.log(this.mainMap);
   }
 
   create() {
+    const data = this.cache.json.get('gameSettings');
+    console.log(data);
     // player1
-    this.player1 = new Player(this, 136, 138);
+    this.player1 = new Player(this, data.hero.x, data.hero.y);
     if (!this.player1.onMap) { this.mainMap = 'map1'; }
 
     // map
@@ -58,6 +59,10 @@ class Scene2 extends Phaser.Scene {
     this.rectangleRight.isFilled = true;
     new Physics(this.rectangleRight);
 
+    const objectOnTheScene1 = new ObjectOnTheScene(this, 221, 184);
+    // this.add.existing(objectOnTheScene1);
+    // objectOnTheScene1.replaceObjectImage();
+
     this.lay1 = lay1;
     this.lay2 = lay2;
     // this.player1 = player1;
@@ -66,8 +71,9 @@ class Scene2 extends Phaser.Scene {
     camera.startFollow(this.player1);
     camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     camera.setViewport(10, 50, 288, 288);
-    this.map = map;
     this.camera = camera;
+
+    this.map = map;
 
     this.cursors = this.input.keyboard.createCursorKeys();
     //
@@ -85,10 +91,10 @@ class Scene2 extends Phaser.Scene {
 
     keyObj.on('up', (event) => { /* ... */ });
 
-    this.physics.add.overlap(this.player1, this.rectangleTop, () => { this.player1.y = 555, this.scene.stop('Scene2'); this.scene.start('Scene3'); });
-    this.physics.add.overlap(this.player1, this.rectangleRight, () => { this.player1.x = 12; this.scene.stop('Scene2'); this.scene.start('Scene4'); });
-    this.physics.add.overlap(this.player1, this.rectangleBottom, () => { this.player1.y = 10; this.scene.stop('Scene2'); this.scene.start('Scene5'); });
-    this.physics.add.overlap(this.player1, this.rectangleLeft, () => { this.player1.x = 555; this.scene.stop('Scene2'); this.scene.start('Scene6'); });
+    this.physics.add.overlap(this.player1, this.rectangleTop, () => { data.hero.y = 545; data.hero.x = this.player1.x; data.hero.x = this.player1.x; this.scene.stop('Scene2'); this.scene.start('Scene3'); });
+    this.physics.add.overlap(this.player1, this.rectangleRight, () => { data.hero.x = 20; data.hero.y = this.player1.y; this.scene.stop('Scene2'); this.scene.start('Scene4'); });
+    this.physics.add.overlap(this.player1, this.rectangleBottom, () => { data.hero.y = 20; data.hero.x = this.player1.x; this.scene.stop('Scene2'); this.scene.start('Scene5'); });
+    this.physics.add.overlap(this.player1, this.rectangleLeft, () => { data.hero.x = 545; data.hero.y = this.player1.y; this.scene.stop('Scene2'); this.scene.start('Scene6'); });
 
     this.lay2.setCollisionByExclusion([-1]);
     this.physics.add.collider(this.player1, this.lay2);//
