@@ -1,7 +1,8 @@
 import Database from './Model/Database.ts';
 // import Model from './Model/Model.ts';
 
-const container = document.querySelector('#testContainer');
+const container = document.createElement('div');
+document.body.append(container);
 
 const output = document.createElement('textarea');
 output.cols = '78';

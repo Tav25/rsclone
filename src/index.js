@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+// import './testTemplate';
 // import packFile from './assets/asset-pack.json';
 
 class MyGame extends Phaser.Scene {
@@ -8,7 +9,7 @@ class MyGame extends Phaser.Scene {
 
   preload() {
     // this.load.image('logo', packFile);
-    this.load.pack('pack', packFile);
+    // this.load.pack('pack', packFile);
   }
 
   create() {
