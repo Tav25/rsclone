@@ -20,7 +20,7 @@ export default class Database {
     return `Ошибка HTTP: ${response.status}`;
   }
 
-  async getOne(collection: string, id: string): Promise<any> {
+  async getList(collection: string, id: string): Promise<any> {
     const response = await axios({
       baseURL: this.baseURL,
       url: `${collection}/${id}`,
@@ -33,10 +33,23 @@ export default class Database {
     return `Ошибка HTTP: ${response.status}`;
   }
 
-  async create(collection: string, id: string, documentData: string): Promise<any> {
+  async getOne(collection: string, id: string): Promise<any> {
+    const response = await axios({
+      baseURL: this.baseURL,
+      url: `${collection}/${id}`,
+    });
+
+    if ((/20\d/).test(String(response.status))) {
+      // return JSON.stringify(response.data, null, 2);
+      return response.data[0];
+    }
+    return `Ошибка HTTP: ${response.status}`;
+  }
+
+  async create(collection: string, id: string, documentData: any): Promise<any> {
     const data = {
       id: id,
-      content:documentData,
+      content: documentData,
     };
     const response = await axios({
       method: 'post',
@@ -51,7 +64,7 @@ export default class Database {
     return `Ошибка HTTP: ${response.status}`;
   }
 
-  async update(collection: string, id: string, documentData: string): Promise<any> {
+  async update(collection: string, id: string, documentData: any): Promise<any> {
     const data = {
       id: id,
       content:documentData,

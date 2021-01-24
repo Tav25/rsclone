@@ -1,4 +1,4 @@
-import { TItem } from "../../Types/types";
+import { TItem } from "../Types/types";
 import Equipment from "./Equipment";
 import Health from "./Health";
 import Inventory from "./Inventory";
@@ -20,7 +20,7 @@ export default class MainCharacter {
     this.position = new Position(location, coordinates, direction);
   }
 
-  getCoordinates(): Position {
+  getPosition(): Position {
     return this.position;
   }
 

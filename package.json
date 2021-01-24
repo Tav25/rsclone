@@ -29,6 +29,7 @@
   "homepage": "https://github.com/tav25/rsclone#readme",
   "devDependencies": {
     "@babel/core": "^7.7.2",
+    "@babel/plugin-transform-runtime": "^7.12.10",
     "@babel/preset-env": "^7.7.1",
     "@types/node": "^14.14.16",
     "babel-loader": "^8.0.6",
@@ -53,6 +54,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "@babel/runtime": "^7.12.5",
     "axios": "^0.21.1",
     "phaser": "^3.50.0"
   }

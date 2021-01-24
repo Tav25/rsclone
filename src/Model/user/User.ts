@@ -3,21 +3,31 @@ import Statistics from './Statistics';
 export default class User {
   name: string;
   statistics: Statistics;
-  savedGames: any[];
+  savesNumber: number;
 
-  constructor(statistics: Statistics = new Statistics(), savedGames: any[] = []) {
-    this.name = 'John Doe';
+  constructor(name: string = 'new user', savesNumber: number = 0, statistics: Statistics = new Statistics()) {
+    this.name = name;
+    this.savesNumber = savesNumber;
     this.statistics = statistics;
-    this.savedGames = savedGames;
   }
 
   getUserName(): string {
     return this.name;
   }
 
-  setUserName(name: string): boolean {
-    if ((/[\/|\\|\.|\"|\$|\*|\<|\>|\:|\||\?]/).test(name) || name === '' || name.startsWith('system.') || name.length >= 120) return false;
-    this.name = name;
-    return true;
+  getUserSavesNumber(): number {
+    return this.savesNumber;
+  }
+
+  increaseUserSavesNumber(): void {
+    this.savesNumber += 1;
+  }
+
+  getUserStatistics(): Statistics {
+    return this.statistics.getStatistics();
+  }
+
+  setUserStatistics(rating: number, isWin: boolean): void {
+    this.statistics.setStatistics(rating, isWin);
   }
 }

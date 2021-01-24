@@ -3,26 +3,32 @@ import Database from '../Database';
 
 export default class World {
   database: Database;
-  player: MainCharacter;
+  mainCharacter: MainCharacter;
   world: any;
   locations: Location[];
   locationsNumber: number;
   startTime: number;
+  elapsedTime: number;
 
   constructor(database: Database) {
     this.database = database;
-    this.player = new MainCharacter();
   }
 
   async init(worldId: string) {
+    this.mainCharacter = new MainCharacter();
     this.world = await this.database.getOne('maps', worldId);
     this.locations = this.world.locations;
     this.locationsNumber = this.locations.length;
     this.startTime = Date.now();
+    this.elapsedTime = 0;
   }
 
-  getFinishTime(): number {
+  setCurrentTime(): void {
+    this.startTime = Date.now();
+  }
+
+  setFinishTime(): void {
     const finishTime: number = Date.now();
-    return finishTime - this.startTime;
+    this.elapsedTime += finishTime - this.startTime;
   }
 }
