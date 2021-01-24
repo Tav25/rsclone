@@ -33,6 +33,11 @@
                 "key": "EventComponent"
             },
             {
+                "url": "src/assets/gameSettings.json",
+                "type": "json",
+                "key": "gameSettings"
+            },
+            {
                 "url": "src/assets/image/img3.png",
                 "type": "image",
                 "key": "img3"

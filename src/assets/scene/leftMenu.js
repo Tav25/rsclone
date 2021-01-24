@@ -25,10 +25,14 @@ class leftMenu extends Phaser.GameObjects.Container {
 
     // weaponsLightsaber_5101
     const imageInLeftMenu = this.scene.add.image(18, imagePositionY, 'weapons', subjectImage);
-    this.add(imageInLeftMenu);
+	this.add(imageInLeftMenu);
+	imageInLeftMenu.setInteractive();
+
+    console.log('Cl1');
+    console.log(imageInLeftMenu);
 
     imageInLeftMenu.on('pointerdown', function (pointer) {
-      console.log('56565+5+65+65');
+      console.log('Cl0');
       // this.callbackFun();
     });
 

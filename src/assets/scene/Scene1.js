@@ -2,32 +2,35 @@ class Scene1 extends Phaser.Scene {
   constructor() {
     super('Scene1');
   }
-
+  
   create() {
+    let data = this.cache.json.get('gameSettings');
+    console.log(data)
+
     this.sc = this.scene.launch('Scene2');
 
-    
+
     const rectangle = this.add.rectangle(306, 50, 210, 295);
     rectangle.setOrigin(0, 0);
     rectangle.isFilled = true;
-    
-    
+
+
     this.arrows = new Arrows(this);
     this.add.existing(this.arrows);
-    this.arrows.directionOfMovement = [1, 0, 0, 1];
-    
-    const herosLifePoints = 70;
+    this.arrows.directionOfMovement = data.mapArrows;
+
+    const herosLifePoints = data.hero.lifePoints;
     if (herosLifePoints < 32) { this.vbn(herosLifePoints, 0x69FF57, 0xF8FF18, this); }
     if (herosLifePoints > 32) { this.vbn(herosLifePoints - 32, 0xF8FF18, 0xFF1F18, this); }
     if (herosLifePoints > 64) { this.vbn(herosLifePoints - 64, 0x69FF57, 0xF8FF18, this); }
-    
+
     const mainFrame = this.add.image(0, 0, 'mainFrame');
     this.add.existing(mainFrame);
     mainFrame.setOrigin(0, 0);
-    
+
     const img3 = new leftMenu(this, 306, 50);
     this.add.existing(img3);
-    img3.objectPositionInTheList = ['Lazer S', 'weaponsLightsaber_510', 0];
+    img3.objectPositionInTheList = ['Phaser S', 'weaponsLightsaber_510', 0];
 
     // this.openTopMenuFile = new openTopMenu(this, 106, 28);
     // // this.openTopMenuFile
@@ -54,6 +57,8 @@ class Scene1 extends Phaser.Scene {
       console.log('Q');
       console.log(this.sc);
     });
+
+
   }
 
   update() {
