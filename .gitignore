@@ -1,4 +1,16 @@
-node_modules
-.vscode/settings.json
-src/assets/images/
+# System and IDE files
+Thumbs.db
+.DS_Store
+.idea
+*.suo
+*.sublime-project
+*.sublime-workspace
+*.vscode/settings.json
+
+# Vendors
+node_modules/
+
+# Build
+dist/
+/npm-debug.log
 debug.log
