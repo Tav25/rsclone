@@ -5,8 +5,8 @@ export default class World {
   database: Database;
   mainCharacter: MainCharacter;
   world: any;
-  locations: Location[];
-  locationsNumber: number;
+  locations: string[];
+  worldSize: number;
   startTime: number;
   elapsedTime: number;
 
@@ -18,7 +18,7 @@ export default class World {
     this.mainCharacter = new MainCharacter();
     this.world = await this.database.getOne('maps', worldId);
     this.locations = this.world.locations;
-    this.locationsNumber = this.locations.length;
+    this.worldSize = this.locations.length;
     this.startTime = Date.now();
     this.elapsedTime = 0;
   }

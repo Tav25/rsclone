@@ -19,7 +19,7 @@ export default class Location {
     return this.entryDirections;
   }
 
-  getObject(objectID: number): TObject {
+  getObject(objectID: string): TObject {
     const returnedObject = this.objects.find((object: TObject) => object.id === objectID);
     return returnedObject;
   }

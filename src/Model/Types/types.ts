@@ -2,7 +2,7 @@ import Position from "../character/Position"
 import World from "../maps/World"
 
 export type TItem = {
-  id: number;
+  id: string;
   name: string;
   icon: string;
   isEquippable?: boolean;
@@ -21,7 +21,7 @@ export type TItem = {
 
 export type TObject = {
   position: Position;
-  id: number;
+  id: string;
   name: string;
   icon: string;
   openedIcon?: string;
@@ -43,4 +43,11 @@ export type TObject = {
 export type TSavedGame = {
   name: string;
   world: World;
+}
+
+export type TWorld = {
+  id: string;
+  name: string;
+  locations: string[];
+  goal: string;
 }
