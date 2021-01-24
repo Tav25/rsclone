@@ -10,10 +10,11 @@ export default class MainCharacter {
   equipment: Equipment;
   position: Position;
 
-  constructor() {
+  constructor(position: Position) {
     this.inventory = new Inventory();
     this.health = new Health();
     this.equipment = new Equipment();
+    this.position = position;
   }
 
   setPosition(location: string, coordinates: number[], direction: string): void {

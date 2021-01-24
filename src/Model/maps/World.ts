@@ -1,11 +1,12 @@
 import MainCharacter from '../character/MainCharacter';
 import Database from '../Database';
+import { TLocation, TWorld } from '../types/types';
 
 export default class World {
   database: Database;
   mainCharacter: MainCharacter;
-  world: any;
-  locations: string[];
+  world: TWorld;
+  locations: TLocation[];
   worldSize: number;
   startTime: number;
   elapsedTime: number;
@@ -15,9 +16,9 @@ export default class World {
   }
 
   async init(worldId: string) {
-    this.mainCharacter = new MainCharacter();
     this.world = await this.database.getOne('maps', worldId);
     this.locations = this.world.locations;
+    this.mainCharacter = new MainCharacter(this.world.startLocation);
     this.worldSize = this.locations.length;
     this.startTime = Date.now();
     this.elapsedTime = 0;

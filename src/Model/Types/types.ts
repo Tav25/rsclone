@@ -20,6 +20,7 @@ export type TItem = {
 }
 
 export type TObject = {
+  type: string;
   position: Position;
   id: string;
   name: string;
@@ -40,14 +41,22 @@ export type TObject = {
   postDialog?: string;
 }
 
-export type TSavedGame = {
+export type TLocation = {
   name: string;
-  world: World;
+  entryDirections: string[];
+  objects: TObject[];
 }
 
 export type TWorld = {
   id: string;
   name: string;
-  locations: string[];
   goal: string;
+  map: string;
+  startLocation: Position;
+  locations: TLocation[];
+}
+
+export type TSavedGame = {
+  name: string;
+  world: World;
 }
