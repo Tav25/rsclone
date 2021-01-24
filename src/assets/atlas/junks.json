@@ -1,0 +1,109 @@
+{
+  "frames": {
+    "junksPileOfCredits_442": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 120,
+        "y": 9,
+        "w": 27,
+        "h": 21
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 7,
+        "w": 27,
+        "h": 21
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "junksPileOfJunk_174": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 92,
+        "y": 4,
+        "w": 26,
+        "h": 26
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 4,
+        "w": 26,
+        "h": 26
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "junksPileOfJunk_175": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "junksPileOfJunk_418": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 62,
+        "y": 3,
+        "w": 28,
+        "h": 27
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "junksPileOfJunk_425": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 32,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    }
+  },
+  "meta": {
+    "app": "Phaser Editor",
+    "version": "1",
+    "image": "junks.png"
+  }
+}
