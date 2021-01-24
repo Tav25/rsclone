@@ -28,7 +28,7 @@ class Scene3 extends Phaser.Scene {
     // lay1
     const lay1 = map.createLayer('bottomLayer', ['sprites'], 0, 0);
     // lay2
-    const lay2 = map.createLayer('midLayer', ['sprites'], 0, 0);
+    const lay2 = map.createLayer('middleLayer', ['sprites'], 0, 0);
 
     this.add.existing(this.player1);
 
@@ -84,10 +84,10 @@ class Scene3 extends Phaser.Scene {
 
     keyObj.on('up', (event) => { /* ... */ });
 
-    this.physics.add.overlap(this.player1, this.rectangleTop, () => { this.player1.y = 555, this.player1.onMap = 'map2'; this.scene.restart('test'); });
+    this.physics.add.overlap(this.player1, this.rectangleTop, () => { this.player1.y = 555;});
+    this.physics.add.overlap(this.player1, this.rectangleRight, () => { this.player1.x = 12;  });
+    this.physics.add.overlap(this.player1, this.rectangleBottom, () => { this.player1.y = 15; this.scene.start('Scene2'); this.scene.stop('Scene3'); });
     this.physics.add.overlap(this.player1, this.rectangleLeft, () => { this.player1.x = 555; });
-    this.physics.add.overlap(this.player1, this.rectangleBottom, () => { this.player1.y = 10; });
-    this.physics.add.overlap(this.player1, this.rectangleRight, () => { this.player1.x = 12; });
 
     this.lay2.setCollisionByExclusion([-1]);
     this.physics.add.collider(this.player1, this.lay2);//
@@ -103,6 +103,7 @@ class Scene3 extends Phaser.Scene {
       `ScrollY: ${this.camera.scrollY}`,
       `MidX: ${this.camera.midPoint.x}`,
       `MidY: ${this.camera.midPoint.y}`,
+      `Map: ${this.mainMap}`,
     ]);
     this.player1.movePlayer(this.cursors);
   }

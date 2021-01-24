@@ -74,6 +74,21 @@
                 "key": "map2"
             },
             {
+                "url": "src/assets/map/map3.json",
+                "type": "tilemapTiledJSON",
+                "key": "map3"
+            },
+            {
+                "url": "src/assets/map/map4.json",
+                "type": "tilemapTiledJSON",
+                "key": "map4"
+            },
+            {
+                "url": "src/assets/map/map5.json",
+                "type": "tilemapTiledJSON",
+                "key": "map5"
+            },
+            {
                 "url": "src/assets/scene/Maps.js",
                 "type": "script",
                 "key": "Maps"
@@ -135,6 +150,21 @@
                 "url": "src/assets/scene/Scene3.js",
                 "type": "sceneFile",
                 "key": "Scene3"
+            },
+            {
+                "url": "src/assets/scene/Scene4.js",
+                "type": "sceneFile",
+                "key": "Scene4"
+            },
+            {
+                "url": "src/assets/scene/Scene5.js",
+                "type": "sceneFile",
+                "key": "Scene5"
+            },
+            {
+                "url": "src/assets/scene/Scene6.js",
+                "type": "sceneFile",
+                "key": "Scene6"
             },
             {
                 "url": "src/assets/scene/SceneDelete.js",
