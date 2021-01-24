@@ -1,5 +1,5 @@
 import Item from './Item';
-import { TItem } from '../../Types/types';
+import { TItem } from '../Types/types';
 
 export default class Weapon extends Item {
   isEquippable: boolean;

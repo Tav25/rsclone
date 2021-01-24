@@ -1,9 +1,9 @@
-export default class User {
-    ratings: number[];
-    lastRating: number;
-    maxRating: number;
-    winCount: number;
-    loseCount: number;
+export default class Statistics {
+  ratings: number[];
+  lastRating: number;
+  maxRating: number;
+  winCount: number;
+  loseCount: number;
 
   constructor() {
     this.ratings = [];
@@ -13,7 +13,7 @@ export default class User {
     this.loseCount = 0;
   }
 
-  getStatistics() {
+  getStatistics(): Statistics {
     return this;
   }
 
