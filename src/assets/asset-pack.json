@@ -1,0 +1,163 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "src/assets/animations.json",
+                "type": "animation",
+                "key": "animations"
+            },
+            {
+                "url": "src/assets/scene/Arrows.js",
+                "type": "script",
+                "key": "Arrows"
+            },
+            {
+                "atlasURL": "src/assets/atlas/atlas.json",
+                "textureURL": "src/assets/atlas/atlas.png",
+                "type": "atlas",
+                "key": "atlas"
+            },
+            {
+                "url": "src/assets/scene/components/ComponentAnim.js",
+                "type": "script",
+                "key": "ComponentAnim"
+            },
+            {
+                "url": [],
+                "type": "scripts",
+                "key": "EventComponent"
+            },
+            {
+                "url": "src/assets/scene/components/EventComponent.js",
+                "type": "script",
+                "key": "EventComponent"
+            },
+            {
+                "url": "src/assets/image/img3.png",
+                "type": "image",
+                "key": "img3"
+            },
+            {
+                "atlasURL": "src/assets/atlas/junks.json",
+                "textureURL": "src/assets/atlas/junks.png",
+                "type": "atlas",
+                "key": "junks"
+            },
+            {
+                "url": "src/assets/scene/leftMenu.js",
+                "type": "script",
+                "key": "leftMenu"
+            },
+            {
+                "url": "src/assets/logo.png",
+                "type": "image",
+                "key": "logo"
+            },
+            {
+                "url": "src/assets/image/mainFrame.png",
+                "type": "image",
+                "key": "mainFrame"
+            },
+            {
+                "url": "src/assets/map/map1.json",
+                "type": "tilemapTiledJSON",
+                "key": "map1"
+            },
+            {
+                "url": "src/assets/map/map2.json",
+                "type": "tilemapTiledJSON",
+                "key": "map2"
+            },
+            {
+                "url": "src/assets/scene/Maps.js",
+                "type": "script",
+                "key": "Maps"
+            },
+            {
+                "atlasURL": "src/assets/atlas/medkits.json",
+                "textureURL": "src/assets/atlas/medkits.png",
+                "type": "atlas",
+                "key": "medkits"
+            },
+            {
+                "url": "src/assets/scene/openTopMenu.js",
+                "type": "script",
+                "key": "openTopMenu"
+            },
+            {
+                "atlasURL": "src/assets/atlas/persons.json",
+                "textureURL": "src/assets/atlas/persons.png",
+                "type": "atlas",
+                "key": "persons"
+            },
+            {
+                "url": "src/assets/scene/components/Physics.js",
+                "type": "script",
+                "key": "Physics"
+            },
+            {
+                "url": "src/assets/scene/components/PhysicsBody.js",
+                "type": "script",
+                "key": "PhysicsBody"
+            },
+            {
+                "url": "src/assets/scene/Player.js",
+                "type": "script",
+                "key": "Player"
+            },
+            {
+                "atlasURL": "src/assets/atlas/questitems.json",
+                "textureURL": "src/assets/atlas/questitems.png",
+                "type": "atlas",
+                "key": "questitems"
+            },
+            {
+                "url": "src/assets/scene/RectangleForMenu.js",
+                "type": "script",
+                "key": "RectangleForMenu"
+            },
+            {
+                "url": "src/assets/scene/Scene1.js",
+                "type": "sceneFile",
+                "key": "Scene1"
+            },
+            {
+                "url": "src/assets/scene/Scene2.js",
+                "type": "sceneFile",
+                "key": "Scene2"
+            },
+            {
+                "url": "src/assets/scene/Scene3.js",
+                "type": "sceneFile",
+                "key": "Scene3"
+            },
+            {
+                "url": "src/assets/scene/SceneDelete.js",
+                "type": "sceneFile",
+                "key": "SceneDelete"
+            },
+            {
+                "url": "src/assets/image/sprites.png",
+                "type": "image",
+                "key": "sprites"
+            },
+            {
+                "url": "src/assets/scene/topMenuText.js",
+                "type": "script",
+                "key": "topMenuText"
+            },
+            {
+                "atlasURL": "src/assets/atlas/weapons.json",
+                "textureURL": "src/assets/atlas/weapons.png",
+                "type": "atlas",
+                "key": "weapons"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2
+    }
+}

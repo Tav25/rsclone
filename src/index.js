@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-// import packFile from './assets/asset-pack.json';
+import packFile from './assets/asset-pack.json';
 
 class MyGame extends Phaser.Scene {
   constructor() {
@@ -14,7 +14,7 @@ class MyGame extends Phaser.Scene {
   create() {
     // const logo = this.add.image(400, 150, 'logo');
 
-    // this.scene.start('Scene1');
+    this.scene.start('Scene1');
   }
 }
 

@@ -1,0 +1,81 @@
+{
+    "id": "a6a45dee-97ea-4c3e-bb09-b884f530657b",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 520,
+        "borderHeight": 350
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "d86cb847-e39e-46b8-9c52-625fb77ff972",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "2e42d43f-5cc1-47f7-84f9-d62de2ecba35",
+                    "label": "rectangle0",
+                    "components": [],
+                    "x": 14,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#00cd35",
+                    "width": 15,
+                    "height": 15
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "eb3eb165-cc30-472e-bcc9-9b375520daa4",
+                    "label": "rectangle1",
+                    "components": [],
+                    "x": 27,
+                    "y": 15,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#00cd32",
+                    "width": 15,
+                    "height": 15
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "e4fd03ca-e8fc-4b37-8a12-e5b8cfe6e93e",
+                    "label": "rectangle2",
+                    "components": [],
+                    "x": 14,
+                    "y": 29,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#00cd35",
+                    "width": 15,
+                    "height": 15
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "4dadacf2-8f7c-4883-9534-3336e9e62c4e",
+                    "label": "rectangle3",
+                    "components": [],
+                    "y": 14,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#39cd00",
+                    "width": 15,
+                    "height": 15
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

@@ -1,0 +1,77 @@
+{
+    "id": "531055ec-f58f-4990-ae66-cb2ba7013362",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 520,
+        "borderHeight": 350
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "4f5e5c62-32e9-480f-a4ae-c123903d067f",
+            "label": "container_1",
+            "components": [],
+            "x": 3,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "01975fbe-49ea-4dde-9344-d147030b8050",
+                    "label": "img3",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "img3"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "d1541686-5c36-42f8-bf9d-501fb815ecad",
+                    "label": "weaponsLightsaber_510",
+                    "components": [],
+                    "texture": {
+                        "key": "weapons",
+                        "frame": "weaponsLightsaber_510"
+                    },
+                    "x": 18,
+                    "y": 16
+                },
+                {
+                    "type": "Image",
+                    "id": "0e76255e-f7de-41e7-93fe-d9bdbf2f0f01",
+                    "label": "weaponsBlaster_512",
+                    "components": [],
+                    "texture": {
+                        "key": "weapons",
+                        "frame": "weaponsBlaster_512"
+                    },
+                    "x": 18,
+                    "y": 48
+                },
+                {
+                    "type": "Text",
+                    "id": "532cb45e-0cb1-404d-b84d-f44dffa57364",
+                    "label": "text",
+                    "components": [],
+                    "x": 42,
+                    "y": 7,
+                    "originX": 0,
+                    "originY": 0,
+                    "text": "New text",
+                    "fontFamily": "Tahoma",
+                    "color": "#020202ff"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}
