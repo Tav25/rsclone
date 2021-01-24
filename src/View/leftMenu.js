@@ -12,7 +12,7 @@ class leftMenu extends Phaser.GameObjects.Container {
     img3.setOrigin(0, 0);
     this.add(img3);
     this.img3 = img3;
-    
+
     // this.objectPositionInTheList('Lazer S', 'weaponsLightsaber_510', 2);
     /* START-USER-CTR-CODE */
     // Write your code here.
@@ -25,13 +25,13 @@ class leftMenu extends Phaser.GameObjects.Container {
 
     // weaponsLightsaber_5101
     const imageInLeftMenu = this.scene.add.image(18, imagePositionY, 'weapons', subjectImage);
-	this.add(imageInLeftMenu);
-	imageInLeftMenu.setInteractive();
+    this.add(imageInLeftMenu);
+    imageInLeftMenu.setInteractive();
 
     console.log('Cl1');
     console.log(imageInLeftMenu);
 
-    imageInLeftMenu.on('pointerdown', function (pointer) {
+    imageInLeftMenu.on('pointerdown', (pointer) => {
       console.log('Cl0');
       // this.callbackFun();
     });
@@ -40,13 +40,7 @@ class leftMenu extends Phaser.GameObjects.Container {
     textInLeftMenu.text = subjectName;
     textInLeftMenu.setStyle({ color: '#020202ff', fontFamily: 'Tahoma' });
     this.add(textInLeftMenu);
-
-    
-
   }
-
-
-
 
   /* START-USER-CODE */
 

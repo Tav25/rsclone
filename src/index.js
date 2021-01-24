@@ -9,7 +9,7 @@ class MyGame extends Phaser.Scene {
 
   preload() {
     // this.load.image('logo', packFile);
-    // this.load.pack('pack', packFile);
+    this.load.pack('pack', packFile);
   }
 
   create() {

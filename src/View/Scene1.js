@@ -2,18 +2,16 @@ class Scene1 extends Phaser.Scene {
   constructor() {
     super('Scene1');
   }
-  
+
   create() {
-    let data = this.cache.json.get('gameSettings');
-    console.log(data)
+    const data = this.cache.json.get('gameSettings');
+    console.log(data);
 
     this.sc = this.scene.launch('Scene2');
-
 
     const rectangle = this.add.rectangle(306, 50, 210, 295);
     rectangle.setOrigin(0, 0);
     rectangle.isFilled = true;
-
 
     this.arrows = new Arrows(this);
     this.add.existing(this.arrows);
@@ -57,8 +55,6 @@ class Scene1 extends Phaser.Scene {
       console.log('Q');
       console.log(this.sc);
     });
-
-
   }
 
   update() {

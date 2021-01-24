@@ -84,8 +84,8 @@ class Scene6 extends Phaser.Scene {
 
     keyObj.on('up', (event) => { /* ... */ });
 
-    this.physics.add.overlap(this.player1, this.rectangleTop, () => { this.player1.y = 555;  });
-    this.physics.add.overlap(this.player1, this.rectangleRight, () => { this.player1.x = 12; this.scene.stop('Scene6'); this.scene.start('Scene2');});
+    this.physics.add.overlap(this.player1, this.rectangleTop, () => { this.player1.y = 555; });
+    this.physics.add.overlap(this.player1, this.rectangleRight, () => { this.player1.x = 12; this.scene.stop('Scene6'); this.scene.start('Scene2'); });
     this.physics.add.overlap(this.player1, this.rectangleBottom, () => { this.player1.y = 10; });
     this.physics.add.overlap(this.player1, this.rectangleLeft, () => { this.player1.x = 555; });
 
