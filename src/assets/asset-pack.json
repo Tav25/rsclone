@@ -18,6 +18,12 @@
                 "key": "atlas"
             },
             {
+                "atlasURL": "src/assets/atlas/atlasPersonsObject.json",
+                "textureURL": "src/assets/atlas/atlasPersonsObject.png",
+                "type": "atlas",
+                "key": "atlasPersonsObject"
+            },
+            {
                 "url": "src/View/components/ComponentAnim.js",
                 "type": "script",
                 "key": "ComponentAnim"
@@ -121,6 +127,11 @@
                 "key": "Player"
             },
             {
+                "url": "src/View/ObjectOnTheScene.js",
+                "type": "script",
+                "key": "ObjectOnTheScene"
+            },
+            {
                 "atlasURL": "src/assets/atlas/questitems.json",
                 "textureURL": "src/assets/atlas/questitems.png",
                 "type": "atlas",
@@ -132,34 +143,34 @@
                 "key": "RectangleForMenu"
             },
             {
-                "url": "src/View/Scene1.js",
+                "url": "src/View/SceneInterface.js",
                 "type": "sceneFile",
-                "key": "Scene1"
+                "key": "SceneInterface"
             },
             {
-                "url": "src/View/Scene2.js",
+                "url": "src/View/world1scene1.js",
                 "type": "sceneFile",
-                "key": "Scene2"
+                "key": "world1scene1"
             },
             {
-                "url": "src/View/Scene3.js",
+                "url": "src/View/world1scene2.js",
                 "type": "sceneFile",
-                "key": "Scene3"
+                "key": "world1scene2"
             },
             {
-                "url": "src/View/Scene4.js",
+                "url": "src/View/world1scene3.js",
                 "type": "sceneFile",
-                "key": "Scene4"
+                "key": "world1scene3"
             },
             {
-                "url": "src/View/Scene5.js",
+                "url": "src/View/world1scene4.js",
                 "type": "sceneFile",
-                "key": "Scene5"
+                "key": "world1scene4"
             },
             {
-                "url": "src/View/Scene6.js",
+                "url": "src/View/world1scene5.js",
                 "type": "sceneFile",
-                "key": "Scene6"
+                "key": "world1scene5"
             },
             {
                 "url": "src/assets/image/sprites.png",

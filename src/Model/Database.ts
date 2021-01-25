@@ -47,7 +47,7 @@ export default class Database {
   }
 
   async create(collection: string, id: string, documentData: any): Promise<any> {
-    const data = {
+    const gameSet= {
       id: id,
       content: documentData,
     };
@@ -65,7 +65,7 @@ export default class Database {
   }
 
   async update(collection: string, id: string, documentData: any): Promise<any> {
-    const data = {
+    const gameSet= {
       id: id,
       content:documentData,
     };

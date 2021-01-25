@@ -1,7 +1,8 @@
 {"hero": {
-    "x": 200,
-    "y":200,
-    "lifePoints": 55
+    "x": 128,
+    "y":128,
+    "lifePoints": 55,
+    "weapons":"no"
 },
 "mapArrows":[1,0,0,0]
 }
