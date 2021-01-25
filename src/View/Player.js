@@ -4,16 +4,19 @@
 
 class Player extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, texture, frame) {
-    super(scene, x, y, texture || 'atlas', frame !== undefined && frame !== null ? frame : 'img1781');
+    super(scene, x, y);
+
+    this.setTexture('atlas', 'img1029');
 
     // this (components)
     const thisComponentAnim = new ComponentAnim(this);
     thisComponentAnim.animationKey = 'goToBottom';
     new Physics(this);
 
-    /* START-USER-CTR-CODE */
-    // this.prefab.play("stop", true);
-    /* END-USER-CTR-CODE */
+    this.gameSet = scene.cache.json.get('gameSettings');
+    this.gameSet.hero.lifePoints = 10;
+    console.log(scene);
+    console.log(this);
   }
 
   /* START-USER-CODE */

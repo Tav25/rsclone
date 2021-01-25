@@ -2,9 +2,9 @@
 
 /* START OF COMPILED CODE */
 
-class Scene2 extends Phaser.Scene {
-  constructor() {
-    super('Scene2');
+class world1scene5 extends Phaser.Scene {
+  constructor(text = 'no') {
+    super('world1scene5');
 
     /** @type {Phaser.Tilemaps.TilemapLayer} */
     this.lay1;
@@ -12,16 +12,16 @@ class Scene2 extends Phaser.Scene {
     this.player1;
 
     /* START-USER-CTR-CODE */
-    this.mainMap = 'map1';
+    this.mainMap = 'map5';
     /* END-USER-CTR-CODE */
+    console.log(text);
   }
 
   create() {
-    const data = this.cache.json.get('gameSettings');
-    console.log(data);
+    const gameSet = this.cache.json.get('gameSettings');
+    console.log(gameSet);
     // player1
-    this.player1 = new Player(this, data.hero.x, data.hero.y);
-    if (!this.player1.onMap) { this.mainMap = 'map1'; }
+    this.player1 = new Player(this, gameSet.hero.x, gameSet.hero.y);
 
     // map
     const map = this.add.tilemap(this.mainMap);
@@ -59,10 +59,6 @@ class Scene2 extends Phaser.Scene {
     this.rectangleRight.isFilled = true;
     new Physics(this.rectangleRight);
 
-    const objectOnTheScene1 = new ObjectOnTheScene(this, 221, 184);
-    // this.add.existing(objectOnTheScene1);
-    // objectOnTheScene1.replaceObjectImage();
-
     this.lay1 = lay1;
     this.lay2 = lay2;
     // this.player1 = player1;
@@ -71,9 +67,8 @@ class Scene2 extends Phaser.Scene {
     camera.startFollow(this.player1);
     camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     camera.setViewport(10, 50, 288, 288);
-    this.camera = camera;
-
     this.map = map;
+    this.camera = camera;
 
     this.cursors = this.input.keyboard.createCursorKeys();
     //
@@ -83,7 +78,7 @@ class Scene2 extends Phaser.Scene {
     const keyObj = this.input.keyboard.addKey('W'); // Get key object
     keyObj.on('down', (event) => {
       console.log('w');
-      // this.scene.remove('Scene1');
+      // this.scene.remove('SceneInterface');
 
       console.log(this.mainMap);
       console.log(this.player1.onMap);
@@ -91,10 +86,10 @@ class Scene2 extends Phaser.Scene {
 
     keyObj.on('up', (event) => { /* ... */ });
 
-    this.physics.add.overlap(this.player1, this.rectangleTop, () => { data.hero.y = 545; data.hero.x = this.player1.x; data.hero.x = this.player1.x; this.scene.stop('Scene2'); this.scene.start('Scene3'); });
-    this.physics.add.overlap(this.player1, this.rectangleRight, () => { data.hero.x = 20; data.hero.y = this.player1.y; this.scene.stop('Scene2'); this.scene.start('Scene4'); });
-    this.physics.add.overlap(this.player1, this.rectangleBottom, () => { data.hero.y = 20; data.hero.x = this.player1.x; this.scene.stop('Scene2'); this.scene.start('Scene5'); });
-    this.physics.add.overlap(this.player1, this.rectangleLeft, () => { data.hero.x = 545; data.hero.y = this.player1.y; this.scene.stop('Scene2'); this.scene.start('Scene6'); });
+    this.physics.add.overlap(this.player1, this.rectangleTop, () => { gameSet.hero.y = 545; gameSet.hero.x = this.player1.x; });
+    this.physics.add.overlap(this.player1, this.rectangleRight, () => { gameSet.hero.x = 20; gameSet.hero.y = this.player1.y; this.scene.stop('world1scene5'); this.scene.start('world1scene1'); });
+    this.physics.add.overlap(this.player1, this.rectangleBottom, () => { gameSet.hero.y = 20; gameSet.hero.x = this.player1.x; });
+    this.physics.add.overlap(this.player1, this.rectangleLeft, () => { gameSet.hero.x = 545; gameSet.hero.y = this.player1.y; });
 
     this.lay2.setCollisionByExclusion([-1]);
     this.physics.add.collider(this.player1, this.lay2);//
@@ -111,6 +106,7 @@ class Scene2 extends Phaser.Scene {
       `MidX: ${this.camera.midPoint.x}`,
       `MidY: ${this.camera.midPoint.y}`,
       `Map: ${this.mainMap}`,
+
     ]);
     this.player1.movePlayer(this.cursors);
   }

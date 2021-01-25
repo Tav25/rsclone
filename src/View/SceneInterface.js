@@ -1,13 +1,13 @@
-class Scene1 extends Phaser.Scene {
+class SceneInterface extends Phaser.Scene {
   constructor() {
-    super('Scene1');
+    super('SceneInterface');
   }
 
   create() {
-    const data = this.cache.json.get('gameSettings');
-    console.log(data);
+    const gameSet = this.cache.json.get('gameSettings');
+    console.log(gameSet);
 
-    this.sc = this.scene.launch('Scene2');
+    this.sc = this.scene.launch('world1scene1');
 
     const rectangle = this.add.rectangle(306, 50, 210, 295);
     rectangle.setOrigin(0, 0);
@@ -15,9 +15,9 @@ class Scene1 extends Phaser.Scene {
 
     this.arrows = new Arrows(this);
     this.add.existing(this.arrows);
-    this.arrows.directionOfMovement = data.mapArrows;
+    this.arrows.directionOfMovement = gameSet.mapArrows;
 
-    const herosLifePoints = data.hero.lifePoints;
+    const herosLifePoints = gameSet.hero.lifePoints;
     if (herosLifePoints < 32) { this.vbn(herosLifePoints, 0x69FF57, 0xF8FF18, this); }
     if (herosLifePoints > 32) { this.vbn(herosLifePoints - 32, 0xF8FF18, 0xFF1F18, this); }
     if (herosLifePoints > 64) { this.vbn(herosLifePoints - 64, 0x69FF57, 0xF8FF18, this); }

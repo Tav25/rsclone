@@ -15,7 +15,7 @@ class MyGame extends Phaser.Scene {
   create() {
     // const logo = this.add.image(400, 150, 'logo');
 
-    this.scene.start('Scene1');
+    this.scene.start('SceneInterface');
   }
 }
 
