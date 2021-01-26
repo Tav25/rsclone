@@ -2,9 +2,9 @@
 
 /* START OF COMPILED CODE */
 
-class world1scene2 extends Phaser.Scene {
+class world1scene6 extends Phaser.Scene {
   constructor(text = 'no') {
-    super('world1scene2');
+    super('world1scene6');
 
     /** @type {Phaser.Tilemaps.TilemapLayer} */
     this.lay1;
@@ -12,7 +12,7 @@ class world1scene2 extends Phaser.Scene {
     this.player1;
 
     /* START-USER-CTR-CODE */
-    this.mainMap = 'map2';
+    this.mainMap = 'map6';
     /* END-USER-CTR-CODE */
     console.log(text);
   }
@@ -35,8 +35,6 @@ class world1scene2 extends Phaser.Scene {
     this.add.existing(this.player1);
 
     const lay3 = map.createLayer('topLayer', ['sprites'], 0, 0);
-
-    // rectangle
 
     this.lay1 = lay1;
     this.lay2 = lay2;
@@ -65,10 +63,7 @@ class world1scene2 extends Phaser.Scene {
 
     keyObj.on('up', (event) => { /* ... */ });
 
-    const rectangleTop = new RectanglePhysics(this, 0, -2, map.widthInPixels, 3, () => { gameSet.hero.y = 545; gameSet.hero.x = this.player1.x; });
-    const rectangleRight = new RectanglePhysics(this, 576, 0, 3, 576, () => { gameSet.hero.x = 20; gameSet.hero.y = this.player1.y; });
-    const rectangleBottom = new RectanglePhysics(this, 0, 575, map.widthInPixels, 3, () => { gameSet.hero.y = 20; gameSet.hero.x = this.player1.x; this.scene.start('world1scene1'); this.scene.stop('world1scene2'); });
-    const rectangleLeft = new RectanglePhysics(this, -2, 0, 3, map.heightInPixels, () => { gameSet.hero.x = 545; gameSet.hero.y = this.player1.y; });
+    const returnToScene1 = new RectanglePhysics(this, 130, 290, 28, 18, () => { gameSet.hero.x = 432; gameSet.hero.y = 250; this.scene.stop('world1scene6'); this.scene.start('world1scene1'); });
 
     this.lay2.setCollisionByExclusion([-1]);
     this.physics.add.collider(this.player1, this.lay2);//
@@ -85,6 +80,7 @@ class world1scene2 extends Phaser.Scene {
       `MidX: ${this.camera.midPoint.x}`,
       `MidY: ${this.camera.midPoint.y}`,
       `Map: ${this.mainMap}`,
+
     ]);
     this.player1.movePlayer(this.cursors);
   }
