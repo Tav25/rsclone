@@ -3,15 +3,15 @@ import { TItem } from '../types/types';
 
 export default class Locator extends Item {
   isClickable: boolean;
-  map: string;
+  worldMap: string;
 
-  constructor(itemObject: TItem, map: string) {
+  constructor(itemObject: TItem, worldMap: string) {
     super(itemObject);
     this.isClickable = itemObject.isClickable;
-    this.map = map;
+    this.worldMap = worldMap;
   }
 
   showMap(): string {
-    return this.map;
+    return this.worldMap;
   }
 }

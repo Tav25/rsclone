@@ -68,8 +68,8 @@ container.append(
   deleteButton,
 );
 
-input1.value = 'userProfiles';
-input2.value = 'levendor';
+input1.value = 'maps';
+input2.value = '1';
 input3.value = 'test message';
 
 const database = new Database();
@@ -86,6 +86,8 @@ getListButton.addEventListener('click', async () => {
 
 getButton.addEventListener('click', async () => {
   const response = await database.getOne(input1.value, input2.value);
+  console.log(response);
+  window.resp = response;
   output.value = JSON.stringify(response, null, 2);
 });
 

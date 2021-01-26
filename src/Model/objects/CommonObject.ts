@@ -1,11 +1,11 @@
-import { TObject } from "../types/types";
+import { TIcon, TObject } from "../types/types";
 import Position from "../character/Position";
 
 export default class CommonObject {
   position: Position;
   id: string;
   name: string;
-  icon: string;
+  icon: TIcon;
 
   constructor(objectObject: TObject) {
     this.position = objectObject.position;

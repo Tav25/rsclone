@@ -1,11 +1,11 @@
 import CommonObject from './CommonObject';
-import { TItem, TObject } from '../types/types';
+import { TGoal, TItem, TObject } from '../types/types';
 
 export default class Character extends CommonObject {
   isKeyNeededToOpen: boolean;
   returnedItem: TItem;
-  itemToActivate: TItem;
-  triggerToActivate: TObject;
+  itemToActivate: string;
+  triggerToActivate: TGoal;
   triggered: boolean
   greetingDialog: string;
   rejectDialog: string;
@@ -17,18 +17,22 @@ export default class Character extends CommonObject {
     super(objectObject);
     this.returnedItem = itemObject;
     this.isKeyNeededToOpen = objectObject.isKeyNeededToOpen;
-    this.itemToActivate = activationItem;
-    this.triggerToActivate = activationTrigger
+    this.itemToActivate = activationItem.name;
+    this.triggerToActivate = {
+      location: activationTrigger.position.location,
+      target: activationTrigger.name,
+      triggered: activationTrigger.triggered,
+    };
     this.greetingDialog = objectObject.greetingDialog;
     this.rejectDialog = objectObject.rejectDialog;
     this.acceptDialog = objectObject.acceptDialog;
     this.postDialog = objectObject.postDialog;
     this.triggered = false;
-    this.isFirstVisit = true;
+    this.isFirstVisit = objectObject.isFirstVisit;
   }
 
   isValidKey(itemObject: TItem): boolean {
-    return itemObject.id === this.itemToActivate.id;
+    return itemObject.id === this.itemToActivate;
   }
 
   isTriggered(): boolean {

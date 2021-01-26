@@ -1,8 +1,8 @@
 import CommonObject from './CommonObject';
-import { TItem, TObject } from '../types/types';
+import { TIcon, TItem, TObject } from '../types/types';
 
 export default class Trigger extends CommonObject{
-  openedIcon: string;
+  openedIcon: TIcon;
   isKeyNeededToOpen: boolean;
   itemToActivate: TItem;
   triggerToActivate: TObject;

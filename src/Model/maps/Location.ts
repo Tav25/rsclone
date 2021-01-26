@@ -17,28 +17,28 @@ export default class Location {
     this.objectList = objectList;
   }
 
-  init(): void {
-    const objects = [];
-    this.objectList.forEach((object: TObject) => {
-      if (object.type === 'character') {
-        const objectInstance = new Character(object);
-        objects.push(objectInstance);
-      } else if (object.type === 'crate') {
-        const objectInstance = new Crate();
-        objects.push(objectInstance);
-      } else if (object.type === 'door') {
-        const objectInstance = new Door();
-        objects.push(objectInstance);
-      } else if (object.type === 'tradingPlace') {
-        const objectInstance = new TradingPlace();
-        objects.push(objectInstance);
-      } else if (object.type === 'trigger') {
-        const objectInstance = new Trigger();
-        objects.push(objectInstance);
-      }
-    });
-    this.objects = objects;
-  }
+  // init(): void {
+  //   const objects = [];
+  //   this.objectList.forEach((object: TObject) => {
+  //     if (object.type === 'character') {
+  //       const objectInstance = new Character(object);
+  //       objects.push(objectInstance);
+  //     } else if (object.type === 'crate') {
+  //       const objectInstance = new Crate();
+  //       objects.push(objectInstance);
+  //     } else if (object.type === 'door') {
+  //       const objectInstance = new Door();
+  //       objects.push(objectInstance);
+  //     } else if (object.type === 'tradingPlace') {
+  //       const objectInstance = new TradingPlace();
+  //       objects.push(objectInstance);
+  //     } else if (object.type === 'trigger') {
+  //       const objectInstance = new Trigger();
+  //       objects.push(objectInstance);
+  //     }
+  //   });
+  //   this.objects = objects;
+  // }
 
   getName(): string {
     return this.name;

@@ -1,13 +1,14 @@
 import CommonObject from './CommonObject';
-import { TItem, TObject } from '../types/types';
+import { TIcon, TItem, TObject } from '../types/types';
 
 export default class Crate extends CommonObject{
-  openedIcon: string;
+  openedIcon: TIcon;
   isKeyNeededToOpen: boolean;
   returnedItem: TItem;
   itemToActivate: TItem;
   triggerToActivate: TObject;
   triggered: boolean;
+  rejectDialog: string;
 
   constructor(objectObject: TObject, itemObject: TItem, activationItem?: TItem, activationTrigger?: TObject) {
     super(objectObject);
@@ -17,6 +18,7 @@ export default class Crate extends CommonObject{
     this.itemToActivate = activationItem;
     this.triggerToActivate = activationTrigger;
     this.triggered = false;
+    this.rejectDialog = objectObject.rejectDialog;
   }
 
   isValidKey(itemObject: TItem): boolean {

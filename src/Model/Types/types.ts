@@ -10,7 +10,6 @@ export type TItem = {
   isClickable?: boolean;
   isTradable?: boolean;
   isQuestItem?: boolean;
-  questTargetID?: string;
   restoredHealth?: number;
   damage?: number;
   currentAmmo?: number;
@@ -19,26 +18,43 @@ export type TItem = {
   cost?: number;
 }
 
+export type TIcon = {
+  toTop: string;
+  toRight: string;
+  toBottom: string;
+  toLeft: string;
+}
+
+export type TGoal = {
+  location: string;
+  target: string;
+  triggered: boolean;
+}
+
 export type TObject = {
   type: string;
   position: Position;
   id: string;
   name: string;
-  icon: string;
-  openedIcon?: string;
+  icon: TIcon;
+  openedIcon?: TIcon;
   isKeyNeededToOpen?: boolean;
   isTriggerNeededToOpen?: boolean;
   returnedItem?: TItem;
   returnedItems1?: TItem[];
   returnedItems2?: TItem[];
-  itemToActivate?: TItem;
-  triggerToActivate?: TObject;
+  itemToActivate?: string;
+  triggerToActivate?: TGoal;
   triggered?: boolean;
   isFirstVisit?: boolean;
   greetingDialog?: string;
   rejectDialog?: string;
   acceptDialog?: string;
   postDialog?: string;
+  health?: number;
+  damage?: number;
+  range?: number;
+  isMoving?: boolean;
 }
 
 export type TLocation = {
@@ -50,7 +66,7 @@ export type TLocation = {
 export type TWorld = {
   id: string;
   name: string;
-  goal: string;
+  goal: TGoal;
   map: string;
   startLocation: Position;
   locations: TLocation[];

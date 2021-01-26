@@ -1,4 +1,4 @@
-import { TItem } from "../types/types";
+import { TItem, TObject } from "../types/types";
 import Equipment from "./Equipment";
 import Health from "./Health";
 import Inventory from "./Inventory";
@@ -34,12 +34,12 @@ export default class MainCharacter {
     return this.equipment.getCurrentAmmo() <= 0 ? true : false;
   }
 
-  shot() {
+  shot(): void {
     this.equipment.releaseAmmo();
     if (this.isNoAmmo()) this.equipment.removeWeapon();
   }
 
-  hit(enemyWeapon: TItem) {
-    this.health.damageHealth(enemyWeapon);
+  hit(enemy: TObject): void {
+    this.health.damageHealth(enemy.damage);
   }
 }
