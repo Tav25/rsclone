@@ -4,7 +4,7 @@
 
 class ObjectOnTheScene extends Phaser.GameObjects.Image {
   constructor(scene, x, y, texture, frame) {
-    super(scene, x, y, texture || 'atlasPersonsObject', frame !== undefined && frame !== null ? frame : 'medkitsImperialFirstAidKit_506');
+    super(scene, x, y, texture || 'atlasPersonsObject', frame !== undefined && frame !== null ? frame : 'AdeganCrystal_459');
 
     const thisPhysicsBody = new PhysicsBody(this);
     // thisPhysicsBody.bodyWidth = 45;

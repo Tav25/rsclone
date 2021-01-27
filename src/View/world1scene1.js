@@ -17,8 +17,10 @@ class world1scene1 extends Phaser.Scene {
   }
 
   create() {
+    
     const gameSet = this.cache.json.get('gameSettings');
     console.log(gameSet);
+    gameSet.mapArrows = [1,1,1,1]
 
     const map = this.add.tilemap(this.mainMap);
     map.addTilesetImage('sprites', 'sprites');

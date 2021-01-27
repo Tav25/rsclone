@@ -19,7 +19,7 @@ class world1scene4 extends Phaser.Scene {
 
   create() {
     const gameSet = this.cache.json.get('gameSettings');
-    console.log(gameSet);
+    gameSet.mapArrows = [1,0,0,0]
     // player1
     this.player1 = new Player(this, gameSet.hero.x, gameSet.hero.y);
 

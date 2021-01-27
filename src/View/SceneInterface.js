@@ -4,8 +4,8 @@ class SceneInterface extends Phaser.Scene {
   }
 
   create() {
-    const gameSet = this.cache.json.get('gameSettings');
-    console.log(gameSet);
+    this.gameSet = this.cache.json.get('gameSettings');
+    console.log(this.gameSet);
 
     this.sc = this.scene.launch('world1scene1');
 
@@ -15,9 +15,9 @@ class SceneInterface extends Phaser.Scene {
 
     this.arrows = new Arrows(this);
     this.add.existing(this.arrows);
-    this.arrows.directionOfMovement = gameSet.mapArrows;
+    
 
-    const herosLifePoints = gameSet.hero.lifePoints;
+    const herosLifePoints = this.gameSet.hero.lifePoints;
     if (herosLifePoints < 32) { this.vbn(herosLifePoints, 0x69FF57, 0xF8FF18, this); }
     if (herosLifePoints > 32) { this.vbn(herosLifePoints - 32, 0xF8FF18, 0xFF1F18, this); }
     if (herosLifePoints > 64) { this.vbn(herosLifePoints - 64, 0x69FF57, 0xF8FF18, this); }
@@ -58,7 +58,7 @@ class SceneInterface extends Phaser.Scene {
   }
 
   update() {
-
+    this.arrows.directionOfMovement = this.gameSet.mapArrows;
     // console.log(this.openTopMenuFile)
   }
 
