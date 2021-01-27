@@ -1,7 +1,10 @@
 import Position from "../character/Position"
 import World from "../maps/World"
+import Character from "../objects/Character"
+import Trigger from "../objects/Trigger"
 
 export type TItem = {
+  type: string;
   id: string;
   name: string;
   icon: string;
@@ -16,6 +19,7 @@ export type TItem = {
   maxAmmo: number;
   range?: number;
   cost?: number;
+  worldMap?: string;
 }
 
 export type TIcon = {
@@ -26,9 +30,8 @@ export type TIcon = {
 }
 
 export type TGoal = {
-  location: string;
-  target: string;
-  triggered: boolean;
+  name: string;
+  target: Trigger | Character;
 }
 
 export type TObject = {
@@ -44,9 +47,10 @@ export type TObject = {
   returnedItems1?: TItem[];
   returnedItems2?: TItem[];
   itemToActivate?: string;
-  triggerToActivate?: TGoal;
+  triggerToActivate?: string;
   triggered?: boolean;
   isFirstVisit?: boolean;
+  isAccepted?: boolean;
   greetingDialog?: string;
   rejectDialog?: string;
   acceptDialog?: string;

@@ -5,10 +5,10 @@ export default class Locator extends Item {
   isClickable: boolean;
   worldMap: string;
 
-  constructor(itemObject: TItem, worldMap: string) {
+  constructor(itemObject: TItem) {
     super(itemObject);
     this.isClickable = itemObject.isClickable;
-    this.worldMap = worldMap;
+    this.worldMap = itemObject.worldMap;
   }
 
   showMap(): string {
