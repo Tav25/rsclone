@@ -1,0 +1,129 @@
+{
+  "frames": {
+    "weaponsBlasterRifle_513": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 32,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "weaponsBlaster_512": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "weaponsLightsaber_18": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 62,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "weaponsLightsaber_510": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 92,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "weaponsTheForce_511": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 122,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "weaponsThermalDetonator_514": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 152,
+        "y": 2,
+        "w": 25,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 2,
+        "w": 25,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    }
+  },
+  "meta": {
+    "app": "Phaser Editor",
+    "version": "1",
+    "image": "weapons.png"
+  }
+}

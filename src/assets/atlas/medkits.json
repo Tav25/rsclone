@@ -1,0 +1,149 @@
+{
+  "frames": {
+    "medkitsBactaFluid_480": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 2,
+        "y": 60,
+        "w": 28,
+        "h": 27
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 3,
+        "w": 28,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "medkitsIceMushroom_1196": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 31,
+        "y": 30,
+        "w": 26,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 2,
+        "w": 26,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "medkitsImperialFirstAidKit_506": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 26
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 3,
+        "w": 28,
+        "h": 26
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "medkitsMushroom_1197": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 2,
+        "y": 30,
+        "w": 27,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 2,
+        "w": 27,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "medkitsQ-Rations_507": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 32,
+        "y": 60,
+        "w": 28,
+        "h": 27
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "medkitsRebelFirstAidKit_505": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 32,
+        "y": 2,
+        "w": 28,
+        "h": 26
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 3,
+        "w": 28,
+        "h": 26
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "medkitsScrubroot_1198": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 59,
+        "y": 31,
+        "w": 25,
+        "h": 27
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 2,
+        "w": 25,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    }
+  },
+  "meta": {
+    "app": "Phaser Editor",
+    "version": "1",
+    "image": "medkits.png"
+  }
+}
