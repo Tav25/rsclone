@@ -46,7 +46,7 @@ class Arrows extends Phaser.GameObjects.Container {
 	 * @param {() => string} x
 	 */
   set directionOfMovement(x) {
-	  console.log(x);
+	  // console.log(x);
 	  this.rectangle0.isFilled = x[0];
 	  this.rectangle1.isFilled = x[1];
 	  this.rectangle2.isFilled = x[2];

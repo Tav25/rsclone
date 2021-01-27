@@ -13,6 +13,12 @@ class Player extends Phaser.GameObjects.Sprite {
     thisComponentAnim.animationKey = 'goToBottom';
     new Physics(this);
 
+    const thisPhysicsBody = new PhysicsBody(this);
+    thisPhysicsBody.bodyX = 4;
+    thisPhysicsBody.bodyY = 4;
+    thisPhysicsBody.bodyWidth = 26;
+    thisPhysicsBody.bodyHeight = 26;
+
     this.gameSet = scene.cache.json.get('gameSettings');
     this.gameSet.hero.lifePoints = 10;
     console.log(scene);
