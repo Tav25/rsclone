@@ -3,8 +3,8 @@
 /* START OF COMPILED CODE */
 
 class ObjectOnTheScene extends Phaser.GameObjects.Image {
-  constructor(scene, x, y, texture, frame) {
-    super(scene, x, y, texture || 'atlasPersonsObject', frame !== undefined && frame !== null ? frame : 'medkitsImperialFirstAidKit_506');
+  constructor(scene, x, y, texture, frame, funct) {
+    super(scene, x, y, texture || 'atlasPersonsObject', frame !== undefined && frame !== null ? frame : 'AdeganCrystal_459');
 
     const thisPhysicsBody = new PhysicsBody(this);
     // thisPhysicsBody.bodyWidth = 45;
@@ -13,14 +13,8 @@ class ObjectOnTheScene extends Phaser.GameObjects.Image {
     scene.physics.add.existing(this, true);
 
     scene.add.existing(this);
-    // scene.physics.add.overlap(scene.player1, this, () => { console.log('BOX')});
-    scene.physics.add.overlap(scene.player1, this, this.collisionFunction);
+    scene.physics.add.overlap(scene.player1, this, funct);
     scene.physics.add.collider(scene.player1, this);//
-  }
-
-  collisionFunction() {
-    console.log('BOX2');
-    // this.replaceObjectImage()
   }
 
   replaceObjectImage() {

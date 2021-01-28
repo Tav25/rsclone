@@ -90,6 +90,16 @@
                 "key": "map5"
             },
             {
+                "url": "src/assets/map/map6.json",
+                "type": "tilemapTiledJSON",
+                "key": "map6"
+            },
+            {
+                "url": "src/assets/map/LokatorMap.json",
+                "type": "tilemapTiledJSON",
+                "key": "LokatorMap"
+            },
+            {
                 "url": "src/View/Maps.js",
                 "type": "script",
                 "key": "Maps"
@@ -127,6 +137,11 @@
                 "key": "Player"
             },
             {
+                "url": "src/View/GameCamera.js",
+                "type": "script",
+                "key": "GameCamera"
+            },
+            {
                 "url": "src/View/ObjectOnTheScene.js",
                 "type": "script",
                 "key": "ObjectOnTheScene"
@@ -141,6 +156,11 @@
                 "url": "src/View/RectangleForMenu.js",
                 "type": "script",
                 "key": "RectangleForMenu"
+            },
+            {
+                "url": "src/View/RectanglePhysics.js",
+                "type": "script",
+                "key": "RectanglePhysics"
             },
             {
                 "url": "src/View/SceneInterface.js",
@@ -171,6 +191,16 @@
                 "url": "src/View/world1scene5.js",
                 "type": "sceneFile",
                 "key": "world1scene5"
+            },
+            {
+                "url": "src/View/world1scene6.js",
+                "type": "sceneFile",
+                "key": "world1scene6"
+            },
+            {
+                "url": "src/View/SceneLocator.js",
+                "type": "sceneFile",
+                "key": "SceneLocator"
             },
             {
                 "url": "src/assets/image/sprites.png",

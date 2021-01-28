@@ -2,9 +2,9 @@
 
 /* START OF COMPILED CODE */
 
-class world1scene5 extends Phaser.Scene {
+class world1scene6 extends Phaser.Scene {
   constructor() {
-    super('world1scene5');
+    super('world1scene6');
 
     /** @type {Phaser.Tilemaps.TilemapLayer} */
     this.lay1;
@@ -12,13 +12,13 @@ class world1scene5 extends Phaser.Scene {
     this.player1;
 
     /* START-USER-CTR-CODE */
-    this.mainMap = 'map5';
+    this.mainMap = 'map6';
     // this.sceneName = this.scene.key
   }
 
   create() {
     this.gameSet = this.cache.json.get('gameSettings');
-    this.gameSet.mapArrows = [0, 1, 0, 0];
+    this.gameSet.mapArrows = [0, 0, 1, 0];
 
     this.map = this.add.tilemap(this.mainMap);
     this.map.addTilesetImage('sprites', 'sprites');
@@ -40,10 +40,7 @@ class world1scene5 extends Phaser.Scene {
     // objects
     // const objectOnTheSceneInterface = new ObjectOnTheScene(this, 221, 184);
 
-    const rectangleTop = new RectanglePhysics(this, 0, -2, this.map.widthInPixels, 3, () => { this.gameSet.hero.y = 545; this.gameSet.hero.x = this.player1.x; });
-    const rectangleRight = new RectanglePhysics(this, 576, 0, 3, 576, () => { this.gameSet.hero.x = 20; this.gameSet.hero.y = this.player1.y; this.scene.stop('world1scene5'); this.scene.start('world1scene1'); });
-    const rectangleBottom = new RectanglePhysics(this, 0, 575, this.map.widthInPixels, 3, () => { this.gameSet.hero.y = 20; this.gameSet.hero.x = this.player1.x; });
-    const rectangleLeft = new RectanglePhysics(this, -2, 0, 3, this.map.heightInPixels, () => { this.gameSet.hero.x = 545; this.gameSet.hero.y = this.player1.y; });
+    const returnToScene1 = new RectanglePhysics(this, 130, 290, 28, 18, () => { this.gameSet.hero.x = 432; this.gameSet.hero.y = 250; this.scene.stop('world1scene6'); this.scene.start('world1scene1'); });
 
     // text
     this.text = this.add.text(10, 10).setScrollFactor(0).setFontSize(12).setColor('#273746');

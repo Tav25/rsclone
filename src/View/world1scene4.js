@@ -3,7 +3,7 @@
 /* START OF COMPILED CODE */
 
 class world1scene4 extends Phaser.Scene {
-  constructor(text = 'no') {
+  constructor() {
     super('world1scene4');
 
     /** @type {Phaser.Tilemaps.TilemapLayer} */
@@ -13,91 +13,63 @@ class world1scene4 extends Phaser.Scene {
 
     /* START-USER-CTR-CODE */
     this.mainMap = 'map4';
-    /* END-USER-CTR-CODE */
-    console.log(text);
+    // this.sceneName = this.scene.key
   }
 
   create() {
-    const gameSet = this.cache.json.get('gameSettings');
-    console.log(gameSet);
-    // player1
-    this.player1 = new Player(this, gameSet.hero.x, gameSet.hero.y);
+    this.gameSet = this.cache.json.get('gameSettings');
+    this.gameSet.mapArrows = [1, 0, 0, 0];
 
-    // map
-    const map = this.add.tilemap(this.mainMap);
-    map.addTilesetImage('sprites', 'sprites');
+    this.map = this.add.tilemap(this.mainMap);
+    this.map.addTilesetImage('sprites', 'sprites');
 
-    // lay1
-    const lay1 = map.createLayer('bottomLayer', ['sprites'], 0, 0);
-    // lay2
-    const lay2 = map.createLayer('middleLayer', ['sprites'], 0, 0);
+    this.lay1 = this.map.createLayer('bottomLayer', ['sprites'], 0, 0);
+    this.lay2 = this.map.createLayer('middleLayer', ['sprites'], 0, 0);
 
+    this.player1 = new Player(this, this.gameSet.hero.x, this.gameSet.hero.y);
     this.add.existing(this.player1);
 
-    // rectangle
-    this.rectangleTop = this.add.rectangle(0, -2, map.widthInPixels, 3);
-    this.rectangleTop.setOrigin(0, 0);
-    this.rectangleTop.visible = false;
-    this.rectangleTop.isFilled = true;
-    new Physics(this.rectangleTop);
+    this.lay3 = this.map.createLayer('topLayer', ['sprites'], 0, 0);
 
-    this.rectangleLeft = this.add.rectangle(-2, 0, 3, map.heightInPixels);
-    this.rectangleLeft.setOrigin(0, 0);
-    this.rectangleLeft.visible = false;
-    this.rectangleLeft.isFilled = true;
-    new Physics(this.rectangleLeft);
+    // camera
+    const camera = new GameCamera(this);
 
-    this.rectangleBottom = this.add.rectangle(0, 575, map.widthInPixels, 3);
-    this.rectangleBottom.setOrigin(0, 0);
-    this.rectangleBottom.visible = false;
-    this.rectangleBottom.isFilled = true;
-    new Physics(this.rectangleBottom);
-
-    this.rectangleRight = this.add.rectangle(575, 0, 3, map.heightInPixels);
-    this.rectangleRight.setOrigin(0, 0);
-    this.rectangleRight.visible = false;
-    this.rectangleRight.isFilled = true;
-    new Physics(this.rectangleRight);
-
-    this.lay1 = lay1;
-    this.lay2 = lay2;
-    // this.player1 = player1;
-
-    const camera = this.cameras.main;
-    camera.startFollow(this.player1);
-    camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
-    camera.setViewport(10, 50, 288, 288);
-    this.map = map;
-    this.camera = camera;
-
+    // cursor
     this.cursors = this.input.keyboard.createCursorKeys();
-    //
-    console.log(map.heightInPixels);
+
+    // objects
+    // const objectOnTheSceneInterface = new ObjectOnTheScene(this, 221, 184);
+
+    const rectangleTop = new RectanglePhysics(this, 0, -2, this.map.widthInPixels, 3, () => { this.gameSet.hero.y = 545, this.scene.stop('world1scene4'); this.scene.start('world1scene1'); });
+    const rectangleLeft = new RectanglePhysics(this, -2, 0, 3, this.map.heightInPixels, () => { this.gameSet.hero.x = 545; this.gameSet.hero.y = this.player1.y; });
+    const rectangleBottom = new RectanglePhysics(this, 0, 575, this.map.widthInPixels, 3, () => { this.gameSet.hero.y = 20; this.gameSet.hero.x = this.player1.x; });
+    const rectangleRight = new RectanglePhysics(this, 576, 0, 3, 576, () => { this.gameSet.hero.x = 20; this.gameSet.hero.y = this.player1.y; });
+
+    // text
     this.text = this.add.text(10, 10).setScrollFactor(0).setFontSize(12).setColor('#273746');
 
+    // key
     const keyObj = this.input.keyboard.addKey('W'); // Get key object
     keyObj.on('down', (event) => {
       console.log('w');
-      // this.scene.remove('SceneInterface');
-
-      console.log(this.mainMap);
-      console.log(this.player1.onMap);
+      console.log(this.scene.key);
     });
 
     keyObj.on('up', (event) => { /* ... */ });
 
-    this.physics.add.overlap(this.player1, this.rectangleTop, () => { gameSet.hero.y = 545, this.scene.stop('world1scene4'); this.scene.start('world1scene1'); });
-    this.physics.add.overlap(this.player1, this.rectangleLeft, () => { gameSet.hero.x = 545; gameSet.hero.y = this.player1.y; });
-    this.physics.add.overlap(this.player1, this.rectangleBottom, () => { gameSet.hero.y = 20; gameSet.hero.x = this.player1.x; });
-    this.physics.add.overlap(this.player1, this.rectangleRight, () => { gameSet.hero.x = 20; gameSet.hero.y = this.player1.y; });
-
+    // col
     this.lay2.setCollisionByExclusion([-1]);
-    this.physics.add.collider(this.player1, this.lay2);//
+    this.physics.add.collider(this.player1, this.lay2);
   }
 
-  /* START-USER-CODE */
-
   update() {
+    this.player1.movePlayer(this.cursors);
+
+    if (this.gameSet.locatorScene) {
+      this.stopScene(this, this.player1.x, this.player1.y);
+      this.scene.start('SceneLocator');
+    }
+
     this.text.setText([
       `Player X: ${this.player1.x}`,
       `Player Y: ${this.player1.y}`,
@@ -106,13 +78,15 @@ class world1scene4 extends Phaser.Scene {
       `MidX: ${this.camera.midPoint.x}`,
       `MidY: ${this.camera.midPoint.y}`,
       `Map: ${this.mainMap}`,
+      `Gmset: ${this.gameSet.locatorScene}`,
     ]);
-    this.player1.movePlayer(this.cursors);
   }
 
-  /* END-USER-CODE */
+  stopScene(scene, x, y) {
+    scene.gameSet.hero.x = x;
+    scene.gameSet.hero.y = y;
+    scene.gameSet.currentLocation = scene.scene.key;
+    scene.scene.stop(scene.scene.key);
+    console.log(scene.scene.key);
+  }
 }
-
-/* END OF COMPILED CODE */
-
-// You can write more code here

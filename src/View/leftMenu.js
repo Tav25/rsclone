@@ -19,12 +19,12 @@ class leftMenu extends Phaser.GameObjects.Container {
     /* END-USER-CTR-CODE */
   }
 
-  set objectPositionInTheList([subjectName, subjectImage, listPosition]) {
+  set objectPositionInTheList([subjectName, subjectImage, listPosition, functionPointerDown]) {
     const imagePositionY = 18 + 32 * listPosition;
     const textPositionY = 7 + 32 * listPosition;
 
     // weaponsLightsaber_5101
-    const imageInLeftMenu = this.scene.add.image(18, imagePositionY, 'weapons', subjectImage);
+    const imageInLeftMenu = this.scene.add.image(18, imagePositionY, 'atlasPersonsObject', subjectImage, functionPointerDown);
     this.add(imageInLeftMenu);
     imageInLeftMenu.setInteractive();
 
@@ -32,8 +32,8 @@ class leftMenu extends Phaser.GameObjects.Container {
     console.log(imageInLeftMenu);
 
     imageInLeftMenu.on('pointerdown', (pointer) => {
-      console.log('Cl0');
-      // this.callbackFun();
+      // console.log('Cl0', functionPointerDown);
+      functionPointerDown();
     });
 
     const textInLeftMenu = this.scene.add.text(42, textPositionY, '', {});
