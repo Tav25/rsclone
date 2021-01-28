@@ -38,7 +38,7 @@ class world1scene1 extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys();
 
     // objects
-    const objectOnTheSceneInterface = new ObjectOnTheScene(this, 221, 184);
+    const objectOnTheSceneInterface = new ObjectOnTheScene(this, 221, 184, 'atlasPersonsObject', 'Blumfruit_483',()=>{console.log('Blumfruit_483')});
 
     const object1Test = new RectanglePhysics(this, 414, 207, 26, 18, () => { this.stopScene(this, 143, 270); this.scene.start('world1scene6'); });
     const object2Test = new RectanglePhysics(this, 260, 416, 26, 18, () => { this.player1.x = 270; this.player1.y = 530; });
