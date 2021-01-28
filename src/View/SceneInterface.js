@@ -15,7 +15,6 @@ class SceneInterface extends Phaser.Scene {
 
     this.arrows = new Arrows(this);
     this.add.existing(this.arrows);
-    
 
     const herosLifePoints = this.gameSet.hero.lifePoints;
     if (herosLifePoints < 32) { this.vbn(herosLifePoints, 0x69FF57, 0xF8FF18, this); }
@@ -28,7 +27,14 @@ class SceneInterface extends Phaser.Scene {
 
     const img3 = new leftMenu(this, 306, 50);
     this.add.existing(img3);
-    img3.objectPositionInTheList = ['Phaser S', 'weaponsLightsaber_510', 0];
+
+    img3.objectPositionInTheList = ['Locator', 'Locator_421', 0, () => {
+      console.log('Locator');
+      if (this.gameSet.locatorScene) { this.gameSet.locatorScene = false; } else { this.gameSet.locatorScene = true; }
+      console.log(this.gameSet);
+    }];
+    // img3.objectPositionInTheList = ['Phaser 45', '5,000Credits_405', 1];
+    // img3.objectPositionInTheList = ['Phaser S', 'weaponsLightsaber_510', 1];
 
     // this.openTopMenuFile = new openTopMenu(this, 106, 28);
     // // this.openTopMenuFile

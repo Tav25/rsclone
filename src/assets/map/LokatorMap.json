@@ -1,24 +1,42 @@
 { "backgroundcolor":"#009600",
  "compressionlevel":-1,
- "height":10,
+ "editorsettings":
+    {
+     "export":
+        {
+         "target":"."
+        }
+    },
+ "height":9,
  "infinite":false,
  "layers":[
         {
          "compression":"",
-         "data":"PQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAADkFAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAADkFAAA5BQAAOQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAOQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAA==",
+         "data":"PQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAADkFAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAOQUAADkFAAA5BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAADkFAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAAPQUAAD0FAAA9BQAA",
          "encoding":"base64",
-         "height":10,
+         "height":9,
          "id":1,
          "name":"bottomLayer",
          "opacity":1,
          "type":"tilelayer",
          "visible":true,
-         "width":10,
+         "width":9,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":2,
+         "name":"obj",
+         "objects":[],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
          "x":0,
          "y":0
         }],
- "nextlayerid":2,
- "nextobjectid":1,
+ "nextlayerid":3,
+ "nextobjectid":6,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.4.2",
@@ -40,5 +58,5 @@
  "tilewidth":32,
  "type":"map",
  "version":1.4,
- "width":10
+ "width":9
 }

@@ -95,6 +95,11 @@
                 "key": "map6"
             },
             {
+                "url": "src/assets/map/LokatorMap.json",
+                "type": "tilemapTiledJSON",
+                "key": "LokatorMap"
+            },
+            {
                 "url": "src/View/Maps.js",
                 "type": "script",
                 "key": "Maps"
@@ -130,6 +135,11 @@
                 "url": "src/View/Player.js",
                 "type": "script",
                 "key": "Player"
+            },
+            {
+                "url": "src/View/GameCamera.js",
+                "type": "script",
+                "key": "GameCamera"
             },
             {
                 "url": "src/View/ObjectOnTheScene.js",
@@ -186,6 +196,11 @@
                 "url": "src/View/world1scene6.js",
                 "type": "sceneFile",
                 "key": "world1scene6"
+            },
+            {
+                "url": "src/View/SceneLocator.js",
+                "type": "sceneFile",
+                "key": "SceneLocator"
             },
             {
                 "url": "src/assets/image/sprites.png",

@@ -3,7 +3,7 @@
 /* START OF COMPILED CODE */
 
 class world1scene6 extends Phaser.Scene {
-  constructor(text = 'no') {
+  constructor() {
     super('world1scene6');
 
     /** @type {Phaser.Tilemaps.TilemapLayer} */
@@ -13,65 +13,60 @@ class world1scene6 extends Phaser.Scene {
 
     /* START-USER-CTR-CODE */
     this.mainMap = 'map6';
-    /* END-USER-CTR-CODE */
-    console.log(text);
+    // this.sceneName = this.scene.key
   }
 
   create() {
-    const gameSet = this.cache.json.get('gameSettings');
-    gameSet.mapArrows = [0,0,1,0]
-    // player1
-    this.player1 = new Player(this, gameSet.hero.x, gameSet.hero.y);
+    this.gameSet = this.cache.json.get('gameSettings');
+    this.gameSet.mapArrows = [0, 0, 1, 0];
 
-    // map
-    const map = this.add.tilemap(this.mainMap);
-    map.addTilesetImage('sprites', 'sprites');
+    this.map = this.add.tilemap(this.mainMap);
+    this.map.addTilesetImage('sprites', 'sprites');
 
-    // lay1
-    const lay1 = map.createLayer('bottomLayer', ['sprites'], 0, 0);
-    // lay2
-    const lay2 = map.createLayer('middleLayer', ['sprites'], 0, 0);
+    this.lay1 = this.map.createLayer('bottomLayer', ['sprites'], 0, 0);
+    this.lay2 = this.map.createLayer('middleLayer', ['sprites'], 0, 0);
 
+    this.player1 = new Player(this, this.gameSet.hero.x, this.gameSet.hero.y);
     this.add.existing(this.player1);
 
-    const lay3 = map.createLayer('topLayer', ['sprites'], 0, 0);
+    this.lay3 = this.map.createLayer('topLayer', ['sprites'], 0, 0);
 
-    this.lay1 = lay1;
-    this.lay2 = lay2;
-    // this.player1 = player1;
+    // camera
+    const camera = new GameCamera(this);
 
-    const camera = this.cameras.main;
-    camera.startFollow(this.player1);
-    camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
-    camera.setViewport(10, 50, 288, 288);
-    this.map = map;
-    this.camera = camera;
-
+    // cursor
     this.cursors = this.input.keyboard.createCursorKeys();
-    //
-    console.log(map.heightInPixels);
+
+    // objects
+    // const objectOnTheSceneInterface = new ObjectOnTheScene(this, 221, 184);
+
+    const returnToScene1 = new RectanglePhysics(this, 130, 290, 28, 18, () => { this.gameSet.hero.x = 432; this.gameSet.hero.y = 250; this.scene.stop('world1scene6'); this.scene.start('world1scene1'); });
+
+    // text
     this.text = this.add.text(10, 10).setScrollFactor(0).setFontSize(12).setColor('#273746');
 
+    // key
     const keyObj = this.input.keyboard.addKey('W'); // Get key object
     keyObj.on('down', (event) => {
       console.log('w');
-      // this.scene.remove('SceneInterface');
-
-      console.log(this.mainMap);
-      console.log(this.player1.onMap);
+      console.log(this.scene.key);
     });
 
     keyObj.on('up', (event) => { /* ... */ });
 
-    const returnToScene1 = new RectanglePhysics(this, 130, 290, 28, 18, () => { gameSet.hero.x = 432; gameSet.hero.y = 250; this.scene.stop('world1scene6'); this.scene.start('world1scene1'); });
-
+    // col
     this.lay2.setCollisionByExclusion([-1]);
-    this.physics.add.collider(this.player1, this.lay2);//
+    this.physics.add.collider(this.player1, this.lay2);
   }
 
-  /* START-USER-CODE */
-
   update() {
+    this.player1.movePlayer(this.cursors);
+
+    if (this.gameSet.locatorScene) {
+      this.stopScene(this, this.player1.x, this.player1.y);
+      this.scene.start('SceneLocator');
+    }
+
     this.text.setText([
       `Player X: ${this.player1.x}`,
       `Player Y: ${this.player1.y}`,
@@ -80,14 +75,15 @@ class world1scene6 extends Phaser.Scene {
       `MidX: ${this.camera.midPoint.x}`,
       `MidY: ${this.camera.midPoint.y}`,
       `Map: ${this.mainMap}`,
-
+      `Gmset: ${this.gameSet.locatorScene}`,
     ]);
-    this.player1.movePlayer(this.cursors);
   }
 
-  /* END-USER-CODE */
+  stopScene(scene, x, y) {
+    scene.gameSet.hero.x = x;
+    scene.gameSet.hero.y = y;
+    scene.gameSet.currentLocation = scene.scene.key;
+    scene.scene.stop(scene.scene.key);
+    console.log(scene.scene.key);
+  }
 }
-
-/* END OF COMPILED CODE */
-
-// You can write more code here

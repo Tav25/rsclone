@@ -4,5 +4,7 @@
     "lifePoints": 55,
     "weapons":"no"
 },
-"mapArrows":[1,0,0,0]
+"mapArrows":[0,0,0,0],
+"locatorScene":false,
+"currentLocation": ""
 }
