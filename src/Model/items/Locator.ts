@@ -1,17 +1,17 @@
-import Item from './Item';
-import { TItem } from '../Types/types';
+import Item from './Item.ts';
+import { TItem } from '../types/types.ts';
 
 export default class Locator extends Item {
   isClickable: boolean;
-  map: any;
+  worldMap: string;
 
-  constructor(itemObject: TItem, map: any) {
+  constructor(itemObject: TItem) {
     super(itemObject);
     this.isClickable = itemObject.isClickable;
-    this.map = map;
+    this.worldMap = itemObject.worldMap;
   }
 
-  showMap(): any {
-    return this.map;
+  showMap(): string {
+    return this.worldMap;
   }
 }

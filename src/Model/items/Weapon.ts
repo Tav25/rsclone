@@ -1,5 +1,5 @@
-import Item from './Item';
-import { TItem } from '../Types/types';
+import Item from './Item.ts';
+import { TItem } from '../types/types.ts';
 
 export default class Weapon extends Item {
   isEquippable: boolean;

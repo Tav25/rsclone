@@ -1,4 +1,4 @@
-import Statistics from './Statistics';
+import Statistics from './Statistics.ts';
 
 export default class User {
   name: string;

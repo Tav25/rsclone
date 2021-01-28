@@ -1,34 +1,30 @@
-import { TItem, TObject } from "../Types/types";
-import CommonObject from "./CommonObject";
+import { TIcon, TItem, TObject } from "../types/types.ts";
+import CommonObject from "./CommonObject.ts";
 
 export default class Door extends CommonObject{
-  openedIcon: string;
-  isKeyNeededToOpen: boolean;
-  itemToActivate: TItem;
-  triggerToActivate: TObject;
-  triggered: boolean;
+  openedIcon: TIcon;
 
-  constructor(objectObject: TObject, activationItem?: TItem, activationTrigger?: TObject) {
+  constructor(objectObject: TObject) {
     super(objectObject);
     this.openedIcon = objectObject.openedIcon;
-    this.isKeyNeededToOpen = objectObject.isKeyNeededToOpen;
-    this.itemToActivate = activationItem;
-    this.triggerToActivate = activationTrigger;
-    this.triggered = false;
   }
 
-  isValidKey(itemObject: TItem): boolean {
-    return itemObject.id === this.itemToActivate.id;
-  }
-
-  isTriggered(): boolean {
-    return this.triggerToActivate.triggered;
-  }
-
-  activate(itemObject?: TItem): void {
-    if (!this.isKeyNeededToOpen || this.isTriggered() || this.isValidKey(itemObject)) {
-      this.icon = this.openedIcon;
-      this.triggered = true;
+  activate(itemObject: TItem): void {
+    if (!this.isFirstVisit) {
+      if (this.isKeyNeededToOpen) {
+        if (this.isValidKey(itemObject)) {
+          this.triggered = true;
+          this.icon = this.openedIcon;
+        }
+      } else if (this.triggerToActivate) {
+        if (this.isTriggered()) {
+          this.triggered = true;
+          this.icon = this.openedIcon;
+        }
+      } else {
+        this.triggered = true;
+        this.icon = this.openedIcon;
+      }
     }
   }
 }

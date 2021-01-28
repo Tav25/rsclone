@@ -18,10 +18,11 @@ export default class Statistics {
   }
 
   setStatistics(rating: number, isWin: boolean): void {
-    this.ratings.push(rating);
-    this.lastRating = rating;
-    this.maxRating = Math.max(...this.ratings);
-    if (isWin) this.winCount += 1;
-    else this.loseCount += 1;
+    if (isWin) {
+      this.ratings.push(rating);
+      this.lastRating = rating;
+      this.maxRating = Math.max(...this.ratings);
+      this.winCount += 1;
+    } else this.loseCount += 1;
   }
 }

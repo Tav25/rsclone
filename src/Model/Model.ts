@@ -1,8 +1,8 @@
-import Database from './Database';
-import User from './user/User';
-import World from './maps/World';
-import Position from './character/Position';
-import { TSavedGame } from './Types/types';
+import Database from './Database.ts';
+import User from './user/User.ts';
+import World from './maps/World.ts';
+import Position from './character/Position.ts';
+import { TSavedGame } from './types/types.ts';
 
 export default class Model {
   database: Database;
@@ -11,28 +11,31 @@ export default class Model {
   userList: User[];
   savedGamesList: any[];
 
-  constructor() {
-    this.database = new Database();
+  constructor(database: Database) {
+    this.database = database;
   }
 
   async newWorld() {
-    this.world = new World(this.database);
-    await this.world.init('1');
+    this.world = new World(await this.database.getOne('maps', 'world1'));
+    this.world.init();
+    return this.world;
   }
 
   async getUsers() {
     const userList = await this.database.getAll('userProfiles');
-    this.userList = userList;
+    this.userList = userList.map((user) => user.content);
+    return this.userList;
   }
 
   loadUser(userName: string) {
     const user = this.userList.find((user: User) => user.name === userName);
     this.user = user;
+    return user;
   }
 
   async createUser(userName: string) {
     if ((/[\/|\\|\.|\"|\$|\*|\<|\>|\:|\||\?]/).test(userName) || userName === '' || userName.startsWith('system.') || userName.length >= 120) return false;
-    if (this.userList.some((item: User) => item.name === userName)) return false;
+    if (this.userList.some((user: User) => user.name === userName)) return false;
 
     this.user = new User(userName);
     await this.database.create('userProfiles', this.user.name, this.user);
@@ -47,11 +50,12 @@ export default class Model {
   loadSaveGame(saveGameName: string): void {
     const saveGame = this.savedGamesList.find((saveGame: TSavedGame) => saveGame.name === saveGameName);
     this.world = saveGame.world;
+    this.world.setCurrentTime();
   }
 
   async saveGame(gameName: string, position: Position) {
     this.world.setFinishTime();
-    this.world.mainCharacter.setPosition(position.location, position.coordinates,position. direction);
+    this.world.mainCharacter.setPosition(position.location, position.coordinates, position.direction);
 
     const savedGame: TSavedGame = {
       name: gameName,
@@ -63,5 +67,16 @@ export default class Model {
     this.user.increaseUserSavesNumber();
 
     await this.database.update('userProfiles', this.user.name, this.user);
+  }
+
+  isFinishGame() {
+    if (this.world.isWin()){
+      this.world.setFinishTime();
+      this.user.setUserStatistics(this.world.elapsedTime / 10, true);
+      return true;
+    } else if (this.world.isLose()) {
+      this.user.setUserStatistics(this.world.elapsedTime, false);
+      return true;
+    } else return false
   }
 }

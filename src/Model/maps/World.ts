@@ -1,24 +1,50 @@
-import MainCharacter from '../character/MainCharacter';
-import Database from '../Database';
+import MainCharacter from '../character/MainCharacter.ts';
+import Position from '../character/Position.ts';
+import { TGoal, TLocation, TWorld } from '../types/types.ts';
+import Location from './Location.ts';
 
 export default class World {
-  database: Database;
-  mainCharacter: MainCharacter;
-  world: any;
+  worldObject:TWorld;
+  id: string;
+  name: string;
+  goal: TGoal;
+  map: string;
+  startLocation: Position;
+  locationList: TLocation[];
   locations: Location[];
-  locationsNumber: number;
+  mainCharacter: MainCharacter;
+  worldSize: number;
   startTime: number;
   elapsedTime: number;
 
-  constructor(database: Database) {
-    this.database = database;
+  constructor(worldObject: TWorld) {
+    this.worldObject = worldObject;
+    this.id = worldObject.id;
+    this.name = worldObject.name;
+    this.goal = {
+      name: worldObject.goal,
+      target: undefined,
+    }
+    this.map = worldObject.map;
+    this.startLocation = worldObject.startLocation;
+    this.locationList = worldObject.locations;
+    this.worldSize = this.locationList.length;
+    this.locations = [];
   }
 
-  async init(worldId: string) {
-    this.mainCharacter = new MainCharacter();
-    this.world = await this.database.getOne('maps', worldId);
-    this.locations = this.world.locations;
-    this.locationsNumber = this.locations.length;
+  init() {
+    this.locationList.forEach((location: TLocation) => {
+      const initLocation = new Location(location);
+      initLocation.init();
+      this.locations.push(initLocation);
+    });
+    this.locations.forEach((location) => {
+      const target = location.objects.find((object) => object.name === this.goal.name);
+      if (target) {
+        this.goal.target = target;
+      };
+    });
+    this.mainCharacter = new MainCharacter(this.startLocation);
     this.startTime = Date.now();
     this.elapsedTime = 0;
   }
@@ -30,5 +56,13 @@ export default class World {
   setFinishTime(): void {
     const finishTime: number = Date.now();
     this.elapsedTime += finishTime - this.startTime;
+  }
+
+  isWin(): boolean {
+    return this.goal.target.triggered;
+  }
+
+  isLose(): boolean {
+    return this.mainCharacter.isDead();
   }
 }

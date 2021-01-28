@@ -1,54 +1,30 @@
-import CommonObject from './CommonObject';
-import { TItem, TObject } from '../Types/types';
+import CommonObject from './CommonObject.ts';
+import { TIcon, TItem, TObject } from '../types/types.ts';
 
 export default class Trigger extends CommonObject{
-  isKeyNeededToOpen: boolean;
-  itemToActivate: TItem;
-  triggerToActivate: TObject;
-  triggered: boolean
-  greetingDialog: string;
-  rejectDialog: string;
-  acceptDialog: string;
-  postDialog: string;
-  isFirstVisit: boolean;
+  openedIcon: TIcon;
 
-  constructor(objectObject: TObject, activationItem?: TItem, activationTrigger?: TObject) {
+  constructor(objectObject: TObject) {
     super(objectObject);
-    this.isKeyNeededToOpen = objectObject.isKeyNeededToOpen;
-    this.itemToActivate = activationItem;
-    this.triggerToActivate = activationTrigger
-    this.greetingDialog = objectObject.greetingDialog;
-    this.rejectDialog = objectObject.rejectDialog;
-    this.acceptDialog = objectObject.acceptDialog;
-    this.postDialog = objectObject.postDialog;
-    this.triggered = false;
+    this.openedIcon = objectObject.openedIcon;
   }
 
-  isValidKey(itemObject: TItem): boolean {
-    return itemObject.id === this.itemToActivate.id;
-  }
-
-  isTriggered(): boolean {
-    return this.triggerToActivate.triggered;
-  }
-
-  activate(itemObject?: TItem): void {
-    if (!this.isKeyNeededToOpen || this.isTriggered() || this.isValidKey(itemObject)) {
-      this.triggered = true;
-    }
-  }
-
-  getDialog(itemObject?: TItem): string {
-    if (this.isFirstVisit) {
-      this.isFirstVisit = false;
-      if (!this.isKeyNeededToOpen) {
-        return this.acceptDialog;
+  activate(itemObject: TItem): void {
+    if (!this.isFirstVisit) {
+      if (this.isKeyNeededToOpen) {
+        if (this.isValidKey(itemObject)) {
+          this.triggered = true;
+          this.icon = this.openedIcon;
+        }
+      } else if (this.triggerToActivate) {
+        if (this.isTriggered()) {
+          this.triggered = true;
+          this.icon = this.openedIcon;
+        }
+      } else {
+        this.triggered = true;
+        this.icon = this.openedIcon;
       }
-      return this.greetingDialog;
-    } else if (this.isTriggered() || this.isValidKey(itemObject)) {
-      return this.acceptDialog;
-    } else if (!this.triggered) {
-      return this.rejectDialog;
-    } else return this.postDialog;
+    }
   }
 }

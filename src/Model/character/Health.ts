@@ -1,4 +1,4 @@
-import { TItem } from "../Types/types";
+import { TItem } from "../types/types.ts";
 
 export default class Health {
   maxHealth: number;
@@ -18,8 +18,8 @@ export default class Health {
     this.currentHealth = newHealth <= this.maxHealth ? newHealth : this.maxHealth;
   }
 
-  damageHealth(itemObject: TItem): void {
-    const newHealth: number = this.currentHealth - itemObject.damage;
+  damageHealth(damage: number): void {
+    const newHealth: number = this.currentHealth - damage;
     this.currentHealth = newHealth > 0 ? newHealth : 0;
   }
 }

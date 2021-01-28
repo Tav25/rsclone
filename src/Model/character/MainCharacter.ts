@@ -1,8 +1,8 @@
-import { TItem } from "../Types/types";
-import Equipment from "./Equipment";
-import Health from "./Health";
-import Inventory from "./Inventory";
-import Position from "./Position";
+import { TObject } from "../types/types.ts";
+import Equipment from "./Equipment.ts";
+import Health from "./Health.ts";
+import Inventory from "./Inventory.ts";
+import Position from "./Position.ts";
 
 export default class MainCharacter {
   inventory: Inventory;
@@ -10,10 +10,11 @@ export default class MainCharacter {
   equipment: Equipment;
   position: Position;
 
-  constructor() {
+  constructor(position: Position) {
     this.inventory = new Inventory();
     this.health = new Health();
     this.equipment = new Equipment();
+    this.position = position;
   }
 
   setPosition(location: string, coordinates: number[], direction: string): void {
@@ -33,12 +34,12 @@ export default class MainCharacter {
     return this.equipment.getCurrentAmmo() <= 0 ? true : false;
   }
 
-  shot() {
+  shot(): void {
     this.equipment.releaseAmmo();
     if (this.isNoAmmo()) this.equipment.removeWeapon();
   }
 
-  hit(enemyWeapon: TItem) {
-    this.health.damageHealth(enemyWeapon);
+  hit(enemy: TObject): void {
+    this.health.damageHealth(enemy.damage);
   }
 }
