@@ -137,6 +137,11 @@
                 "key": "Player"
             },
             {
+                "url": "src/View/GameCamera.js",
+                "type": "script",
+                "key": "GameCamera"
+            },
+            {
                 "url": "src/View/ObjectOnTheScene.js",
                 "type": "script",
                 "key": "ObjectOnTheScene"
