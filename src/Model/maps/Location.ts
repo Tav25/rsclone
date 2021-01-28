@@ -1,44 +1,54 @@
 import Character from "../objects/Character";
 import Crate from "../objects/Crate";
 import Door from "../objects/Door";
+import Enemy from "../objects/Enemy";
 import TradingPlace from "../objects/TradingPlace";
 import Trigger from "../objects/Trigger";
-import { TObject } from "../types/types";
+import { TLocation, TObject } from "../types/types";
 
 export default class Location {
+  locationObject: TLocation;
   name: string;
   entryDirections: string[];
   objectList: TObject[];
-  objects: (Character | Crate | Door | TradingPlace | Trigger)[];
+  objects: (Character | Crate | Door | Enemy | TradingPlace | Trigger)[];
 
-  constructor(name: string, entryDirections: string[], objectList: TObject[]) {
-    this.name = name;
-    this.entryDirections = entryDirections;
-    this.objectList = objectList;
+  constructor(locationObject: TLocation) {
+    this.locationObject = locationObject;
+    this.name = locationObject.name;
+    this.entryDirections = locationObject.entryDirections;
+    this.objectList = locationObject.objectList;
+    this.objects = [];
   }
 
-  // init(): void {
-  //   const objects = [];
-  //   this.objectList.forEach((object: TObject) => {
-  //     if (object.type === 'character') {
-  //       const objectInstance = new Character(object);
-  //       objects.push(objectInstance);
-  //     } else if (object.type === 'crate') {
-  //       const objectInstance = new Crate();
-  //       objects.push(objectInstance);
-  //     } else if (object.type === 'door') {
-  //       const objectInstance = new Door();
-  //       objects.push(objectInstance);
-  //     } else if (object.type === 'tradingPlace') {
-  //       const objectInstance = new TradingPlace();
-  //       objects.push(objectInstance);
-  //     } else if (object.type === 'trigger') {
-  //       const objectInstance = new Trigger();
-  //       objects.push(objectInstance);
-  //     }
-  //   });
-  //   this.objects = objects;
-  // }
+  init(): void {
+    this.objectList.forEach((object: TObject) => {
+      let objectInstance: Character | Crate | Door | Enemy | TradingPlace | Trigger;
+      switch (object.type) {
+        case 'character':
+          objectInstance = new Character(object);
+          break;
+        case 'crate':
+          objectInstance = new Crate(object);
+          break;
+        case 'door':
+          objectInstance = new Door(object);
+          break;
+        case 'enemy':
+          objectInstance = new Enemy(object);
+          break;
+        case 'tradingPlace':
+          objectInstance = new TradingPlace(object);
+          break;
+        case 'trigger':
+          objectInstance = new Trigger(object);
+          break;
+        default:
+          break;
+      }
+      this.objects.push(objectInstance);
+    });
+  }
 
   getName(): string {
     return this.name;
@@ -48,8 +58,12 @@ export default class Location {
     return this.entryDirections;
   }
 
-  getObject(objectID: string): Character | Crate | Door | TradingPlace | Trigger {
-    const returnedObject = this.objects.find((object: Character | Crate | Door | TradingPlace | Trigger) => object.id === objectID);
+  getObjectList(): (Character | Crate | Door | Enemy | TradingPlace | Trigger)[] {
+    return this.objects;
+  }
+
+  getObject(objectName: string): Character | Crate | Door | Enemy | TradingPlace | Trigger {
+    const returnedObject = this.objects.find((object) => object.name === objectName);
     return returnedObject;
   }
 }

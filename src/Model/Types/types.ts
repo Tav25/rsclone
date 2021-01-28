@@ -64,7 +64,7 @@ export type TObject = {
 export type TLocation = {
   name: string;
   entryDirections: string[];
-  objects: TObject[];
+  objectList: TObject[];
 }
 
 export type TWorld = {
