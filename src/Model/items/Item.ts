@@ -1,4 +1,4 @@
-import { TItem } from '../types/types';
+import { TItem } from '../types/types.ts';
 
 export default class Item {
   itemObject: TItem;

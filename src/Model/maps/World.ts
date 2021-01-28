@@ -1,7 +1,7 @@
-import MainCharacter from '../character/MainCharacter';
-import Position from '../character/Position';
-import { TGoal, TLocation, TWorld } from '../types/types';
-import Location from './Location';
+import MainCharacter from '../character/MainCharacter.ts';
+import Position from '../character/Position.ts';
+import { TGoal, TLocation, TWorld } from '../types/types.ts';
+import Location from './Location.ts';
 
 export default class World {
   worldObject:TWorld;
@@ -29,10 +29,15 @@ export default class World {
     this.startLocation = worldObject.startLocation;
     this.locationList = worldObject.locations;
     this.worldSize = this.locationList.length;
+    this.locations = [];
   }
 
   init() {
-    this.locationList.forEach((location: TLocation) => this.locations.push(new Location(location)));
+    this.locationList.forEach((location: TLocation) => {
+      const initLocation = new Location(location);
+      initLocation.init();
+      this.locations.push(initLocation);
+    });
     this.locations.forEach((location) => {
       const target = location.objects.find((object) => object.name === this.goal.name);
       if (target) {

@@ -1,5 +1,5 @@
-import Item from './Item';
-import { TItem } from '../types/types';
+import Item from './Item.ts';
+import { TItem } from '../types/types.ts';
 
 export default class Locator extends Item {
   isClickable: boolean;

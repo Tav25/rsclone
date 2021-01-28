@@ -44,11 +44,15 @@ export default class Database {
   }
 
   async create(collection: string, id: string, documentData: any): Promise<any> {
+    const gameSet= {
+      id: id,
+      content: documentData,
+    };
     const response = await axios({
       method: 'post',
       baseURL: this.baseURL,
       url: `/${collection}`,
-      data: documentData,
+      data: gameSet,
     });
 
     if ((/20\d/).test(String(response.status))) {
@@ -58,11 +62,15 @@ export default class Database {
   }
 
   async update(collection: string, id: string, documentData: any): Promise<any> {
+    const gameSet= {
+      id: id,
+      content:documentData,
+    };
     const response = await axios({
       method: 'put',
       baseURL: this.baseURL,
       url: `/${collection}/${id}`,
-      data: documentData,
+      data: gameSet,
     });
 
     if ((/20\d/).test(String(response.status))) {

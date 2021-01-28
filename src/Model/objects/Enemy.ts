@@ -1,7 +1,7 @@
-import MainCharacter from "../character/MainCharacter";
-import Position from "../character/Position";
-import { TIcon, TItem, TObject } from "../types/types";
-import ItemOnTheGround from "./ItemOnTheGround";
+import MainCharacter from "../character/MainCharacter.ts";
+import Position from "../character/Position.ts";
+import { TIcon, TItem, TObject } from "../types/types.ts";
+import ItemOnTheGround from "./ItemOnTheGround.ts";
 
 export default class Enemy {
   objectObject: TObject;

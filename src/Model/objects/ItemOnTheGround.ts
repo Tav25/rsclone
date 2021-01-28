@@ -1,10 +1,10 @@
-import Position from "../character/Position";
-import Junk from "../items/Junk";
-import Locator from "../items/Locator";
-import MedKit from "../items/MedKit";
-import QuestItem from "../items/QuestItem";
-import Weapon from "../items/Weapon";
-import { TItem, TObject } from "../types/types";
+import Position from "../character/Position.ts";
+import Junk from "../items/Junk.ts";
+import Locator from "../items/Locator.ts";
+import MedKit from "../items/MedKit.ts";
+import QuestItem from "../items/QuestItem.ts";
+import Weapon from "../items/Weapon.ts";
+import { TItem, TObject } from "../types/types.ts";
 
 export default class ItemOnTheGround {
   returnedItem: TItem;

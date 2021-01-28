@@ -1,5 +1,5 @@
 import Database from './Model/Database.ts';
-// import Model from './Model/Model.ts';
+import Model from './Model/Model.ts';
 
 const container = document.createElement('div');
 document.body.append(container);
@@ -33,6 +33,7 @@ const getButton = document.createElement('button');
 const postButton = document.createElement('button');
 const updateButton = document.createElement('button');
 const deleteButton = document.createElement('button');
+const newWorldButton = document.createElement('button');
 
 getAllButton.innerText = 'Get all';
 getListButton.innerText = 'Get list';
@@ -40,6 +41,7 @@ getButton.innerText = 'Get document';
 postButton.innerText = 'Add document';
 updateButton.innerText = 'Update document';
 deleteButton.innerText = 'Delete document';
+newWorldButton.innerText = 'New world';
 
 const collectionElem = document.createElement('span');
 collectionElem.textContent = 'Collection: ';
@@ -49,6 +51,7 @@ const messageElem = document.createElement('span');
 messageElem.textContent = 'Message: ';
 const br = document.createElement('br');
 const br1 = document.createElement('br');
+const br2 = document.createElement('br');
 
 container.append(
   output,
@@ -66,6 +69,8 @@ container.append(
   postButton,
   updateButton,
   deleteButton,
+  br2,
+  newWorldButton,
 );
 
 input1.value = 'maps';
@@ -73,6 +78,7 @@ input2.value = 'world1';
 input3.value = 'test message';
 
 const database = new Database();
+const model = new Model(database);
 
 getAllButton.addEventListener('click', async () => {
   const response = await database.getAll(input1.value);
@@ -104,4 +110,9 @@ updateButton.addEventListener('click', async () => {
 deleteButton.addEventListener('click', async () => {
   const response = await database.delete(input1.value, input2.value);
   output.value = JSON.stringify(response, null, 2);
+});
+
+newWorldButton.addEventListener('click', async () => {
+  window.model = model;
+  console.log(await model.newWorld());
 });

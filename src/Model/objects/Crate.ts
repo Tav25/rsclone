@@ -1,6 +1,6 @@
-import CommonObject from './CommonObject';
-import { TIcon, TItem, TObject } from '../types/types';
-import ItemOnTheGround from './ItemOnTheGround';
+import CommonObject from './CommonObject.ts';
+import { TIcon, TItem, TObject } from '../types/types.ts';
+import ItemOnTheGround from './ItemOnTheGround.ts';
 
 export default class Crate extends CommonObject{
   openedIcon: TIcon;

@@ -1,10 +1,10 @@
-import Character from "../objects/Character";
-import Crate from "../objects/Crate";
-import Door from "../objects/Door";
-import Enemy from "../objects/Enemy";
-import TradingPlace from "../objects/TradingPlace";
-import Trigger from "../objects/Trigger";
-import { TLocation, TObject } from "../types/types";
+import Character from "../objects/Character.ts";
+import Crate from "../objects/Crate.ts";
+import Door from "../objects/Door.ts";
+import Enemy from "../objects/Enemy.ts";
+import TradingPlace from "../objects/TradingPlace.ts";
+import Trigger from "../objects/Trigger.ts";
+import { TLocation, TObject } from "../types/types.ts";
 
 export default class Location {
   locationObject: TLocation;
@@ -17,7 +17,7 @@ export default class Location {
     this.locationObject = locationObject;
     this.name = locationObject.name;
     this.entryDirections = locationObject.entryDirections;
-    this.objectList = locationObject.objectList;
+    this.objectList = locationObject.objects;
     this.objects = [];
   }
 
@@ -49,7 +49,8 @@ export default class Location {
       this.objects.push(objectInstance);
     });
     this.objects.forEach((object, index, array) => {
-      if (!!object.triggerToActivate.name) {
+      const hasTrigger = !!object.triggerToActivate && !!object.triggerToActivate.name;
+      if (hasTrigger) {
         object.triggerToActivate.target = array.find((object) => object.name === object.triggerToActivate.name);
       }
     })

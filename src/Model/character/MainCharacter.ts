@@ -1,8 +1,8 @@
-import { TObject } from "../types/types";
-import Equipment from "./Equipment";
-import Health from "./Health";
-import Inventory from "./Inventory";
-import Position from "./Position";
+import { TObject } from "../types/types.ts";
+import Equipment from "./Equipment.ts";
+import Health from "./Health.ts";
+import Inventory from "./Inventory.ts";
+import Position from "./Position.ts";
 
 export default class MainCharacter {
   inventory: Inventory;

@@ -1,7 +1,7 @@
-import Position from "../character/Position"
-import World from "../maps/World"
-import Character from "../objects/Character"
-import Trigger from "../objects/Trigger"
+import Position from "../character/Position.ts"
+import World from "../maps/World.ts"
+import Character from "../objects/Character.ts"
+import Trigger from "../objects/Trigger.ts"
 
 export type TItem = {
   type: string;
@@ -64,7 +64,7 @@ export type TObject = {
 export type TLocation = {
   name: string;
   entryDirections: string[];
-  objectList: TObject[];
+  objects: TObject[];
 }
 
 export type TWorld = {
