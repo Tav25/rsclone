@@ -18,10 +18,10 @@ class world1scene6 extends Phaser.Scene {
   }
 
   create() {
-    const gameSet = this.cache.json.get('gameSettings');
-    gameSet.mapArrows = [0, 0, 1, 0];
+    this.gameSet = this.cache.json.get('gameSettings');
+    this.gameSet.mapArrows = [0, 0, 1, 0];
     // player1
-    this.player1 = new Player(this, gameSet.hero.x, gameSet.hero.y);
+    this.player1 = new Player(this, this.gameSet.hero.x, this.gameSet.hero.y);
 
     // map
     const map = this.add.tilemap(this.mainMap);
@@ -43,13 +43,13 @@ class world1scene6 extends Phaser.Scene {
     const camera = this.cameras.main;
     camera.startFollow(this.player1);
     camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
-    camera.setViewport(10, 50, 288, 288);
+    camera.setViewport(9, 52, 288, 288);
     this.map = map;
     this.camera = camera;
 
     this.cursors = this.input.keyboard.createCursorKeys();
     //
-    console.log(map.heightInPixels);
+    
     this.text = this.add.text(10, 10).setScrollFactor(0).setFontSize(12).setColor('#273746');
 
     const keyObj = this.input.keyboard.addKey('W'); // Get key object
@@ -63,7 +63,7 @@ class world1scene6 extends Phaser.Scene {
 
     keyObj.on('up', (event) => { /* ... */ });
 
-    const returnToScene1 = new RectanglePhysics(this, 130, 290, 28, 18, () => { gameSet.hero.x = 432; gameSet.hero.y = 250; this.scene.stop('world1scene6'); this.scene.start('world1scene1'); });
+    const returnToScene1 = new RectanglePhysics(this, 130, 290, 28, 18, () => { this.gameSet.hero.x = 432; this.gameSet.hero.y = 250; this.scene.stop('world1scene6'); this.scene.start('world1scene1'); });
 
     this.lay2.setCollisionByExclusion([-1]);
     this.physics.add.collider(this.player1, this.lay2);//
@@ -72,6 +72,14 @@ class world1scene6 extends Phaser.Scene {
   /* START-USER-CODE */
 
   update() {
+    this.player1.movePlayer(this.cursors);
+
+    if (this.gameSet.locatorScene) {
+      this.gameSet.hero.x = this.player1.x;
+      this.gameSet.hero.y = this.player1.y;
+      this.scene.start('SceneLocator');
+    }
+
     this.text.setText([
       `Player X: ${this.player1.x}`,
       `Player Y: ${this.player1.y}`,
@@ -80,9 +88,17 @@ class world1scene6 extends Phaser.Scene {
       `MidX: ${this.camera.midPoint.x}`,
       `MidY: ${this.camera.midPoint.y}`,
       `Map: ${this.mainMap}`,
-
+      `Gmset: ${this.gameSet.locatorScene}`,
     ]);
-    this.player1.movePlayer(this.cursors);
+    
+  }
+
+  stopScene(scene, x, y, location) {
+    scene.gameSet.hero.x = x;
+    scene.gameSet.hero.y = y;
+    scene.gameSet.currentLocation = location;
+    scene.scene.stop(location);
+    console.log(location);
   }
 
   /* END-USER-CODE */

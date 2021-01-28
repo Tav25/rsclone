@@ -30,6 +30,8 @@ class SceneInterface extends Phaser.Scene {
 
     img3.objectPositionInTheList = ['Locator', 'Locator_421', 0, () => {
       console.log('Locator');
+      if (this.gameSet.locatorScene) { this.gameSet.locatorScene = false; } else { this.gameSet.locatorScene = true; }
+      console.log(this.gameSet);
     }];
     // img3.objectPositionInTheList = ['Phaser 45', '5,000Credits_405', 1];
     // img3.objectPositionInTheList = ['Phaser S', 'weaponsLightsaber_510', 1];

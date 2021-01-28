@@ -193,6 +193,11 @@
                 "key": "world1scene6"
             },
             {
+                "url": "src/View/SceneLocator.js",
+                "type": "sceneFile",
+                "key": "SceneLocator"
+            },
+            {
                 "url": "src/assets/image/sprites.png",
                 "type": "image",
                 "key": "sprites"
