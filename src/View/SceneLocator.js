@@ -23,20 +23,27 @@ class SceneLocator extends Phaser.Scene {
     // player1
 
     // map
-    const map = this.add.tilemap(this.mainMap);
-    map.addTilesetImage('sprites', 'sprites');
+    this.map = this.add.tilemap(this.mainMap);
+    this.map.addTilesetImage('sprites', 'sprites');
 
     // lay1
-    const lay1 = map.createLayer('bottomLayer', ['sprites'], 9, 52);
-    // lay2
+    const lay1 = this.map.createLayer('bottomLayer', ['sprites'], 0, 0);
+
+    const camera = this.cameras.main;
+    camera.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
+    camera.setViewport(9, 52, 288, 288);
+    this.camera = camera;
+
+    // obj
+    // const objectOnTheSceneInterface = new ObjectOnTheScene(this, 128 + 16, 128 + 16);
   }
 
   /* START-USER-CODE */
 
   update() {
-    if (!this.gameSet.locatorScene) { 
-      this.scene.stop('SceneLocator'); 
-      this.scene.start('world1scene1');
+    if (!this.gameSet.locatorScene) {
+      this.scene.stop('SceneLocator');
+      this.scene.start(this.gameSet.currentLocation);
     }
   }
 

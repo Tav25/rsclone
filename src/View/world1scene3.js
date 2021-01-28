@@ -3,7 +3,7 @@
 /* START OF COMPILED CODE */
 
 class world1scene3 extends Phaser.Scene {
-  constructor(text = 'no') {
+  constructor() {
     super('world1scene3');
 
     /** @type {Phaser.Tilemaps.TilemapLayer} */
@@ -13,73 +13,64 @@ class world1scene3 extends Phaser.Scene {
 
     /* START-USER-CTR-CODE */
     this.mainMap = 'map3';
-    /* END-USER-CTR-CODE */
-    console.log(text);
+    // this.sceneName = this.scene.key
   }
 
   create() {
     this.gameSet = this.cache.json.get('gameSettings');
     this.gameSet.mapArrows = [0, 0, 0, 1];
-    // player1
+
+    this.map = this.add.tilemap(this.mainMap);
+    this.map.addTilesetImage('sprites', 'sprites');
+
+    this.lay1 = this.map.createLayer('bottomLayer', ['sprites'], 0, 0);
+    this.lay2 = this.map.createLayer('middleLayer', ['sprites'], 0, 0);
+
     this.player1 = new Player(this, this.gameSet.hero.x, this.gameSet.hero.y);
-
-    // map
-    const map = this.add.tilemap(this.mainMap);
-    map.addTilesetImage('sprites', 'sprites');
-
-    // lay1
-    const lay1 = map.createLayer('bottomLayer', ['sprites'], 0, 0);
-    // lay2
-    const lay2 = map.createLayer('middleLayer', ['sprites'], 0, 0);
-
     this.add.existing(this.player1);
 
-    const lay3 = map.createLayer('topLayer', ['sprites'], 0, 0);
+    this.lay3 = this.map.createLayer('topLayer', ['sprites'], 0, 0);
 
-    this.lay1 = lay1;
-    this.lay2 = lay2;
-    // this.player1 = player1;
+    // camera
+    const camera = new GameCamera(this);
 
-    const camera = this.cameras.main;
-    camera.startFollow(this.player1);
-    camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
-    camera.setViewport(9, 52, 288, 288);
-    this.map = map;
-    this.camera = camera;
-
+    // cursor
     this.cursors = this.input.keyboard.createCursorKeys();
-    //
-    
+
+    // objects
+    const objectOnTheSceneInterface = new ObjectOnTheScene(this, 221, 184);
+
+    // const object1Test = new RectanglePhysics(this, 414, 207, 26, 18, () => { this.stopScene(this, 143, 270); this.scene.start('world1scene6'); });
+    // const object2Test = new RectanglePhysics(this, 260, 416, 26, 18, () => { this.player1.x = 270; this.player1.y = 530; });
+    // const object3Test = new RectanglePhysics(this, 260, 495, 26, 18, () => { this.player1.x = 270; this.player1.y = 400; });
+
+    const rectangleTop = new RectanglePhysics(this, 0, -2, this.map.widthInPixels, 3, () => { this.gameSet.hero.y = 545; this.gameSet.hero.x = this.player1.x; });
+    const rectangleRight = new RectanglePhysics(this, 576, 0, 3, 576, () => { this.gameSet.hero.x = 20; this.gameSet.hero.y = this.player1.y; });
+    const rectangleBottom = new RectanglePhysics(this, 0, 575, this.map.widthInPixels, 3, () => { this.gameSet.hero.y = 20; this.gameSet.hero.x = this.player1.x; });
+    const rectangleLeft = new RectanglePhysics(this, -2, 0, 3, this.map.heightInPixels, () => { this.gameSet.hero.x = 545; this.gameSet.hero.y = this.player1.y; this.scene.stop('world1scene3'); this.scene.start('world1scene1'); });
+
+    // text
     this.text = this.add.text(10, 10).setScrollFactor(0).setFontSize(12).setColor('#273746');
 
+    // key
     const keyObj = this.input.keyboard.addKey('W'); // Get key object
     keyObj.on('down', (event) => {
       console.log('w');
-      // this.scene.remove('SceneInterface');
-
-      console.log(this.mainMap);
-      console.log(this.player1.onMap);
+      console.log(this.scene.key);
     });
 
     keyObj.on('up', (event) => { /* ... */ });
 
-    const rectangleTop = new RectanglePhysics(this, 0, -2, map.widthInPixels, 3, () => { this.gameSet.hero.y = 545; this.gameSet.hero.x = this.player1.x; });
-    const rectangleRight = new RectanglePhysics(this, 576, 0, 3, 576, () => { this.gameSet.hero.x = 20; this.gameSet.hero.y = this.player1.y; });
-    const rectangleBottom = new RectanglePhysics(this, 0, 575, map.widthInPixels, 3, () => { this.gameSet.hero.y = 20; this.gameSet.hero.x = this.player1.x; });
-    const rectangleLeft = new RectanglePhysics(this, -2, 0, 3, map.heightInPixels, () => { this.gameSet.hero.x = 545; this.gameSet.hero.y = this.player1.y; this.scene.stop('world1scene3'); this.scene.start('world1scene1'); });
-
+    // col
     this.lay2.setCollisionByExclusion([-1]);
-    this.physics.add.collider(this.player1, this.lay2);//
+    this.physics.add.collider(this.player1, this.lay2);
   }
-
-  /* START-USER-CODE */
 
   update() {
     this.player1.movePlayer(this.cursors);
 
     if (this.gameSet.locatorScene) {
-      this.gameSet.hero.x = this.player1.x;
-      this.gameSet.hero.y = this.player1.y;
+      this.stopScene(this, this.player1.x, this.player1.y);
       this.scene.start('SceneLocator');
     }
 
@@ -93,20 +84,13 @@ class world1scene3 extends Phaser.Scene {
       `Map: ${this.mainMap}`,
       `Gmset: ${this.gameSet.locatorScene}`,
     ]);
-    
   }
 
-  stopScene(scene, x, y, location) {
+  stopScene(scene, x, y) {
     scene.gameSet.hero.x = x;
     scene.gameSet.hero.y = y;
-    scene.gameSet.currentLocation = location;
-    scene.scene.stop(location);
-    console.log(location);
+    scene.gameSet.currentLocation = scene.scene.key;
+    scene.scene.stop(scene.scene.key);
+    console.log(scene.scene.key);
   }
-
-  /* END-USER-CODE */
 }
-
-/* END OF COMPILED CODE */
-
-// You can write more code here
