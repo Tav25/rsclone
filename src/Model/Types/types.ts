@@ -70,7 +70,7 @@ export type TLocation = {
 export type TWorld = {
   id: string;
   name: string;
-  goal: TGoal;
+  goal: string;
   map: string;
   startLocation: Position;
   locations: TLocation[];

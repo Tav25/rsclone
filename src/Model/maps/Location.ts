@@ -11,7 +11,7 @@ export default class Location {
   name: string;
   entryDirections: string[];
   objectList: TObject[];
-  objects: (Character | Crate | Door | Enemy | TradingPlace | Trigger)[];
+  objects: any[];
 
   constructor(locationObject: TLocation) {
     this.locationObject = locationObject;
@@ -23,7 +23,7 @@ export default class Location {
 
   init(): void {
     this.objectList.forEach((object: TObject) => {
-      let objectInstance: Character | Crate | Door | Enemy | TradingPlace | Trigger;
+      let objectInstance;
       switch (object.type) {
         case 'character':
           objectInstance = new Character(object);
@@ -48,6 +48,11 @@ export default class Location {
       }
       this.objects.push(objectInstance);
     });
+    this.objects.forEach((object, index, array) => {
+      if (!!object.triggerToActivate.name) {
+        object.triggerToActivate.target = array.find((object) => object.name === object.triggerToActivate.name);
+      }
+    })
   }
 
   getName(): string {
@@ -58,11 +63,11 @@ export default class Location {
     return this.entryDirections;
   }
 
-  getObjectList(): (Character | Crate | Door | Enemy | TradingPlace | Trigger)[] {
+  getObjectList() {
     return this.objects;
   }
 
-  getObject(objectName: string): Character | Crate | Door | Enemy | TradingPlace | Trigger {
+  getObject(objectName: string) {
     const returnedObject = this.objects.find((object) => object.name === objectName);
     return returnedObject;
   }

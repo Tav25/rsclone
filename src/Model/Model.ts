@@ -16,8 +16,8 @@ export default class Model {
   }
 
   async newWorld() {
-    this.world = new World(this.database);
-    await this.world.init('1');
+    this.world = new World(await this.database.getOne('maps', 'world1'));
+    this.world.init();
   }
 
   async getUsers() {

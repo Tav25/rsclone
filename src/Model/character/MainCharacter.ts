@@ -1,4 +1,4 @@
-import { TItem, TObject } from "../types/types";
+import { TObject } from "../types/types";
 import Equipment from "./Equipment";
 import Health from "./Health";
 import Inventory from "./Inventory";

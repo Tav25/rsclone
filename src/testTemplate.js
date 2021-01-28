@@ -69,7 +69,7 @@ container.append(
 );
 
 input1.value = 'maps';
-input2.value = '1';
+input2.value = 'world1';
 input3.value = 'test message';
 
 const database = new Database();

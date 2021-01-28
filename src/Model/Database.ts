@@ -14,7 +14,6 @@ export default class Database {
     });
 
     if ((/20\d/).test(String(response.status))) {
-      // return JSON.stringify(response.data, null, 2);
       return response.data;
     }
     return `Ошибка HTTP: ${response.status}`;
@@ -27,7 +26,6 @@ export default class Database {
     });
 
     if ((/20\d/).test(String(response.status))) {
-      // return JSON.stringify(response.data, null, 2);
       return response.data;
     }
     return `Ошибка HTTP: ${response.status}`;
@@ -40,22 +38,17 @@ export default class Database {
     });
 
     if ((/20\d/).test(String(response.status))) {
-      // return JSON.stringify(response.data, null, 2);
       return response.data[0];
     }
     return `Ошибка HTTP: ${response.status}`;
   }
 
   async create(collection: string, id: string, documentData: any): Promise<any> {
-    const gameSet= {
-      id: id,
-      content: documentData,
-    };
     const response = await axios({
       method: 'post',
       baseURL: this.baseURL,
       url: `/${collection}`,
-      data,
+      data: documentData,
     });
 
     if ((/20\d/).test(String(response.status))) {
@@ -65,15 +58,11 @@ export default class Database {
   }
 
   async update(collection: string, id: string, documentData: any): Promise<any> {
-    const gameSet= {
-      id: id,
-      content:documentData,
-    };
     const response = await axios({
       method: 'put',
       baseURL: this.baseURL,
       url: `/${collection}/${id}`,
-      data,
+      data: documentData,
     });
 
     if ((/20\d/).test(String(response.status))) {
