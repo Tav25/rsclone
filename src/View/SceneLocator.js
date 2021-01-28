@@ -34,8 +34,34 @@ class SceneLocator extends Phaser.Scene {
     camera.setViewport(9, 52, 288, 288);
     this.camera = camera;
 
-    // obj
-    // const objectOnTheSceneInterface = new ObjectOnTheScene(this, 128 + 16, 128 + 16);
+    const mapPosition = {
+      world1scene1: {
+        x: 144,
+        y: 144,
+      },
+      world1scene2: {
+        x: 144,
+        y: 114,
+      },
+      world1scene3: {
+        x: 174,
+        y: 144,
+      },
+      world1scene4: {
+        x: 144,
+        y: 174,
+      },
+      world1scene5: {
+        x: 114,
+        y: 144,
+      },
+      world1scene6: {
+        x: 144,
+        y: 144,
+      },
+    };
+    const objectOnTheSceneInterface = new ObjectOnTheScene(this, mapPosition[this.gameSet.currentLocation].x, mapPosition[this.gameSet.currentLocation].y, 'atlasPersonsObject', 'AlluvialDamper_435');
+    this.blinkObj(objectOnTheSceneInterface);
   }
 
   /* START-USER-CODE */
@@ -45,6 +71,16 @@ class SceneLocator extends Phaser.Scene {
       this.scene.stop('SceneLocator');
       this.scene.start(this.gameSet.currentLocation);
     }
+  }
+
+  blinkObj(obj) {
+    this.time.addEvent({
+      repeat: -1,
+      delay: 500,
+      callback: () => {
+        obj.visible = !obj.visible;
+      },
+    });
   }
 
   /* END-USER-CODE */
