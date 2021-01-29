@@ -1,4 +1,5 @@
-import { TIcon, TItem, TObject } from "../types/types";
+import QuestItem from "../items/QuestItem";
+import { TIcon, TObject } from "../types/types";
 import CommonObject from "./CommonObject";
 
 export default class Door extends CommonObject{
@@ -9,10 +10,10 @@ export default class Door extends CommonObject{
     this.openedIcon = objectObject.openedIcon;
   }
 
-  activate(itemObject: TItem): void {
+  activate(itemInstance: QuestItem): void {
     if (!this.isFirstVisit) {
       if (this.isKeyNeededToOpen) {
-        if (this.isValidKey(itemObject)) {
+        if (this.isValidKey(itemInstance)) {
           this.triggered = true;
           this.icon = this.openedIcon;
         }

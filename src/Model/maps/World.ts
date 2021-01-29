@@ -1,6 +1,7 @@
 import MainCharacter from '../character/MainCharacter';
 import Position from '../character/Position';
-import { TGoal, TLocation, TWorld } from '../types/types';
+import Weapon from '../items/Weapon';
+import { TGoal, TItem, TLocation, TWorld } from '../types/types';
 import Location from './Location';
 
 export default class World {
@@ -9,6 +10,7 @@ export default class World {
   name: string;
   goal: TGoal;
   map: string;
+  startItems: TItem[];
   startLocation: Position;
   locationList: TLocation[];
   locations: Location[];
@@ -26,6 +28,7 @@ export default class World {
       target: undefined,
     }
     this.map = worldObject.map;
+    this.startItems = worldObject.startItems;
     this.startLocation = worldObject.startLocation;
     this.locationList = worldObject.locations;
     this.worldSize = this.locationList.length;
@@ -45,6 +48,7 @@ export default class World {
       };
     });
     this.mainCharacter = new MainCharacter(this.startLocation);
+    this.startItems.forEach((item) => this.mainCharacter.pickItem(new Weapon(item)));
     this.startTime = Date.now();
     this.elapsedTime = 0;
   }

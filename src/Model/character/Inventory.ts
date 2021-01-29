@@ -17,6 +17,12 @@ export default class Inventory {
     return this.itemList;
   }
 
+  getItem(itemName: string) {
+    if (this.hasItem(itemName)) {
+      return this.itemList.find((item) => item.name === itemName);
+    }
+  }
+
   addItem(item: Junk | Locator | MedKit | QuestItem | Weapon): void {
     this.itemList.push(item);
     this.inventorySize += 1;

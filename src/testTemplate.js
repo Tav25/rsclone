@@ -5,8 +5,8 @@ const container = document.createElement('div');
 document.body.append(container);
 
 const output = document.createElement('textarea');
-output.cols = '78';
-output.rows = '35';
+output.cols = '79';
+output.rows = '5';
 output.readOnly = 'true';
 output.style.resize = 'none';
 output.style.outline = 'none';
@@ -19,12 +19,12 @@ input1.style.display = 'inline';
 
 const input2 = document.createElement('input');
 input2.type = 'text';
-input2.size = '17';
+input2.size = '13';
 input2.style.display = 'inline';
 
 const input3 = document.createElement('input');
 input3.type = 'text';
-input3.size = '69';
+input3.size = '68';
 input3.style.display = 'inline';
 
 const getAllButton = document.createElement('button');
@@ -47,6 +47,7 @@ const collectionElem = document.createElement('span');
 collectionElem.textContent = 'Collection: ';
 const idElem = document.createElement('span');
 idElem.textContent = ' id: ';
+idElem.style.marginLeft = '3px';
 const messageElem = document.createElement('span');
 messageElem.textContent = 'Message: ';
 const br = document.createElement('br');
@@ -114,5 +115,6 @@ deleteButton.addEventListener('click', async () => {
 
 newWorldButton.addEventListener('click', async () => {
   window.model = model;
-  console.log(await model.newWorld());
+  await model.newWorld();
+  console.log(model.world);
 });

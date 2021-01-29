@@ -1,4 +1,4 @@
-import { TItem } from "../types/types";
+import MedKit from "../items/MedKit";
 
 export default class Health {
   maxHealth: number;
@@ -13,8 +13,8 @@ export default class Health {
     return this.currentHealth;
   }
 
-  restoreHealth(itemObject: TItem): void {
-    const newHealth: number = this.currentHealth + itemObject.restoredHealth;
+  restoreHealth(itemInstance: MedKit): void {
+    const newHealth: number = this.currentHealth + itemInstance.restoredHealth;
     this.currentHealth = newHealth <= this.maxHealth ? newHealth : this.maxHealth;
   }
 

@@ -72,6 +72,7 @@ export type TWorld = {
   name: string;
   goal: string;
   map: string;
+  startItems: TItem[];
   startLocation: Position;
   locations: TLocation[];
 }

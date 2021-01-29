@@ -59,6 +59,7 @@ export default class Model {
 
   async saveGame(gameName: string, position: Position) {
     this.world.setFinishTime();
+    this.world.setCurrentTime();
     this.world.mainCharacter.setPosition(position.location, position.coordinates, position.direction);
 
     const savedGame: TSavedGame = {

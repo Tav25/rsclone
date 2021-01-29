@@ -3,7 +3,7 @@ import Locator from "../items/Locator";
 import MedKit from "../items/MedKit";
 import QuestItem from "../items/QuestItem";
 import Weapon from "../items/Weapon";
-import { TObject } from "../types/types";
+import Enemy from "../objects/Enemy";
 import Equipment from "./Equipment";
 import Health from "./Health";
 import Inventory from "./Inventory";
@@ -46,13 +46,18 @@ export default class MainCharacter {
     return true;
   }
 
-  hit(enemy: TObject): boolean {
+  hit(enemy: Enemy): boolean {
     this.health.damageHealth(enemy.damage);
     return true;
   }
 
   hasItem(itemName: string): boolean {
     return this.inventory.hasItem(itemName);
+  }
+
+  giveItem(itemName: string) {
+    this.inventory.removeItem(itemName);
+    return this.inventory.getItem(itemName);
   }
 
   pickItem(item: Junk | Locator | MedKit | QuestItem | Weapon): boolean {

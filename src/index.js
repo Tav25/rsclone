@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import packFile from './assets/asset-pack.json';
-// import './testTemplate';
+import './testTemplate';
 
 class MyGame extends Phaser.Scene {
   constructor() {
