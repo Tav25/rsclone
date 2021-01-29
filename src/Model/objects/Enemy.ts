@@ -1,15 +1,9 @@
-import MainCharacter from "../character/MainCharacter.ts";
-import Position from "../character/Position.ts";
-import { TIcon, TItem, TObject } from "../types/types.ts";
-import ItemOnTheGround from "./ItemOnTheGround.ts";
+import MainCharacter from "../character/MainCharacter";
+import { TItem, TObject } from "../types/types";
+import CommonObject from "./CommonObject";
+import ItemOnTheGround from "./ItemOnTheGround";
 
-export default class Enemy {
-  objectObject: TObject;
-  type: string;
-  position: Position;
-  id: string;
-  name: string;
-  icon: TIcon;
+export default class Enemy extends CommonObject {
   health: number;
   damage: number;
   range: number;
@@ -17,12 +11,7 @@ export default class Enemy {
   isMoving?: boolean;
 
   constructor(objectObject: TObject) {
-    this.objectObject = objectObject;
-    this.type = objectObject.type;
-    this.position = objectObject.position;
-    this.id = objectObject.id;
-    this.name = objectObject.name;
-    this.icon = objectObject.icon;
+    super(objectObject);
     this.health = objectObject.health;
     this.damage = objectObject.damage;
     this.range = objectObject.range;
@@ -43,7 +32,10 @@ export default class Enemy {
     return !!this.health;
   }
 
-  returnItem(): ItemOnTheGround {
-    if (this.isDead()) return new ItemOnTheGround(this.objectObject, this.returnedItem);
+  dead(): ItemOnTheGround {
+    if (this.isDead()) {
+      this.triggered = true;
+      return new ItemOnTheGround(this.objectObject, this.returnedItem);
+    };
   }
 }

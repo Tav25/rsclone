@@ -1,7 +1,7 @@
-import MainCharacter from '../character/MainCharacter.ts';
-import Position from '../character/Position.ts';
-import { TGoal, TLocation, TWorld } from '../types/types.ts';
-import Location from './Location.ts';
+import MainCharacter from '../character/MainCharacter';
+import Position from '../character/Position';
+import { TGoal, TLocation, TWorld } from '../types/types';
+import Location from './Location';
 
 export default class World {
   worldObject:TWorld;

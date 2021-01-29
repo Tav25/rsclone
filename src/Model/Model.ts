@@ -1,8 +1,8 @@
-import Database from './Database.ts';
-import User from './user/User.ts';
-import World from './maps/World.ts';
-import Position from './character/Position.ts';
-import { TSavedGame } from './types/types.ts';
+import Database from './Database';
+import User from './user/User';
+import World from './maps/World';
+import Position from './character/Position';
+import { TSavedGame } from './types/types';
 
 export default class Model {
   database: Database;
@@ -15,22 +15,23 @@ export default class Model {
     this.database = database;
   }
 
-  async newWorld() {
-    this.world = new World(await this.database.getOne('maps', 'world1'));
+  async newWorld(worldName: string = 'world1') {
+    this.world = new World(await this.database.getOne('maps', worldName));
     this.world.init();
-    return this.world;
+    return true;
   }
 
   async getUsers() {
     const userList = await this.database.getAll('userProfiles');
     this.userList = userList.map((user) => user.content);
-    return this.userList;
+    return true;
   }
 
-  loadUser(userName: string) {
+  loadUser(userName: string): boolean {
     const user = this.userList.find((user: User) => user.name === userName);
     this.user = user;
-    return user;
+    localStorage.setItem('tav25-levendor-rsclone-user', userName);
+    return true;
   }
 
   async createUser(userName: string) {
@@ -38,6 +39,7 @@ export default class Model {
     if (this.userList.some((user: User) => user.name === userName)) return false;
 
     this.user = new User(userName);
+    localStorage.setItem('tav25-levendor-rsclone-user', userName);
     await this.database.create('userProfiles', this.user.name, this.user);
     return true;
   }
@@ -45,12 +47,14 @@ export default class Model {
   async getSavedGamesList() {
     const savedGamesList = await this.database.getList('savedGames', this.user.name);
     this.savedGamesList = savedGamesList.map((item: any) => item.content);
+    return true;
   }
 
-  loadSaveGame(saveGameName: string): void {
+  loadGame(saveGameName: string): boolean {
     const saveGame = this.savedGamesList.find((saveGame: TSavedGame) => saveGame.name === saveGameName);
     this.world = saveGame.world;
     this.world.setCurrentTime();
+    return true;
   }
 
   async saveGame(gameName: string, position: Position) {
@@ -67,6 +71,8 @@ export default class Model {
     this.user.increaseUserSavesNumber();
 
     await this.database.update('userProfiles', this.user.name, this.user);
+
+    return true;
   }
 
   isFinishGame() {

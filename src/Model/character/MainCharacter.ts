@@ -1,8 +1,13 @@
-import { TObject } from "../types/types.ts";
-import Equipment from "./Equipment.ts";
-import Health from "./Health.ts";
-import Inventory from "./Inventory.ts";
-import Position from "./Position.ts";
+import Junk from "../items/Junk";
+import Locator from "../items/Locator";
+import MedKit from "../items/MedKit";
+import QuestItem from "../items/QuestItem";
+import Weapon from "../items/Weapon";
+import { TObject } from "../types/types";
+import Equipment from "./Equipment";
+import Health from "./Health";
+import Inventory from "./Inventory";
+import Position from "./Position";
 
 export default class MainCharacter {
   inventory: Inventory;
@@ -17,8 +22,9 @@ export default class MainCharacter {
     this.position = position;
   }
 
-  setPosition(location: string, coordinates: number[], direction: string): void {
+  setPosition(location: string, coordinates: number[], direction: string): boolean {
     this.position = new Position(location, coordinates, direction);
+    return true;
   }
 
   getPosition(): Position {
@@ -34,12 +40,23 @@ export default class MainCharacter {
     return this.equipment.getCurrentAmmo() <= 0 ? true : false;
   }
 
-  shot(): void {
+  shot(): boolean {
     this.equipment.releaseAmmo();
     if (this.isNoAmmo()) this.equipment.removeWeapon();
+    return true;
   }
 
-  hit(enemy: TObject): void {
+  hit(enemy: TObject): boolean {
     this.health.damageHealth(enemy.damage);
+    return true;
+  }
+
+  hasItem(itemName: string): boolean {
+    return this.inventory.hasItem(itemName);
+  }
+
+  pickItem(item: Junk | Locator | MedKit | QuestItem | Weapon): boolean {
+    this.inventory.addItem(item);
+    return true;
   }
 }

@@ -1,5 +1,5 @@
-import CommonObject from './CommonObject.ts';
-import { TIcon, TItem, TObject } from '../types/types.ts';
+import CommonObject from './CommonObject';
+import { TIcon, TItem, TObject } from '../types/types';
 
 export default class Trigger extends CommonObject{
   openedIcon: TIcon;

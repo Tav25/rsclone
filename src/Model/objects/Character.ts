@@ -1,6 +1,6 @@
-import CommonObject from './CommonObject.ts';
-import { TItem, TObject } from '../types/types.ts';
-import ItemOnTheGround from './ItemOnTheGround.ts';
+import CommonObject from './CommonObject';
+import { TItem, TObject } from '../types/types';
+import ItemOnTheGround from './ItemOnTheGround';
 
 export default class Character extends CommonObject {
   returnedItem: TItem;

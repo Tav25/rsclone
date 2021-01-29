@@ -1,5 +1,5 @@
-import Item from './Item.ts';
-import { TItem } from '../types/types.ts';
+import Item from './Item';
+import { TItem } from '../types/types';
 
 export default class QuestItem extends Item {
   isQuestItem: boolean;

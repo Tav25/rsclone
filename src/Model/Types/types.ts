@@ -1,7 +1,7 @@
-import Position from "../character/Position.ts"
-import World from "../maps/World.ts"
-import Character from "../objects/Character.ts"
-import Trigger from "../objects/Trigger.ts"
+import Position from "../character/Position"
+import World from "../maps/World"
+import Character from "../objects/Character"
+import Trigger from "../objects/Trigger"
 
 export type TItem = {
   type: string;

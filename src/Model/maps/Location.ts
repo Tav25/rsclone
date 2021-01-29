@@ -1,10 +1,10 @@
-import Character from "../objects/Character.ts";
-import Crate from "../objects/Crate.ts";
-import Door from "../objects/Door.ts";
-import Enemy from "../objects/Enemy.ts";
-import TradingPlace from "../objects/TradingPlace.ts";
-import Trigger from "../objects/Trigger.ts";
-import { TLocation, TObject } from "../types/types.ts";
+import Character from "../objects/Character";
+import Crate from "../objects/Crate";
+import Door from "../objects/Door";
+import Enemy from "../objects/Enemy";
+import TradingPlace from "../objects/TradingPlace";
+import Trigger from "../objects/Trigger";
+import { TLocation, TObject } from "../types/types";
 
 export default class Location {
   locationObject: TLocation;

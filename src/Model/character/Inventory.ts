@@ -1,7 +1,11 @@
-import { TItem } from '../types/types.ts';
+import Junk from '../items/Junk';
+import Locator from '../items/Locator';
+import MedKit from '../items/MedKit';
+import QuestItem from '../items/QuestItem';
+import Weapon from '../items/Weapon';
 
 export default class Inventory {
-  itemList: TItem[];
+  itemList: (Junk | Locator | MedKit | QuestItem | Weapon)[];
   inventorySize: number;
 
   constructor() {
@@ -9,18 +13,25 @@ export default class Inventory {
     this.inventorySize = 0;
   }
 
-  getItemList(): TItem[] {
+  getItemList(): (Junk | Locator | MedKit | QuestItem | Weapon)[] {
     return this.itemList;
   }
 
-  addItem(itemObject: TItem): void {
-    this.itemList.push(itemObject);
+  addItem(item: Junk | Locator | MedKit | QuestItem | Weapon): void {
+    this.itemList.push(item);
     this.inventorySize += 1;
   }
 
-  removeItem(id: string): void {
-    const removedItemIndex: number = this.itemList.findIndex((item) => item.id === id);
-    this.itemList.splice(removedItemIndex, 1);
-    this.inventorySize -= 1;
+  removeItem(itemName: string): void {
+    if (this.hasItem(itemName)) {
+      const removedItemIndex: number = this.itemList.findIndex((item) => item.name === itemName);
+      this.itemList.splice(removedItemIndex, 1);
+      this.inventorySize -= 1;
+    }
+  }
+
+  hasItem(itemName: string): boolean {
+    const index = this.itemList.findIndex((item) => item.name === itemName);
+    return index === -1 ? false : true;
   }
 }

@@ -1,7 +1,7 @@
-import { TGoal, TIcon, TItem, TObject } from "../types/types.ts";
-import Position from "../character/Position.ts";
-import Trigger from "./Trigger.ts";
-import Character from "./Character.ts";
+import { TGoal, TIcon, TItem, TObject } from "../types/types";
+import Position from "../character/Position";
+import Trigger from "./Trigger";
+import Character from "./Character";
 
 export default class CommonObject {
   objectObject: TObject;

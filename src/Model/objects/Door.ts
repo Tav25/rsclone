@@ -1,5 +1,5 @@
-import { TIcon, TItem, TObject } from "../types/types.ts";
-import CommonObject from "./CommonObject.ts";
+import { TIcon, TItem, TObject } from "../types/types";
+import CommonObject from "./CommonObject";
 
 export default class Door extends CommonObject{
   openedIcon: TIcon;

@@ -1,4 +1,4 @@
-import { TItem } from "../types/types.ts";
+import { TItem } from "../types/types";
 
 export default class Equipment {
   equippedWeapon: TItem;
