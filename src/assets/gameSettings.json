@@ -1,10 +1,42 @@
-{"hero": {
-    "x": 276,
-    "y":375,
-    "lifePoints": 55,
-    "weapons":"no"
-},
-"mapArrows":[0,0,0,0],
-"locatorScene":false,
-"currentLocation": ""
+{
+    "hero": {
+        "x": 276,
+        "y": 375,
+        "lifePoints": 55,
+        "weapons": "no"
+    },
+    "mapArrows": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "locatorScene": false,
+    "currentLocation": "",
+    "objectOnMap": {
+        "Locator_421": {
+            "image": "Locator_421",
+            "functionPointerDown": "console.log('json421')"
+        },
+        "Dainougut_2036": {
+            "image": "Dainougut_2036",
+            "functionPointerDown": "console.log('json2036')"
+        }
+    },
+    "itemOnMap": [
+        {
+            "image": "Locator_421",
+            "x": 228,
+            "y": 260,
+            "location":"world1scene1",
+            "functionPointerDown": "console.log('json421')"
+        },
+        {
+            "image": "Dainougut_2036",
+            "x": 260,
+            "y": 260,
+            "location":"world1scene1",
+            "functionPointerDown": "console.log('json2036')"
+        }
+    ]
 }

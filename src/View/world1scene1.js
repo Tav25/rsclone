@@ -29,8 +29,6 @@ class world1scene1 extends Phaser.Scene {
     this.player1 = new Player(this, this.gameSet.hero.x, this.gameSet.hero.y);
     this.add.existing(this.player1);
 
-    this.lay3 = this.map.createLayer('topLayer', ['sprites'], 0, 0);
-
     // camera
     const camera = new GameCamera(this);
 
@@ -38,7 +36,10 @@ class world1scene1 extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys();
 
     // objects
-    const objectOnTheSceneInterface = new ObjectOnTheScene(this, 221, 184, 'atlasPersonsObject', 'Blumfruit_483',()=>{console.log('Blumfruit_483')});
+    const items = new Item(this);
+    items.ItemsOnScene();
+
+    const b3 = new ObjectOnTheScene(this, 221, 184, 'atlasPersonsObject', 'AdeganCrystal_459', () => { console.log('555'); });
 
     const object1Test = new RectanglePhysics(this, 414, 207, 26, 18, () => { this.stopScene(this, 143, 270); this.scene.start('world1scene6'); });
     const object2Test = new RectanglePhysics(this, 260, 416, 26, 18, () => { this.player1.x = 270; this.player1.y = 530; });
@@ -50,7 +51,7 @@ class world1scene1 extends Phaser.Scene {
     const rectangleLeft = new RectanglePhysics(this, -2, 0, 3, this.map.heightInPixels, () => { this.stopScene(this, 545, this.player1.y); this.scene.start('world1scene5'); });
 
     // text
-    this.text = this.add.text(10, 10).setScrollFactor(0).setFontSize(12).setColor('#273746');
+    // this.text = this.add.text(10, 10).setScrollFactor(0).setFontSize(12).setColor('#273746');
 
     // key
     const keyObj = this.input.keyboard.addKey('W'); // Get key object
@@ -64,6 +65,7 @@ class world1scene1 extends Phaser.Scene {
     // col
     this.lay2.setCollisionByExclusion([-1]);
     this.physics.add.collider(this.player1, this.lay2);
+    this.lay3 = this.map.createLayer('topLayer', ['sprites'], 0, 0);
   }
 
   update() {
@@ -74,16 +76,16 @@ class world1scene1 extends Phaser.Scene {
       this.scene.start('SceneLocator');
     }
 
-    this.text.setText([
-      `Player X: ${this.player1.x}`,
-      `Player Y: ${this.player1.y}`,
-      `ScrollX: ${this.camera.scrollX}`,
-      `ScrollY: ${this.camera.scrollY}`,
-      `MidX: ${this.camera.midPoint.x}`,
-      `MidY: ${this.camera.midPoint.y}`,
-      `Map: ${this.mainMap}`,
-      `Gmset: ${this.gameSet.locatorScene}`,
-    ]);
+    // this.text.setText([
+    //   `Player X: ${this.player1.x}`,
+    //   `Player Y: ${this.player1.y}`,
+    //   `ScrollX: ${this.camera.scrollX}`,
+    //   `ScrollY: ${this.camera.scrollY}`,
+    //   `MidX: ${this.camera.midPoint.x}`,
+    //   `MidY: ${this.camera.midPoint.y}`,
+    //   `Map: ${this.mainMap}`,
+    //   `Gmset: ${this.gameSet.locatorScene}`,
+    // ]);
   }
 
   stopScene(scene, x, y) {

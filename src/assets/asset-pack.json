@@ -60,6 +60,11 @@
                 "key": "leftMenu"
             },
             {
+                "url": "src/View/Item.js",
+                "type": "script",
+                "key": "Item"
+            },
+            {
                 "url": "src/assets/image/mainFrame.png",
                 "type": "image",
                 "key": "mainFrame"
@@ -145,6 +150,11 @@
                 "url": "src/View/ObjectOnTheScene.js",
                 "type": "script",
                 "key": "ObjectOnTheScene"
+            },
+            {
+                "url": "src/View/ObjectInBox.js",
+                "type": "script",
+                "key": "ObjectInBox"
             },
             {
                 "atlasURL": "src/assets/atlas/questitems.json",

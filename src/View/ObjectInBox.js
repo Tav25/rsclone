@@ -2,7 +2,7 @@
 
 /* START OF COMPILED CODE */
 
-class ObjectOnTheScene extends Phaser.GameObjects.Image {
+class ObjectInBox extends Phaser.GameObjects.Image {
   constructor(scene, x, y, texture, frame, funct) {
     super(scene, x, y, texture || 'atlasPersonsObject', frame !== undefined && frame !== null ? frame : 'AdeganCrystal_459');
 
