@@ -1,17 +1,17 @@
-import Database from './Database';
+import DatabaseInterface from './DatabaseInterface';
 import User from './user/User';
 import World from './maps/World';
 import Position from './character/Position';
 import { TSavedGame } from './types/types';
 
 export default class Model {
-  database: Database;
+  database: DatabaseInterface;
   world: World;
   user: User;
   userList: User[];
   savedGamesList: any[];
 
-  constructor(database: Database) {
+  constructor(database: DatabaseInterface) {
     this.database = database;
   }
 

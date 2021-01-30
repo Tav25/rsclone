@@ -1,4 +1,4 @@
-import Database from './Model/Database.ts';
+import Database from './Model/DatabaseInterface.ts';
 import Model from './Model/Model.ts';
 import Controller from './Controller/Controller';
 
