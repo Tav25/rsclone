@@ -50,7 +50,8 @@ export default class CommonObject {
   }
 
   isValidKey(itemInstance: Junk | QuestItem): boolean {
-    return itemInstance.name === this.itemToActivate || false;
+    if (itemInstance) return itemInstance.name === this.itemToActivate;
+    else return false;
   }
 
   isTriggered(): boolean {
