@@ -67,6 +67,7 @@ class world1scene1 extends Phaser.Scene {
     this.lay2.setCollisionByExclusion([-1]);
     this.physics.add.collider(this.player1, this.lay2);
     this.lay3 = this.map.createLayer('topLayer', ['sprites'], 0, 0);
+    this.player1.weaponAttack(this);
   }
 
   update() {
@@ -93,7 +94,9 @@ class world1scene1 extends Phaser.Scene {
     scene.gameSet.hero.x = x;
     scene.gameSet.hero.y = y;
     scene.gameSet.currentLocation = scene.scene.key;
+    this.player1.destroy();
     scene.scene.stop(scene.scene.key);
+
     console.log(scene.scene.key);
   }
 }
