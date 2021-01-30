@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export default class Database {
+export default class DatabaseInterface {
   baseURL: string;
 
   constructor() {

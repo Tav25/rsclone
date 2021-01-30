@@ -1,13 +1,14 @@
-import { TItem } from "../types/types.ts";
+import Weapon from "../items/Weapon";
+import { TItem } from "../types/types";
 
 export default class Equipment {
-  equippedWeapon: TItem;
+  equippedWeapon: Weapon;
 
   constructor() {
     this.equippedWeapon = null;
   }
 
-  getEquipment(): TItem {
+  getEquipment(): Weapon {
     return this.equippedWeapon;
   }
 
@@ -15,8 +16,8 @@ export default class Equipment {
     return this.equippedWeapon.currentAmmo;
   }
 
-  equipWeapon(itemObject: TItem): void {
-    if (itemObject.isEquippable) this.equippedWeapon = itemObject;
+  equipWeapon(itemInstance: Weapon): void {
+    if (itemInstance.isEquippable) this.equippedWeapon = itemInstance;
   }
 
   removeWeapon(): void {
