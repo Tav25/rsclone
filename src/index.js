@@ -1,10 +1,11 @@
 import Phaser from 'phaser';
 import packFile from './assets/asset-pack.json';
-import './testTemplate';
+// import './testTemplate';
 
 class MyGame extends Phaser.Scene {
   constructor() {
     super();
+    this.xxx = 10;
   }
 
   preload() {
@@ -14,7 +15,6 @@ class MyGame extends Phaser.Scene {
 
   create() {
     // const logo = this.add.image(400, 150, 'logo');
-
     this.scene.start('SceneInterface');
   }
 }
