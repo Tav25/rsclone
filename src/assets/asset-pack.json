@@ -218,9 +218,19 @@
                 "key": "sprites"
             },
             {
+                "url": "src/assets/image/dialog.png",
+                "type": "image",
+                "key": "dialog"
+            },
+            {
                 "url": "src/View/topMenuText.js",
                 "type": "script",
                 "key": "topMenuText"
+            },
+            {
+                "url": "src/View/Dialog.js",
+                "type": "script",
+                "key": "Dialog"
             },
             {
                 "atlasURL": "src/assets/atlas/weapons.json",

@@ -40,6 +40,8 @@ class world1scene1 extends Phaser.Scene {
     // cursor
     this.cursors = this.input.keyboard.createCursorKeys();
 
+    // dialog
+    this.dialog = new Dialog(this);
     // objects
     const items = new Item(this);
     items.ItemsOnScene();
@@ -75,6 +77,9 @@ class world1scene1 extends Phaser.Scene {
     this.physics.add.collider(this.player1, this.lay2);
     this.lay3 = this.map.createLayer('topLayer', ['sprites'], 0, 0);
     this.player1.weaponAttack(this);
+
+    // this.dialog.initDialog()
+    this.add.existing(this.dialog);
   }
 
   update() {
