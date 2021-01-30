@@ -5,7 +5,7 @@ import { TGoal, TItem, TLocation, TWorld } from '../types/types';
 import Location from './Location';
 
 export default class World {
-  worldObject:TWorld;
+  // worldObject: TWorld;
   id: string;
   name: string;
   goal: TGoal;
@@ -21,7 +21,7 @@ export default class World {
   elapsedTime: number;
 
   constructor(worldObject: TWorld) {
-    this.worldObject = worldObject;
+    // this.worldObject = worldObject;
     this.id = worldObject.id;
     this.name = worldObject.name;
     this.goal = {
