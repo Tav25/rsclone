@@ -1,10 +1,11 @@
-import { TGoal, TIcon, TItem, TObject } from "../types/types.ts";
-import Position from "../character/Position.ts";
-import Trigger from "./Trigger.ts";
-import Character from "./Character.ts";
+import { TGoal, TIcon, TObject } from "../types/types";
+import Position from "../character/Position";
+import Trigger from "./Trigger";
+import Character from "./Character";
+import Junk from "../items/Junk";
+import QuestItem from "../items/QuestItem";
 
 export default class CommonObject {
-  objectObject: TObject;
   type: string;
   position: Position;
   id: string;
@@ -23,7 +24,6 @@ export default class CommonObject {
   postDialog: string;
 
   constructor(objectObject: TObject) {
-    this.objectObject = objectObject;
     this.type = objectObject.type;
     this.position = objectObject.position;
     this.id = objectObject.id;
@@ -49,8 +49,8 @@ export default class CommonObject {
     this.triggerToActivate.target = objectInstance;
   }
 
-  isValidKey(itemObject: TItem): boolean {
-    return itemObject.name === this.itemToActivate || false;
+  isValidKey(itemInstance: Junk | QuestItem): boolean {
+    return itemInstance.name === this.itemToActivate || false;
   }
 
   isTriggered(): boolean {

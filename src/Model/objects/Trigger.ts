@@ -1,5 +1,6 @@
-import CommonObject from './CommonObject.ts';
-import { TIcon, TItem, TObject } from '../types/types.ts';
+import CommonObject from './CommonObject';
+import { TIcon, TObject } from '../types/types';
+import QuestItem from '../items/QuestItem';
 
 export default class Trigger extends CommonObject{
   openedIcon: TIcon;
@@ -9,10 +10,10 @@ export default class Trigger extends CommonObject{
     this.openedIcon = objectObject.openedIcon;
   }
 
-  activate(itemObject: TItem): void {
+  activate(itemInstance: QuestItem): void {
     if (!this.isFirstVisit) {
       if (this.isKeyNeededToOpen) {
-        if (this.isValidKey(itemObject)) {
+        if (this.isValidKey(itemInstance)) {
           this.triggered = true;
           this.icon = this.openedIcon;
         }

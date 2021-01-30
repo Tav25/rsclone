@@ -1,8 +1,10 @@
-import CommonObject from './CommonObject.ts';
-import { TIcon, TItem, TObject } from '../types/types.ts';
-import ItemOnTheGround from './ItemOnTheGround.ts';
+import CommonObject from './CommonObject';
+import { TIcon, TItem, TObject } from '../types/types';
+import ItemOnTheGround from './ItemOnTheGround';
+import Junk from '../items/Junk';
+import QuestItem from '../items/QuestItem';
 
-export default class Crate extends CommonObject{
+export default class Crate extends CommonObject {
   openedIcon: TIcon;
   returnedItem: TItem;
 
@@ -12,24 +14,24 @@ export default class Crate extends CommonObject{
     this.returnedItem = objectObject.returnedItem;
   }
 
-  activate(itemObject: TItem): ItemOnTheGround {
+  activate(itemInstance: Junk | QuestItem): ItemOnTheGround {
     if (!this.isFirstVisit) {
       if (this.isKeyNeededToOpen) {
-        if (this.isValidKey(itemObject)) {
+        if (this.isValidKey(itemInstance)) {
           this.triggered = true;
           this.icon = this.openedIcon;
-          return new ItemOnTheGround(this.objectObject, this.returnedItem);
+          return new ItemOnTheGround(this, this.returnedItem);
         }
       } else if (this.triggerToActivate) {
         if (this.isTriggered()) {
           this.triggered = true;
           this.icon = this.openedIcon;
-          return new ItemOnTheGround(this.objectObject, this.returnedItem);
+          return new ItemOnTheGround(this, this.returnedItem);
         }
       } else {
         this.triggered = true;
         this.icon = this.openedIcon;
-        return new ItemOnTheGround(this.objectObject, this.returnedItem);
+        return new ItemOnTheGround(this, this.returnedItem);
       }
     }
   }

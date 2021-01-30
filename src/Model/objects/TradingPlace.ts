@@ -1,6 +1,7 @@
-import CommonObject from './CommonObject.ts';
-import { TItem, TObject } from '../types/types.ts';
-import ItemOnTheGround from './ItemOnTheGround.ts';
+import CommonObject from './CommonObject';
+import { TItem, TObject } from '../types/types';
+import ItemOnTheGround from './ItemOnTheGround';
+import Junk from '../items/Junk';
 
 export default class TradingPlace extends CommonObject{
   returnedItems1: TItem[];
@@ -12,20 +13,20 @@ export default class TradingPlace extends CommonObject{
     this.returnedItems2 = objectObject.returnedItems2;
   }
 
-  isValidKey(itemObject: TItem): boolean {
-    return !!itemObject.isTradable;
+  isValidKey(itemInstance: Junk): boolean {
+    return !!itemInstance.isTradable;
   }
 
-  activate(itemObject: TItem): ItemOnTheGround {
+  activate(itemInstance: Junk): ItemOnTheGround {
     if (!this.isFirstVisit) {
-      if (this.isValidKey(itemObject)) {
+      if (this.isValidKey(itemInstance)) {
         this.triggered = true;
-        if (itemObject.cost === 1) {
+        if (itemInstance.cost === 1) {
           const returnedItem = this.returnedItems1[Math.floor(Math.random() * this.returnedItems1.length)];
-          return new ItemOnTheGround(this.objectObject, returnedItem);
-        } else if (itemObject.cost === 2) {
+          return new ItemOnTheGround(this, returnedItem);
+        } else if (itemInstance.cost === 2) {
           const returnedItem = this.returnedItems2[Math.floor(Math.random() * this.returnedItems2.length)];
-          return new ItemOnTheGround(this.objectObject, returnedItem);
+          return new ItemOnTheGround(this, returnedItem);
         }
       }
     }
