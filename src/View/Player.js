@@ -97,7 +97,6 @@ class Player extends Phaser.GameObjects.Sprite {
         this.setTexture('atlas', 'img1028');
         this.scene.model.world.mainCharacter.position.direction = 'toLeft';
         this.scene.model.world.mainCharacter.icon = 'img1028';
-        console.log(this.scene);
       } else if (prevVelocity.x > 0) {
         this.setTexture('atlas', 'img1029');
         this.scene.model.world.mainCharacter.position.direction = 'toright';

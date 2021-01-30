@@ -63,7 +63,7 @@ class world1scene1 extends Phaser.Scene {
     const keyObj = this.input.keyboard.addKey('W'); // Get key object
     keyObj.on('down', (event) => {
       // console.log('w');
-      
+
       console.log('gameSet: ', this.gameSet);
       console.log('Model: ', this.model);
     });
@@ -100,6 +100,5 @@ class world1scene1 extends Phaser.Scene {
   stopScene(scene, x, y) {
     this.model.world.mainCharacter.setPosition(scene.scene.key, [x, y]);
     scene.scene.stop(scene.scene.key);
-
   }
 }
