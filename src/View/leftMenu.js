@@ -12,18 +12,12 @@ class leftMenu extends Phaser.GameObjects.Container {
     img3.setOrigin(0, 0);
     this.add(img3);
     this.img3 = img3;
-
-    // this.objectPositionInTheList('Lazer S', 'weaponsLightsaber_510', 2);
-    /* START-USER-CTR-CODE */
-    // Write your code here.
-    /* END-USER-CTR-CODE */
   }
 
   set objectPositionInTheList([subjectName, subjectImage, listPosition, functionPointerDown]) {
     const imagePositionY = 18 + 32 * listPosition;
     const textPositionY = 7 + 32 * listPosition;
 
-    // weaponsLightsaber_5101
     const imageInLeftMenu = this.scene.add.image(18, imagePositionY, 'atlasPersonsObject', subjectImage, functionPointerDown);
     this.add(imageInLeftMenu);
     imageInLeftMenu.setInteractive();
@@ -32,7 +26,6 @@ class leftMenu extends Phaser.GameObjects.Container {
     console.log(imageInLeftMenu);
 
     imageInLeftMenu.on('pointerdown', (pointer) => {
-      // console.log('Cl0', functionPointerDown);
       functionPointerDown();
     });
 
@@ -42,13 +35,24 @@ class leftMenu extends Phaser.GameObjects.Container {
     this.add(textInLeftMenu);
   }
 
-  /* START-USER-CODE */
+  objectPositionInTheList2() {
+    this.scene.gameSet.listOfEquipment.forEach((e) => {
+      console.log('E:', e);
+      const imagePositionY = 18 + 32 * e.position;
+      const textPositionY = 7 + 32 * e.position;
 
-  // Write your code here.
+      const imageInLeftMenu = this.scene.add.image(18, imagePositionY, 'atlasPersonsObject', e.image);
+      this.add(imageInLeftMenu);
+      imageInLeftMenu.setInteractive();
 
-  /* END-USER-CODE */
+      imageInLeftMenu.on('pointerdown', (pointer) => {
+        new Function(e.functionPointerDown)(9);
+      });
+
+      const textInLeftMenu = this.scene.add.text(42, textPositionY, '', {});
+      textInLeftMenu.text = e.text;
+      textInLeftMenu.setStyle({ color: '#020202ff', fontFamily: 'Tahoma' });
+      this.add(textInLeftMenu);
+    });
+  }
 }
-
-/* END OF COMPILED CODE */
-
-// You can write more code here

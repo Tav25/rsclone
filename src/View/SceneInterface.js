@@ -33,8 +33,9 @@ class SceneInterface extends Phaser.Scene {
       if (this.gameSet.locatorScene) { this.gameSet.locatorScene = false; } else { this.gameSet.locatorScene = true; }
       console.log(this.gameSet);
     }];
-    // img3.objectPositionInTheList = ['Phaser 45', '5,000Credits_405', 1];
-    // img3.objectPositionInTheList = ['Phaser S', 'weaponsLightsaber_510', 1];
+
+    img3.objectPositionInTheList2();
+    // img3.objectPositionInTheList2 = ['Phaser S', 'weaponsLightsaber_510', 1];
 
     // this.openTopMenuFile = new openTopMenu(this, 106, 28);
     // // this.openTopMenuFile
