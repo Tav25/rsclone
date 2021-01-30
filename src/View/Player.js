@@ -6,23 +6,25 @@ class Player extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, texture, frame) {
     super(scene, x, y);
 
-    this.setTexture('atlas', 'img1029');
+    this.scene = scene;
 
+    
     // this (components)
-    const thisComponentAnim = new ComponentAnim(this);
-    thisComponentAnim.animationKey = 'goToBottom';
+    // const thisComponentAnim = new ComponentAnim(this);
+    // thisComponentAnim.animationKey = 'goToBottom';
     new Physics(this);
-
+    
     const thisPhysicsBody = new PhysicsBody(this);
     thisPhysicsBody.bodyX = 4;
     thisPhysicsBody.bodyY = 4;
     thisPhysicsBody.bodyWidth = 26;
     thisPhysicsBody.bodyHeight = 26;
-
+    
     this.gameSet = scene.cache.json.get('gameSettings');
     this.gameSet.hero.lifePoints = 10;
-    console.log(scene);
-    console.log(this);
+    // console.log(scene);
+    // console.log(this);
+    this.setTexture('atlas', this.scene.gameSet.hero.image);
   }
 
   /* START-USER-CODE */
@@ -58,10 +60,24 @@ class Player extends Phaser.GameObjects.Sprite {
     } else {
       this.stop();
 
-      if (prevVelocity.x < 0) this.setTexture('atlas', 'img1028');
-      else if (prevVelocity.x > 0) this.setTexture('atlas', 'img1029');
-      else if (prevVelocity.y < 0) this.setTexture('atlas', 'img1032');
-      else if (prevVelocity.y > 0) this.setTexture('atlas', 'img1781');
+      if (prevVelocity.x < 0) {
+        this.setTexture('atlas', 'img1028');
+        this.scene.gameSet.hero.direction = 'left';
+        this.scene.gameSet.hero.image = 'img1028'
+        console.log(this.scene);
+      } else if (prevVelocity.x > 0) {
+        this.setTexture('atlas', 'img1029');
+        this.scene.gameSet.hero.direction = 'right';
+        this.scene.gameSet.hero.image = 'img1029'
+      } else if (prevVelocity.y < 0) {
+        this.setTexture('atlas', 'img1032');
+        this.scene.gameSet.hero.direction = 'top';
+        this.scene.gameSet.hero.image = 'img1032'
+      } else if (prevVelocity.y > 0) {
+        this.setTexture('atlas', 'img1781');
+        this.scene.gameSet.hero.direction = 'bottom';
+        this.scene.gameSet.hero.image = 'img1781'
+      }
     }
   }
 

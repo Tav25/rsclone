@@ -3,7 +3,10 @@
         "x": 276,
         "y": 375,
         "lifePoints": 55,
-        "weapons": "no"
+        "weapons": "no",
+        "direction": "top",
+        "image":"img1029"
+
     },
     "mapArrows": [
         0,
