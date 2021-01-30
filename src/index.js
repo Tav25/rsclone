@@ -1,5 +1,19 @@
 import Phaser from 'phaser';
 import packFile from './assets/asset-pack.json';
+
+import Database from './Model/DatabaseInterface';
+import Model from './Model/Model';
+
+const database = new Database();
+const model = new Model(database);
+
+document.addEventListener('DOMContentLoaded', async () => {
+  await model.newWorld();
+  const game = new Phaser.Game(config);
+});
+
+// import Model from './Model/Model'
+// const model  = new Model;
 // import './testTemplate';
 
 class MyGame extends Phaser.Scene {
@@ -14,7 +28,7 @@ class MyGame extends Phaser.Scene {
 
   create() {
     // const logo = this.add.image(400, 150, 'logo');
-    this.scene.start('SceneInterface');
+    this.scene.start('SceneInterface', model);
   }
 }
 
@@ -39,5 +53,3 @@ const config = {
   },
   scene: MyGame,
 };
-
-const game = new Phaser.Game(config);

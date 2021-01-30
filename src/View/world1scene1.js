@@ -16,6 +16,11 @@ class world1scene1 extends Phaser.Scene {
     // this.sceneName = this.scene.key
   }
 
+  init(model) {
+    this.model = model;
+    // console.log('sc1:', this.model);
+  }
+
   create() {
     this.gameSet = this.cache.json.get('gameSettings');
     this.gameSet.mapArrows = [1, 1, 1, 1];
@@ -26,7 +31,7 @@ class world1scene1 extends Phaser.Scene {
     this.lay1 = this.map.createLayer('bottomLayer', ['sprites'], 0, 0);
     this.lay2 = this.map.createLayer('middleLayer', ['sprites'], 0, 0);
 
-    this.player1 = new Player(this, this.gameSet.hero.x, this.gameSet.hero.y);
+    this.player1 = new Player(this);
     this.add.existing(this.player1);
 
     // camera
@@ -58,7 +63,9 @@ class world1scene1 extends Phaser.Scene {
     const keyObj = this.input.keyboard.addKey('W'); // Get key object
     keyObj.on('down', (event) => {
       // console.log('w');
+      
       console.log('gameSet: ', this.gameSet);
+      console.log('Model: ', this.model);
     });
 
     keyObj.on('up', (event) => { /* ... */ });
@@ -75,7 +82,7 @@ class world1scene1 extends Phaser.Scene {
 
     if (this.gameSet.locatorScene) {
       this.stopScene(this, this.player1.x, this.player1.y);
-      this.scene.start('SceneLocator');
+      this.scene.start('SceneLocator', this.model);
     }
 
     // this.text.setText([
@@ -91,12 +98,8 @@ class world1scene1 extends Phaser.Scene {
   }
 
   stopScene(scene, x, y) {
-    scene.gameSet.hero.x = x;
-    scene.gameSet.hero.y = y;
-    scene.gameSet.currentLocation = scene.scene.key;
-    this.player1.destroy();
+    this.model.world.mainCharacter.setPosition(scene.scene.key, [x, y]);
     scene.scene.stop(scene.scene.key);
 
-    console.log(scene.scene.key);
   }
 }

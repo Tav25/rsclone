@@ -14,7 +14,12 @@ class SceneLocator extends Phaser.Scene {
     /* START-USER-CTR-CODE */
     this.mainMap = 'LokatorMap';
     /* END-USER-CTR-CODE */
-    console.log(text);
+    // console.log(text);
+  }
+
+  init(model) {
+    this.model = model;
+    // console.log('Locator:', this.model);
   }
 
   create() {
@@ -69,12 +74,12 @@ class SceneLocator extends Phaser.Scene {
   update() {
     if (!this.gameSet.locatorScene) {
       this.scene.stop('SceneLocator');
-      this.scene.start(this.gameSet.currentLocation);
+      this.scene.start(this.model.world.mainCharacter.position.location);
     }
   }
 
   blinkObj(obj) {
-    console.log('this++++', this);
+    // console.log('this++++', this);
     this.time.addEvent({
       repeat: -1,
       delay: 500,

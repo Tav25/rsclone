@@ -1,11 +1,8 @@
 {
     "hero": {
-        "x": 276,
-        "y": 375,
+        
         "lifePoints": 55,
-        "weapons": "no",
-        "direction": "top",
-        "image":"img1029"
+        "weapons": "no"
 
     },
     "mapArrows": [
@@ -15,7 +12,7 @@
         0
     ],
     "locatorScene": false,
-    "currentLocation": "",
+    "currentLocation": "world1scene1",
     "listOfEquipment": [
         {
             "image": "Locator_421",

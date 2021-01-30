@@ -3,11 +3,16 @@ class SceneInterface extends Phaser.Scene {
     super('SceneInterface');
   }
 
+  init(model) {
+    this.model = model;
+    console.log(this.model);
+  }
+
   create() {
     this.gameSet = this.cache.json.get('gameSettings');
     console.log(this.gameSet);
 
-    this.sc = this.scene.launch('world1scene1');
+    this.sc = this.scene.launch('world1scene1', this.model);
 
     const rectangle = this.add.rectangle(306, 50, 210, 295);
     rectangle.setOrigin(0, 0);

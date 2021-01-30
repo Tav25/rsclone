@@ -26,7 +26,7 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
     super(scene, x, y);
 
     this.scene = scene;
-    console.log('++++++++++++++', scene.gameSet);
+    // console.log('++++++++++++++', scene.gameSet);
   }
 
   ItemsOnScene() {
