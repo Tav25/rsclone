@@ -16,6 +16,12 @@ class world1scene1 extends Phaser.Scene {
     // this.sceneName = this.scene.key
   }
 
+  init(model)
+  {
+      this.model = model;
+      console.log("sc1:",this.model)
+  }
+
   create() {
     this.gameSet = this.cache.json.get('gameSettings');
     this.gameSet.mapArrows = [1, 1, 1, 1];

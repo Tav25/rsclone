@@ -8,7 +8,7 @@ class Player extends Phaser.GameObjects.Sprite {
 
     this.scene = scene;
 
-    // this (components)
+    console.log("MODEL",this.scene.model)
     // const thisComponentAnim = new ComponentAnim(this);
     // thisComponentAnim.animationKey = 'goToBottom';
     new Physics(this);
@@ -20,10 +20,12 @@ class Player extends Phaser.GameObjects.Sprite {
     thisPhysicsBody.bodyHeight = 26;
 
     this.gameSet = scene.cache.json.get('gameSettings');
-    this.gameSet.hero.lifePoints = 10;
+    // this.gameSet.hero.lifePoints = 10;
     // console.log(scene);
     // console.log(this);
     this.setTexture('atlas', this.scene.gameSet.hero.image);
+
+
   }
 
   /* START-USER-CODE */
