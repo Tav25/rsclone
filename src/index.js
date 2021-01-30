@@ -5,7 +5,6 @@ import packFile from './assets/asset-pack.json';
 class MyGame extends Phaser.Scene {
   constructor() {
     super();
-    this.xxx = 10;
   }
 
   preload() {
