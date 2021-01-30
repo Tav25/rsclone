@@ -60,7 +60,7 @@ class SceneLocator extends Phaser.Scene {
         y: 144,
       },
     };
-    const objectOnTheSceneInterface = new ObjectOnTheScene(this, mapPosition[this.gameSet.currentLocation].x, mapPosition[this.gameSet.currentLocation].y, 'atlasPersonsObject', '837');
+    const objectOnTheSceneInterface = new ObjectInBox(this, mapPosition[this.gameSet.currentLocation].x, mapPosition[this.gameSet.currentLocation].y, 'atlasPersonsObject', '837');
     this.blinkObj(objectOnTheSceneInterface);
   }
 
@@ -74,6 +74,7 @@ class SceneLocator extends Phaser.Scene {
   }
 
   blinkObj(obj) {
+    console.log('this++++', this);
     this.time.addEvent({
       repeat: -1,
       delay: 500,

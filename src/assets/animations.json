@@ -149,6 +149,48 @@
             "frameRate": 5,
             "skipMissedFrames": true,
             "hideOnComplete": true
+        },
+        {
+            "key": "laserSwordRight",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas",
+                    "frame": "img1040",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img1042",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "animation34",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas",
+                    "frame": "img1039",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img1041",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
         }
     ],
     "globalTimeScale": 1,
