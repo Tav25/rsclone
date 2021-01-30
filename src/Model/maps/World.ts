@@ -11,6 +11,7 @@ export default class World {
   goal: TGoal;
   map: string;
   startItems: TItem[];
+  heroIcon: string;
   startLocation: Position;
   locationList: TLocation[];
   locations: Location[];
@@ -29,6 +30,7 @@ export default class World {
     }
     this.map = worldObject.map;
     this.startItems = worldObject.startItems;
+    this.heroIcon = worldObject.heroIcon;
     this.startLocation = worldObject.startLocation;
     this.locationList = worldObject.locations;
     this.worldSize = this.locationList.length;
@@ -47,7 +49,7 @@ export default class World {
         this.goal.target = target;
       };
     });
-    this.mainCharacter = new MainCharacter(this.startLocation);
+    this.mainCharacter = new MainCharacter(this.startLocation, this.heroIcon);
     this.startItems.forEach((item) => this.mainCharacter.pickItem(new Weapon(item)));
     this.startTime = Date.now();
     this.elapsedTime = 0;

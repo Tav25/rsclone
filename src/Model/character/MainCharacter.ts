@@ -10,12 +10,14 @@ import Inventory from "./Inventory";
 import Position from "./Position";
 
 export default class MainCharacter {
+  icon: string;
   inventory: Inventory;
   health: Health;
   equipment: Equipment;
   position: Position;
 
-  constructor(position: Position) {
+  constructor(position: Position, icon: string) {
+    this.icon = icon;
     this.inventory = new Inventory();
     this.health = new Health();
     this.equipment = new Equipment();
