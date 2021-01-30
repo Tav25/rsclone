@@ -1,5 +1,6 @@
 import Database from './Model/Database.ts';
 import Model from './Model/Model.ts';
+import Controller from './Controller/Controller';
 
 const container = document.createElement('div');
 document.body.append(container);
@@ -80,6 +81,7 @@ input3.value = 'test message';
 
 const database = new Database();
 const model = new Model(database);
+const controller = new Controller(model);
 
 getAllButton.addEventListener('click', async () => {
   const response = await database.getAll(input1.value);
@@ -115,6 +117,7 @@ deleteButton.addEventListener('click', async () => {
 
 newWorldButton.addEventListener('click', async () => {
   window.model = model;
+  window.controller = controller;
+  await controller.init();
   await model.newWorld();
-  console.log(model.world);
 });

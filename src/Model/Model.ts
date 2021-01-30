@@ -41,6 +41,7 @@ export default class Model {
     this.user = new User(userName);
     localStorage.setItem('tav25-levendor-rsclone-user', userName);
     await this.database.create('userProfiles', this.user.name, this.user);
+    await this.getUsers();
     return true;
   }
 
