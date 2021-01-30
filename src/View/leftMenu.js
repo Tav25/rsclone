@@ -22,8 +22,8 @@ class leftMenu extends Phaser.GameObjects.Container {
     this.add(imageInLeftMenu);
     imageInLeftMenu.setInteractive();
 
-    console.log('Cl1');
-    console.log(imageInLeftMenu);
+    // console.log('Cl1');
+    // console.log(imageInLeftMenu);
 
     imageInLeftMenu.on('pointerdown', (pointer) => {
       functionPointerDown();
@@ -37,7 +37,7 @@ class leftMenu extends Phaser.GameObjects.Container {
 
   objectPositionInTheList2() {
     this.scene.gameSet.listOfEquipment.forEach((e) => {
-      console.log('E:', e);
+      // console.log('E:', e);
       const imagePositionY = 18 + 32 * e.position;
       const textPositionY = 7 + 32 * e.position;
 

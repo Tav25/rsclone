@@ -3,14 +3,12 @@ class SceneInterface extends Phaser.Scene {
     super('SceneInterface');
   }
 
-  init(model)
-    {
-        this.model = model;
-        console.log(this.model)
-    }
+  init(model) {
+    this.model = model;
+    console.log(this.model);
+  }
 
   create() {
-
     this.gameSet = this.cache.json.get('gameSettings');
     console.log(this.gameSet);
 
