@@ -39,7 +39,8 @@ class world1scene1 extends Phaser.Scene {
     const items = new Item(this);
     items.ItemsOnScene();
 
-    const b3 = new ObjectOnTheScene(this, 221, 184, 'atlasPersonsObject', 'AdeganCrystal_459', () => { console.log('555'); });
+    const b3 = new ObjectOnTheScene(this);
+    b3.ItemsOnScene();
 
     const object1Test = new RectanglePhysics(this, 414, 207, 26, 18, () => { this.stopScene(this, 143, 270); this.scene.start('world1scene6'); });
     const object2Test = new RectanglePhysics(this, 260, 416, 26, 18, () => { this.player1.x = 270; this.player1.y = 530; });
@@ -56,8 +57,8 @@ class world1scene1 extends Phaser.Scene {
     // key
     const keyObj = this.input.keyboard.addKey('W'); // Get key object
     keyObj.on('down', (event) => {
-      console.log('w');
-      console.log(this.scene.key);
+      // console.log('w');
+      console.log('gameSet: ', this.gameSet);
     });
 
     keyObj.on('up', (event) => { /* ... */ });
