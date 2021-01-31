@@ -37,6 +37,7 @@ class Dialog extends Phaser.GameObjects.Container {
       this.scene.model.isBlocked = false;
       console.log('roundCloseButton');
       this.visible = false;
+      this.scene.model.world.mainCharacter.setPosition(this.scene.scene.key, [this.scene.player1.x, this.scene.player1.y]);
 		  });
   }
 }
