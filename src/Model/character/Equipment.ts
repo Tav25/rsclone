@@ -1,5 +1,4 @@
 import Weapon from "../items/Weapon";
-import { TItem } from "../types/types";
 
 export default class Equipment {
   equippedWeapon: Weapon;

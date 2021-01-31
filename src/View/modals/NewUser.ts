@@ -81,7 +81,7 @@ export default class NewUser {
       } else if (userList.value) {
         this.model.loadUser(userList.value);
         newUserWindow.remove();
-      } else  {
+      } else {
         input.value = 'You must register!';
         okButton.classList.add('disabled');
         setTimeout(() => {

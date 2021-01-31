@@ -61,26 +61,28 @@ export default class Model {
 
   loadGame(saveGameName: string): boolean {
     const saveGame = this.savedGamesList.find((saveGame: TSavedGame) => saveGame.name === saveGameName);
-    this.world = saveGame.world;
-    this.world.setCurrentTime();
+    this.world = new World(saveGame.world);
+    this.world.init();
     return true;
   }
 
-  async saveGame(gameName: string, position: Position) {
+  async saveGame(gameName: string) {
+    if ((/[\/|\\|\.|\"|\$|\*|\<|\>|\:|\||\?]/).test(gameName) || gameName === '' || gameName.startsWith('system.') || gameName.length >= 120) return false;
+
     this.world.setFinishTime();
     this.world.setCurrentTime();
-    this.world.mainCharacter.setPosition(position.location, position.coordinates, position.direction);
 
     const savedGame: TSavedGame = {
       name: gameName,
-      world: this.world,
+      world: this.world.worldObject,
     };
 
     await this.database.create('savedGames', this.user.name, savedGame);
 
-    this.user.increaseUserSavesNumber();
-
+    this.user.savesNumber += 1;
     await this.database.update('userProfiles', this.user.name, this.user);
+
+    await this.getSavedGamesList();
 
     return true;
   }
