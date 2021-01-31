@@ -5,7 +5,6 @@ import Database from './Model/DatabaseInterface.ts';
 import Model from './Model/Model.ts';
 
 import NewUser from './View/modals/NewUser.ts';
-import './View/modals/newUser.scss';
 
 const database = new Database();
 const model = new Model(database);
