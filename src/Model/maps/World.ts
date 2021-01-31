@@ -5,7 +5,14 @@ import Locator from '../items/Locator';
 import MedKit from '../items/MedKit';
 import QuestItem from '../items/QuestItem';
 import Weapon from '../items/Weapon';
-import { TGoal, TItem, TLocation, TWorld } from '../types/types';
+import Character from '../objects/Character';
+import CommonObject from '../objects/CommonObject';
+import Crate from '../objects/Crate';
+import Door from '../objects/Door';
+import Enemy from '../objects/Enemy';
+import TradingPlace from '../objects/TradingPlace';
+import Trigger from '../objects/Trigger';
+import { TGoal, TItem, TLocation, TObject, TWorld } from '../types/types';
 import Location from './Location';
 
 export default class World {
@@ -75,6 +82,8 @@ export default class World {
     });
     this.startTime = Date.now();
     this.elapsedTime = 0;
+
+    console.log(this.worldObject);
   }
 
   setCurrentTime(): void {
@@ -94,9 +103,34 @@ export default class World {
     return this.mainCharacter.isDead();
   }
 
-  // convertToTWorld(): TWorld {
-  //   const convertedWorld: TWorld = {};
+  convertToTWorld() {
+    const convertedWorld: TWorld = this.worldObject;
 
-  //   return convertedWorld;
-  // }
+    convertedWorld.startItems = [];
+    this.mainCharacter.inventory.itemList.forEach((item) => {
+      convertedWorld.startItems.push(item.itemObject);
+    });
+
+    this.locations.forEach((location: Location) => {
+      location.objects.forEach((object: CommonObject | Character | Crate | Door | Enemy | TradingPlace | Trigger) => {
+        console.log(object);
+      })
+    });
+    // {
+    //   locationRecord.objects.forEach((objectRecord: TObject) => {
+    //     const instanceLocation = this.locations.find((location: Location) => {
+    //       locationRecord.name === location.name;
+    //     });
+    //     console.log(instanceLocation);
+    //     const instanceObject = instanceLocation.objects.find((object: ) => {
+    //       objectRecord.name === object.name;
+    //     });
+    //     objectRecord.icon = instanceObject.icon;
+    //     objectRecord.triggered = instanceObject.triggered;
+    //     objectRecord.isFirstVisit = instanceObject.isFirstVisit;
+    //     objectRecord.isAccepted = instanceObject.isAccepted;
+    //   });
+    // })
+    return convertedWorld;
+  }
 }

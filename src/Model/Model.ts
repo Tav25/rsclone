@@ -74,7 +74,7 @@ export default class Model {
 
     const savedGame: TSavedGame = {
       name: gameName,
-      world: this.world.worldObject,
+      world: this.world.convertToTWorld(),
     };
 
     await this.database.create('savedGames', this.user.name, savedGame);
