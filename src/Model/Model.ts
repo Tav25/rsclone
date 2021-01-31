@@ -23,8 +23,11 @@ export default class Model {
 
   async getUsers() {
     const userList = await this.database.getAll('userProfiles');
-    this.userList = userList.map((user) => user.content);
-    return true;
+    this.userList = userList.map((user: any) => user.content);
+    if (!!localStorage.getItem('tav25-levendor-rsclone-user')) {
+      this.user = this.userList.find((user) => user.name === localStorage.getItem('tav25-levendor-rsclone-user'));
+      return true;
+    } else return false;
   }
 
   loadUser(userName: string): boolean {
