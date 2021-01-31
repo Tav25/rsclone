@@ -7,10 +7,12 @@ import Weapon from '../items/Weapon';
 export default class Inventory {
   itemList: (Junk | Locator | MedKit | QuestItem | Weapon)[];
   inventorySize: number;
+  isChanged: boolean;
 
   constructor() {
     this.itemList = [];
     this.inventorySize = 0;
+    this.isChanged = false;
   }
 
   getItemList(): (Junk | Locator | MedKit | QuestItem | Weapon)[] {
@@ -26,6 +28,7 @@ export default class Inventory {
   addItem(item: Junk | Locator | MedKit | QuestItem | Weapon): void {
     this.itemList.push(item);
     this.inventorySize += 1;
+    this.isChanged = true;
   }
 
   removeItem(itemName: string): void {
@@ -33,11 +36,16 @@ export default class Inventory {
       const removedItemIndex: number = this.itemList.findIndex((item) => item.name === itemName);
       this.itemList.splice(removedItemIndex, 1);
       this.inventorySize -= 1;
+      this.isChanged = true;
     }
   }
 
   hasItem(itemName: string): boolean {
     const index = this.itemList.findIndex((item) => item.name === itemName);
     return index === -1 ? false : true;
+  }
+
+  isRendered(): void {
+    this.isChanged = false;
   }
 }
