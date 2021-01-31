@@ -55,9 +55,9 @@
                 "key": "junks"
             },
             {
-                "url": "src/View/leftMenu.js",
+                "url": "src/View/Inventory.js",
                 "type": "script",
-                "key": "leftMenu"
+                "key": "Inventory"
             },
             {
                 "url": "src/View/Item.js",
@@ -218,9 +218,24 @@
                 "key": "sprites"
             },
             {
+                "url": "src/assets/image/dialog.png",
+                "type": "image",
+                "key": "dialog"
+            },
+            {
                 "url": "src/View/topMenuText.js",
                 "type": "script",
                 "key": "topMenuText"
+            },
+            {
+                "url": "src/View/Dialog.js",
+                "type": "script",
+                "key": "Dialog"
+            },
+            {
+                "url": "src/View/EquippedWeapon.js",
+                "type": "script",
+                "key": "EquippedWeapon"
             },
             {
                 "atlasURL": "src/assets/atlas/weapons.json",

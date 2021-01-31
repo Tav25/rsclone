@@ -40,6 +40,8 @@ class world1scene1 extends Phaser.Scene {
     // cursor
     this.cursors = this.input.keyboard.createCursorKeys();
 
+    // dialog
+    this.dialog = new Dialog(this);
     // objects
     const items = new Item(this);
     items.ItemsOnScene();
@@ -51,10 +53,10 @@ class world1scene1 extends Phaser.Scene {
     const object2Test = new RectanglePhysics(this, 260, 416, 26, 18, () => { this.player1.x = 270; this.player1.y = 530; });
     const object3Test = new RectanglePhysics(this, 260, 495, 26, 18, () => { this.player1.x = 270; this.player1.y = 400; });
 
-    const rectangleTop = new RectanglePhysics(this, 0, -2, this.map.widthInPixels, 3, () => { this.stopScene(this, this.player1.x, 545); this.scene.start('world1scene2'); });
-    const rectangleRight = new RectanglePhysics(this, 576, 0, 3, 576, () => { this.stopScene(this, 20, this.player1.y); this.scene.start('world1scene3'); });
-    const rectangleBottom = new RectanglePhysics(this, 0, 575, this.map.widthInPixels, 3, () => { this.stopScene(this, this.player1.x, 20); this.scene.start('world1scene4'); });
-    const rectangleLeft = new RectanglePhysics(this, -2, 0, 3, this.map.heightInPixels, () => { this.stopScene(this, 545, this.player1.y); this.scene.start('world1scene5'); });
+    const rectangleTop = new RectanglePhysics(this, 0, -2, this.map.widthInPixels, 3, () => { this.stopScene(this, this.player1.x, 545); this.scene.start('world1scene2', this.model); });
+    const rectangleRight = new RectanglePhysics(this, 576, 0, 3, 576, () => { this.stopScene(this, 20, this.player1.y); this.scene.start('world1scene3', this.model); });
+    const rectangleBottom = new RectanglePhysics(this, 0, 575, this.map.widthInPixels, 3, () => { this.stopScene(this, this.player1.x, 20); this.scene.start('world1scene4', this.model); });
+    const rectangleLeft = new RectanglePhysics(this, -2, 0, 3, this.map.heightInPixels, () => { this.stopScene(this, 545, this.player1.y); this.scene.start('world1scene5', this.model); });
 
     // text
     // this.text = this.add.text(10, 10).setScrollFactor(0).setFontSize(12).setColor('#273746');
@@ -63,9 +65,10 @@ class world1scene1 extends Phaser.Scene {
     const keyObj = this.input.keyboard.addKey('W'); // Get key object
     keyObj.on('down', (event) => {
       // console.log('w');
-      
+
       console.log('gameSet: ', this.gameSet);
       console.log('Model: ', this.model);
+      console.log('Model: ', this.model.isBlocked);
     });
 
     keyObj.on('up', (event) => { /* ... */ });
@@ -75,6 +78,9 @@ class world1scene1 extends Phaser.Scene {
     this.physics.add.collider(this.player1, this.lay2);
     this.lay3 = this.map.createLayer('topLayer', ['sprites'], 0, 0);
     this.player1.weaponAttack(this);
+
+    // this.dialog.initDialog()
+    this.add.existing(this.dialog);
   }
 
   update() {
@@ -100,6 +106,5 @@ class world1scene1 extends Phaser.Scene {
   stopScene(scene, x, y) {
     this.model.world.mainCharacter.setPosition(scene.scene.key, [x, y]);
     scene.scene.stop(scene.scene.key);
-
   }
 }
