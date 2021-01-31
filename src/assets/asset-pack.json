@@ -55,9 +55,9 @@
                 "key": "junks"
             },
             {
-                "url": "src/View/leftMenu.js",
+                "url": "src/View/Inventory.js",
                 "type": "script",
-                "key": "leftMenu"
+                "key": "Inventory"
             },
             {
                 "url": "src/View/Item.js",
