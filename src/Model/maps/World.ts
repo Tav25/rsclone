@@ -82,8 +82,6 @@ export default class World {
     });
     this.startTime = Date.now();
     this.elapsedTime = 0;
-
-    console.log(this.worldObject);
   }
 
   setCurrentTime(): void {
