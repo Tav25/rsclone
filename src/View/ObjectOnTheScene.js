@@ -72,7 +72,7 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
               .isThisItemYouNeed(e.itemToActivate));
 
             const speech = e.getDialog();
-            this.scene.dialog.initDialog(e.position.coordinates, speech);
+            if (speech) this.scene.dialog.initDialog(e.position.coordinates, speech);
             console.log(speech);
 
             if (itemToTake) {
