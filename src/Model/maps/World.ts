@@ -111,26 +111,15 @@ export default class World {
       convertedWorld.startItems.push(item.itemObject);
     });
 
-    this.locations.forEach((location: Location) => {
-      location.objects.forEach((object: CommonObject | Character | Crate | Door | Enemy | TradingPlace | Trigger) => {
-        console.log(object);
+    this.locations.forEach((location: Location, locIndex: number) => {
+      location.objects.forEach((object: CommonObject | Character | Crate | Door | Enemy | TradingPlace | Trigger, objIndex: number) => {
+        const objRecord = convertedWorld.locations[locIndex].objects[objIndex];
+        objRecord.icon = object.icon;
+        objRecord.triggered = object.triggered;
+        objRecord.isFirstVisit = object.isFirstVisit;
+        objRecord.isAccepted = object.isAccepted;
       })
     });
-    // {
-    //   locationRecord.objects.forEach((objectRecord: TObject) => {
-    //     const instanceLocation = this.locations.find((location: Location) => {
-    //       locationRecord.name === location.name;
-    //     });
-    //     console.log(instanceLocation);
-    //     const instanceObject = instanceLocation.objects.find((object: ) => {
-    //       objectRecord.name === object.name;
-    //     });
-    //     objectRecord.icon = instanceObject.icon;
-    //     objectRecord.triggered = instanceObject.triggered;
-    //     objectRecord.isFirstVisit = instanceObject.isFirstVisit;
-    //     objectRecord.isAccepted = instanceObject.isAccepted;
-    //   });
-    // })
     return convertedWorld;
   }
 }
