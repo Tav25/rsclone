@@ -17,7 +17,7 @@ export default class TradingPlace extends CommonObject{
     return !!itemInstance.isTradable;
   }
 
-  activate(itemInstance: Junk): ItemOnTheGround {
+  activate(itemInstance?: Junk): ItemOnTheGround {
     if (!this.isFirstVisit) {
       if (this.isValidKey(itemInstance)) {
         this.triggered = true;

@@ -14,15 +14,15 @@ export default class Crate extends CommonObject {
     this.returnedItem = objectObject.returnedItem;
   }
 
-  activate(itemInstance: Junk | QuestItem): ItemOnTheGround {
-    if (!this.isFirstVisit) {
+  activate(itemInstance?: Junk | QuestItem): ItemOnTheGround {
+    if (!this.isFirstVisit && !this.triggered) {
       if (this.isKeyNeededToOpen) {
         if (this.isValidKey(itemInstance)) {
           this.triggered = true;
           this.icon = this.openedIcon;
           return new ItemOnTheGround(this, this.returnedItem);
         }
-      } else if (this.triggerToActivate) {
+      } else if (this.isTriggerNeededToOpen) {
         if (this.isTriggered()) {
           this.triggered = true;
           this.icon = this.openedIcon;
