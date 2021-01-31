@@ -247,7 +247,9 @@
     "WebContent/weapons/Yoda_780.png",
     "WebContent/weapons/Yoda'sBack_1993.png",
     "WebContent/weapons/Yubnut_528.png",
-    "WebContent/weapons/837.png"
+    "WebContent/weapons/837.png",
+    "WebContent/weapons/dialog.png",
+    "WebContent/weapons/roundCloseButton.png"
   ],
   "settings": {
     "pot": false,

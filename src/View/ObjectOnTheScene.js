@@ -29,7 +29,7 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
     // console.log('++++++++++++++', scene.gameSet);
   }
 
-  ItemsOnScene() {
+  ItemsOnScene2() {
     this.scene.gameSet.objectOnMap.forEach((e) => {
       // if(this.scene..key)
       if (this.scene.sys.config === e.location) {
@@ -44,6 +44,42 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
           new Function(e.functionCollision)();
         });
         this.scene.physics.add.collider(this.scene.player1, itemObj);//
+      }
+    });
+  }
+
+  ItemsOnScene() {
+    // console.log(this.scene.model.world.locations[0].objects);
+
+    this.scene.model.world.locations.forEach((e) => {
+      if (e.locationObject.name === this.scene.sys.config) {
+        e.objects.forEach((e) => {
+          console.log(e);
+
+          const itemObj = this.scene.add.image(e.position.coordinates[0], e.position.coordinates[1], 'atlasPersonsObject', e.icon.toBottom);
+
+          const thisPhysicsBody = new PhysicsBody(itemObj);
+
+          this.scene.physics.add.existing(itemObj, true);
+
+          this.scene.add.existing(itemObj);
+          this.scene.physics.add.overlap(this.scene.player1, itemObj, () => {
+            console.log('JJJ');
+            let item;
+            if (!e.isFirstVisit) {
+              item = e.activate(this.scene.model.world.mainCharacter.giveItem(e.itemToActivate));
+            }
+            const speech = e.getDialog();
+
+            this.scene.dialog.initDialog(e.position.coordinates, speech);
+            console.log('iT', item);
+            if (item) {
+              this.scene.model.world.mainCharacter.pickItem(item.activate());
+            }
+            console.log(speech);
+          });
+          this.scene.physics.add.collider(this.scene.player1, itemObj);//
+        });
       }
     });
   }

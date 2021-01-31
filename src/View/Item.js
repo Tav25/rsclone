@@ -11,10 +11,10 @@ class Item extends Phaser.GameObjects.Container {
   }
 
   objectPositionInTheList() {
-    const imageInLeftMenu = this.scene.add.image(228, 228, 'atlasPersonsObject', this.scene.gameSet.objectOnMap.Locator_421.image);
-    this.add(imageInLeftMenu);
-    imageInLeftMenu.setInteractive();
-    imageInLeftMenu.on('pointerdown', (pointer) => {
+    const imageInInventory = this.scene.add.image(228, 228, 'atlasPersonsObject', this.scene.gameSet.objectOnMap.Locator_421.image);
+    this.add(imageInInventory);
+    imageInInventory.setInteractive();
+    imageInInventory.on('pointerdown', (pointer) => {
       new Function(this.scene.gameSet.objectOnMap.Locator_421.functionPointerDown)();
     });
   }
