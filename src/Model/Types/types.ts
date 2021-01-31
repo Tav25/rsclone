@@ -74,11 +74,11 @@ export type TWorld = {
   map: string;
   startItems: TItem[];
   heroIcon: string;
-  startLocation: Position;
+  startPosition: Position;
   locations: TLocation[];
 }
 
 export type TSavedGame = {
   name: string;
-  world: World;
+  world: TWorld;
 }
