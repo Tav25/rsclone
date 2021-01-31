@@ -65,18 +65,18 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
           this.scene.add.existing(itemObj);
           this.scene.physics.add.overlap(this.scene.player1, itemObj, () => {
             console.log('JJJ');
-            let item;
-            if (!e.isFirstVisit) {
-              item = e.activate(this.scene.model.world.mainCharacter.giveItem(e.itemToActivate));
-            }
-            const speech = e.getDialog();
 
+            const itemToTake = e.activate(this.scene.model.world.mainCharacter
+              .isThisItemYouNeed(e.itemToActivate));
+
+            const speech = e.getDialog();
             this.scene.dialog.initDialog(e.position.coordinates, speech);
-            console.log('iT', item);
-            if (item) {
-              this.scene.model.world.mainCharacter.pickItem(item.activate());
-            }
             console.log(speech);
+
+            if (itemToTake) {
+              this.scene.model.world.mainCharacter.giveItem(e.itemToActivate);
+              if (itemToTake) this.scene.model.world.mainCharacter.pickItem(itemToTake.activate());
+            }
           });
           this.scene.physics.add.collider(this.scene.player1, itemObj);//
         });

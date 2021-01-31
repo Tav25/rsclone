@@ -70,6 +70,7 @@ export default class CommonObject {
         return this.greetingDialog;
       } else if (this.triggered && !this.isAccepted) {
         this.isAccepted = true;
+        console.log('accepted');
         return this.acceptDialog;
       } else if (!this.triggered) {
         return this.rejectDialog;

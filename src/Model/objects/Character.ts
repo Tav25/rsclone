@@ -11,23 +11,30 @@ export default class Character extends CommonObject {
     this.returnedItem = objectObject.returnedItem;
   }
 
-  activate(itemInstance: QuestItem): ItemOnTheGround {
+  activate(itemInstance?: QuestItem): ItemOnTheGround {
     if (!this.isFirstVisit) {
       if (this.isKeyNeededToOpen) {
         if (this.isValidKey(itemInstance)) {
           this.triggered = true;
-          console.log('item transferred!')
-          return new ItemOnTheGround(this, this.returnedItem);
+          return this.returnItem();
         }
       } else if (this.triggerToActivate) {
         if (this.isTriggered()) {
           this.triggered = true;
-          return new ItemOnTheGround(this, this.returnedItem);
+          return this.returnItem();
         }
       } else {
         this.triggered = true;
-        return new ItemOnTheGround(this, this.returnedItem);
+        return this.returnItem();
       }
     }
   }
+
+  returnItem() {
+    return new ItemOnTheGround(this, this.returnedItem);
+  }
+
+  // triggerTrigger() {
+  //   this.activatedTrigger.target.triggered = true;
+  // }
 }

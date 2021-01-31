@@ -57,6 +57,11 @@ export default class MainCharacter {
     return this.inventory.hasItem(itemName);
   }
 
+  isThisItemYouNeed(itemName: string) {
+    if (this.inventory.hasItem(itemName)) return this.inventory.getItem(itemName);
+    else return undefined;
+  }
+
   giveItem(itemName: string) {
     this.inventory.removeItem(itemName);
     return this.inventory.getItem(itemName);
