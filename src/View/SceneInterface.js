@@ -30,8 +30,7 @@ class SceneInterface extends Phaser.Scene {
     this.add.existing(mainFrame);
     mainFrame.setOrigin(0, 0);
 
-    const img3 = new Inventory(this, 306, 50);
-    this.add.existing(img3);
+
 
     const img4 = new EquippedWeapon(this, 306, 50);
     this.add.existing(img4);
@@ -43,7 +42,8 @@ class SceneInterface extends Phaser.Scene {
     //   console.log(this.gameSet);
     // }];
 
-    img3.objectPositionInTheList3();
+    // this.img3.objectPositionInTheList3();
+
     // img3.objectPositionInTheList3 = ['Phaser S', 'weaponsLightsaber_510', 1];
 
     // this.openTopMenuFile = new openTopMenu(this, 106, 28);
@@ -69,12 +69,22 @@ class SceneInterface extends Phaser.Scene {
     const keyObj = this.input.keyboard.addKey('Q'); // Get key object
     keyObj.on('down', (event) => {
       console.log('Q');
-      console.log(this.sc);
+      console.log(this.model.world.mainCharacter.inventory.isChanged);
     });
+
+    this.inventoryIsChanged = false
   }
 
   update() {
     this.arrows.directionOfMovement = this.gameSet.mapArrows;
+
+    if (this.model.world.mainCharacter.inventory.isChanged) {
+      console.log("Update")
+      this.img3 = new Inventory(this, 306, 50);
+      this.add.existing(this.img3);
+      this.img3.objectPositionInTheList3();
+      this.model.world.mainCharacter.inventory.isRendered()
+    }
     // console.log(this.openTopMenuFile)
   }
 
