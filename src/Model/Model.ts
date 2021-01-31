@@ -10,9 +10,11 @@ export default class Model {
   user: User;
   userList: User[];
   savedGamesList: any[];
+  isBlocked: boolean;
 
   constructor(database: DatabaseInterface) {
     this.database = database;
+    this.isBlocked = false;
   }
 
   async newWorld(worldName: string = 'world1') {
@@ -23,13 +25,18 @@ export default class Model {
 
   async getUsers() {
     const userList = await this.database.getAll('userProfiles');
-    this.userList = userList.map((user) => user.content);
-    return true;
+    this.userList = userList.map((user: any) => user.content);
+    if (!!localStorage.getItem('tav25-levendor-rsclone-user')) {
+      this.user = this.userList.find((user) => user.name === localStorage.getItem('tav25-levendor-rsclone-user'));
+      await this.getSavedGamesList();
+      return this.user;
+    } else return false;
   }
 
-  loadUser(userName: string): boolean {
+  async loadUser(userName: string) {
     const user = this.userList.find((user: User) => user.name === userName);
     this.user = user;
+    await this.getSavedGamesList();
     localStorage.setItem('tav25-levendor-rsclone-user', userName);
     return true;
   }
@@ -41,7 +48,8 @@ export default class Model {
     this.user = new User(userName);
     localStorage.setItem('tav25-levendor-rsclone-user', userName);
     await this.database.create('userProfiles', this.user.name, this.user);
-    await this.getUsers();
+    await this.getSavedGamesList();
+    this.userList.push(this.user);
     return true;
   }
 

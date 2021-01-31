@@ -1,20 +1,20 @@
 import Phaser from 'phaser';
 import packFile from './assets/asset-pack.json';
 
-import Database from './Model/DatabaseInterface';
-import Model from './Model/Model';
+import Database from './Model/DatabaseInterface.ts';
+import Model from './Model/Model.ts';
+
+import NewUser from './View/modals/NewUser.ts';
 
 const database = new Database();
 const model = new Model(database);
+const newUser = new NewUser(model);
 
 document.addEventListener('DOMContentLoaded', async () => {
   await model.newWorld();
   const game = new Phaser.Game(config);
+  if (!(await model.getUsers())) newUser.init();
 });
-
-// import Model from './Model/Model'
-// const model  = new Model;
-// import './testTemplate';
 
 class MyGame extends Phaser.Scene {
   constructor() {

@@ -19,6 +19,8 @@ export default class Enemy extends CommonObject {
     this.isMoving = objectObject.isMoving;
   }
 
+  activate(): void {}
+
   shot(): Enemy {
     return this;
   }
