@@ -49,7 +49,6 @@ class world1scene4 extends Phaser.Scene {
     const b3 = new ObjectOnTheScene(this);
     b3.ItemsOnScene();
 
-
     const rectangleTop = new RectanglePhysics(this, 0, -2, this.map.widthInPixels, 3, () => { this.gameSet.hero.y = 545, this.scene.stop('world1scene4'); this.scene.start('world1scene1'); });
     const rectangleLeft = new RectanglePhysics(this, -2, 0, 3, this.map.heightInPixels, () => { this.gameSet.hero.x = 545; this.gameSet.hero.y = this.player1.y; });
     const rectangleBottom = new RectanglePhysics(this, 0, 575, this.map.widthInPixels, 3, () => { this.gameSet.hero.y = 20; this.gameSet.hero.x = this.player1.x; });

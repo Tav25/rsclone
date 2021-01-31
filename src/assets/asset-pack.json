@@ -233,6 +233,11 @@
                 "key": "Dialog"
             },
             {
+                "url": "src/View/EquippedWeapon.js",
+                "type": "script",
+                "key": "EquippedWeapon"
+            },
+            {
                 "atlasURL": "src/assets/atlas/weapons.json",
                 "textureURL": "src/assets/atlas/weapons.png",
                 "type": "atlas",

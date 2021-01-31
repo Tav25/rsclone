@@ -33,6 +33,10 @@ class SceneInterface extends Phaser.Scene {
     const img3 = new Inventory(this, 306, 50);
     this.add.existing(img3);
 
+    const img4 = new EquippedWeapon(this, 306, 50);
+    this.add.existing(img4);
+    img4.initEquippedWeapon();
+
     // img3.objectPositionInTheList = ['Locator', 'Locator_421', 0, () => {
     //   console.log('Locator');
     //   if (this.gameSet.locatorScene) { this.gameSet.locatorScene = false; } else { this.gameSet.locatorScene = true; }

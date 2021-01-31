@@ -64,57 +64,57 @@ class Player extends Phaser.GameObjects.Sprite {
 
   movePlayer(cursors) {
     if (this.scene.model.isBlocked) {
-      this.stop()
-    }else{
-    const speed = 100;
-    const prevVelocity = this.body.velocity.clone();
-    
-    this.body.setVelocity(0);
-    
-    if (cursors.left.isDown) {
-      this.body.setVelocityX(-speed);
-    } else if (cursors.right.isDown) {
-      this.body.setVelocityX(speed);
-    }
-
-    if (cursors.up.isDown) {
-      this.body.setVelocityY(-speed);
-    } else if (cursors.down.isDown) {
-      this.body.setVelocityY(speed);
-    }
-
-    this.body.velocity.normalize().scale(speed);
-
-    if (cursors.left.isDown) {
-      this.play('goToLeft', true);
-    } else if (cursors.right.isDown) {
-      this.play('goToRight', true);
-    } else if (cursors.up.isDown) {
-      this.play('goToTop', true);
-    } else if (cursors.down.isDown) {
-      this.play('goToBottom', true);
-    } else {
       this.stop();
+    } else {
+      const speed = 100;
+      const prevVelocity = this.body.velocity.clone();
 
-      if (prevVelocity.x < 0) {
-        this.setTexture('atlas', 'img1028');
-        this.scene.model.world.mainCharacter.position.direction = 'toLeft';
-        this.scene.model.world.mainCharacter.icon = 'img1028';
-      } else if (prevVelocity.x > 0) {
-        this.setTexture('atlas', 'img1029');
-        this.scene.model.world.mainCharacter.position.direction = 'toright';
-        this.scene.model.world.mainCharacter.icon = 'img1029';
-      } else if (prevVelocity.y < 0) {
-        this.setTexture('atlas', 'img1032');
-        this.scene.model.world.mainCharacter.position.direction = 'totop';
-        this.scene.model.world.mainCharacter.icon = 'img1032';
-      } else if (prevVelocity.y > 0) {
-        this.setTexture('atlas', 'img1781');
-        this.scene.model.world.mainCharacter.position.direction = 'tobottom';
-        this.scene.model.world.mainCharacter.icon = 'img1781';
+      this.body.setVelocity(0);
+
+      if (cursors.left.isDown) {
+        this.body.setVelocityX(-speed);
+      } else if (cursors.right.isDown) {
+        this.body.setVelocityX(speed);
+      }
+
+      if (cursors.up.isDown) {
+        this.body.setVelocityY(-speed);
+      } else if (cursors.down.isDown) {
+        this.body.setVelocityY(speed);
+      }
+
+      this.body.velocity.normalize().scale(speed);
+
+      if (cursors.left.isDown) {
+        this.play('goToLeft', true);
+      } else if (cursors.right.isDown) {
+        this.play('goToRight', true);
+      } else if (cursors.up.isDown) {
+        this.play('goToTop', true);
+      } else if (cursors.down.isDown) {
+        this.play('goToBottom', true);
+      } else {
+        this.stop();
+
+        if (prevVelocity.x < 0) {
+          this.setTexture('atlas', 'img1028');
+          this.scene.model.world.mainCharacter.position.direction = 'toLeft';
+          this.scene.model.world.mainCharacter.icon = 'img1028';
+        } else if (prevVelocity.x > 0) {
+          this.setTexture('atlas', 'img1029');
+          this.scene.model.world.mainCharacter.position.direction = 'toright';
+          this.scene.model.world.mainCharacter.icon = 'img1029';
+        } else if (prevVelocity.y < 0) {
+          this.setTexture('atlas', 'img1032');
+          this.scene.model.world.mainCharacter.position.direction = 'totop';
+          this.scene.model.world.mainCharacter.icon = 'img1032';
+        } else if (prevVelocity.y > 0) {
+          this.setTexture('atlas', 'img1781');
+          this.scene.model.world.mainCharacter.position.direction = 'tobottom';
+          this.scene.model.world.mainCharacter.icon = 'img1781';
+        }
       }
     }
-  }
   }
 
   /* END-USER-CODE */
