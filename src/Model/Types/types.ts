@@ -35,6 +35,7 @@ export type TGoal = {
 }
 
 export type TObject = {
+  objectObject: TObject;
   type: string;
   position: Position;
   id: string;

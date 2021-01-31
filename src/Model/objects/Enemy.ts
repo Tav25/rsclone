@@ -37,6 +37,7 @@ export default class Enemy extends CommonObject {
   dead(): ItemOnTheGround {
     if (this.isDead()) {
       this.triggered = true;
+      this.icon = null;
       return new ItemOnTheGround(this, this.returnedItem);
     };
   }

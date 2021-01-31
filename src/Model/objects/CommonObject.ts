@@ -6,6 +6,7 @@ import Junk from "../items/Junk";
 import QuestItem from "../items/QuestItem";
 
 export default class CommonObject {
+  objectObject: TObject;
   type: string;
   position: Position;
   id: string;
@@ -24,6 +25,7 @@ export default class CommonObject {
   postDialog: string;
 
   constructor(objectObject: TObject) {
+    this.objectObject = objectObject;
     this.type = objectObject.type;
     this.position = objectObject.position;
     this.id = objectObject.id;

@@ -16,6 +16,7 @@ export default class Character extends CommonObject {
       if (this.isKeyNeededToOpen) {
         if (this.isValidKey(itemInstance)) {
           this.triggered = true;
+          console.log('item transferred!')
           return new ItemOnTheGround(this, this.returnedItem);
         }
       } else if (this.triggerToActivate) {
