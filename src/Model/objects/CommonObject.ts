@@ -57,7 +57,9 @@ export default class CommonObject {
   }
 
   isTriggered(): boolean {
-    return !!this.triggerToActivate.target.triggered || false;
+    if (this.triggerToActivate.name) {
+      return !!this.triggerToActivate.target.triggered || false;
+    }
   }
 
   getDialog(): string {

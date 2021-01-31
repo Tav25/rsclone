@@ -1,6 +1,5 @@
 import './loadGame.scss';
 import Model from "../../Model/Model";
-import World from '../../Model/maps/World';
 
 export default class LoadGame {
   model: Model;

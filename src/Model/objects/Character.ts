@@ -18,7 +18,8 @@ export default class Character extends CommonObject {
           this.triggered = true;
           return this.returnItem();
         }
-      } else if (this.triggerToActivate) {
+      } else if (this.triggerToActivate.name) {
+        console.log(this.triggerToActivate);
         if (this.isTriggered()) {
           this.triggered = true;
           return this.returnItem();

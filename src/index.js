@@ -7,12 +7,14 @@ import Model from './Model/Model.ts';
 import NewUser from './View/modals/NewUser.ts';
 import SaveGame from './View/modals/SaveGame.ts';
 import LoadGame from './View/modals/LoadGame.ts';
+import About from './View/modals/About.ts';
 
 const database = new Database();
 const model = new Model(database);
 const newUser = new NewUser(model);
 const saveGame = new SaveGame(model);
 const loadGame = new LoadGame(model);
+const about = new About(model);
 
 document.addEventListener('DOMContentLoaded', async () => {
   await model.newWorld();
@@ -24,11 +26,11 @@ document.addEventListener('keypress', (event) => {
   if (event.code === 'KeyS' && event.shiftKey === true) {
     saveGame.init();
   }
-});
-
-document.addEventListener('keypress', (event) => {
   if (event.code === 'KeyL' && event.shiftKey === true) {
     loadGame.init();
+  }
+  if (event.code === 'KeyA' && event.shiftKey === true) {
+    about.init();
   }
 });
 
