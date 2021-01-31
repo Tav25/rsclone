@@ -14,6 +14,9 @@ class Dialog extends Phaser.GameObjects.Container {
   initDialog([x, y], speech) {
     // x = 250;
     // y = 350;
+    this.visible = true;
+
+    this.scene.model.isBlocked = true;
 
     console.log('initdiadog');
 
@@ -31,6 +34,7 @@ class Dialog extends Phaser.GameObjects.Container {
     this.add(image);
     image.setInteractive();
     image.on('pointerdown', (pointer) => {
+      this.scene.model.isBlocked = false;
       console.log('roundCloseButton');
       this.visible = false;
 		  });

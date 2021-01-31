@@ -63,11 +63,14 @@ class Player extends Phaser.GameObjects.Sprite {
   }
 
   movePlayer(cursors) {
+    if (this.scene.model.isBlocked) {
+      this.stop()
+    }else{
     const speed = 100;
     const prevVelocity = this.body.velocity.clone();
-
+    
     this.body.setVelocity(0);
-
+    
     if (cursors.left.isDown) {
       this.body.setVelocityX(-speed);
     } else if (cursors.right.isDown) {
@@ -111,6 +114,7 @@ class Player extends Phaser.GameObjects.Sprite {
         this.scene.model.world.mainCharacter.icon = 'img1781';
       }
     }
+  }
   }
 
   /* END-USER-CODE */
