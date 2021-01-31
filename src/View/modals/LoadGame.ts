@@ -58,9 +58,6 @@ export default class LoadGame {
     okButton.addEventListener('click', async () => {
       if (loadGameList.value) {
         this.model.loadGame(loadGameList.value);
-        console.log(World.isPrototypeOf(this.model.world));
-        console.log(this.model.world instanceof World);
-        console.log(this.model.world);
         this.model.world.setCurrentTime();
         loadGameWindow.remove();
       } else {
