@@ -55,10 +55,15 @@ export default class World {
       this.locations.push(initLocation);
     });
     this.locations.forEach((location) => {
-      const target = location.objects.find((object) => object.name === this.goal.name);
-      if (target) {
-        this.goal.target = target;
+      const mainTarget = location.objects.find((object) => object.name === this.goal.name);
+      if (mainTarget) {
+        this.goal.target = mainTarget;
       };
+
+      const objectToActivate = location.objects.find((object) => object.triggerToActivate.name);
+      if (objectToActivate) {
+        objectToActivate.triggerToActivate.target = location.objects.find((object) => objectToActivate.triggerToActivate.name === object.name);
+      }
     });
     this.mainCharacter = new MainCharacter(this.startPosition, this.heroIcon);
     this.startItems.forEach((item) => {

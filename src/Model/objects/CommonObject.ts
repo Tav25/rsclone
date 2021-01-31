@@ -58,6 +58,7 @@ export default class CommonObject {
 
   isTriggered(): boolean {
     if (this.triggerToActivate.name) {
+      console.log(this.triggerToActivate.target);
       return !!this.triggerToActivate.target.triggered || false;
     }
   }
