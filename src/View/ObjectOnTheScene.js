@@ -57,8 +57,10 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
           console.log(e);
 
           const itemObj = this.scene.add.image(e.position.coordinates[0], e.position.coordinates[1], 'atlasPersonsObject', e.icon.toBottom);
+          itemObj.setOrigin(0, 1);
 
           const thisPhysicsBody = new PhysicsBody(itemObj);
+          // this.setOrigin(0.5, 1);
 
           this.scene.physics.add.existing(itemObj, true);
 

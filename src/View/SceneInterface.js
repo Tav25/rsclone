@@ -30,8 +30,6 @@ class SceneInterface extends Phaser.Scene {
     this.add.existing(mainFrame);
     mainFrame.setOrigin(0, 0);
 
-
-
     const img4 = new EquippedWeapon(this, 306, 50);
     this.add.existing(img4);
     img4.initEquippedWeapon();
@@ -72,18 +70,18 @@ class SceneInterface extends Phaser.Scene {
       console.log(this.model.world.mainCharacter.inventory.isChanged);
     });
 
-    this.inventoryIsChanged = false
+    this.inventoryIsChanged = false;
   }
 
   update() {
     this.arrows.directionOfMovement = this.gameSet.mapArrows;
 
     if (this.model.world.mainCharacter.inventory.isChanged) {
-      console.log("Update")
+      console.log('Update');
       this.img3 = new Inventory(this, 306, 50);
       this.add.existing(this.img3);
       this.img3.objectPositionInTheList3();
-      this.model.world.mainCharacter.inventory.isRendered()
+      this.model.world.mainCharacter.inventory.isRendered();
     }
     // console.log(this.openTopMenuFile)
   }
