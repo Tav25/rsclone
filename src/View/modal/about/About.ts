@@ -1,5 +1,4 @@
-import './about.scss';
-const logo = require('../../assets/image/rs_school_js.svg') as string;
+const logo = require('../../../assets/image/rs_school_js.svg') as string;
 
 export default class About {
   init() {

@@ -1,0 +1,17 @@
+@import "./about/about.scss";
+@import "./loadGame/loadGame.scss";
+@import "./newUser/newUser.scss";
+@import "./saveGame/saveGame.scss";
+@import "./statistics/statistics.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+body {
+  position: relative;
+}

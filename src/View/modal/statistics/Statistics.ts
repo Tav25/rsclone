@@ -1,9 +1,9 @@
-import Model from '../../Model/Model';
-import './statistics.scss';
-const yoda = require('../../assets/image/yoda.png') as string;
+import Model from '../../../Model/Model';
+const yoda = require('../../../assets/image/yoda.png') as string;
 
-export default class statistics {
+export default class Statistics {
   model: Model;
+
   constructor(model: Model) {
     this.model = model;
   }

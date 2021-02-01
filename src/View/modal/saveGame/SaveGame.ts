@@ -1,5 +1,4 @@
-import './saveGame.scss';
-import Model from "../../Model/Model";
+import Model from "../../../Model/Model";
 
 export default class SaveGame {
   model: Model;

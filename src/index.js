@@ -3,42 +3,33 @@ import packFile from './assets/asset-pack.json';
 
 import Database from './Model/DatabaseInterface.ts';
 import Model from './Model/Model.ts';
-
-import NewUser from './View/modals/NewUser.ts';
-import SaveGame from './View/modals/SaveGame.ts';
-import LoadGame from './View/modals/LoadGame.ts';
-import Statistics from './View/modals/Statistics.ts';
-import About from './View/modals/About.ts';
+import ModalWindow from './View/modal/ModalWindow.ts';
 
 const database = new Database();
 const model = new Model(database);
-const newUser = new NewUser(model);
-const saveGame = new SaveGame(model);
-const loadGame = new LoadGame(model);
-const statistics = new Statistics(model);
-const about = new About();
+const modalWindow = new ModalWindow(model);
 
 document.addEventListener('DOMContentLoaded', async () => {
   await model.newWorld();
   const game = new Phaser.Game(config);
-  if (!(await model.getUsers())) newUser.init();
+  if (!(await model.getUsers())) modalWindow.newUser.init();
 });
 
 document.addEventListener('keypress', (event) => {
   if (event.code === 'KeyN' && event.shiftKey === true) {
-    newUser.init();
+    modalWindow.newUser.init();
   }
   if (event.code === 'KeyS' && event.shiftKey === true) {
-    saveGame.init();
+    modalWindow.saveGame.init();
   }
   if (event.code === 'KeyL' && event.shiftKey === true) {
-    loadGame.init();
+    modalWindow.loadGame.init();
   }
   if (event.code === 'KeyA' && event.shiftKey === true) {
-    about.init();
+    modalWindow.about.init();
   }
   if (event.code === 'KeyP' && event.shiftKey === true) {
-    statistics.init();
+    modalWindow.statistics.init();
   }
 });
 
@@ -54,7 +45,7 @@ class MyGame extends Phaser.Scene {
 
   create() {
     // const logo = this.add.image(400, 150, 'logo');
-    this.scene.start('SceneInterface', model);
+    this.scene.start('SceneInterface', { model, modalWindow });
   }
 }
 

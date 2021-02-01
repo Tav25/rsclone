@@ -3,9 +3,10 @@ class SceneInterface extends Phaser.Scene {
     super('SceneInterface');
   }
 
-  init(model) {
-    this.model = model;
-    console.log(this.model);
+  init(data) {
+    this.model = data.model;
+    this.modalWindow = data.modalWindow;
+    console.log(this.modalWindow);
   }
 
   create() {
@@ -34,12 +35,30 @@ class SceneInterface extends Phaser.Scene {
     this.add.existing(img4);
     img4.initEquippedWeapon();
 
-    this.newWorld = new topMenuText(this, 8, 28, 'New World', () => { console.log('New World'); });
-    this.loadWorld = new topMenuText(this, 70, 28, 'Load World', () => { console.log('Load World'); });
-    this.saveWorld = new topMenuText(this, 140, 28, 'Save World', () => { console.log('Save World'); });
-    this.сhangeUser = new topMenuText(this, 210, 28, 'Change User', () => { console.log('Change User'); });
-    this.statistics = new topMenuText(this, 280, 28, 'Statistics', () => { console.log('Statistics'); });
-    this.About = new topMenuText(this, 330, 28, 'About', () => { console.log('About'); });
+    this.newWorld = new topMenuText(this, 8, 28, 'New World', async () => {
+      await this.model.newWorld();
+      console.log('New World');
+    });
+    this.loadWorld = new topMenuText(this, 70, 28, 'Load World', () => {
+      this.modalWindow.loadGame.init();
+      console.log('Load World');
+    });
+    this.saveWorld = new topMenuText(this, 140, 28, 'Save World', () => {
+      this.modalWindow.saveGame.init();
+      console.log('Save World');
+    });
+    this.сhangeUser = new topMenuText(this, 210, 28, 'Change User', () => {
+      this.modalWindow.newUser.init();
+      console.log('Change User');
+    });
+    this.statistics = new topMenuText(this, 280, 28, 'Statistics', () => {
+      this.modalWindow.statistics.init();
+      console.log('Statistics');
+    });
+    this.about = new topMenuText(this, 330, 28, 'About', () => {
+      this.modalWindow.about.init();
+      console.log('About');
+    });
 
     const keyObj = this.input.keyboard.addKey('Q'); // Get key object
     keyObj.on('down', (event) => {
