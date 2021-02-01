@@ -69,7 +69,7 @@ class world1scene1 extends Phaser.Scene {
 
       console.log('gameSet: ', this.gameSet);
       console.log('Model: ', this.model);
-      console.log('Model: ', this.model.isBlocked);
+      console.log('This: ', this);
     });
 
     keyObj.on('up', (event) => { /* ... */ });
@@ -78,10 +78,10 @@ class world1scene1 extends Phaser.Scene {
     this.lay2.setCollisionByExclusion([-1]);
     this.physics.add.collider(this.player1, this.lay2);
     this.lay3 = this.map.createLayer('topLayer', ['sprites'], 0, 0);
-    this.player1.weaponAttack(this);
 
     // this.dialog.initDialog()
     this.add.existing(this.dialog);
+    //
   }
 
   update() {

@@ -31,7 +31,7 @@ export default class Enemy extends CommonObject {
   }
 
   isDead(): boolean {
-    return !!this.health;
+    return !this.health;
   }
 
   dead(): ItemOnTheGround {

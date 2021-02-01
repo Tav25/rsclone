@@ -22,44 +22,9 @@ class Player extends Phaser.GameObjects.Sprite {
     this.setTexture('atlas', this.scene.model.world.mainCharacter.icon);
 
     console.log(this.scene.model.world.mainCharacter);
-  }
 
-  weaponAttack(sc) {
-    const keyObj = sc.input.keyboard.addKey('Space'); // Get key object
-    this.medkitsBactaFluid_480 = sc.add.sprite(sc.player1.x + 32, sc.player1.y, 'medkits', 'medkitsBactaFluid_480');
-    this.medkitsBactaFluid_4801 = sc.add.sprite(sc.player1.x, sc.player1.y, 'medkits', 'medkitsBactaFluid_480');
-    this.medkitsBactaFluid_480.visible = false;
-    this.medkitsBactaFluid_4801.visible = false;
-
-    keyObj.on('down', (event) => {
-      console.log('atac', sc);
-      this.medkitsBactaFluid_480.x = sc.player1.x + 32;
-      this.medkitsBactaFluid_480.y = sc.player1.y + 0;
-      this.medkitsBactaFluid_4801.x = sc.player1.x;
-      this.medkitsBactaFluid_4801.y = sc.player1.y;
-      this.medkitsBactaFluid_480.play('laserSwordRight', true);
-      this.medkitsBactaFluid_4801.play('animation34', true);
-      this.medkitsBactaFluid_480.visible = true;
-      this.medkitsBactaFluid_4801.visible = true;
-      sc.player1.visible = false;
-
-      // this.medkitsBactaFluid_480.play('goToRight', true);
-      //
-      // const medkitsBactaFluid_480StartAnimation = new StartAnimation(medkitsBactaFluid_480);
-      // 		medkitsBactaFluid_480StartAnimation.animationKey = "test";
-
-      //
-    });
-
-    keyObj.on('up', (event) => {
-      this.medkitsBactaFluid_480.stop();
-      this.medkitsBactaFluid_4801.stop();
-      this.medkitsBactaFluid_480.visible = false;
-      this.medkitsBactaFluid_4801.visible = false;
-      sc.player1.visible = true;
-
-      // this.setTexture('atlas', this.scene.gameSet.hero.image);
-    });
+    this.weaponOfAttack = this.scene.add.sprite(this.x, this.y);
+    new Physics(this.weaponOfAttack);
   }
 
   movePlayer(cursors) {
@@ -87,13 +52,29 @@ class Player extends Phaser.GameObjects.Sprite {
 
       if (cursors.left.isDown) {
         this.play('goToLeft', true);
+        console.log('down');
       } else if (cursors.right.isDown) {
         this.play('goToRight', true);
       } else if (cursors.up.isDown) {
         this.play('goToTop', true);
       } else if (cursors.down.isDown) {
         this.play('goToBottom', true);
+      } else if (cursors.space.isDown) {
+        this.play('animation34', true);
+
+        this.weaponOfAttack.visible = true;
+        // this.weaponOfAttack = this.scene.add.sprite(this.scene.player1.x, this.scene.player1.y, 'medkits', 'medkitsBactaFluid_480');
+        this.weaponOfAttack.play('laserSwordRight', true);
+        this.weaponOfAttack.x = this.x + 32;
+        this.weaponOfAttack.y = this.y;
       } else {
+        if (this.weaponOfAttack) {
+          this.weaponOfAttack.x = 0;
+          this.weaponOfAttack.y = 0;
+
+          this.weaponOfAttack.visible = false;
+        }
+
         this.stop();
 
         if (prevVelocity.x < 0) {
@@ -114,6 +95,11 @@ class Player extends Phaser.GameObjects.Sprite {
           this.scene.model.world.mainCharacter.icon = 'img1781';
         }
       }
+
+      // if (cursors.space.isDown) {
+      //   console.log("space")
+      //   this.play('goToTop', true);
+      // }
     }
   }
 
