@@ -67,7 +67,6 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
           if (e.type === 'door') {
             if (e.triggered) {
               isPhysicBodyHave = false;
-              console.log('Dooor!!!!!!!!!!!1');
             }
           }
           //!
@@ -85,15 +84,22 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
               .isThisItemYouNeed(e.itemToActivate));
 
             const speech = e.getDialog();
-            if (speech) this.scene.dialog.initDialog(e.position.coordinates, speech);
+            this.scene.model.world.mainCharacter.setPosition(this.scene.scene.key, [this.scene.player1.x, this.scene.player1.y]);//! добавить направление
+
+            if (speech) {
+              this.scene.dialog.initDialog(e.position.coordinates, speech);
+            } else {
+              this.scene.model.world.toRender();
+            }
             console.log(speech);
 
             if (itemToTake) {
               this.scene.model.world.mainCharacter.giveItem(e.itemToActivate);
               if (itemToTake) this.scene.model.world.mainCharacter.pickItem(itemToTake.activate());
             }
-            this.scene.model.world.mainCharacter.setPosition(this.scene.scene.key, [this.scene.player1.x, this.scene.player1.y]);//! добавить направление
-            this.scene.model.world.toRender();
+
+            // if (e.type === 'door' || e.type === 'trigger' || e.type === 'crate') {
+            // }
           });
 
           this.scene.physics.add.collider(this.scene.player1, itemObj);//

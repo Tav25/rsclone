@@ -92,16 +92,13 @@ class world1scene1 extends Phaser.Scene {
       this.scene.start('SceneLocator', this.model);
     }
 
-    // this.text.setText([
-    //   `Player X: ${this.player1.x}`,
-    //   `Player Y: ${this.player1.y}`,
-    //   `ScrollX: ${this.camera.scrollX}`,
-    //   `ScrollY: ${this.camera.scrollY}`,
-    //   `MidX: ${this.camera.midPoint.x}`,
-    //   `MidY: ${this.camera.midPoint.y}`,
-    //   `Map: ${this.mainMap}`,
-    //   `Gmset: ${this.gameSet.locatorScene}`,
-    // ]);
+    //! 777
+    if (this.model.world.isChanged) {
+      this.scene.restart();
+      this.model.world.isRendered();
+      console.log('restart();');
+    }
+    //!
   }
 
   stopScene(scene, x, y) {
