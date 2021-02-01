@@ -102,12 +102,12 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
 
           this.scene.physics.add.overlap(this.scene.player1, itemObj, () => {
             console.log('JJJ');
+            let itemToTake = undefined;
 
-            if (e.type === "tradingPlace") {
-              const itemToTake = e.activate(this.scene.model.world.mainCharacter
-                .isThisItemYouNeed(e.itemToActivate));
-                //inventory.itemList[1].isTradable
-            } else const itemToTake = e.activate(this.scene.model.world.mainCharacter
+            if (e.type === "tradingPlace") itemToTake = e.activate(this.scene.model.world.mainCharacter
+              .getItemToTrader());
+            //inventory.itemList[1].isTradable
+            else itemToTake = e.activate(this.scene.model.world.mainCharacter
               .isThisItemYouNeed(e.itemToActivate));
 
 
@@ -122,7 +122,10 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
             console.log(speech);
 
             if (itemToTake) {
-              this.scene.model.world.mainCharacter.giveItem(e.itemToActivate);
+              if (e.type === "tradingPlace") this.scene.model.world.mainCharacter.giveItem(this.scene.model.world.mainCharacter
+                .getItemToTrader().name);
+              else this.scene.model.world.mainCharacter.giveItem(e.itemToActivate);
+
               if (itemToTake) this.scene.model.world.mainCharacter.pickItem(itemToTake.activate());
             }
 
