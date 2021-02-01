@@ -249,7 +249,6 @@
     "WebContent/weapons/Yubnut_528.png",
     "WebContent/weapons/837.png",
     "WebContent/weapons/dialog.png",
-    "WebContent/weapons/roundCloseButton.png",
     "WebContent/555/1092.png",
     "WebContent/555/1294.png",
     "WebContent/555/1296.png",
@@ -272,7 +271,10 @@
     "WebContent/555/816.png",
     "WebContent/555/971.png",
     "WebContent/555/972.png",
-    "WebContent/555/974.png"
+    "WebContent/555/974.png",
+    "WebContent/555/downButton.png",
+    "WebContent/555/upButton.png",
+    "WebContent/555/roundCloseButton.png"
   ],
   "settings": {
     "pot": false,

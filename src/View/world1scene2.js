@@ -44,14 +44,15 @@ class world1scene2 extends Phaser.Scene {
     this.dialog = new Dialog(this);
     // objects
     const items = new Item(this);
-    items.ItemsOnScene();
+    // items.ItemsOnScene();
 
+    this.model.world.locations[1].objects[0].objectObject.position.coordinates = [240, 530];//! 777
     const b3 = new ObjectOnTheScene(this);
     b3.ItemsOnScene();
 
     const rectangleTop = new RectanglePhysics(this, 0, -2, this.map.widthInPixels, 3, () => { this.gameSet.hero.y = 545; this.gameSet.hero.x = this.player1.x; });
     const rectangleRight = new RectanglePhysics(this, 576, 0, 3, 576, () => { this.gameSet.hero.x = 20; this.gameSet.hero.y = this.player1.y; });
-    const rectangleBottom = new RectanglePhysics(this, 0, 575, this.map.widthInPixels, 3, () => { this.gameSet.hero.y = 20; this.gameSet.hero.x = this.player1.x; this.scene.start('world1scene1'); this.scene.stop('world1scene2'); });
+    const rectangleBottom = new RectanglePhysics(this, 0, 575, this.map.widthInPixels, 3, () => { this.model.world.mainCharacter.setPosition(this.scene.scene.key, [this.player1.x, 20]); this.scene.start('world1scene1'); this.scene.stop('world1scene2'); });
     const rectangleLeft = new RectanglePhysics(this, -2, 0, 3, this.map.heightInPixels, () => { this.gameSet.hero.x = 545; this.gameSet.hero.y = this.player1.y; });
 
     // text
@@ -64,7 +65,15 @@ class world1scene2 extends Phaser.Scene {
 
       console.log('gameSet: ', this.gameSet);
       console.log('Model: ', this.model);
-      console.log('Model: ', this.model.isBlocked);
+      console.log('door: ', this.model.world.locations[1].objects[0]);
+    });
+
+    const keyObj2 = this.input.keyboard.addKey('E'); // Get key object
+    keyObj2.on('down', (event) => {
+      console.log('(\'E\')');
+      // this.scene.stop(this.scene.scene.key)
+      // this.scene.start(this.scene.scene.key)
+      this.scene.restart();
     });
 
     keyObj.on('up', (event) => { /* ... */ });
@@ -86,6 +95,14 @@ class world1scene2 extends Phaser.Scene {
       this.stopScene(this, this.player1.x, this.player1.y);
       this.scene.start('SceneLocator', this.model);
     }
+
+    //! 777
+    if (this.model.world.isChanged) {
+      this.scene.restart();
+      this.model.world.isRendered();
+      console.log('restart();');
+    }
+    //!
 
     // this.text.setText([
     //   `Player X: ${this.player1.x}`,

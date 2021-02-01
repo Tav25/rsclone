@@ -26,7 +26,7 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
     super(scene, x, y);
 
     this.scene = scene;
-    // console.log('++++++++++++++', scene.gameSet);
+    console.log('++++++++++++++', scene.gameSet);
   }
 
   ItemsOnScene2() {
@@ -59,12 +59,25 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
           const itemObj = this.scene.add.image(e.position.coordinates[0], e.position.coordinates[1], 'atlasPersonsObject', e.icon.toBottom);
           itemObj.setOrigin(0, 1);
 
-          const thisPhysicsBody = new PhysicsBody(itemObj);
-          // this.setOrigin(0.5, 1);
+          console.log('e.id ', e.id);
 
-          this.scene.physics.add.existing(itemObj, true);
+          //! 777
+          let isPhysicBodyHave = true;
 
-          this.scene.add.existing(itemObj);
+          if (e.type === 'door') {
+            if (e.triggered) {
+              isPhysicBodyHave = false;
+              console.log('Dooor!!!!!!!!!!!1');
+            }
+          }
+          //!
+
+          if (isPhysicBodyHave) {
+            const thisPhysicsBody = new PhysicsBody(itemObj);
+            this.scene.physics.add.existing(itemObj, true);
+          }
+
+          // this.scene.add.existing(itemObj);
           this.scene.physics.add.overlap(this.scene.player1, itemObj, () => {
             console.log('JJJ');
 
@@ -79,7 +92,10 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
               this.scene.model.world.mainCharacter.giveItem(e.itemToActivate);
               if (itemToTake) this.scene.model.world.mainCharacter.pickItem(itemToTake.activate());
             }
+            this.scene.model.world.mainCharacter.setPosition(this.scene.scene.key, [this.scene.player1.x, this.scene.player1.y]);//! добавить направление
+            this.scene.model.world.toRender();
           });
+
           this.scene.physics.add.collider(this.scene.player1, itemObj);//
         });
       }

@@ -50,7 +50,7 @@ class world1scene5 extends Phaser.Scene {
     b3.ItemsOnScene();
 
     const rectangleTop = new RectanglePhysics(this, 0, -2, this.map.widthInPixels, 3, () => { this.gameSet.hero.y = 545; this.gameSet.hero.x = this.player1.x; });
-    const rectangleRight = new RectanglePhysics(this, 576, 0, 3, 576, () => { this.gameSet.hero.x = 20; this.gameSet.hero.y = this.player1.y; this.scene.stop('world1scene5'); this.scene.start('world1scene1'); });
+    const rectangleRight = new RectanglePhysics(this, 576, 0, 3, 576, () => { this.model.world.mainCharacter.setPosition(this.scene.scene.key, [20, this.player1.y]); this.scene.stop('world1scene5'); this.scene.start('world1scene1'); });
     const rectangleBottom = new RectanglePhysics(this, 0, 575, this.map.widthInPixels, 3, () => { this.gameSet.hero.y = 20; this.gameSet.hero.x = this.player1.x; });
     const rectangleLeft = new RectanglePhysics(this, -2, 0, 3, this.map.heightInPixels, () => { this.gameSet.hero.x = 545; this.gameSet.hero.y = this.player1.y; });
 
