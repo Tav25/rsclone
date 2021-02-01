@@ -64,7 +64,7 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
           //! 777
           let isPhysicBodyHave = true;
 
-          if (e.type === 'door') {
+          if (e.type === 'door' || e.type === 'enemy') {
             if (e.triggered) {
               isPhysicBodyHave = false;
             }
@@ -77,6 +77,29 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
           }
 
           // this.scene.add.existing(itemObj);
+          //! меч
+          let i = 0;
+          if (e.type === 'enemy') {
+            this.scene.physics.add.overlap(this.scene.player1.weaponOfAttack, itemObj, () => {
+              i++;
+
+              if (i === 30) {
+                e.hit(this.scene.model.world.mainCharacter);
+                e.isDead();
+                console.log('Атака врага:', e);
+                console.log('Умер:', e.isDead());
+                i = 0;
+                if (e.isDead()) {
+                  const itemFromEnemy = e.dead();
+                  this.scene.model.world.mainCharacter.pickItem(itemFromEnemy.activate());
+                  this.scene.model.world.mainCharacter.setPosition(this.scene.scene.key, [this.scene.player1.x, this.scene.player1.y]);//! добавить направление
+                  this.scene.model.world.toRender();
+                }
+              }
+            });
+          }
+          //!
+
           this.scene.physics.add.overlap(this.scene.player1, itemObj, () => {
             console.log('JJJ');
 

@@ -62,7 +62,7 @@ const config = {
     default: 'arcade',
     arcade: {
       debug: true,
-      fps: 10,
+      fps: 60,
     },
   },
   render: {

@@ -73,7 +73,6 @@ class world1scene5 extends Phaser.Scene {
     this.lay2.setCollisionByExclusion([-1]);
     this.physics.add.collider(this.player1, this.lay2);
     this.lay3 = this.map.createLayer('topLayer', ['sprites'], 0, 0);
-    this.player1.weaponAttack(this);
 
     // this.dialog.initDialog()
     this.add.existing(this.dialog);
