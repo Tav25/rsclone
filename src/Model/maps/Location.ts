@@ -12,6 +12,7 @@ export default class Location {
   entryDirections: string[];
   objectList: TObject[];
   objects: any[];
+  isChanged: boolean;
 
   constructor(locationObject: TLocation) {
     this.locationObject = locationObject;
@@ -19,6 +20,7 @@ export default class Location {
     this.entryDirections = locationObject.entryDirections;
     this.objectList = locationObject.objects;
     this.objects = [];
+    this.isChanged = false;
   }
 
   init(): void {
@@ -71,5 +73,13 @@ export default class Location {
   getObject(objectName: string) {
     const returnedObject = this.objects.find((object) => object.name === objectName);
     return returnedObject;
+  }
+
+  toRender() {
+    this.isChanged = true;
+  }
+
+  isRendered() {
+    this.isChanged = false;
   }
 }

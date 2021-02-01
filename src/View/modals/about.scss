@@ -38,26 +38,28 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   border: 1px solid #A0A0A0;
   padding: 3px 5px;
+  margin: 3px;
 
   .about-link {
-    margin-bottom: 3px;
+    margin: 10px 0;
+    font-size: 20px;
   }
 
   .about-link-logo {
-    text-align: center;
+    height: 35px;
+    margin: 20px 0;
   }
 }
 
 .about-buttons-container {
   display: flex;
   justify-content: space-around;
+  margin: 3px 0;
 
   .about-button-ok {
-    width: 60px;
-  }
-  .about-button-cancel {
     width: 60px;
   }
 }

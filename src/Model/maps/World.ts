@@ -85,6 +85,8 @@ export default class World {
         break;
       }
     });
+    const weapon: any = this.mainCharacter.inventory.getItem('Lightsaber');
+    this.mainCharacter.equipment.equipWeapon(weapon);
     this.startTime = Date.now();
     this.elapsedTime = 0;
   }
