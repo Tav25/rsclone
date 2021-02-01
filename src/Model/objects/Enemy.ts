@@ -1,5 +1,5 @@
 import MainCharacter from "../character/MainCharacter";
-import { TItem, TObject } from "../types/types";
+import { TIcon, TItem, TObject } from "../types/types";
 import CommonObject from "./CommonObject";
 import ItemOnTheGround from "./ItemOnTheGround";
 
@@ -9,6 +9,7 @@ export default class Enemy extends CommonObject {
   range: number;
   returnedItem?: TItem;
   isMoving?: boolean;
+  openedIcon?: TIcon;
 
   constructor(objectObject: TObject) {
     super(objectObject);
@@ -17,6 +18,7 @@ export default class Enemy extends CommonObject {
     this.range = objectObject.range;
     this.returnedItem = objectObject.returnedItem;
     this.isMoving = objectObject.isMoving;
+    this.openedIcon = objectObject.openedIcon;
   }
 
   activate(): void {}
@@ -31,14 +33,14 @@ export default class Enemy extends CommonObject {
   }
 
   isDead(): boolean {
-    return !!this.health;
+    return !this.health;
   }
 
   dead(): ItemOnTheGround {
     if (this.isDead()) {
       this.triggered = true;
-      this.icon = null;
-      return new ItemOnTheGround(this, this.returnedItem);
+      this.icon = this.openedIcon;
+      if (this.returnedItem) return new ItemOnTheGround(this, this.returnedItem);
     };
   }
 }
