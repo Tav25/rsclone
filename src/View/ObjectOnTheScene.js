@@ -62,11 +62,12 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
 
 
           //!777
-          if (true) {
+          // if(!e.type === "door"){
+          // if (e.triggered) {
             console.log('e.id ', e.id)
             const thisPhysicsBody = new PhysicsBody(itemObj);
             this.scene.physics.add.existing(itemObj, true);
-          }
+          // }}
           //!
 
           this.scene.add.existing(itemObj);
