@@ -68,7 +68,7 @@ class Inventory extends Phaser.GameObjects.Container {
       imageInInventory.on('pointerdown', (pointer) => {
         this.scene.model.world.mainCharacter.equipment.equipWeapon(e);
 
-        //!777
+        //! 777
         if (e.itemObject.type === 'locator') {
           if (!this.scene.gameSet.locatorScene) { this.scene.gameSet.locatorScene = true; } else { this.scene.gameSet.locatorScene = false; }
         }

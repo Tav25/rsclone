@@ -33,8 +33,7 @@ class EquippedWeapon extends Phaser.GameObjects.Container {
   }
 
   initEquippedWeapon() {
-    if (this.scene.model.world.mainCharacter.equipment.equippedWeapon) {//!777 если есть оружие
-
+    if (this.scene.model.world.mainCharacter.equipment.equippedWeapon) { //! 777 если есть оружие
       console.log('Weap', this.scene.model.world.mainCharacter.equipment.equippedWeapon);
       console.log('initEquippedWeapon()', this.scene.model.world.mainCharacter);
       const image = this.scene.add.image(110, 262, 'atlasPersonsObject', 'Defel_1061');//! вставить ссылку на картинку
@@ -46,7 +45,5 @@ class EquippedWeapon extends Phaser.GameObjects.Container {
       rectangle.fillColor = 559826;
       this.add(rectangle);
     }
-
-    
   }
 }

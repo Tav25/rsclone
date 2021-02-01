@@ -46,7 +46,7 @@ class world1scene2 extends Phaser.Scene {
     const items = new Item(this);
     // items.ItemsOnScene();
 
-    this.model.world.locations[1].objects[0].objectObject.position.coordinates = [240,530]//!777
+    this.model.world.locations[1].objects[0].objectObject.position.coordinates = [240, 530];//! 777
     const b3 = new ObjectOnTheScene(this);
     b3.ItemsOnScene();
 
@@ -70,7 +70,7 @@ class world1scene2 extends Phaser.Scene {
 
     const keyObj2 = this.input.keyboard.addKey('E'); // Get key object
     keyObj2.on('down', (event) => {
-      console.log("('E')");
+      console.log('(\'E\')');
       // this.scene.stop(this.scene.scene.key)
       // this.scene.start(this.scene.scene.key)
       this.scene.restart();
@@ -86,11 +86,6 @@ class world1scene2 extends Phaser.Scene {
 
     // this.dialog.initDialog()
     this.add.existing(this.dialog);
-
-
-
-
-    
   }
 
   update() {
@@ -101,12 +96,13 @@ class world1scene2 extends Phaser.Scene {
       this.scene.start('SceneLocator', this.model);
     }
 
-    //!777
-    if(false) this.scene.restart();
+    //! 777
+    if (this.model.world.isChanged) {
+      this.scene.restart();
+      this.model.world.isRendered();
+      console.log('restart();');
+    }
     //!
-
-
-
 
     // this.text.setText([
     //   `Player X: ${this.player1.x}`,
@@ -124,6 +120,4 @@ class world1scene2 extends Phaser.Scene {
     this.model.world.mainCharacter.setPosition(scene.scene.key, [x, y]);
     scene.scene.stop(scene.scene.key);
   }
-
-  
 }

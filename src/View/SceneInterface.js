@@ -51,7 +51,6 @@ class SceneInterface extends Phaser.Scene {
     this.arrows.directionOfMovement = this.gameSet.mapArrows;
 
     if (this.model.world.mainCharacter.inventory.isChanged) {
-      
       console.log('Update');
       this.img3 = new Inventory(this, 306, 50);
       this.add.existing(this.img3);
@@ -62,9 +61,8 @@ class SceneInterface extends Phaser.Scene {
       if (herosLifePoints < 32) { this.vbn(herosLifePoints, 0x69FF57, 0xF8FF18, this); }
       if (herosLifePoints > 32) { this.vbn(herosLifePoints - 32, 0xF8FF18, 0xFF1F18, this); }
       if (herosLifePoints > 64) { this.vbn(herosLifePoints - 64, 0x69FF57, 0xF8FF18, this); }
-      
-      this.model.world.mainCharacter.inventory.isRendered();
 
+      this.model.world.mainCharacter.inventory.isRendered();
     }
     // console.log(this.openTopMenuFile)
   }
