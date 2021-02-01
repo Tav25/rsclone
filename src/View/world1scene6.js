@@ -49,7 +49,7 @@ class world1scene6 extends Phaser.Scene {
     const b3 = new ObjectOnTheScene(this);
     b3.ItemsOnScene();
 
-    const returnToScene1 = new RectanglePhysics(this, 130, 290, 28, 18, () => { this.gameSet.hero.x = 432; this.gameSet.hero.y = 250; this.scene.stop('world1scene6'); this.scene.start('world1scene1'); });
+    const returnToScene1 = new RectanglePhysics(this, 130, 290, 28, 18, () => { this.model.world.mainCharacter.setPosition(this.scene.scene.key, [432, 250]); this.scene.stop('world1scene6'); this.scene.start('world1scene1'); });
 
     // text
     // this.text = this.add.text(10, 10).setScrollFactor(0).setFontSize(12).setColor('#273746');

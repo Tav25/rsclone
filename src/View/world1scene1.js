@@ -29,6 +29,7 @@ class world1scene1 extends Phaser.Scene {
     this.map.addTilesetImage('sprites', 'sprites');
 
     this.lay1 = this.map.createLayer('bottomLayer', ['sprites'], 0, 0);
+    this.lay1_5 = this.map.createLayer('bottomLayer2', ['sprites'], 0, 0);
     this.lay2 = this.map.createLayer('middleLayer', ['sprites'], 0, 0);
 
     this.player1 = new Player(this);

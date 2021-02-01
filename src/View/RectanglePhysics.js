@@ -3,7 +3,7 @@ class RectanglePhysics extends Phaser.GameObjects.Rectangle {
     super(scene, x, y, typeof width === 'number' ? width : 128, typeof height === 'number' ? height : 128);
 
     this.setOrigin(0, 0);
-    this.isFilled = true;
+    this.isFilled = false;
     this.fillColor = 13027014;
 
     scene.physics.add.existing(this, true);
