@@ -1,5 +1,4 @@
-import './loadGame.scss';
-import Model from "../../Model/Model";
+import Model from "../../../Model/Model";
 
 export default class LoadGame {
   model: Model;

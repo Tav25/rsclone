@@ -1,5 +1,4 @@
-import './newUser.scss';
-import Model from "../../Model/Model";
+import Model from "../../../Model/Model";
 
 export default class NewUser {
   model: Model;
