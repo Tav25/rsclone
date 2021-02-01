@@ -1,7 +1,6 @@
 import DatabaseInterface from './DatabaseInterface';
 import User from './user/User';
 import World from './maps/World';
-import Position from './character/Position';
 import { TSavedGame } from './types/types';
 
 export default class Model {
