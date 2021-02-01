@@ -46,7 +46,7 @@ class world1scene2 extends Phaser.Scene {
     const items = new Item(this);
     // items.ItemsOnScene();
 
-    this.model.world.locations[1].objects[0].objectObject.position.coordinates = [240, 530];//! 777
+    // this.model.world.locations[1].objects[0].objectObject.position.coordinates = [240, 530];//! 777
     const b3 = new ObjectOnTheScene(this);
     b3.ItemsOnScene();
 
@@ -103,17 +103,6 @@ class world1scene2 extends Phaser.Scene {
       console.log('restart();');
     }
     //!
-
-    // this.text.setText([
-    //   `Player X: ${this.player1.x}`,
-    //   `Player Y: ${this.player1.y}`,
-    //   `ScrollX: ${this.camera.scrollX}`,
-    //   `ScrollY: ${this.camera.scrollY}`,
-    //   `MidX: ${this.camera.midPoint.x}`,
-    //   `MidY: ${this.camera.midPoint.y}`,
-    //   `Map: ${this.mainMap}`,
-    //   `Gmset: ${this.gameSet.locatorScene}`,
-    // ]);
   }
 
   stopScene(scene, x, y) {
