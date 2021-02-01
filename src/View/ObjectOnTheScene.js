@@ -77,7 +77,7 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
           }
 
           // this.scene.add.existing(itemObj);
-          //! меч
+          //! меч 
           let i = 0;
           if (e.type === 'enemy') {
             this.scene.physics.add.overlap(this.scene.player1.weaponOfAttack, itemObj, () => {
@@ -103,8 +103,13 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
           this.scene.physics.add.overlap(this.scene.player1, itemObj, () => {
             console.log('JJJ');
 
-            const itemToTake = e.activate(this.scene.model.world.mainCharacter
+            if (e.type === "tradingPlace") {
+              const itemToTake = e.activate(this.scene.model.world.mainCharacter
+                .isThisItemYouNeed(e.itemToActivate));
+                //inventory.itemList[1].isTradable
+            } else const itemToTake = e.activate(this.scene.model.world.mainCharacter
               .isThisItemYouNeed(e.itemToActivate));
+
 
             const speech = e.getDialog();
             this.scene.model.world.mainCharacter.setPosition(this.scene.scene.key, [this.scene.player1.x, this.scene.player1.y]);//! добавить направление
