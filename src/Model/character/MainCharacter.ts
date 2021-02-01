@@ -71,4 +71,8 @@ export default class MainCharacter {
     this.inventory.addItem(item);
     return true;
   }
+
+  getItemToTrader() {
+    return this.inventory.getTradableItem();
+  }
 }

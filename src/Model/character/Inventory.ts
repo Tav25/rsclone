@@ -25,6 +25,10 @@ export default class Inventory {
     }
   }
 
+  getTradableItem() {
+    return this.itemList.find((item: Junk) => item.isTradable === true);
+  }
+
   addItem(item: Junk | Locator | MedKit | QuestItem | Weapon): void {
     this.itemList.push(item);
     this.inventorySize += 1;
