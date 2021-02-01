@@ -7,6 +7,7 @@ import Model from './Model/Model.ts';
 import NewUser from './View/modals/NewUser.ts';
 import SaveGame from './View/modals/SaveGame.ts';
 import LoadGame from './View/modals/LoadGame.ts';
+import Statistics from './View/modals/Statistics.ts';
 import About from './View/modals/About.ts';
 
 const database = new Database();
@@ -14,7 +15,8 @@ const model = new Model(database);
 const newUser = new NewUser(model);
 const saveGame = new SaveGame(model);
 const loadGame = new LoadGame(model);
-const about = new About(model);
+const statistics = new Statistics(model);
+const about = new About();
 
 document.addEventListener('DOMContentLoaded', async () => {
   await model.newWorld();
@@ -23,6 +25,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 document.addEventListener('keypress', (event) => {
+  if (event.code === 'KeyN' && event.shiftKey === true) {
+    newUser.init();
+  }
   if (event.code === 'KeyS' && event.shiftKey === true) {
     saveGame.init();
   }
@@ -31,6 +36,9 @@ document.addEventListener('keypress', (event) => {
   }
   if (event.code === 'KeyA' && event.shiftKey === true) {
     about.init();
+  }
+  if (event.code === 'KeyP' && event.shiftKey === true) {
+    statistics.init();
   }
 });
 

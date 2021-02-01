@@ -19,7 +19,7 @@ export default class LoadGame {
       </div>
   
       <div class="load-game-form-text-container">
-        <span class="load-game-form-text">Enter new or choose existed user:</span>
+        <span class="load-game-form-text">Choose a world of user:</span>
         <br>
         <span class="load-game-form-user"></span>
       </div>
