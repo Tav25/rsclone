@@ -26,7 +26,7 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
     super(scene, x, y);
 
     this.scene = scene;
-    // console.log('++++++++++++++', scene.gameSet);
+    console.log('++++++++++++++', scene.gameSet);
   }
 
   ItemsOnScene2() {
@@ -59,8 +59,15 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
           const itemObj = this.scene.add.image(e.position.coordinates[0], e.position.coordinates[1], 'atlasPersonsObject', e.icon.toBottom);
           itemObj.setOrigin(0, 1);
 
-          const thisPhysicsBody = new PhysicsBody(itemObj);
-          this.scene.physics.add.existing(itemObj, true);
+
+
+          //!777
+          if (true) {
+            console.log('e.id ', e.id)
+            const thisPhysicsBody = new PhysicsBody(itemObj);
+            this.scene.physics.add.existing(itemObj, true);
+          }
+          //!
 
           this.scene.add.existing(itemObj);
           this.scene.physics.add.overlap(this.scene.player1, itemObj, () => {

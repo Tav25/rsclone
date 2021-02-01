@@ -21,10 +21,10 @@ class SceneInterface extends Phaser.Scene {
     this.arrows = new Arrows(this);
     this.add.existing(this.arrows);
 
-    const herosLifePoints = this.gameSet.hero.lifePoints;
-    if (herosLifePoints < 32) { this.vbn(herosLifePoints, 0x69FF57, 0xF8FF18, this); }
-    if (herosLifePoints > 32) { this.vbn(herosLifePoints - 32, 0xF8FF18, 0xFF1F18, this); }
-    if (herosLifePoints > 64) { this.vbn(herosLifePoints - 64, 0x69FF57, 0xF8FF18, this); }
+    // const herosLifePoints = this.gameSet.hero.lifePoints;
+    // if (herosLifePoints < 32) { this.vbn(herosLifePoints, 0x69FF57, 0xF8FF18, this); }
+    // if (herosLifePoints > 32) { this.vbn(herosLifePoints - 32, 0xF8FF18, 0xFF1F18, this); }
+    // if (herosLifePoints > 64) { this.vbn(herosLifePoints - 64, 0x69FF57, 0xF8FF18, this); }
 
     const mainFrame = this.add.image(0, 0, 'mainFrame');
     this.add.existing(mainFrame);
@@ -51,11 +51,20 @@ class SceneInterface extends Phaser.Scene {
     this.arrows.directionOfMovement = this.gameSet.mapArrows;
 
     if (this.model.world.mainCharacter.inventory.isChanged) {
+      
       console.log('Update');
       this.img3 = new Inventory(this, 306, 50);
       this.add.existing(this.img3);
       this.img3.objectPositionInTheList3();
+
+      // const herosLifePoints = this.gameSet.hero.lifePoints;
+      const herosLifePoints = this.model.world.mainCharacter.health.maxHealth - this.model.world.mainCharacter.health.currentHealth;
+      if (herosLifePoints < 32) { this.vbn(herosLifePoints, 0x69FF57, 0xF8FF18, this); }
+      if (herosLifePoints > 32) { this.vbn(herosLifePoints - 32, 0xF8FF18, 0xFF1F18, this); }
+      if (herosLifePoints > 64) { this.vbn(herosLifePoints - 64, 0x69FF57, 0xF8FF18, this); }
+      
       this.model.world.mainCharacter.inventory.isRendered();
+
     }
     // console.log(this.openTopMenuFile)
   }

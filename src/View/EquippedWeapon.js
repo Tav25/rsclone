@@ -29,18 +29,24 @@ class EquippedWeapon extends Phaser.GameObjects.Container {
       console.log('roundCloseButton');
       this.visible = false;
       this.scene.model.world.mainCharacter.setPosition(this.scene.scene.key, [this.scene.player1.x, this.scene.player1.y]);
-		  });
+    });
   }
 
   initEquippedWeapon() {
-    console.log('initEquippedWeapon()', this.scene.model.world.mainCharacter.equipment.equippedWeapon);
-    const image = this.scene.add.image(110, 262, 'atlasPersonsObject', 'Defel_1061');
-    this.add(image);
+    if (this.scene.model.world.mainCharacter.equipment.equippedWeapon) {//!777 если есть оружие
 
-    const rectangle = this.scene.add.rectangle(83, 278, 10, 32);
-    rectangle.setOrigin(0.5, 1);
-    rectangle.isFilled = true;
-    rectangle.fillColor = 559826;
-    this.add(rectangle);
+      console.log('Weap', this.scene.model.world.mainCharacter.equipment.equippedWeapon);
+      console.log('initEquippedWeapon()', this.scene.model.world.mainCharacter);
+      const image = this.scene.add.image(110, 262, 'atlasPersonsObject', 'Defel_1061');//! вставить ссылку на картинку
+      this.add(image);
+
+      const rectangle = this.scene.add.rectangle(83, 278, 10, 32);//! заряд
+      rectangle.setOrigin(0.5, 1);
+      rectangle.isFilled = true;
+      rectangle.fillColor = 559826;
+      this.add(rectangle);
+    }
+
+    
   }
 }

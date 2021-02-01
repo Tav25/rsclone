@@ -44,8 +44,9 @@ class world1scene2 extends Phaser.Scene {
     this.dialog = new Dialog(this);
     // objects
     const items = new Item(this);
-    items.ItemsOnScene();
+    // items.ItemsOnScene();
 
+    this.model.world.locations[1].objects[0].objectObject.position.coordinates = [240,530]//!777
     const b3 = new ObjectOnTheScene(this);
     b3.ItemsOnScene();
 
@@ -64,7 +65,15 @@ class world1scene2 extends Phaser.Scene {
 
       console.log('gameSet: ', this.gameSet);
       console.log('Model: ', this.model);
-      console.log('Model: ', this.model.isBlocked);
+      console.log('door: ', this.model.world.locations[1].objects[0]);
+    });
+
+    const keyObj2 = this.input.keyboard.addKey('E'); // Get key object
+    keyObj2.on('down', (event) => {
+      console.log("('E')");
+      // this.scene.stop(this.scene.scene.key)
+      // this.scene.start(this.scene.scene.key)
+      this.scene.restart();
     });
 
     keyObj.on('up', (event) => { /* ... */ });
@@ -77,6 +86,11 @@ class world1scene2 extends Phaser.Scene {
 
     // this.dialog.initDialog()
     this.add.existing(this.dialog);
+
+
+
+
+    
   }
 
   update() {
@@ -86,6 +100,13 @@ class world1scene2 extends Phaser.Scene {
       this.stopScene(this, this.player1.x, this.player1.y);
       this.scene.start('SceneLocator', this.model);
     }
+
+    //!777
+    if(false) this.scene.restart();
+    //!
+
+
+
 
     // this.text.setText([
     //   `Player X: ${this.player1.x}`,
@@ -103,4 +124,6 @@ class world1scene2 extends Phaser.Scene {
     this.model.world.mainCharacter.setPosition(scene.scene.key, [x, y]);
     scene.scene.stop(scene.scene.key);
   }
+
+  
 }
