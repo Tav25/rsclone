@@ -30,6 +30,7 @@ export default class World {
   worldSize: number;
   startTime: number;
   elapsedTime: number;
+  isChanged: boolean;
 
   constructor(worldObject: TWorld) {
     this.worldObject = worldObject;
@@ -46,6 +47,7 @@ export default class World {
     this.locationList = worldObject.locations;
     this.worldSize = this.locationList.length;
     this.locations = [];
+    this.isChanged = false;
   }
 
   init() {
@@ -126,5 +128,13 @@ export default class World {
       })
     });
     return convertedWorld;
+  }
+
+  toRender() {
+    this.isChanged = true;
+  }
+
+  isRendered() {
+    this.isChanged = false;
   }
 }
