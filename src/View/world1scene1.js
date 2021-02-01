@@ -43,8 +43,8 @@ class world1scene1 extends Phaser.Scene {
     // dialog
     this.dialog = new Dialog(this);
     // objects
-    const items = new Item(this);
-    items.ItemsOnScene();
+    // const items = new Item(this);
+    // items.ItemsOnScene();
 
     const b3 = new ObjectOnTheScene(this);
     b3.ItemsOnScene();

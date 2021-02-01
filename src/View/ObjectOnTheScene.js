@@ -60,8 +60,6 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
           itemObj.setOrigin(0, 1);
 
           const thisPhysicsBody = new PhysicsBody(itemObj);
-          // this.setOrigin(0.5, 1);
-
           this.scene.physics.add.existing(itemObj, true);
 
           this.scene.add.existing(itemObj);

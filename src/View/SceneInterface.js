@@ -34,43 +34,17 @@ class SceneInterface extends Phaser.Scene {
     this.add.existing(img4);
     img4.initEquippedWeapon();
 
-    // img3.objectPositionInTheList = ['Locator', 'Locator_421', 0, () => {
-    //   console.log('Locator');
-    //   if (this.gameSet.locatorScene) { this.gameSet.locatorScene = false; } else { this.gameSet.locatorScene = true; }
-    //   console.log(this.gameSet);
-    // }];
-
-    // this.img3.objectPositionInTheList3();
-
-    // img3.objectPositionInTheList3 = ['Phaser S', 'weaponsLightsaber_510', 1];
-
-    // this.openTopMenuFile = new openTopMenu(this, 106, 28);
-    // // this.openTopMenuFile
-    // this.add.existing(this.openTopMenuFile);
-
-    this.textFile = new topMenuText(this, 8, 28, 'File', () => {
-      console.log(this.openTopMenuFile);
-      this.openTopMenuFile.x = 16;
-      this.openTopMenuFile.setDepth(10);
-    });
-    this.add.existing(this.textFile);
-
-    // this.textOption = new topMenuText(this, 42, 28, 'Option');
-    // this.add.existing(this.textOption);
-
-    // this.textWindow = new topMenuText(this, 96, 28, 'Window');
-    // this.add.existing(this.textWindow);
-
-    // this.textHelp = new topMenuText(this, 156, 28, 'Help');
-    // this.add.existing(this.textHelp);
+    this.newWorld = new topMenuText(this, 8, 28, 'New World', () => { console.log('New World'); });
+    this.loadWorld = new topMenuText(this, 70, 28, 'Load World', () => { console.log('Load World'); });
+    this.saveWorld = new topMenuText(this, 140, 28, 'Save World', () => { console.log('Save World'); });
+    this.сhangeUser = new topMenuText(this, 210, 28, 'Change User', () => { console.log('Change User'); });
+    this.statistics = new topMenuText(this, 280, 28, 'Statistics', () => { console.log('Statistics'); });
+    this.About = new topMenuText(this, 330, 28, 'About', () => { console.log('About'); });
 
     const keyObj = this.input.keyboard.addKey('Q'); // Get key object
     keyObj.on('down', (event) => {
       console.log('Q');
-      console.log(this.model.world.mainCharacter.inventory.isChanged);
     });
-
-    this.inventoryIsChanged = false;
   }
 
   update() {
