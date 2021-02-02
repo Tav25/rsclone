@@ -91,7 +91,7 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
                 i = 0;
                 if (e.isDead()) {
                   const itemFromEnemy = e.dead();
-                  this.scene.model.world.mainCharacter.pickItem(itemFromEnemy.activate());
+                  if (itemFromEnemy) this.scene.model.world.mainCharacter.pickItem(itemFromEnemy.activate());
                   this.scene.model.world.mainCharacter.setPosition(this.scene.scene.key, [this.scene.player1.x, this.scene.player1.y]);//! добавить направление
                   this.scene.model.world.toRender();
                 }
