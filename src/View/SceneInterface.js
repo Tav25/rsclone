@@ -68,6 +68,9 @@ class SceneInterface extends Phaser.Scene {
   }
 
   update() {
+    // if(this.model.isFinishGame()){console.log("Final",this.model.isFinishGame())}
+
+
     this.arrows.directionOfMovement = this.gameSet.mapArrows;
 
     if (this.model.world.mainCharacter.inventory.isChanged) {
@@ -93,6 +96,11 @@ class SceneInterface extends Phaser.Scene {
   }
 
   vbn(didg, color0, color1, dfg) {
+    if(dfg.ellipse){
+      dfg.ellipse.destroy()
+      dfg.graphics.destroy()
+      dfg.edgingElipse.destroy()
+    }
     const ellipse = dfg.add.ellipse(474, 311, 40, 40);
     ellipse.isFilled = true;
     ellipse.fillColor = color1;
@@ -105,5 +113,9 @@ class SceneInterface extends Phaser.Scene {
     graphics.slice(474, 311, 20, Phaser.Math.DegToRad(270), Phaser.Math.DegToRad(a), true);
     graphics.closePath();
     graphics.fillPath();
+
+    const edgingElipse = dfg.add.ellipse(474, 311, 40, 40);
+		edgingElipse.isStroked = true;
+		edgingElipse.strokeColor = 11119017;
   }
 }
