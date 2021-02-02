@@ -84,6 +84,7 @@ class world1scene1 extends Phaser.Scene {
 
     //
     // this.scene.start('SceneWin', this.model);
+    // this.time.delayedCall(3000, ()=>{console.log("hhhgjhgjhg gjhg  jhg jh")}, [], this);
   }
 
   update() {

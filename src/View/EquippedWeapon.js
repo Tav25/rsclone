@@ -33,10 +33,10 @@ class EquippedWeapon extends Phaser.GameObjects.Container {
   }
 
   initEquippedWeapon() {
-    if (this.scene.model.world.mainCharacter.equipment.equippedWeapon) { //! 777 если есть оружие
+    if (this.scene.model.world.mainCharacter.equipment.equippedWeapon) { 
       console.log('Weap', this.scene.model.world.mainCharacter.equipment.equippedWeapon);
       console.log('initEquippedWeapon()', this.scene.model.world.mainCharacter);
-      const image = this.scene.add.image(110, 262, 'atlasPersonsObject', 'Defel_1061');//! вставить ссылку на картинку
+      const image = this.scene.add.image(110, 262, 'atlasPersonsObject', this.scene.model.world.mainCharacter.equipment.equippedWeapon.icon);
       this.add(image);
 
       const rectangle = this.scene.add.rectangle(83, 278, 10, 32);//! заряд
