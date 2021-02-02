@@ -274,7 +274,11 @@
     "WebContent/555/974.png",
     "WebContent/555/downButton.png",
     "WebContent/555/upButton.png",
-    "WebContent/555/roundCloseButton.png"
+    "WebContent/555/roundCloseButton.png",
+    "WebContent/555/948.png",
+    "WebContent/555/949.png",
+    "WebContent/555/950.png",
+    "WebContent/555/951.png"
   ],
   "settings": {
     "pot": false,

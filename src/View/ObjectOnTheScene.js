@@ -77,7 +77,7 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
           }
 
           // this.scene.add.existing(itemObj);
-          //! меч 
+          //! меч
           let i = 0;
           if (e.type === 'enemy') {
             this.scene.physics.add.overlap(this.scene.player1.weaponOfAttack, itemObj, () => {
@@ -102,14 +102,17 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
 
           this.scene.physics.add.overlap(this.scene.player1, itemObj, () => {
             console.log('JJJ');
-            let itemToTake = undefined;
+            let itemToTake;
 
-            if (e.type === "tradingPlace") itemToTake = e.activate(this.scene.model.world.mainCharacter
-              .getItemToTrader());
-            //inventory.itemList[1].isTradable
-            else itemToTake = e.activate(this.scene.model.world.mainCharacter
-              .isThisItemYouNeed(e.itemToActivate));
-
+            if (e.type === 'tradingPlace') {
+              itemToTake = e.activate(this.scene.model.world.mainCharacter
+                .getItemToTrader());
+            }
+            // inventory.itemList[1].isTradable
+            else {
+              itemToTake = e.activate(this.scene.model.world.mainCharacter
+                .isThisItemYouNeed(e.itemToActivate));
+            }
 
             const speech = e.getDialog();
             this.scene.model.world.mainCharacter.setPosition(this.scene.scene.key, [this.scene.player1.x, this.scene.player1.y]);//! добавить направление
@@ -122,9 +125,10 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
             console.log(speech);
 
             if (itemToTake) {
-              if (e.type === "tradingPlace") this.scene.model.world.mainCharacter.giveItem(this.scene.model.world.mainCharacter
-                .getItemToTrader().name);
-              else this.scene.model.world.mainCharacter.giveItem(e.itemToActivate);
+              if (e.type === 'tradingPlace') {
+                this.scene.model.world.mainCharacter.giveItem(this.scene.model.world.mainCharacter
+                  .getItemToTrader().name);
+              } else this.scene.model.world.mainCharacter.giveItem(e.itemToActivate);
 
               if (itemToTake) this.scene.model.world.mainCharacter.pickItem(itemToTake.activate());
             }
