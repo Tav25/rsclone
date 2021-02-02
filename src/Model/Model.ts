@@ -28,7 +28,6 @@ export default class Model {
     if (!!localStorage.getItem('tav25-levendor-rsclone-user')) {
       const userObject: User = this.userList.find((user) => user.name === localStorage.getItem('tav25-levendor-rsclone-user'));
       this.user = new User(userObject.name, userObject.savesNumber, userObject.statistics);
-      console.log(this.user);
       await this.getSavedGamesList();
       return this.user;
     } else return false;
