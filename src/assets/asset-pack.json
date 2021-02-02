@@ -281,6 +281,13 @@
             },
             {
                 "url": [
+                    "src/assets/audio/hurt.wav"
+                ],
+                "type": "audio",
+                "key": "hurt"
+            },
+            {
+                "url": [
                     "src/assets/audio/opening.wav"
                 ],
                 "type": "audio",

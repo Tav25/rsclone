@@ -77,13 +77,13 @@ class SceneInterface extends Phaser.Scene {
       this.img3.objectPositionInTheList3();
 
       // const herosLifePoints = this.gameSet.hero.lifePoints;
-      const herosLifePoints = this.model.world.mainCharacter.health.maxHealth - this.model.world.mainCharacter.health.currentHealth;
-      if (herosLifePoints < 32) { this.vbn(herosLifePoints, 0x69FF57, 0xF8FF18, this); }
-      if (herosLifePoints > 32) { this.vbn(herosLifePoints - 32, 0xF8FF18, 0xFF1F18, this); }
-      if (herosLifePoints > 64) { this.vbn(herosLifePoints - 64, 0x69FF57, 0xF8FF18, this); }
-
+      
       this.model.world.mainCharacter.inventory.isRendered();
     }
+    const herosLifePoints = this.model.world.mainCharacter.health.maxHealth - this.model.world.mainCharacter.health.currentHealth;
+    if (herosLifePoints < 32) { this.vbn(herosLifePoints, 0x69FF57, 0xF8FF18, this); }
+    if (herosLifePoints > 32) { this.vbn(herosLifePoints - 32, 0xF8FF18, 0xFF1F18, this); }
+    if (herosLifePoints > 64) { this.vbn(herosLifePoints - 64, 0xFF1F18, 0x000000, this); }
     // console.log(this.openTopMenuFile)
   }
 
