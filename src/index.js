@@ -69,5 +69,5 @@ const config = {
     pixelArt: true,
   },
   scene: MyGame,
-  
+
 };

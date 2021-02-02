@@ -56,6 +56,10 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
         e.objects.forEach((e) => {
           console.log(e);
 
+          if (e.type === 'enemy') {
+
+          }
+
           const itemObj = this.scene.add.image(e.position.coordinates[0], e.position.coordinates[1], 'atlasPersonsObject', e.icon.toBottom);
           itemObj.setOrigin(0, 1);
 
@@ -79,10 +83,32 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
           // this.scene.add.existing(itemObj);
           //! меч
           let i = 0;
+          let counterForTheEnemy = 0;
+
           if (e.type === 'enemy') {
+            const correctionX = 16;
+            const correctionY = -16;
+            const rectangle_1 = this.scene.add.rectangle(e.position.coordinates[0] + correctionX, e.position.coordinates[1] + correctionY, 128, 128);
+            // rectangle_1.isFilled = true;
+            if (!e.isDead()) new Physics(rectangle_1);
+
+            this.scene.physics.add.overlap(this.scene.player1, rectangle_1, () => {
+              counterForTheEnemy++;
+              if (counterForTheEnemy === 30) {
+
+                console.log('Enemy Att');
+                console.log(this.scene.model.world.mainCharacter.health.currentHealth);
+
+                this.scene.model.world.mainCharacter.hit(e);
+                this.scene.model.isFinishGame();
+                this.scene.model.world.isRendered();
+                counterForTheEnemy = 0;
+
+              }
+            });
+
             this.scene.physics.add.overlap(this.scene.player1.weaponOfAttack, itemObj, () => {
               i++;
-
               if (i === 30) {
                 e.hit(this.scene.model.world.mainCharacter);
                 e.isDead();
@@ -132,7 +158,7 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
 
               if (itemToTake) this.scene.model.world.mainCharacter.pickItem(itemToTake.activate());
             }
-
+            this.scene.model.isFinishGame();
             // if (e.type === 'door' || e.type === 'trigger' || e.type === 'crate') {
             // }
           });
