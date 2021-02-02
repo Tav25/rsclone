@@ -22,10 +22,10 @@ class SceneInterface extends Phaser.Scene {
     this.arrows = new Arrows(this);
     this.add.existing(this.arrows);
 
-    // const herosLifePoints = this.gameSet.hero.lifePoints;
-    // if (herosLifePoints < 32) { this.vbn(herosLifePoints, 0x69FF57, 0xF8FF18, this); }
-    // if (herosLifePoints > 32) { this.vbn(herosLifePoints - 32, 0xF8FF18, 0xFF1F18, this); }
-    // if (herosLifePoints > 64) { this.vbn(herosLifePoints - 64, 0x69FF57, 0xF8FF18, this); }
+    const herosLifePoints = this.model.world.mainCharacter.health.maxHealth - this.model.world.mainCharacter.health.currentHealth;
+    if (herosLifePoints < 32) { this.vbn(herosLifePoints, 0x69FF57, 0xF8FF18, this); }
+    if (herosLifePoints > 32) { this.vbn(herosLifePoints - 32, 0xF8FF18, 0xFF1F18, this); }
+    if (herosLifePoints > 64) { this.vbn(herosLifePoints - 64, 0xFF1F18, 0x000000, this); }
 
     const mainFrame = this.add.image(0, 0, 'mainFrame');
     this.add.existing(mainFrame);
@@ -83,10 +83,7 @@ class SceneInterface extends Phaser.Scene {
       
       this.model.world.mainCharacter.inventory.isRendered();
     }
-    const herosLifePoints = this.model.world.mainCharacter.health.maxHealth - this.model.world.mainCharacter.health.currentHealth;
-    if (herosLifePoints < 32) { this.vbn(herosLifePoints, 0x69FF57, 0xF8FF18, this); }
-    if (herosLifePoints > 32) { this.vbn(herosLifePoints - 32, 0xF8FF18, 0xFF1F18, this); }
-    if (herosLifePoints > 64) { this.vbn(herosLifePoints - 64, 0xFF1F18, 0x000000, this); }
+ 
     // console.log(this.openTopMenuFile)
   }
 
