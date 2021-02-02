@@ -38,8 +38,8 @@ export default class Model {
   }
 
   async loadUser(userName: string) {
-    const user = this.userList.find((user: User) => user.name === userName);
-    this.user = user;
+    const userObject = this.userList.find((user: User) => user.name === userName);
+    this.user = new User(userObject.name, userObject.savesNumber, userObject.statistics);
     await this.getSavedGamesList();
     localStorage.setItem('tav25-levendor-rsclone-user', userName);
     return true;
@@ -99,9 +99,10 @@ export default class Model {
     }
   }
 
-  winGame() {
+  async winGame() {
     this.world.setFinishTime();
-    this.user.setUserStatistics(this.world.elapsedTime / 10, true);
+    this.user.setUserStatistics(Math.floor(this.world.elapsedTime / 1000), true);
+    await this.database.update('userProfiles', this.user.name, this.user);
   }
 
   loseGame() {
