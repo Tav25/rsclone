@@ -23,6 +23,8 @@ class SceneLocator extends Phaser.Scene {
   }
 
   create() {
+    const bass = this.sound.add('locator'); bass.play();
+
     this.gameSet = this.cache.json.get('gameSettings');
     this.gameSet.mapArrows = [0, 0, 0, 0];
     // player1

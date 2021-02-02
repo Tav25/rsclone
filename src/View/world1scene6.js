@@ -22,6 +22,9 @@ class world1scene6 extends Phaser.Scene {
   }
 
   create() {
+    //!
+    if (false) { const bass = this.sound.add('cantina'); bass.play(); }
+
     this.gameSet = this.cache.json.get('gameSettings');
     this.gameSet.mapArrows = [0, 0, 1, 0];
 
