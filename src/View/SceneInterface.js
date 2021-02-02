@@ -27,7 +27,6 @@ class SceneInterface extends Phaser.Scene {
     // if (herosLifePoints > 32) { this.vbn(herosLifePoints - 32, 0xF8FF18, 0xFF1F18, this); }
     // if (herosLifePoints > 64) { this.vbn(herosLifePoints - 64, 0xFF1F18, 0x000000, this); }
 
-
     const mainFrame = this.add.image(0, 0, 'mainFrame');
     this.add.existing(mainFrame);
     mainFrame.setOrigin(0, 0);
@@ -36,9 +35,8 @@ class SceneInterface extends Phaser.Scene {
     this.add.existing(img4);
     img4.initEquippedWeapon();
 
-    this.circle = new CircleOfLife(this, 474, 311,);
+    this.circle = new CircleOfLife(this, 474, 311);
     this.add.existing(this.circle);
-
 
     this.newWorld = new topMenuText(this, 8, 28, 'New World', async () => {
       await this.model.newWorld();
@@ -75,11 +73,9 @@ class SceneInterface extends Phaser.Scene {
   update() {
     // if(this.model.isFinishGame()){console.log("Final",this.model.isFinishGame())}
 
-
     this.arrows.directionOfMovement = this.gameSet.mapArrows;
 
     if (this.model.world.mainCharacter.inventory.isChanged) {
-      
       this.circle.circleOfLifeInit();
       console.log('Update');
       this.img3 = new Inventory(this, 306, 50);
@@ -100,7 +96,6 @@ class SceneInterface extends Phaser.Scene {
   }
 
   vbn(didg, color0, color1, dfg) {
-
     const ellipse = dfg.add.ellipse(474, 311, 40, 40);
     ellipse.isFilled = true;
     ellipse.fillColor = color1;

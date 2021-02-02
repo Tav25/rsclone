@@ -18,7 +18,9 @@ class Dialog extends Phaser.GameObjects.Container {
 
     this.scene.model.isBlocked = true;
 
-    console.log('initdiadog');
+    if (x < 75) x = 75;
+    if (y < 120) y = 120;
+    if (x > this.scene.map.widthInPixels - 100) x = this.scene.map.widthInPixels - 100;
 
     const dialog = this.scene.add.image(-1 + x, -58 + y, 'dialog');
     this.add(dialog);

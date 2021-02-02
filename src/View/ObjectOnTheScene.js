@@ -95,7 +95,6 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
             this.scene.physics.add.overlap(this.scene.player1, rectangle_1, () => {
               counterForTheEnemy++;
               if (counterForTheEnemy === 15) {
-
                 console.log('Enemy Att');
                 console.log(this.scene.model.world.mainCharacter.health.currentHealth);
 
@@ -104,7 +103,6 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
                 this.scene.model.isFinishGame();
                 this.scene.model.world.isRendered();
                 counterForTheEnemy = 0;
-
               }
             });
 

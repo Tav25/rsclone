@@ -76,7 +76,7 @@ class Inventory extends Phaser.GameObjects.Container {
         if (e.itemObject.type === 'medkit') {
           this.scene.model.world.mainCharacter.health.restoreHealth(e);
           this.scene.model.world.mainCharacter.inventory.removeItem(e.name);
-          }
+        }
         //!
       });
 
