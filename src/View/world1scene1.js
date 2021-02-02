@@ -35,6 +35,7 @@ class world1scene1 extends Phaser.Scene {
     this.player1 = new Player(this);
     this.add.existing(this.player1);
 
+    this.model.world.mainCharacter.setPosition(this.key, [this.player1.x, this.player1.y], 'totop');
     // camera
     const camera = new GameCamera(this);
 
@@ -81,7 +82,10 @@ class world1scene1 extends Phaser.Scene {
 
     // this.dialog.initDialog()
     this.add.existing(this.dialog);
+
     //
+    // this.scene.start('SceneWin', this.model);
+    // this.time.delayedCall(3000, ()=>{console.log("hhhgjhgjhg gjhg  jhg jh")}, [], this);
   }
 
   update() {
@@ -92,13 +96,16 @@ class world1scene1 extends Phaser.Scene {
       this.scene.start('SceneLocator', this.model);
     }
 
-    //! 777
     if (this.model.world.isChanged) {
       this.scene.restart();
       this.model.world.isRendered();
       console.log('restart();');
     }
-    //!
+
+    //! 777 только на 1й сцене финал?
+    if (false) {
+      this.scene.start('SceneWin', this.model);
+    }
   }
 
   stopScene(scene, x, y) {

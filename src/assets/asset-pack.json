@@ -100,6 +100,11 @@
                 "key": "map6"
             },
             {
+                "url": "src/assets/map/winMap.json",
+                "type": "tilemapTiledJSON",
+                "key": "winMap"
+            },
+            {
                 "url": "src/assets/map/LokatorMap.json",
                 "type": "tilemapTiledJSON",
                 "key": "LokatorMap"
@@ -206,6 +211,16 @@
                 "url": "src/View/world1scene6.js",
                 "type": "sceneFile",
                 "key": "world1scene6"
+            },
+            {
+                "url": "src/View/SceneWin.js",
+                "type": "sceneFile",
+                "key": "SceneWin"
+            },
+            {
+                "url": "src/View/SceneStart.js",
+                "type": "sceneFile",
+                "key": "SceneStart"
             },
             {
                 "url": "src/View/SceneLocator.js",

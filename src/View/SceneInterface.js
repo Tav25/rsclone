@@ -13,7 +13,7 @@ class SceneInterface extends Phaser.Scene {
     this.gameSet = this.cache.json.get('gameSettings');
     console.log(this.gameSet);
 
-    this.sc = this.scene.launch('world1scene1', this.model);
+    this.sc = this.scene.launch('SceneStart', this.model);
 
     const rectangle = this.add.rectangle(306, 50, 210, 295);
     rectangle.setOrigin(0, 0);
@@ -37,13 +37,14 @@ class SceneInterface extends Phaser.Scene {
 
     this.newWorld = new topMenuText(this, 8, 28, 'New World', async () => {
       await this.model.newWorld();
+      this.scene.restart();
       console.log('New World');
     });
-    this.loadWorld = new topMenuText(this, 70, 28, 'Load World', () => {
+    this.loadWorld = new topMenuText(this, 74, 28, 'Load World', () => {
       this.modalWindow.loadGame.init();
       console.log('Load World');
     });
-    this.saveWorld = new topMenuText(this, 140, 28, 'Save World', () => {
+    this.saveWorld = new topMenuText(this, 142, 28, 'Save World', () => {
       this.modalWindow.saveGame.init();
       console.log('Save World');
     });
@@ -51,11 +52,11 @@ class SceneInterface extends Phaser.Scene {
       this.modalWindow.newUser.init();
       console.log('Change User');
     });
-    this.statistics = new topMenuText(this, 280, 28, 'Statistics', () => {
+    this.statistics = new topMenuText(this, 285, 28, 'Statistics', () => {
       this.modalWindow.statistics.init();
       console.log('Statistics');
     });
-    this.about = new topMenuText(this, 330, 28, 'About', () => {
+    this.about = new topMenuText(this, 337, 28, 'About', () => {
       this.modalWindow.about.init();
       console.log('About');
     });

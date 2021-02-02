@@ -60,13 +60,42 @@ class Player extends Phaser.GameObjects.Sprite {
       } else if (cursors.down.isDown) {
         this.play('goToBottom', true);
       } else if (cursors.space.isDown) {
-        this.play('animation34', true);
+        this.attackDirection = {
+          toLeft: {
+            animation: 'attackLeft',
+            animationLightSaber: 'laserSwordLeft',
+            xPosition: -34,
+            yPosition: 0,
+          },
+          toright: {
+            animation: 'attackRight',
+            animationLightSaber: 'laserSwordRight',
+            xPosition: 34,
+            yPosition: 0,
+          },
+          totop: {
+            animation: 'attackTop',
+            animationLightSaber: 'laserSwordTop',
+            xPosition: 0,
+            yPosition: -34,
+          },
+          tobottom: {
+            animation: 'attackBottom',
+            animationLightSaber: 'laserSwordBottom',
+            xPosition: 0,
+            yPosition: 34,
+          },
+        };
 
         this.weaponOfAttack.visible = true;
-        // this.weaponOfAttack = this.scene.add.sprite(this.scene.player1.x, this.scene.player1.y, 'medkits', 'medkitsBactaFluid_480');
-        this.weaponOfAttack.play('laserSwordRight', true);
-        this.weaponOfAttack.x = this.x + 32;
-        this.weaponOfAttack.y = this.y;
+        // console.log(this.attackDirection[this.scene.model.world.mainCharacter.position.direction].animationLightSaber)
+
+        if (this.scene.model.world.mainCharacter.position.direction) {
+          this.play(this.attackDirection[this.scene.model.world.mainCharacter.position.direction].animation, true);
+          this.weaponOfAttack.play(this.attackDirection[this.scene.model.world.mainCharacter.position.direction].animationLightSaber, true);
+          this.weaponOfAttack.x = this.x + this.attackDirection[this.scene.model.world.mainCharacter.position.direction].xPosition;
+          this.weaponOfAttack.y = this.y + this.attackDirection[this.scene.model.world.mainCharacter.position.direction].yPosition;
+        }
       } else {
         if (this.weaponOfAttack) {
           this.weaponOfAttack.x = 0;
