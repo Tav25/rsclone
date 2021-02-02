@@ -60,6 +60,11 @@
                 "key": "Inventory"
             },
             {
+                "url": "src/View/CircleOfLife.js",
+                "type": "script",
+                "key": "CircleOfLife"
+            },
+            {
                 "url": "src/View/Item.js",
                 "type": "script",
                 "key": "Item"

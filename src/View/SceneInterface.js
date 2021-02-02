@@ -22,10 +22,11 @@ class SceneInterface extends Phaser.Scene {
     this.arrows = new Arrows(this);
     this.add.existing(this.arrows);
 
-    const herosLifePoints = this.model.world.mainCharacter.health.maxHealth - this.model.world.mainCharacter.health.currentHealth;
-    if (herosLifePoints < 32) { this.vbn(herosLifePoints, 0x69FF57, 0xF8FF18, this); }
-    if (herosLifePoints > 32) { this.vbn(herosLifePoints - 32, 0xF8FF18, 0xFF1F18, this); }
-    if (herosLifePoints > 64) { this.vbn(herosLifePoints - 64, 0xFF1F18, 0x000000, this); }
+    // const herosLifePoints = this.model.world.mainCharacter.health.maxHealth - this.model.world.mainCharacter.health.currentHealth;
+    // if (herosLifePoints < 32) { this.vbn(herosLifePoints, 0x69FF57, 0xF8FF18, this); }
+    // if (herosLifePoints > 32) { this.vbn(herosLifePoints - 32, 0xF8FF18, 0xFF1F18, this); }
+    // if (herosLifePoints > 64) { this.vbn(herosLifePoints - 64, 0xFF1F18, 0x000000, this); }
+
 
     const mainFrame = this.add.image(0, 0, 'mainFrame');
     this.add.existing(mainFrame);
@@ -34,6 +35,10 @@ class SceneInterface extends Phaser.Scene {
     const img4 = new EquippedWeapon(this, 306, 50);
     this.add.existing(img4);
     img4.initEquippedWeapon();
+
+    this.circle = new CircleOfLife(this, 474, 311,);
+    this.add.existing(this.circle);
+
 
     this.newWorld = new topMenuText(this, 8, 28, 'New World', async () => {
       await this.model.newWorld();
@@ -74,16 +79,18 @@ class SceneInterface extends Phaser.Scene {
     this.arrows.directionOfMovement = this.gameSet.mapArrows;
 
     if (this.model.world.mainCharacter.inventory.isChanged) {
+      
+      this.circle.circleOfLifeInit();
       console.log('Update');
       this.img3 = new Inventory(this, 306, 50);
       this.add.existing(this.img3);
       this.img3.objectPositionInTheList3();
 
       // const herosLifePoints = this.gameSet.hero.lifePoints;
-      
+
       this.model.world.mainCharacter.inventory.isRendered();
     }
- 
+
     // console.log(this.openTopMenuFile)
   }
 
@@ -93,11 +100,7 @@ class SceneInterface extends Phaser.Scene {
   }
 
   vbn(didg, color0, color1, dfg) {
-    if(dfg.ellipse){
-      dfg.ellipse.destroy()
-      dfg.graphics.destroy()
-      dfg.edgingElipse.destroy()
-    }
+
     const ellipse = dfg.add.ellipse(474, 311, 40, 40);
     ellipse.isFilled = true;
     ellipse.fillColor = color1;
@@ -112,7 +115,7 @@ class SceneInterface extends Phaser.Scene {
     graphics.fillPath();
 
     const edgingElipse = dfg.add.ellipse(474, 311, 40, 40);
-		edgingElipse.isStroked = true;
-		edgingElipse.strokeColor = 11119017;
+    edgingElipse.isStroked = true;
+    edgingElipse.strokeColor = 11119017;
   }
 }

@@ -100,6 +100,7 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
                 console.log(this.scene.model.world.mainCharacter.health.currentHealth);
 
                 this.scene.model.world.mainCharacter.hit(e);
+                this.scene.model.world.mainCharacter.inventory.toRender();
                 this.scene.model.isFinishGame();
                 this.scene.model.world.isRendered();
                 counterForTheEnemy = 0;
