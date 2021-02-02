@@ -14,7 +14,8 @@ export default class TradingPlace extends CommonObject{
   }
 
   isValidKey(itemInstance: Junk): boolean {
-    return !!itemInstance.isTradable;
+    if (itemInstance) return true;
+    else return false;
   }
 
   activate(itemInstance?: Junk): ItemOnTheGround {

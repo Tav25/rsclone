@@ -33,8 +33,4 @@ export default class Character extends CommonObject {
   returnItem() {
     if (this.returnedItem) return new ItemOnTheGround(this, this.returnedItem);
   }
-
-  // triggerTrigger() {
-  //   this.activatedTrigger.target.triggered = true;
-  // }
 }
