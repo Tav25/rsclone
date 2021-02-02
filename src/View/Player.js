@@ -25,6 +25,8 @@ class Player extends Phaser.GameObjects.Sprite {
 
     this.weaponOfAttack = this.scene.add.sprite(this.x, this.y);
     new Physics(this.weaponOfAttack);
+    this.i = 0;
+    this.bass = this.scene.sound.add('saber');
   }
 
   movePlayer(cursors) {
@@ -64,30 +66,37 @@ class Player extends Phaser.GameObjects.Sprite {
           toLeft: {
             animation: 'attackLeft',
             animationLightSaber: 'laserSwordLeft',
-            xPosition: -34,
+            xPosition: -28,
             yPosition: 0,
           },
           toright: {
             animation: 'attackRight',
             animationLightSaber: 'laserSwordRight',
-            xPosition: 34,
+            xPosition: 28,
             yPosition: 0,
           },
           totop: {
             animation: 'attackTop',
             animationLightSaber: 'laserSwordTop',
             xPosition: 0,
-            yPosition: -34,
+            yPosition: -28,
           },
           tobottom: {
             animation: 'attackBottom',
             animationLightSaber: 'laserSwordBottom',
             xPosition: 0,
-            yPosition: 34,
+            yPosition: 28,
           },
         };
 
         this.weaponOfAttack.visible = true;
+
+        this.i++;
+        if (this.i === 30) {
+          this.bass.play();
+          this.i = 0;
+        }
+
         // console.log(this.attackDirection[this.scene.model.world.mainCharacter.position.direction].animationLightSaber)
 
         if (this.scene.model.world.mainCharacter.position.direction) {
@@ -97,6 +106,7 @@ class Player extends Phaser.GameObjects.Sprite {
           this.weaponOfAttack.y = this.y + this.attackDirection[this.scene.model.world.mainCharacter.position.direction].yPosition;
         }
       } else {
+        this.scene.sound.stopAll();
         if (this.weaponOfAttack) {
           this.weaponOfAttack.x = 0;
           this.weaponOfAttack.y = 0;

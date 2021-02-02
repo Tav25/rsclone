@@ -22,6 +22,8 @@ class SceneStart extends Phaser.Scene {
   }
 
   create() {
+    const bass = this.sound.add('opening'); bass.play();
+
     this.gameSet = this.cache.json.get('gameSettings');
     this.gameSet.mapArrows = [1, 1, 1, 1];
 

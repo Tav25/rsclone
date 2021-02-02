@@ -257,6 +257,34 @@
                 "textureURL": "src/assets/atlas/weapons.png",
                 "type": "atlas",
                 "key": "weapons"
+            },
+            {
+                "url": [
+                    "src/assets/audio/cantina.wav"
+                ],
+                "type": "audio",
+                "key": "cantina"
+            },
+            {
+                "url": [
+                    "src/assets/audio/locator.wav"
+                ],
+                "type": "audio",
+                "key": "locator"
+            },
+            {
+                "url": [
+                    "src/assets/audio/saber.wav"
+                ],
+                "type": "audio",
+                "key": "saber"
+            },
+            {
+                "url": [
+                    "src/assets/audio/opening.wav"
+                ],
+                "type": "audio",
+                "key": "opening"
             }
         ]
     },
