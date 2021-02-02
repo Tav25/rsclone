@@ -32,7 +32,7 @@ export default class Inventory {
   addItem(item: Junk | Locator | MedKit | QuestItem | Weapon): void {
     this.itemList.push(item);
     this.inventorySize += 1;
-    this.isChanged = true;
+    this.toRender();
   }
 
   removeItem(itemName: string): void {
@@ -40,13 +40,17 @@ export default class Inventory {
       const removedItemIndex: number = this.itemList.findIndex((item) => item.name === itemName);
       this.itemList.splice(removedItemIndex, 1);
       this.inventorySize -= 1;
-      this.isChanged = true;
+      this.toRender();
     }
   }
 
   hasItem(itemName: string): boolean {
     const index = this.itemList.findIndex((item) => item.name === itemName);
     return index === -1 ? false : true;
+  }
+
+  toRender(): void {
+    this.isChanged = true;
   }
 
   isRendered(): void {
