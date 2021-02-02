@@ -16,9 +16,8 @@ class world1scene3 extends Phaser.Scene {
     // this.sceneName = this.scene.key
   }
 
-  init(data) {
-    this.model = data.model;
-    this.modalWindow= data.modalWindow;
+  init(model) {
+    this.model = model;
     // console.log('sc1:', this.model);
   }
 
@@ -83,23 +82,19 @@ class world1scene3 extends Phaser.Scene {
     if (this.model.isWin) {
       this.model.winGame()
       console.log("Выиграл")
-
-      this.scene.start('SceneWin', {model:this.model, modalWindow:this.modalWindow});
     }
 
 
     if (this.model.isLose) {
       this.model.loseGame()
-      // const timedEvent = this.time.delayedCall(3000, (), [], this);
       console.log("Проиграл")
-      this.scene.start('SceneDead', {model:this.model, modalWindow:this.modalWindow});
     }
 
     this.player1.movePlayer(this.cursors);
 
     if (this.gameSet.locatorScene) {
       this.stopScene(this, this.player1.x, this.player1.y);
-      this.scene.start('SceneLocator', {model:this.model, modalWindow:this.modalWindow});
+      this.scene.start('SceneLocator', this.model);
     }
 
     //! 777
