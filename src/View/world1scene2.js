@@ -16,8 +16,9 @@ class world1scene2 extends Phaser.Scene {
     // this.sceneName = this.scene.key
   }
 
-  init(model) {
-    this.model = model;
+  init(data) {
+    this.model = data.model;
+    this.modalWindow= data.modalWindow;
     // console.log('sc1:', this.model);
   }
 

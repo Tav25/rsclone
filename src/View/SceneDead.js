@@ -16,8 +16,9 @@ class SceneDead extends Phaser.Scene {
     // this.sceneName = this.scene.key
   }
 
-  init(model) {
-    this.model = model;
+  init(data) {
+    this.model = data.model;
+    this.modalWindow= data.modalWindow;
     // console.log('sc1:', this.model);
   }
 
@@ -55,7 +56,7 @@ class SceneDead extends Phaser.Scene {
   update() {
     this.fly.x += 2;
     this.fly.y -= 0.5;
-    this.fly.rotation -= 0.01;
+    this.fly.rotation -= 0.05;
     this.fly.scale -= 0.005;
   }
 }

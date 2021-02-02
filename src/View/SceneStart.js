@@ -16,8 +16,9 @@ class SceneStart extends Phaser.Scene {
     // this.sceneName = this.scene.key
   }
 
-  init(model) {
-    this.model = model;
+  init(data) {
+    this.model = data.model;
+    this.modalWindow= data.modalWindow;
     // console.log('sc1:', this.model);
   }
 
@@ -65,6 +66,6 @@ class SceneStart extends Phaser.Scene {
     console.log('ghghghg');
     this.scene.stop('SceneStart');
 
-    this.scene.start('world1scene1', this.model);
+    this.scene.start('world1scene1', {model:this.model, modalWindow:this.modalWindow});
   }
 }

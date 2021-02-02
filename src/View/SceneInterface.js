@@ -13,7 +13,9 @@ class SceneInterface extends Phaser.Scene {
     this.gameSet = this.cache.json.get('gameSettings');
     console.log(this.gameSet);
 
-    this.sc = this.scene.launch('SceneStart', this.model);
+    
+
+    this.sc = this.scene.launch('SceneStart', {model:this.model, modalWindow:this.modalWindow});
 
     const rectangle = this.add.rectangle(306, 50, 210, 295);
     rectangle.setOrigin(0, 0);
