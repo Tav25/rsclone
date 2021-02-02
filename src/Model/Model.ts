@@ -96,7 +96,7 @@ export default class Model {
       this.isWin = true;
     } else if (this.world.isLose()) {
       this.isLose = true;
-    } else return false
+    }
   }
 
   winGame() {
