@@ -78,6 +78,18 @@ class world1scene3 extends Phaser.Scene {
   }
 
   update() {
+
+    if (this.model.isWin) {
+      this.model.winGame()
+      console.log("Выиграл")
+    }
+
+
+    if (this.model.isLose) {
+      this.model.loseGame()
+      console.log("Проиграл")
+    }
+
     this.player1.movePlayer(this.cursors);
 
     if (this.gameSet.locatorScene) {

@@ -37,7 +37,7 @@ class SceneInterface extends Phaser.Scene {
 
     this.newWorld = new topMenuText(this, 8, 28, 'New World', async () => {
       await this.model.newWorld();
-      this.scene.restart();
+      // this.scene.restart();
       console.log('New World');
     });
     this.loadWorld = new topMenuText(this, 74, 28, 'Load World', () => {
