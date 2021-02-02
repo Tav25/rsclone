@@ -72,6 +72,11 @@ class Inventory extends Phaser.GameObjects.Container {
         if (e.itemObject.type === 'locator') {
           if (!this.scene.gameSet.locatorScene) { this.scene.gameSet.locatorScene = true; } else { this.scene.gameSet.locatorScene = false; }
         }
+
+        if (e.itemObject.type === 'medkit') {
+          this.scene.model.world.mainCharacter.health.restoreHealth(e);
+          this.scene.model.world.mainCharacter.inventory.removeItem(e.name);
+          }
         //!
       });
 

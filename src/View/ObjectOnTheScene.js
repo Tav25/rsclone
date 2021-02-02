@@ -94,7 +94,7 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
 
             this.scene.physics.add.overlap(this.scene.player1, rectangle_1, () => {
               counterForTheEnemy++;
-              if (counterForTheEnemy === 30) {
+              if (counterForTheEnemy === 15) {
 
                 console.log('Enemy Att');
                 console.log(this.scene.model.world.mainCharacter.health.currentHealth);
@@ -109,7 +109,7 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
 
             this.scene.physics.add.overlap(this.scene.player1.weaponOfAttack, itemObj, () => {
               i++;
-              if (i === 30) {
+              if (i === 15) {
                 e.hit(this.scene.model.world.mainCharacter);
                 e.isDead();
                 console.log('Атака врага:', e);

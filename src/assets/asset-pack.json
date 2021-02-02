@@ -218,6 +218,11 @@
                 "key": "SceneWin"
             },
             {
+                "url": "src/View/SceneDead.js",
+                "type": "sceneFile",
+                "key": "SceneDead"
+            },
+            {
                 "url": "src/View/SceneStart.js",
                 "type": "sceneFile",
                 "key": "SceneStart"
