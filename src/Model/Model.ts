@@ -26,7 +26,9 @@ export default class Model {
     const userList = await this.database.getAll('userProfiles');
     this.userList = userList.map((user: any) => user.content);
     if (!!localStorage.getItem('tav25-levendor-rsclone-user')) {
-      this.user = this.userList.find((user) => user.name === localStorage.getItem('tav25-levendor-rsclone-user'));
+      const userObject: User = this.userList.find((user) => user.name === localStorage.getItem('tav25-levendor-rsclone-user'));
+      this.user = new User(userObject.name, userObject.savesNumber, userObject.statistics);
+      console.log(this.user);
       await this.getSavedGamesList();
       return this.user;
     } else return false;
@@ -44,7 +46,7 @@ export default class Model {
     if ((/[\/|\\|\.|\"|\$|\*|\<|\>|\:|\||\?]/).test(userName) || userName === '' || userName.startsWith('system.') || userName.length >= 120) return false;
     if (this.userList.some((user: User) => user.name === userName)) return false;
 
-    this.user = new User(userName);
+    this.user = new User(userName, 0);
     localStorage.setItem('tav25-levendor-rsclone-user', userName);
     await this.database.create('userProfiles', this.user.name, this.user);
     await this.getSavedGamesList();
