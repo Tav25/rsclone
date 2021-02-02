@@ -10,10 +10,14 @@ export default class Model {
   userList: User[];
   savedGamesList: any[];
   isBlocked: boolean;
+  isWin: boolean;
+  isLose: boolean;
 
   constructor(database: DatabaseInterface) {
     this.database = database;
     this.isBlocked = false;
+    this.isWin = false;
+    this.isLose = false;
   }
 
   async newWorld(worldName: string = 'world1') {
@@ -88,13 +92,19 @@ export default class Model {
   }
 
   isFinishGame() {
-    if (this.world.isWin()){
-      this.world.setFinishTime();
-      this.user.setUserStatistics(this.world.elapsedTime / 10, true);
-      return true;
+    if (this.world.isWin()){ 
+      this.isWin = true;
     } else if (this.world.isLose()) {
-      this.user.setUserStatistics(this.world.elapsedTime, false);
-      return true;
+      this.isLose = true;
     } else return false
+  }
+
+  winGame() {
+    this.world.setFinishTime();
+    this.user.setUserStatistics(this.world.elapsedTime / 10, true);
+  }
+
+  loseGame() {
+    this.user.setUserStatistics(this.world.elapsedTime, false);
   }
 }
