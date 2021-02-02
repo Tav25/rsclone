@@ -2,9 +2,9 @@
 
 /* START OF COMPILED CODE */
 
-class SceneStart extends Phaser.Scene {
+class SceneDead extends Phaser.Scene {
   constructor() {
-    super('SceneStart');
+    super('SceneDead');
 
     /** @type {Phaser.Tilemaps.TilemapLayer} */
     this.lay1;
@@ -22,8 +22,6 @@ class SceneStart extends Phaser.Scene {
   }
 
   create() {
-    const bass = this.sound.add('opening'); bass.play();
-
     this.gameSet = this.cache.json.get('gameSettings');
     this.gameSet.mapArrows = [1, 1, 1, 1];
 
@@ -32,7 +30,6 @@ class SceneStart extends Phaser.Scene {
 
     this.lay1 = this.map.createLayer('bottomLayer', ['sprites'], 0, 0);
     this.lay2 = this.map.createLayer('middleLayer', ['sprites'], 0, 0);
-    this.lay2 = this.map.createLayer('start', ['sprites'], 0, 0);
 
     this.player1 = new Player(this);
     this.add.existing(this.player1);
@@ -40,6 +37,8 @@ class SceneStart extends Phaser.Scene {
     // camera
     const camera = new GameCamera(this);
     this.cameras.main.fadeFrom(2000, Phaser.Math.Between(50, 255), Phaser.Math.Between(50, 255), Phaser.Math.Between(50, 255));
+
+    this.lay3 = this.map.createLayer('dead', ['sprites'], 0, 0);
 
     this.fly = this.add.container(-20, 200);
 
@@ -49,22 +48,14 @@ class SceneStart extends Phaser.Scene {
     const fly3 = this.add.image(0, 32, 'atlasPersonsObject', '950');
     const fly4 = this.add.image(32, 32, 'atlasPersonsObject', '951');
     this.fly.add([fly1, fly2, fly3, fly4]);
-    // weaponsBlasterRifle_513
 
-    // this.lay3 = this.map.createLayer('topLayer', ['sprites'], 0, 0);
-
-    // const timedEvent = this.time.addEvent({ delay: 3000, callback: this.onEvent });
-    const timedEvent = this.time.delayedCall(3000, this.onEvent, [], this);
+    // this.dialog.initDialog()
   }
 
   update() {
     this.fly.x += 2;
-  }
-
-  onEvent() {
-    console.log('ghghghg');
-    this.scene.stop('SceneStart');
-
-    this.scene.start('world1scene1', this.model);
+    this.fly.y -= 0.5;
+    this.fly.rotation -= 0.01;
+    this.fly.scale -= 0.005;
   }
 }
