@@ -10,10 +10,14 @@ export default class Model {
   userList: User[];
   savedGamesList: any[];
   isBlocked: boolean;
+  isWin: boolean;
+  isLose: boolean;
 
   constructor(database: DatabaseInterface) {
     this.database = database;
     this.isBlocked = false;
+    this.isWin = false;
+    this.isLose = false;
   }
 
   async newWorld(worldName: string = 'world1') {
@@ -28,7 +32,6 @@ export default class Model {
     if (!!localStorage.getItem('tav25-levendor-rsclone-user')) {
       const userObject: User = this.userList.find((user) => user.name === localStorage.getItem('tav25-levendor-rsclone-user'));
       this.user = new User(userObject.name, userObject.savesNumber, userObject.statistics);
-      console.log(this.user);
       await this.getSavedGamesList();
       return this.user;
     } else return false;
@@ -89,13 +92,19 @@ export default class Model {
   }
 
   isFinishGame() {
-    if (this.world.isWin()){
-      this.world.setFinishTime();
-      this.user.setUserStatistics(this.world.elapsedTime / 10, true);
-      return true;
+    if (this.world.isWin()){ 
+      this.isWin = true;
     } else if (this.world.isLose()) {
-      this.user.setUserStatistics(this.world.elapsedTime, false);
-      return true;
-    } else return false
+      this.isLose = true;
+    }
+  }
+
+  winGame() {
+    this.world.setFinishTime();
+    this.user.setUserStatistics(this.world.elapsedTime / 10, true);
+  }
+
+  loseGame() {
+    this.user.setUserStatistics(this.world.elapsedTime, false);
   }
 }
