@@ -25,8 +25,6 @@ class Player extends Phaser.GameObjects.Sprite {
 
     this.weaponOfAttack = this.scene.add.sprite(this.x, this.y);
     new Physics(this.weaponOfAttack);
-
-    
   }
 
   movePlayer(cursors) {
@@ -64,39 +62,39 @@ class Player extends Phaser.GameObjects.Sprite {
       } else if (cursors.space.isDown) {
         this.attackDirection = {
           toLeft: {
-            animation:'attackLeft',
-            animationLightSaber:"laserSwordLeft",
+            animation: 'attackLeft',
+            animationLightSaber: 'laserSwordLeft',
             xPosition: -34,
-            yPosition:0,
+            yPosition: 0,
           },
           toright: {
-            animation:'attackRight',
-            animationLightSaber:"laserSwordRight",
+            animation: 'attackRight',
+            animationLightSaber: 'laserSwordRight',
             xPosition: 34,
-            yPosition:0,
+            yPosition: 0,
           },
           totop: {
-            animation:'attackTop',
-            animationLightSaber:"laserSwordTop",
+            animation: 'attackTop',
+            animationLightSaber: 'laserSwordTop',
             xPosition: 0,
-            yPosition:-34,
+            yPosition: -34,
           },
           tobottom: {
-            animation:'attackBottom',
-            animationLightSaber:"laserSwordBottom",
+            animation: 'attackBottom',
+            animationLightSaber: 'laserSwordBottom',
             xPosition: 0,
-            yPosition:34,
+            yPosition: 34,
           },
         };
 
         this.weaponOfAttack.visible = true;
         // console.log(this.attackDirection[this.scene.model.world.mainCharacter.position.direction].animationLightSaber)
 
-        if(this.scene.model.world.mainCharacter.position.direction){
-        this.play(this.attackDirection[this.scene.model.world.mainCharacter.position.direction].animation, true);
-        this.weaponOfAttack.play(this.attackDirection[this.scene.model.world.mainCharacter.position.direction].animationLightSaber, true);
-        this.weaponOfAttack.x = this.x + this.attackDirection[this.scene.model.world.mainCharacter.position.direction].xPosition;
-        this.weaponOfAttack.y = this.y + this.attackDirection[this.scene.model.world.mainCharacter.position.direction].yPosition;
+        if (this.scene.model.world.mainCharacter.position.direction) {
+          this.play(this.attackDirection[this.scene.model.world.mainCharacter.position.direction].animation, true);
+          this.weaponOfAttack.play(this.attackDirection[this.scene.model.world.mainCharacter.position.direction].animationLightSaber, true);
+          this.weaponOfAttack.x = this.x + this.attackDirection[this.scene.model.world.mainCharacter.position.direction].xPosition;
+          this.weaponOfAttack.y = this.y + this.attackDirection[this.scene.model.world.mainCharacter.position.direction].yPosition;
         }
       } else {
         if (this.weaponOfAttack) {
