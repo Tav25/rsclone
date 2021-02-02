@@ -117,7 +117,7 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
                 i = 0;
                 if (e.isDead()) {
                   const itemFromEnemy = e.dead();
-                  this.scene.model.world.mainCharacter.pickItem(itemFromEnemy.activate());
+                  if (itemFromEnemy) this.scene.model.world.mainCharacter.pickItem(itemFromEnemy.activate());
                   this.scene.model.world.mainCharacter.setPosition(this.scene.scene.key, [this.scene.player1.x, this.scene.player1.y]);//! добавить направление
                   this.scene.model.world.toRender();
                 }
@@ -128,20 +128,16 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
 
           this.scene.physics.add.overlap(this.scene.player1, itemObj, () => {
             console.log('JJJ');
-            let itemToTake;
-
-            if (e.type === 'tradingPlace') {
-              itemToTake = e.activate(this.scene.model.world.mainCharacter
-                .getItemToTrader());
-            }
-            // inventory.itemList[1].isTradable
-            else {
-              itemToTake = e.activate(this.scene.model.world.mainCharacter
+            const itemToTake = e.type === 'tradingPlace'
+              ? e.activate(this.scene.model.world.mainCharacter.getItemToTrader())
+              : e.activate(this.scene.model.world.mainCharacter
                 .isThisItemYouNeed(e.itemToActivate));
-            }
 
             const speech = e.getDialog();
-            this.scene.model.world.mainCharacter.setPosition(this.scene.scene.key, [this.scene.player1.x, this.scene.player1.y]);//! добавить направление
+            this.scene.model.world.mainCharacter.setPosition(
+              this.scene.scene.key,
+              [this.scene.player1.x, this.scene.player1.y],
+            ); //! добавить направление
 
             if (speech) {
               this.scene.dialog.initDialog(e.position.coordinates, speech);
@@ -152,11 +148,13 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
 
             if (itemToTake) {
               if (e.type === 'tradingPlace') {
-                this.scene.model.world.mainCharacter.giveItem(this.scene.model.world.mainCharacter
-                  .getItemToTrader().name);
-              } else this.scene.model.world.mainCharacter.giveItem(e.itemToActivate);
-
-              if (itemToTake) this.scene.model.world.mainCharacter.pickItem(itemToTake.activate());
+                this.scene.model.world.mainCharacter.giveItem(
+                  this.scene.model.world.mainCharacter.getItemToTrader().name,
+                );
+              } else {
+                this.scene.model.world.mainCharacter.giveItem(e.itemToActivate);
+              }
+              this.scene.model.world.mainCharacter.pickItem(itemToTake.activate());
             }
             this.scene.model.isFinishGame();
             // if (e.type === 'door' || e.type === 'trigger' || e.type === 'crate') {
