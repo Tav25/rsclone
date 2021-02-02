@@ -6,7 +6,7 @@ export default class Health {
 
   constructor() {
     this.maxHealth = 96;
-    this.currentHealth = 96;
+    this.currentHealth = 10;
   }
 
   getCurrentHealth():number {

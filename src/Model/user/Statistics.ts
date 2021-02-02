@@ -5,12 +5,12 @@ export default class Statistics {
   winCount: number;
   loseCount: number;
 
-  constructor() {
-    this.ratings = [];
-    this.lastRating = 0;
-    this.maxRating = 0;
-    this.winCount = 0;
-    this.loseCount = 0;
+  constructor(stats?: Statistics) {
+    this.ratings = stats ? stats.ratings : [];
+    this.lastRating = stats ? stats.lastRating : 0;
+    this.maxRating = stats ? stats.maxRating : 0;
+    this.winCount = stats ? stats.winCount : 0;
+    this.loseCount = stats ? stats.loseCount : 0;
   }
 
   getStatistics(): Statistics {

@@ -5,10 +5,10 @@ export default class User {
   statistics: Statistics;
   savesNumber: number;
 
-  constructor(name: string = 'new user', savesNumber: number = 0, statistics: Statistics = new Statistics()) {
+  constructor(name: string = 'new user', savesNumber: number, statistics?: Statistics) {
     this.name = name;
     this.savesNumber = savesNumber;
-    this.statistics = statistics;
+    this.statistics = new Statistics(statistics);
   }
 
   getUserName(): string {
