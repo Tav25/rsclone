@@ -21,26 +21,21 @@ class Player extends Phaser.GameObjects.Sprite {
 
     //!
 
-    
-
-
-
     //!
-    
+
     this.setTexture('atlas', this.scene.model.world.mainCharacter.icon);
-    
+
     console.log(this.scene.model.world.mainCharacter);
-    
+
     this.weaponOfAttack = this.scene.add.sprite(this.x, this.y);
     new Physics(this.weaponOfAttack);
     this.i = 0;
     this.bass = this.scene.sound.add('saber');
   }
-  
+
   movePlayer(cursors) {
-    
     // this.setTexture('atlas', this.directionHero[this.scene.model.world.mainCharacter.position.direction].image);
-    
+
     if (this.scene.model.isBlocked) {
       this.stop();
     } else {

@@ -40,6 +40,9 @@ class SceneInterface extends Phaser.Scene {
 
     this.newWorld = new topMenuText(this, 8, 28, 'New World', async () => {
       await this.model.newWorld();
+      this.model.world.mainCharacter.position.coordinates[0] = 276;
+      this.model.world.mainCharacter.position.coordinates[1] = 375;
+      this.gameSet.newScene = true;
       // this.scene.restart();
       console.log('New World');
     });

@@ -97,6 +97,11 @@ class world1scene5 extends Phaser.Scene {
       this.scene.start('SceneLocator', this.model);
     }
 
+    if (this.gameSet.newScene) {
+      this.scene.start('world1scene1', this.model);
+      this.gameSet.newScene = false;
+    }
+
     //! 777
     if (this.model.world.isChanged) {
       this.scene.restart();
