@@ -60,6 +60,11 @@
                 "key": "Inventory"
             },
             {
+                "url": "src/View/HealthСircle.js",
+                "type": "script",
+                "key": "HealthСircle"
+            },
+            {
                 "url": "src/View/Item.js",
                 "type": "script",
                 "key": "Item"
@@ -108,11 +113,6 @@
                 "url": "src/assets/map/LokatorMap.json",
                 "type": "tilemapTiledJSON",
                 "key": "LokatorMap"
-            },
-            {
-                "url": "src/View/Maps.js",
-                "type": "script",
-                "key": "Maps"
             },
             {
                 "atlasURL": "src/assets/atlas/medkits.json",

@@ -1,7 +1,3 @@
-// import TopMenu from '../Menu';
-
-/* START OF COMPILED CODE */
-
 class world1scene3 extends Phaser.Scene {
   constructor() {
     super('world1scene3');
@@ -11,14 +7,11 @@ class world1scene3 extends Phaser.Scene {
     /** @type {Player} */
     this.player1;
 
-    /* START-USER-CTR-CODE */
     this.mainMap = 'map3';
-    // this.sceneName = this.scene.key
   }
 
   init(model) {
     this.model = model;
-    // console.log('sc1:', this.model);
   }
 
   create() {
@@ -53,21 +46,6 @@ class world1scene3 extends Phaser.Scene {
     const rectangleBottom = new RectanglePhysics(this, 0, 575, this.map.widthInPixels, 3, () => { this.gameSet.hero.y = 20; this.gameSet.hero.x = this.player1.x; });
     const rectangleLeft = new RectanglePhysics(this, -2, 0, 3, this.map.heightInPixels, () => { this.model.world.mainCharacter.setPosition(this.scene.scene.key, [545, this.player1.y]); this.scene.stop('world1scene3'); this.scene.start('world1scene1'); });
 
-    // text
-    // this.text = this.add.text(10, 10).setScrollFactor(0).setFontSize(12).setColor('#273746');
-
-    // key
-    const keyObj = this.input.keyboard.addKey('W'); // Get key object
-    keyObj.on('down', (event) => {
-      // console.log('w');
-
-      console.log('gameSet: ', this.gameSet);
-      console.log('Model: ', this.model);
-      console.log('Model: ', this.model.isBlocked);
-    });
-
-    keyObj.on('up', (event) => { /* ... */ });
-
     // col
     this.lay2.setCollisionByExclusion([-1]);
     this.physics.add.collider(this.player1, this.lay2);
@@ -78,16 +56,16 @@ class world1scene3 extends Phaser.Scene {
   }
 
   update() {
-
     if (this.model.isWin) {
-      this.model.winGame()
-      console.log("Выиграл")
+      this.scene.start('SceneWin', this.model);
+      this.model.winGame();
+      console.log('Выиграл');
     }
 
-
     if (this.model.isLose) {
-      this.model.loseGame()
-      console.log("Проиграл")
+      this.scene.start('SceneDead', this.model);
+      this.model.loseGame();
+      console.log('Проиграл');
     }
 
     this.player1.movePlayer(this.cursors);
@@ -95,6 +73,11 @@ class world1scene3 extends Phaser.Scene {
     if (this.gameSet.locatorScene) {
       this.stopScene(this, this.player1.x, this.player1.y);
       this.scene.start('SceneLocator', this.model);
+    }
+
+    if (this.gameSet.newScene) {
+      this.scene.start('world1scene1', this.model);
+      this.gameSet.newScene = false;
     }
 
     //! 777

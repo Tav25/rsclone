@@ -1,7 +1,3 @@
-// import TopMenu from '../Menu';
-
-/* START OF COMPILED CODE */
-
 class SceneStart extends Phaser.Scene {
   constructor() {
     super('SceneStart');
@@ -11,14 +7,11 @@ class SceneStart extends Phaser.Scene {
     /** @type {Player} */
     this.player1;
 
-    /* START-USER-CTR-CODE */
     this.mainMap = 'winMap';
-    // this.sceneName = this.scene.key
   }
 
   init(model) {
     this.model = model;
-    // console.log('sc1:', this.model);
   }
 
   create() {
@@ -49,11 +42,7 @@ class SceneStart extends Phaser.Scene {
     const fly3 = this.add.image(0, 32, 'atlasPersonsObject', '950');
     const fly4 = this.add.image(32, 32, 'atlasPersonsObject', '951');
     this.fly.add([fly1, fly2, fly3, fly4]);
-    // weaponsBlasterRifle_513
 
-    // this.lay3 = this.map.createLayer('topLayer', ['sprites'], 0, 0);
-
-    // const timedEvent = this.time.addEvent({ delay: 3000, callback: this.onEvent });
     const timedEvent = this.time.delayedCall(3000, this.onEvent, [], this);
   }
 
@@ -62,9 +51,7 @@ class SceneStart extends Phaser.Scene {
   }
 
   onEvent() {
-    console.log('ghghghg');
     this.scene.stop('SceneStart');
-
     this.scene.start('world1scene1', this.model);
   }
 }

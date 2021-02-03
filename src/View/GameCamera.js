@@ -1,7 +1,3 @@
-// You can write more code here
-
-/* START OF COMPILED CODE */
-
 class GameCamera {
   constructor(scene) {
     const camera = scene.cameras.main;
@@ -10,10 +6,4 @@ class GameCamera {
     camera.setViewport(9, 52, 288, 288);
     scene.camera = camera;
   }
-
-  /* END-USER-CODE */
 }
-
-/* END OF COMPILED CODE */
-
-// You can write more code here
