@@ -1,0 +1,65 @@
+{
+  "name": "rsclone",
+  "version": "1.0.0",
+  "description": "rsclone school project",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack --config webpack/prod.js ",
+    "start": "webpack-dev-server --config webpack/base.js --open",
+    "lint": "eslint ./**/*.js",
+    "lint_fix": "eslint --fix ./**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tav25/rsclone.git"
+  },
+  "keywords": [
+    "rsclone",
+    "yoda story",
+    "RSSchool",
+    "Levendor",
+    "Tav25",
+    "JavaScript"
+  ],
+  "author": "Levendor Tav25",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tav25/rsclone/issues"
+  },
+  "homepage": "https://github.com/tav25/rsclone#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.7.1",
+    "@types/node": "^14.14.16",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.1",
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-html": "^6.1.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "prettier": "^2.2.1",
+    "raw-loader": "^3.1.0",
+    "sass": "^1.32.5",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^2.2.1",
+    "ts-loader": "^8.0.14",
+    "typescript": "^4.1.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.12.5",
+    "axios": "^0.21.1",
+    "phaser": "^3.50.0"
+  }
+}

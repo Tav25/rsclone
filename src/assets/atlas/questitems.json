@@ -1,0 +1,2089 @@
+{
+  "frames": {
+    "questitems10,000Credits_429": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 245,
+        "y": 152,
+        "w": 22,
+        "h": 27
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 3,
+        "w": 22,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitems5,000Credits_405": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 122,
+        "y": 5,
+        "w": 22,
+        "h": 21
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 7,
+        "w": 22,
+        "h": 21
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsAdeganCrystal_459": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 292,
+        "y": 23,
+        "w": 17,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 2,
+        "w": 17,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsAlluvialDamper_435": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 185,
+        "y": 213,
+        "w": 28,
+        "h": 26
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 26
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsAncientKey_1796": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 242,
+        "y": 122,
+        "w": 25,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 2,
+        "w": 25,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsAnti-GravGenerator_447": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 215,
+        "y": 213,
+        "w": 28,
+        "h": 26
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 3,
+        "w": 28,
+        "h": 26
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsAshcan_1907": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 2,
+        "y": 237,
+        "w": 25,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 0,
+        "w": 25,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsBarOfDurasteel_443": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 62,
+        "y": 2,
+        "w": 28,
+        "h": 27
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsBeamdrill_457": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 29,
+        "y": 241,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsBlueKeyCard_472": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 122,
+        "y": 137,
+        "w": 28,
+        "h": 21
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 5,
+        "w": 28,
+        "h": 21
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsBreathMask_499": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 2,
+        "y": 176,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsCloakingDevice_1940": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 150,
+        "y": 56,
+        "w": 25,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 2,
+        "w": 25,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsComlink_503": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 152,
+        "y": 137,
+        "w": 28,
+        "h": 21
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 5,
+        "w": 28,
+        "h": 21
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsCommUnit_446": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 150,
+        "y": 86,
+        "w": 26,
+        "h": 27
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 2,
+        "w": 26,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsComputerProbe_469": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 299,
+        "y": 161,
+        "w": 28,
+        "h": 23
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 4,
+        "w": 28,
+        "h": 23
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsCondenserUnit_489": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 298,
+        "y": 83,
+        "w": 26,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 2,
+        "w": 26,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsDataCard_449": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 2,
+        "y": 146,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsDatacube_1215": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 2,
+        "y": 116,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsDecoder_462": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 2,
+        "y": 86,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsDriveCompensator_445": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 269,
+        "y": 114,
+        "w": 28,
+        "h": 20
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 6,
+        "w": 28,
+        "h": 20
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsDriveGuide_486": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 2,
+        "y": 56,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsDroidCaller_470": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 269,
+        "y": 186,
+        "w": 28,
+        "h": 25
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 25
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsDroidDetector_434": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 233,
+        "y": 64,
+        "w": 24,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 2,
+        "w": 24,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsDroidPart_465": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 185,
+        "y": 185,
+        "w": 28,
+        "h": 26
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 4,
+        "w": 28,
+        "h": 26
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsElectrolockpick_477": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 245,
+        "y": 211,
+        "w": 22,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 2,
+        "w": 22,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsElectroscope_487": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 182,
+        "y": 106,
+        "w": 27,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 27,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsEnergyCell_468": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 185,
+        "y": 159,
+        "w": 28,
+        "h": 24
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 4,
+        "w": 28,
+        "h": 24
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsEnergyRelay_1351": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 2,
+        "y": 26,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsFuse_1284": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 32,
+        "y": 176,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsFusionCutter_518": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 35,
+        "y": 211,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsFusionFurnace_497": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 59,
+        "y": 241,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsFusionWelder_456": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 32,
+        "y": 146,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsGasGrenade_430": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 92,
+        "y": 2,
+        "w": 28,
+        "h": 27
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsGlowRod_478": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 306,
+        "y": 53,
+        "w": 19,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 2,
+        "w": 19,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsGreenKeyCard_474": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 22
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 5,
+        "w": 28,
+        "h": 22
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsHolocomm_500": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 32,
+        "y": 116,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsHolocron_461": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 32,
+        "y": 86,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsHolocube_463": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 32,
+        "y": 56,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsHydrospanner_492": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 269,
+        "y": 242,
+        "w": 28,
+        "h": 27
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 3,
+        "w": 28,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsHyperspaceCompass_455": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 32,
+        "y": 26,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsIceDrill_433": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 299,
+        "y": 242,
+        "w": 28,
+        "h": 27
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 3,
+        "w": 28,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsIdCard_1237": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 204,
+        "y": 46,
+        "w": 24,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 2,
+        "w": 24,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsIgniter_525": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 269,
+        "y": 87,
+        "w": 27,
+        "h": 25
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 5,
+        "w": 27,
+        "h": 25
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsImMine_515": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 215,
+        "y": 159,
+        "w": 28,
+        "h": 24
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 3,
+        "w": 28,
+        "h": 24
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsImperialBelt_493": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 62,
+        "y": 181,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsImperialKey_1240": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 65,
+        "y": 211,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsKaiburrCrystal_451": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 89,
+        "y": 241,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsKeyCard_1231": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 122,
+        "y": 115,
+        "w": 28,
+        "h": 20
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 7,
+        "w": 28,
+        "h": 20
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsKeyCard_1232": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 178,
+        "y": 77,
+        "w": 26,
+        "h": 27
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 2,
+        "w": 26,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsKeyCard_1233": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 202,
+        "y": 5,
+        "w": 21,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 2,
+        "w": 21,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsKeyCard_1234": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 149,
+        "y": 29,
+        "w": 25,
+        "h": 25
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 3,
+        "w": 25,
+        "h": 25
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsKeyCard_1235": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 176,
+        "y": 19,
+        "w": 24,
+        "h": 27
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 3,
+        "w": 24,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsKeyCard_1241": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 240,
+        "y": 94,
+        "w": 27,
+        "h": 26
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 3,
+        "w": 27,
+        "h": 26
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsKeyCard_1242": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 122,
+        "y": 28,
+        "w": 25,
+        "h": 25
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 3,
+        "w": 25,
+        "h": 25
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsKeyCard_1243": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 299,
+        "y": 186,
+        "w": 28,
+        "h": 25
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 4,
+        "w": 28,
+        "h": 25
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsKeyCard_1244": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 62,
+        "y": 121,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsKeyCard_1793": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 149,
+        "y": 2,
+        "w": 25,
+        "h": 25
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 4,
+        "w": 25,
+        "h": 25
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsKeyCard_1795": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 269,
+        "y": 213,
+        "w": 28,
+        "h": 27
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 3,
+        "w": 28,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsKey_1238": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 62,
+        "y": 151,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsLanternOfSacredLight_448": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 271,
+        "y": 23,
+        "w": 19,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 2,
+        "w": 19,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsLocomotor_476": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 32,
+        "y": 2,
+        "w": 28,
+        "h": 22
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 5,
+        "w": 28,
+        "h": 22
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsLommiteCrystal_450": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 62,
+        "y": 91,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsMacrofuser_491": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 62,
+        "y": 61,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsMacroscope_495": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 62,
+        "y": 31,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsMinePin_524": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 215,
+        "y": 185,
+        "w": 28,
+        "h": 26
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 4,
+        "w": 28,
+        "h": 26
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsMotivator_467": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 92,
+        "y": 181,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsNavCard_484": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 122,
+        "y": 85,
+        "w": 26,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 26,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsNavicomputer_441": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 259,
+        "y": 58,
+        "w": 23,
+        "h": 27
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 3,
+        "w": 23,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsOrangeKeyCard_516": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 299,
+        "y": 137,
+        "w": 28,
+        "h": 22
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 5,
+        "w": 28,
+        "h": 22
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsOreDrill_609": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 211,
+        "y": 106,
+        "w": 27,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 2,
+        "w": 27,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsPairOfBinoculars_490": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 299,
+        "y": 213,
+        "w": 28,
+        "h": 27
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsPowerConverter_466": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 95,
+        "y": 211,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsPowerCoupling_479": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 182,
+        "y": 136,
+        "w": 28,
+        "h": 21
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 6,
+        "w": 28,
+        "h": 21
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsPowerPrybar_440": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 119,
+        "y": 241,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsPowerTerminal_439": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 92,
+        "y": 151,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsPurpleKeyCard_508": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 269,
+        "y": 136,
+        "w": 28,
+        "h": 22
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 5,
+        "w": 28,
+        "h": 22
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsRangefinder_488": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 92,
+        "y": 121,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsRebelIdCard_1245": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 284,
+        "y": 53,
+        "w": 20,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 2,
+        "w": 20,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsRedKeyCard_473": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 299,
+        "y": 113,
+        "w": 28,
+        "h": 22
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 5,
+        "w": 28,
+        "h": 22
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsRepulsor_454": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 225,
+        "y": 5,
+        "w": 21,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 2,
+        "w": 21,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsRestrainingBolt_438": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 230,
+        "y": 35,
+        "w": 23,
+        "h": 27
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 3,
+        "w": 23,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsSampleOfCarbonite_481": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 248,
+        "y": 5,
+        "w": 21,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 2,
+        "w": 21,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsSampleOfRyll_452": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 92,
+        "y": 91,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsSecurityPass_1287": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 152,
+        "y": 115,
+        "w": 28,
+        "h": 20
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 7,
+        "w": 28,
+        "h": 20
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsSensorArray_453": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 122,
+        "y": 55,
+        "w": 25,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 2,
+        "w": 25,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsSensorPack_460": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 92,
+        "y": 61,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsShieldGenerator_444": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 92,
+        "y": 31,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsSithAmulet_610": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 125,
+        "y": 184,
+        "w": 28,
+        "h": 26
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 4,
+        "w": 28,
+        "h": 26
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsSmokeGrenade_431": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 149,
+        "y": 241,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsSonicCleaver_432": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 177,
+        "y": 48,
+        "w": 25,
+        "h": 27
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 3,
+        "w": 25,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsSonicHammer_1239": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 206,
+        "y": 76,
+        "w": 25,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 2,
+        "w": 25,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsSpiritHeart_1432": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 155,
+        "y": 184,
+        "w": 28,
+        "h": 26
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 3,
+        "w": 28,
+        "h": 26
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsStarSapphire_1216": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 255,
+        "y": 37,
+        "w": 13,
+        "h": 19
+      },
+      "spriteSourceSize": {
+        "x": 9,
+        "y": 6,
+        "w": 13,
+        "h": 19
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsStasisMine_523": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 269,
+        "y": 160,
+        "w": 28,
+        "h": 24
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 4,
+        "w": 28,
+        "h": 24
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsStormtrooperId_1236": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 122,
+        "y": 160,
+        "w": 28,
+        "h": 22
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 5,
+        "w": 28,
+        "h": 22
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsTelesponder_498": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 245,
+        "y": 181,
+        "w": 22,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 2,
+        "w": 22,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsThermalCape_437": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 125,
+        "y": 212,
+        "w": 28,
+        "h": 27
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 3,
+        "w": 28,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsToolDroid_1768": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 2,
+        "y": 206,
+        "w": 31,
+        "h": 29
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 1,
+        "w": 31,
+        "h": 29
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsTransferRegister_501": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 155,
+        "y": 212,
+        "w": 28,
+        "h": 27
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 3,
+        "w": 28,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsTransponder_464": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 179,
+        "y": 241,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsUtilityBelt_496": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 209,
+        "y": 241,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsVialOfTibannaGas_436": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 239,
+        "y": 241,
+        "w": 28,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsVocabulator_458": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 212,
+        "y": 136,
+        "w": 28,
+        "h": 21
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 5,
+        "w": 28,
+        "h": 21
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "questitemsYellowKeyCard_509": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 152,
+        "y": 160,
+        "w": 28,
+        "h": 22
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 5,
+        "w": 28,
+        "h": 22
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    }
+  },
+  "meta": {
+    "app": "Phaser Editor",
+    "version": "1",
+    "image": "questitems.png"
+  }
+}

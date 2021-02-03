@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "target": "es5",
+    "sourceMap": false,
+    "outDir": "rsclone",
+    "moduleResolution": "node",
+    "allowJs": true,
+  },
+  "exclude": [
+    "node_modules",
+  ]
+}
