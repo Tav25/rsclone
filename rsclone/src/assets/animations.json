@@ -1,0 +1,327 @@
+{
+    "anims": [
+        {
+            "key": "test",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas",
+                    "frame": "img2053",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img2051",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "goToLeft",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas",
+                    "frame": "img1026",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img1027",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img1028",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "goToRight",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas",
+                    "frame": "img1029",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img1030",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img1031",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "goToTop",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas",
+                    "frame": "img1032",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img1033",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img1034",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "goToBottom",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas",
+                    "frame": "img1024",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img1025",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "animation",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas",
+                    "frame": "img1073",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img1074",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img1075",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "hideOnComplete": true
+        },
+        {
+            "key": "laserSwordRight",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas",
+                    "frame": "img1040",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img1042",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "attackRight",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas",
+                    "frame": "img1039",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img1041",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "attackLeft",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas",
+                    "frame": "img1044",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img1046",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "laserSwordLeft",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas",
+                    "frame": "img1043",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img1045",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "laserSwordTop",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas",
+                    "frame": "img1747",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img1748",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "laserSwordBottom",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas",
+                    "frame": "img1750",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img1752",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "attackTop",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas",
+                    "frame": "img1746",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img1780",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "attackBottom",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas",
+                    "frame": "img1749",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "atlas",
+                    "frame": "img1751",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    }
+}

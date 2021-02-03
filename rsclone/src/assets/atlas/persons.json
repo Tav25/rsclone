@@ -1,0 +1,1269 @@
+{
+  "frames": {
+    "persons2-1B_797": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 716,
+        "y": 36,
+        "w": 26,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 0,
+        "w": 26,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsAbyssin_1063": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 744,
+        "y": 36,
+        "w": 25,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 0,
+        "w": 25,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsAdvorzse2_1054": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 799,
+        "y": 36,
+        "w": 24,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 0,
+        "w": 24,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsAdvorzse_1053": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 771,
+        "y": 36,
+        "w": 26,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 0,
+        "w": 26,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsAsinusTesta_1602": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 237,
+        "y": 37,
+        "w": 24,
+        "h": 31
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 0,
+        "w": 24,
+        "h": 31
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsBartenderDroid_1281": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 263,
+        "y": 37,
+        "w": 30,
+        "h": 31
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 0,
+        "w": 30,
+        "h": 31
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsBetsyPage_1830": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 295,
+        "y": 37,
+        "w": 20,
+        "h": 31
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 0,
+        "w": 20,
+        "h": 31
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsBilbo_1055": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 317,
+        "y": 37,
+        "w": 27,
+        "h": 31
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 0,
+        "w": 27,
+        "h": 31
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsBillCarson_1825": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 2,
+        "y": 8,
+        "w": 26,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 0,
+        "w": 26,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsBith_1072": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 30,
+        "y": 8,
+        "w": 25,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 0,
+        "w": 25,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsBobaFett_800": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 346,
+        "y": 37,
+        "w": 23,
+        "h": 31
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 0,
+        "w": 23,
+        "h": 31
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsBrainee2_1066": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 57,
+        "y": 6,
+        "w": 26,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 0,
+        "w": 26,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsC-3PO_1353": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 85,
+        "y": 6,
+        "w": 28,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 0,
+        "w": 28,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsCaptainBahl_I_1211": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 371,
+        "y": 37,
+        "w": 23,
+        "h": 31
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 0,
+        "w": 23,
+        "h": 31
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsCaptainBlob_785": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 396,
+        "y": 37,
+        "w": 23,
+        "h": 31
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 0,
+        "w": 23,
+        "h": 31
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsChewbacca_2114": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 825,
+        "y": 36,
+        "w": 20,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 0,
+        "w": 20,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsChico_1067": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 115,
+        "y": 6,
+        "w": 24,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 0,
+        "w": 24,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsChubbs_1833": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 141,
+        "y": 5,
+        "w": 31,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 31,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsDefel_1061": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 174,
+        "y": 5,
+        "w": 25,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 0,
+        "w": 25,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsDoctorNambu_I_1214": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 201,
+        "y": 4,
+        "w": 23,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 0,
+        "w": 23,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsDr": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 226,
+        "y": 3,
+        "w": 24,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 0,
+        "w": 24,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsDroid1_1785": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 252,
+        "y": 3,
+        "w": 22,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 0,
+        "w": 22,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsDroid2_1786": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 276,
+        "y": 3,
+        "w": 26,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 0,
+        "w": 26,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsDuros_1058": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 421,
+        "y": 37,
+        "w": 25,
+        "h": 31
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 0,
+        "w": 25,
+        "h": 31
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsEmperor'sBG_790": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 304,
+        "y": 3,
+        "w": 24,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 0,
+        "w": 24,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsEwokDoc_2037": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 448,
+        "y": 37,
+        "w": 26,
+        "h": 31
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 0,
+        "w": 26,
+        "h": 31
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsFibbs_I_1213": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 330,
+        "y": 3,
+        "w": 25,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 0,
+        "w": 25,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsFrodo_1057": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 476,
+        "y": 37,
+        "w": 25,
+        "h": 31
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 0,
+        "w": 25,
+        "h": 31
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsGeneralMarutz_1212": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 357,
+        "y": 3,
+        "w": 24,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 0,
+        "w": 24,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsGnudoHeap_1052": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 383,
+        "y": 3,
+        "w": 26,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 0,
+        "w": 26,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsGroucho_1062": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 411,
+        "y": 3,
+        "w": 26,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 0,
+        "w": 26,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsHanSolo_809": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 503,
+        "y": 37,
+        "w": 23,
+        "h": 31
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 0,
+        "w": 23,
+        "h": 31
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsHarpo_1069": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 439,
+        "y": 3,
+        "w": 24,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 0,
+        "w": 24,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsHiball_1824": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 154,
+        "y": 39,
+        "w": 23,
+        "h": 29
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 0,
+        "w": 23,
+        "h": 29
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsIG88_E_1769": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 493,
+        "y": 3,
+        "w": 25,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 0,
+        "w": 25,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsIP-8Droid_1280": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 73,
+        "y": 40,
+        "w": 23,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 2,
+        "w": 23,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsIceMerchant_1279": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 465,
+        "y": 3,
+        "w": 26,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 0,
+        "w": 26,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsImpOffOne_1981": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 528,
+        "y": 37,
+        "w": 23,
+        "h": 31
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 0,
+        "w": 23,
+        "h": 31
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsImpOffToo_1982": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 179,
+        "y": 39,
+        "w": 25,
+        "h": 29
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 0,
+        "w": 25,
+        "h": 29
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsJawa_1350": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 98,
+        "y": 40,
+        "w": 26,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 3,
+        "w": 26,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsJawa_784": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 126,
+        "y": 40,
+        "w": 26,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 3,
+        "w": 26,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsJimmyCorrigan_1823": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 520,
+        "y": 3,
+        "w": 22,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 0,
+        "w": 22,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsLabria_1071": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 544,
+        "y": 3,
+        "w": 25,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 0,
+        "w": 25,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsNai'ah_1827": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 571,
+        "y": 3,
+        "w": 22,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 0,
+        "w": 22,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsNanuk_1822": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 595,
+        "y": 3,
+        "w": 24,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 0,
+        "w": 24,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsNienNunb_1064": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 621,
+        "y": 3,
+        "w": 28,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 0,
+        "w": 28,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsNikto_1056": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 553,
+        "y": 37,
+        "w": 23,
+        "h": 31
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 0,
+        "w": 23,
+        "h": 31
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsObiWanKenobi_779": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 604,
+        "y": 37,
+        "w": 24,
+        "h": 31
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 0,
+        "w": 24,
+        "h": 31
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsObiWan_791": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 578,
+        "y": 37,
+        "w": 24,
+        "h": 31
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 0,
+        "w": 24,
+        "h": 31
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsPorker_1821": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 630,
+        "y": 37,
+        "w": 29,
+        "h": 31
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 0,
+        "w": 29,
+        "h": 31
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsPrincessLeia_1607": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 651,
+        "y": 3,
+        "w": 24,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 0,
+        "w": 24,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsPrivateLime_1603": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 661,
+        "y": 37,
+        "w": 29,
+        "h": 31
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 0,
+        "w": 29,
+        "h": 31
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsR2-AmNot_795": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 2,
+        "y": 42,
+        "w": 21,
+        "h": 26
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 4,
+        "w": 21,
+        "h": 26
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsR2-D2_794": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 25,
+        "y": 42,
+        "w": 23,
+        "h": 26
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 4,
+        "w": 23,
+        "h": 26
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsR2L7_I_1218": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 50,
+        "y": 42,
+        "w": 21,
+        "h": 26
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 4,
+        "w": 21,
+        "h": 26
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsRumple_1831": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 677,
+        "y": 3,
+        "w": 26,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 0,
+        "w": 26,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsSgt": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 705,
+        "y": 2,
+        "w": 32,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsShaker_1832": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 692,
+        "y": 37,
+        "w": 22,
+        "h": 31
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 0,
+        "w": 22,
+        "h": 31
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsTahmboix_1818": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 739,
+        "y": 2,
+        "w": 26,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 0,
+        "w": 26,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsUncleJimmy_1600": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 767,
+        "y": 2,
+        "w": 30,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 0,
+        "w": 30,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsXizorSalUd_1826": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 799,
+        "y": 2,
+        "w": 25,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 0,
+        "w": 25,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsYeaMartini_1794": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 826,
+        "y": 2,
+        "w": 23,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 0,
+        "w": 23,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    },
+    "personsYoda_780": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 206,
+        "y": 38,
+        "w": 29,
+        "h": 30
+      },
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 0,
+        "w": 29,
+        "h": 30
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      }
+    }
+  },
+  "meta": {
+    "app": "Phaser Editor",
+    "version": "1",
+    "image": "persons.png"
+  }
+}

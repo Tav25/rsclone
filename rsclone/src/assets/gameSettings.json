@@ -1,0 +1,76 @@
+{
+    "hero": {
+        
+        "lifePoints": 55,
+        "weapons": "no"
+
+    },
+    "mapArrows": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "locatorScene": false,
+    "newScene": false,
+    "currentLocation": "world1scene1",
+    "listOfEquipment": [
+        {
+            "image": "Locator_421",
+            "text": "this is Text",
+            "position": 1,
+            "x": 228,
+            "y": 260,
+            "location": "world1scene1",
+            "functionPointerDown": "console.log(this);"
+        },
+        {
+            "image": "GreenKeyCard_474",
+            "text": "GreenKeyCard",
+            "position": 2,
+            "x": 228,
+            "y": 260,
+            "location": "world1scene1",
+            "functionPointerDown": "console.log('GreenKeyCard')"
+        }
+    ],
+    "objectOnMap": [
+        {
+            "image": "Locator_421",
+            "x": 228,
+            "y": 260,
+            "location": "world1scene1",
+            "functionCollision": "console.log('Locator_421collision')"
+        },
+        {
+            "image": "Defel_1061",
+            "x": 228,
+            "y": 228,
+            "location": "world1scene1",
+            "functionCollision": "console.log('Defel_1061collision')"
+        }
+    ],
+    "itemOnMap": [
+        {
+            "image": "Locator_421",
+            "x": 228,
+            "y": 260,
+            "location": "world1scene1",
+            "functionPointerDown": "console.log('json421')"
+        },
+        {
+            "image": "Dainougut_2036",
+            "x": 260,
+            "y": 260,
+            "location": "world1scene1",
+            "functionPointerDown": "console.log('json2036')"
+        },
+        {
+            "image": "Dainougut_2036",
+            "x": 292,
+            "y": 260,
+            "location": "world1scene1",
+            "functionPointerDown": "console.log('json2036')"
+        }
+    ]
+}
