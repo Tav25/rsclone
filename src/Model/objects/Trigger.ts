@@ -11,8 +11,6 @@ export default class Trigger extends CommonObject{
   }
 
   activate(itemInstance?: QuestItem): void {
-    console.log(this.icon);
-    console.log(this.openedIcon);
     if (!this.isFirstVisit) {
       if (this.isKeyNeededToOpen) {
         if (this.isValidKey(itemInstance)) {
