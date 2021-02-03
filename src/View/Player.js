@@ -19,17 +19,28 @@ class Player extends Phaser.GameObjects.Sprite {
     thisPhysicsBody.bodyWidth = 26;
     thisPhysicsBody.bodyHeight = 26;
 
+    //!
+
+    
+
+
+
+    //!
+    
     this.setTexture('atlas', this.scene.model.world.mainCharacter.icon);
-
+    
     console.log(this.scene.model.world.mainCharacter);
-
+    
     this.weaponOfAttack = this.scene.add.sprite(this.x, this.y);
     new Physics(this.weaponOfAttack);
     this.i = 0;
     this.bass = this.scene.sound.add('saber');
   }
-
+  
   movePlayer(cursors) {
+    
+    // this.setTexture('atlas', this.directionHero[this.scene.model.world.mainCharacter.position.direction].image);
+    
     if (this.scene.model.isBlocked) {
       this.stop();
     } else {
@@ -54,13 +65,16 @@ class Player extends Phaser.GameObjects.Sprite {
 
       if (cursors.left.isDown) {
         this.play('goToLeft', true);
-        console.log('down');
+        this.scene.model.world.mainCharacter.position.direction = 'toLeft';
       } else if (cursors.right.isDown) {
         this.play('goToRight', true);
+        this.scene.model.world.mainCharacter.position.direction = 'toRight';
       } else if (cursors.up.isDown) {
         this.play('goToTop', true);
+        this.scene.model.world.mainCharacter.position.direction = 'toTop';
       } else if (cursors.down.isDown) {
         this.play('goToBottom', true);
+        this.scene.model.world.mainCharacter.position.direction = 'toBottom';
       } else if (cursors.space.isDown) {
         this.attackDirection = {
           toLeft: {
@@ -69,19 +83,19 @@ class Player extends Phaser.GameObjects.Sprite {
             xPosition: -28,
             yPosition: 0,
           },
-          toright: {
+          toRight: {
             animation: 'attackRight',
             animationLightSaber: 'laserSwordRight',
             xPosition: 28,
             yPosition: 0,
           },
-          totop: {
+          toTop: {
             animation: 'attackTop',
             animationLightSaber: 'laserSwordTop',
             xPosition: 0,
             yPosition: -28,
           },
-          tobottom: {
+          toBottom: {
             animation: 'attackBottom',
             animationLightSaber: 'laserSwordBottom',
             xPosition: 0,
@@ -122,15 +136,15 @@ class Player extends Phaser.GameObjects.Sprite {
           this.scene.model.world.mainCharacter.icon = 'img1028';
         } else if (prevVelocity.x > 0) {
           this.setTexture('atlas', 'img1029');
-          this.scene.model.world.mainCharacter.position.direction = 'toright';
+          this.scene.model.world.mainCharacter.position.direction = 'toRight';
           this.scene.model.world.mainCharacter.icon = 'img1029';
         } else if (prevVelocity.y < 0) {
           this.setTexture('atlas', 'img1032');
-          this.scene.model.world.mainCharacter.position.direction = 'totop';
+          this.scene.model.world.mainCharacter.position.direction = 'toTop';
           this.scene.model.world.mainCharacter.icon = 'img1032';
         } else if (prevVelocity.y > 0) {
           this.setTexture('atlas', 'img1781');
-          this.scene.model.world.mainCharacter.position.direction = 'tobottom';
+          this.scene.model.world.mainCharacter.position.direction = 'toBottom';
           this.scene.model.world.mainCharacter.icon = 'img1781';
         }
       }

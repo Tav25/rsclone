@@ -35,7 +35,7 @@ class world1scene1 extends Phaser.Scene {
     this.player1 = new Player(this);
     this.add.existing(this.player1);
 
-    this.model.world.mainCharacter.setPosition(this.key, [this.player1.x, this.player1.y], 'totop');
+    this.model.world.mainCharacter.setPosition(this.key, [this.player1.x, this.player1.y], 'toTop');
     // camera
     const camera = new GameCamera(this);
 
