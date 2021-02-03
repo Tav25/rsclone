@@ -43,6 +43,7 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
                 this.scene.model.isFinishGame();
                 this.scene.model.world.isRendered();
                 counterForTheEnemy = 0;
+                this.scene.cameras.main.shake(50, 0.02);
               }
             });
 
@@ -90,7 +91,15 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
               }
               this.scene.model.world.mainCharacter.pickItem(itemToTake.activate());
             }
-            this.scene.model.isFinishGame();
+
+            const event = this.scene.time.addEvent({
+              repeat: 1,
+              delay: 5000,
+              callback: () => {
+                this.scene.model.isFinishGame();
+                event.destroy();
+              },
+            });
           });
 
           this.scene.physics.add.collider(this.scene.player1, itemObj);//

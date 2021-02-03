@@ -25,7 +25,7 @@ class SceneWin extends Phaser.Scene {
     this.lay2 = this.map.createLayer('middleLayer', ['sprites'], 0, 0);
 
     this.player1 = new Player(this);
-    this.add.existing(this.player1);
+    // this.add.existing(this.player1);
 
     const camera = new GameCamera(this);
     this.cameras.main.fadeFrom(2000, Phaser.Math.Between(50, 255), Phaser.Math.Between(50, 255), Phaser.Math.Between(50, 255));

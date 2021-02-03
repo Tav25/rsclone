@@ -33,6 +33,7 @@ class SceneInterface extends Phaser.Scene {
     this.add.existing(this.circle);
 
     this.newWorld = new topMenuText(this, 8, 28, 'New World', async () => {
+      this.model.isBlocked = false;
       await this.model.newWorld();
       this.model.isWin = false;
       this.model.isLose = false;
