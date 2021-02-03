@@ -50,7 +50,6 @@ class SceneWin extends Phaser.Scene {
     if (this.gameSet.newScene) {
       this.scene.start('world1scene1', this.model);
       this.gameSet.newScene = false;
-      //! добавить функцию что игра не закончена
     }
   }
 }
