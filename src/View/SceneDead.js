@@ -57,5 +57,11 @@ class SceneDead extends Phaser.Scene {
     this.fly.y -= 0.5;
     this.fly.rotation -= 0.01;
     this.fly.scale -= 0.005;
+
+    if (this.gameSet.newScene) {
+      this.scene.start('world1scene1', this.model);
+      this.gameSet.newScene = false;
+      //! добавить функцию что игра не закончена
+    }
   }
 }

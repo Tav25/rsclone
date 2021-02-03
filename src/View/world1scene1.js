@@ -108,7 +108,7 @@ class world1scene1 extends Phaser.Scene {
     }
 
     if (this.gameSet.newScene) {
-      //       this.scene.start('world1scene1', this.model);
+      this.scene.start('world1scene1', this.model);
       this.gameSet.newScene = false;
     }
 
