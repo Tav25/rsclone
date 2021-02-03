@@ -47,7 +47,6 @@ class world1scene5 extends Phaser.Scene {
     const rectangleBottom = new RectanglePhysics(this, 0, 575, this.map.widthInPixels, 3, () => { this.gameSet.hero.y = 20; this.gameSet.hero.x = this.player1.x; });
     const rectangleLeft = new RectanglePhysics(this, -2, 0, 3, this.map.heightInPixels, () => { this.gameSet.hero.x = 545; this.gameSet.hero.y = this.player1.y; });
 
-
     // col
     this.lay2.setCollisionByExclusion([-1]);
     this.physics.add.collider(this.player1, this.lay2);

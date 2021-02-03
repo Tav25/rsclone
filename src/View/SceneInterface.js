@@ -6,17 +6,18 @@ class SceneInterface extends Phaser.Scene {
   init(data) {
     this.model = data.model;
     this.modalWindow = data.modalWindow;
-    //console.log(this.modalWindow);
+    // console.log(this.modalWindow);
   }
 
   create() {
     this.gameSet = this.cache.json.get('gameSettings');
-    //console.log(this.gameSet);
+    // console.log(this.gameSet);
 
     this.sc = this.scene.launch('SceneStart', this.model);
 
     const rectangle = this.add.rectangle(306, 50, 210, 295);
     rectangle.setOrigin(0, 0);
+    rectangle.fillColor = 15790320;
     rectangle.isFilled = true;
 
     this.arrows = new Arrows(this);
@@ -35,6 +36,8 @@ class SceneInterface extends Phaser.Scene {
 
     this.newWorld = new topMenuText(this, 8, 28, 'New World', async () => {
       await this.model.newWorld();
+      this.model.isWin = false;
+      this.model.isLose = false;
       this.model.world.mainCharacter.position.coordinates[0] = 276;
       this.model.world.mainCharacter.position.coordinates[1] = 375;
       this.gameSet.newScene = true;
@@ -60,12 +63,9 @@ class SceneInterface extends Phaser.Scene {
       this.modalWindow.about.init();
       console.log('About');
     });
-
-
   }
 
   update() {
-
     this.arrows.directionOfMovement = this.gameSet.mapArrows;
 
     if (this.model.world.mainCharacter.inventory.isChanged) {
@@ -75,11 +75,7 @@ class SceneInterface extends Phaser.Scene {
       this.add.existing(this.img3);
       this.img3.objectPositionInTheList();
 
-
       this.model.world.mainCharacter.inventory.isRendered();
     }
-
   }
-
-
 }

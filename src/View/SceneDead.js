@@ -39,7 +39,6 @@ class SceneDead extends Phaser.Scene {
     const fly3 = this.add.image(0, 32, 'atlasPersonsObject', '950');
     const fly4 = this.add.image(32, 32, 'atlasPersonsObject', '951');
     this.fly.add([fly1, fly2, fly3, fly4]);
-
   }
 
   update() {

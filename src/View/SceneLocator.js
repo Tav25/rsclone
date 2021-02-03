@@ -60,7 +60,6 @@ class SceneLocator extends Phaser.Scene {
     this.blinkObj(objectOnTheSceneInterface);
   }
 
-
   update() {
     if (!this.gameSet.locatorScene) {
       this.scene.stop('SceneLocator');
@@ -77,6 +76,4 @@ class SceneLocator extends Phaser.Scene {
       },
     });
   }
-
 }
-

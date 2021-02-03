@@ -3,7 +3,6 @@ class Dialog extends Phaser.GameObjects.Container {
     super(scene, x, y);
 
     this.scene = scene;
-
   }
 
   initDialog([x, y], speech) {
@@ -13,7 +12,7 @@ class Dialog extends Phaser.GameObjects.Container {
 
     const leftMargin = 75;
     const rightMargin = 100;
-    const topMargin = 120
+    const topMargin = 120;
 
     if (x < leftMargin) x = leftMargin;
     if (y < topMargin) y = topMargin;

@@ -8,6 +8,7 @@ class world1scene1 extends Phaser.Scene {
     this.player1;
 
     this.mainMap = 'map1';
+    
   }
 
   init(model) {
@@ -53,14 +54,12 @@ class world1scene1 extends Phaser.Scene {
     const rectangleBottom = new RectanglePhysics(this, 0, 575, this.map.widthInPixels, 3, () => { this.stopScene(this, this.player1.x, 20); this.scene.start('world1scene4', this.model); });
     const rectangleLeft = new RectanglePhysics(this, -2, 0, 3, this.map.heightInPixels, () => { this.stopScene(this, 545, this.player1.y); this.scene.start('world1scene5', this.model); });
 
-
     // col
     this.lay2.setCollisionByExclusion([-1]);
     this.physics.add.collider(this.player1, this.lay2);
     this.lay3 = this.map.createLayer('topLayer', ['sprites'], 0, 0);
 
     this.add.existing(this.dialog);
-
   }
 
   update() {

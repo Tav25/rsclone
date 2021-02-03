@@ -47,7 +47,6 @@ class world1scene6 extends Phaser.Scene {
 
     const returnToScene1 = new RectanglePhysics(this, 130, 290, 28, 18, () => { this.model.world.mainCharacter.setPosition(this.scene.scene.key, [432, 250]); this.scene.stop('world1scene6'); this.scene.start('world1scene1'); });
 
-
     // col
     this.lay2.setCollisionByExclusion([-1]);
     this.physics.add.collider(this.player1, this.lay2);

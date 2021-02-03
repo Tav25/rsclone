@@ -5,8 +5,6 @@ class Item extends Phaser.GameObjects.Container {
     this.scene = scene;
   }
 
-
-
   ItemsOnScene() {
     this.scene.gameSet.itemOnMap.forEach((e) => {
       if (this.scene.sys.config === e.location) {

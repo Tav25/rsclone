@@ -15,10 +15,9 @@ class Player extends Phaser.GameObjects.Sprite {
     thisPhysicsBody.bodyWidth = 26;
     thisPhysicsBody.bodyHeight = 26;
 
-
     this.setTexture('atlas', this.scene.model.world.mainCharacter.icon);
 
-    //console.log(this.scene.model.world.mainCharacter);
+    // console.log(this.scene.model.world.mainCharacter);
 
     this.weaponOfAttack = this.scene.add.sprite(this.x, this.y);
     new Physics(this.weaponOfAttack);
@@ -27,7 +26,6 @@ class Player extends Phaser.GameObjects.Sprite {
   }
 
   movePlayer(cursors) {
-
     if (this.scene.model.isBlocked) {
       this.stop();
     } else {
@@ -98,7 +96,6 @@ class Player extends Phaser.GameObjects.Sprite {
           this.i = 0;
         }
 
-
         if (this.scene.model.world.mainCharacter.position.direction) {
           this.play(this.attackDirection[this.scene.model.world.mainCharacter.position.direction].animation, true);
           this.weaponOfAttack.play(this.attackDirection[this.scene.model.world.mainCharacter.position.direction].animationLightSaber, true);
@@ -134,10 +131,6 @@ class Player extends Phaser.GameObjects.Sprite {
           this.scene.model.world.mainCharacter.icon = 'img1781';
         }
       }
-
-
     }
   }
-
 }
-

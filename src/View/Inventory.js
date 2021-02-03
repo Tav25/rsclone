@@ -9,7 +9,7 @@ class Inventory extends Phaser.GameObjects.Container {
     this.pictureInventoryBack = pictureInventoryBack;
   }
 
-    objectPositionInTheList() {
+  objectPositionInTheList() {
     this.scene.model.world.mainCharacter.inventory.itemList.forEach((e, index) => {
       // console.log('E:', e.index, e);
       const imagePositionY = 18 + 32 * index;

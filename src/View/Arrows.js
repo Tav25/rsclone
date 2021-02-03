@@ -30,7 +30,6 @@ class Arrows extends Phaser.GameObjects.Container {
     [this.rectangle0, this.rectangle1, this.rectangle2, this.rectangle3] = [rectangle0, rectangle1, rectangle2, rectangle3];
   }
 
-
   /**
 	 * @param {() => string} x
 	 */
@@ -40,7 +39,4 @@ class Arrows extends Phaser.GameObjects.Container {
 	  this.rectangle2.isFilled = x[2];
 	  this.rectangle3.isFilled = x[3];
   }
-
 }
-
-

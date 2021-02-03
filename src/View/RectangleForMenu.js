@@ -5,8 +5,5 @@ class RectangleForMenu extends Phaser.GameObjects.Rectangle {
     this.setOrigin(0, 0);
     this.isFilled = true;
     this.fillColor = 13027014;
-
   }
-
 }
-

@@ -4,7 +4,6 @@ class ObjectInBox extends Phaser.GameObjects.Image {
 
     const thisPhysicsBody = new PhysicsBody(this);
 
-
     scene.physics.add.existing(this, true);
 
     scene.add.existing(this);

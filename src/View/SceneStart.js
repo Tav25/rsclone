@@ -43,7 +43,6 @@ class SceneStart extends Phaser.Scene {
     const fly4 = this.add.image(32, 32, 'atlasPersonsObject', '951');
     this.fly.add([fly1, fly2, fly3, fly4]);
 
-
     const timedEvent = this.time.delayedCall(3000, this.onEvent, [], this);
   }
 

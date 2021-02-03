@@ -3,13 +3,12 @@ class EquippedWeapon extends Phaser.GameObjects.Container {
     super(scene, x, y);
 
     this.scene = scene;
-
   }
 
   initEquippedWeapon() {
     if (this.scene.model.world.mainCharacter.equipment.equippedWeapon) {
-      //console.log('Weap', this.scene.model.world.mainCharacter.equipment.equippedWeapon);
-      //console.log('initEquippedWeapon()', this.scene.model.world.mainCharacter);
+      // console.log('Weap', this.scene.model.world.mainCharacter.equipment.equippedWeapon);
+      // console.log('initEquippedWeapon()', this.scene.model.world.mainCharacter);
       const image = this.scene.add.image(110, 262, 'atlasPersonsObject', this.scene.model.world.mainCharacter.equipment.equippedWeapon.icon);
       this.add(image);
 

@@ -17,11 +17,5 @@ class openTopMenu extends Phaser.GameObjects.Container {
       left: 2, top: 2, right: 2, bottom: 2,
     });
     this.add(text);
-
-    
   }
-
- 
 }
-
-

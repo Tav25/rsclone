@@ -10,11 +10,8 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
     this.scene.model.world.locations.forEach((e) => {
       if (e.locationObject.name === this.scene.sys.config) {
         e.objects.forEach((e) => {
-
-
           const itemObj = this.scene.add.image(e.position.coordinates[0], e.position.coordinates[1], 'atlasPersonsObject', e.icon.toBottom);
           itemObj.setOrigin(0, 1);
-
 
           let isPhysicBodyHave = true;
 
@@ -41,8 +38,6 @@ class ObjectOnTheScene extends Phaser.GameObjects.Container {
             this.scene.physics.add.overlap(this.scene.player1, rectangle_1, () => {
               counterForTheEnemy++;
               if (counterForTheEnemy === fpsEvent) {
-
-
                 this.scene.model.world.mainCharacter.hit(e);
                 this.scene.model.world.mainCharacter.inventory.toRender();
                 this.scene.model.isFinishGame();

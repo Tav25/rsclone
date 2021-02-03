@@ -6,6 +6,4 @@ class GameCamera {
     camera.setViewport(9, 52, 288, 288);
     scene.camera = camera;
   }
-
 }
-
