@@ -39,12 +39,10 @@ class MyGame extends Phaser.Scene {
   }
 
   preload() {
-    // this.load.image('logo', packFile);
     this.load.pack('pack', packFile);
   }
 
   create() {
-    // const logo = this.add.image(400, 150, 'logo');
     this.scene.start('SceneInterface', { model, modalWindow });
   }
 }

@@ -1,7 +1,3 @@
-// import TopMenu from '../Menu';
-
-/* START OF COMPILED CODE */
-
 class world1scene2 extends Phaser.Scene {
   constructor() {
     super('world1scene2');
@@ -11,14 +7,11 @@ class world1scene2 extends Phaser.Scene {
     /** @type {Player} */
     this.player1;
 
-    /* START-USER-CTR-CODE */
     this.mainMap = 'map2';
-    // this.sceneName = this.scene.key
   }
 
   init(model) {
     this.model = model;
-    // console.log('sc1:', this.model);
   }
 
   create() {
@@ -47,7 +40,6 @@ class world1scene2 extends Phaser.Scene {
     const items = new Item(this);
     // items.ItemsOnScene();
 
-    // this.model.world.locations[1].objects[0].objectObject.position.coordinates = [240, 530];//! 777
     const b3 = new ObjectOnTheScene(this);
     b3.ItemsOnScene();
 
@@ -55,29 +47,6 @@ class world1scene2 extends Phaser.Scene {
     const rectangleRight = new RectanglePhysics(this, 576, 0, 3, 576, () => { this.gameSet.hero.x = 20; this.gameSet.hero.y = this.player1.y; });
     const rectangleBottom = new RectanglePhysics(this, 0, 575, this.map.widthInPixels, 3, () => { this.model.world.mainCharacter.setPosition(this.scene.scene.key, [this.player1.x, 20]); this.scene.start('world1scene1'); this.scene.stop('world1scene2'); });
     const rectangleLeft = new RectanglePhysics(this, -2, 0, 3, this.map.heightInPixels, () => { this.gameSet.hero.x = 545; this.gameSet.hero.y = this.player1.y; });
-
-    // text
-    // this.text = this.add.text(10, 10).setScrollFactor(0).setFontSize(12).setColor('#273746');
-
-    // key
-    const keyObj = this.input.keyboard.addKey('W'); // Get key object
-    keyObj.on('down', (event) => {
-      // console.log('w');
-
-      console.log('gameSet: ', this.gameSet);
-      console.log('Model: ', this.model);
-      console.log('door: ', this.model.world.locations[1].objects[0]);
-    });
-
-    const keyObj2 = this.input.keyboard.addKey('E'); // Get key object
-    keyObj2.on('down', (event) => {
-      console.log('(\'E\')');
-      // this.scene.stop(this.scene.scene.key)
-      // this.scene.start(this.scene.scene.key)
-      this.scene.restart();
-    });
-
-    keyObj.on('up', (event) => { /* ... */ });
 
     // col
     this.lay2.setCollisionByExclusion([-1]);

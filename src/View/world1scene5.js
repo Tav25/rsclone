@@ -1,7 +1,3 @@
-// import TopMenu from '../Menu';
-
-/* START OF COMPILED CODE */
-
 class world1scene5 extends Phaser.Scene {
   constructor() {
     super('world1scene5');
@@ -11,14 +7,11 @@ class world1scene5 extends Phaser.Scene {
     /** @type {Player} */
     this.player1;
 
-    /* START-USER-CTR-CODE */
     this.mainMap = 'map5';
-    // this.sceneName = this.scene.key
   }
 
   init(model) {
     this.model = model;
-    // console.log('sc1:', this.model);
   }
 
   create() {
@@ -54,20 +47,6 @@ class world1scene5 extends Phaser.Scene {
     const rectangleBottom = new RectanglePhysics(this, 0, 575, this.map.widthInPixels, 3, () => { this.gameSet.hero.y = 20; this.gameSet.hero.x = this.player1.x; });
     const rectangleLeft = new RectanglePhysics(this, -2, 0, 3, this.map.heightInPixels, () => { this.gameSet.hero.x = 545; this.gameSet.hero.y = this.player1.y; });
 
-    // text
-    // this.text = this.add.text(10, 10).setScrollFactor(0).setFontSize(12).setColor('#273746');
-
-    // key
-    const keyObj = this.input.keyboard.addKey('W'); // Get key object
-    keyObj.on('down', (event) => {
-      // console.log('w');
-
-      console.log('gameSet: ', this.gameSet);
-      console.log('Model: ', this.model);
-      console.log('Model: ', this.model.isBlocked);
-    });
-
-    keyObj.on('up', (event) => { /* ... */ });
 
     // col
     this.lay2.setCollisionByExclusion([-1]);

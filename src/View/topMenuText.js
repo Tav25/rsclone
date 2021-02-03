@@ -1,6 +1,3 @@
-// const text = new topMenuText(this, 176, 110, 'File');
-// this.add.existing(text);
-
 class topMenuText extends Phaser.GameObjects.Text {
   constructor(scene, x, y, text, callbackFun) {
     super(scene, x, y, '', {});

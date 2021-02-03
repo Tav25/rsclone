@@ -1,7 +1,3 @@
-// You can write more code here
-
-/* START OF COMPILED CODE */
-
 class Player extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, texture, frame) {
     super(scene, x, y);
@@ -19,13 +15,10 @@ class Player extends Phaser.GameObjects.Sprite {
     thisPhysicsBody.bodyWidth = 26;
     thisPhysicsBody.bodyHeight = 26;
 
-    //!
-
-    //!
 
     this.setTexture('atlas', this.scene.model.world.mainCharacter.icon);
 
-    console.log(this.scene.model.world.mainCharacter);
+    //console.log(this.scene.model.world.mainCharacter);
 
     this.weaponOfAttack = this.scene.add.sprite(this.x, this.y);
     new Physics(this.weaponOfAttack);
@@ -34,7 +27,6 @@ class Player extends Phaser.GameObjects.Sprite {
   }
 
   movePlayer(cursors) {
-    // this.setTexture('atlas', this.directionHero[this.scene.model.world.mainCharacter.position.direction].image);
 
     if (this.scene.model.isBlocked) {
       this.stop();
@@ -106,7 +98,6 @@ class Player extends Phaser.GameObjects.Sprite {
           this.i = 0;
         }
 
-        // console.log(this.attackDirection[this.scene.model.world.mainCharacter.position.direction].animationLightSaber)
 
         if (this.scene.model.world.mainCharacter.position.direction) {
           this.play(this.attackDirection[this.scene.model.world.mainCharacter.position.direction].animation, true);
@@ -144,16 +135,9 @@ class Player extends Phaser.GameObjects.Sprite {
         }
       }
 
-      // if (cursors.space.isDown) {
-      //   console.log("space")
-      //   this.play('goToTop', true);
-      // }
+
     }
   }
 
-  /* END-USER-CODE */
 }
 
-/* END OF COMPILED CODE */
-
-// You can write more code here

@@ -60,9 +60,9 @@
                 "key": "Inventory"
             },
             {
-                "url": "src/View/CircleOfLife.js",
+                "url": "src/View/HealthСircle.js",
                 "type": "script",
-                "key": "CircleOfLife"
+                "key": "HealthСircle"
             },
             {
                 "url": "src/View/Item.js",
@@ -113,11 +113,6 @@
                 "url": "src/assets/map/LokatorMap.json",
                 "type": "tilemapTiledJSON",
                 "key": "LokatorMap"
-            },
-            {
-                "url": "src/View/Maps.js",
-                "type": "script",
-                "key": "Maps"
             },
             {
                 "atlasURL": "src/assets/atlas/medkits.json",

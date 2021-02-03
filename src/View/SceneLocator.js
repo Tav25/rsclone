@@ -1,7 +1,3 @@
-// import TopMenu from '../Menu';
-
-/* START OF COMPILED CODE */
-
 class SceneLocator extends Phaser.Scene {
   constructor(text = 'no') {
     super('SceneLocator');
@@ -11,15 +7,11 @@ class SceneLocator extends Phaser.Scene {
     /** @type {Player} */
     this.player1;
 
-    /* START-USER-CTR-CODE */
     this.mainMap = 'LokatorMap';
-    /* END-USER-CTR-CODE */
-    // console.log(text);
   }
 
   init(model) {
     this.model = model;
-    // console.log('Locator:', this.model);
   }
 
   create() {
@@ -27,13 +19,10 @@ class SceneLocator extends Phaser.Scene {
 
     this.gameSet = this.cache.json.get('gameSettings');
     this.gameSet.mapArrows = [0, 0, 0, 0];
-    // player1
 
-    // map
     this.map = this.add.tilemap(this.mainMap);
     this.map.addTilesetImage('sprites', 'sprites');
 
-    // lay1
     const lay1 = this.map.createLayer('bottomLayer', ['sprites'], 0, 0);
 
     const camera = this.cameras.main;
@@ -71,7 +60,6 @@ class SceneLocator extends Phaser.Scene {
     this.blinkObj(objectOnTheSceneInterface);
   }
 
-  /* START-USER-CODE */
 
   update() {
     if (!this.gameSet.locatorScene) {
@@ -81,7 +69,6 @@ class SceneLocator extends Phaser.Scene {
   }
 
   blinkObj(obj) {
-    // console.log('this++++', this);
     this.time.addEvent({
       repeat: -1,
       delay: 500,
@@ -91,9 +78,5 @@ class SceneLocator extends Phaser.Scene {
     });
   }
 
-  /* END-USER-CODE */
 }
 
-/* END OF COMPILED CODE */
-
-// You can write more code here

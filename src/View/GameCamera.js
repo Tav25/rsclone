@@ -1,7 +1,3 @@
-// You can write more code here
-
-/* START OF COMPILED CODE */
-
 class GameCamera {
   constructor(scene) {
     const camera = scene.cameras.main;
@@ -11,9 +7,5 @@ class GameCamera {
     scene.camera = camera;
   }
 
-  /* END-USER-CODE */
 }
 
-/* END OF COMPILED CODE */
-
-// You can write more code here

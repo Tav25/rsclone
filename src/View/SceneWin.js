@@ -1,7 +1,3 @@
-// import TopMenu from '../Menu';
-
-/* START OF COMPILED CODE */
-
 class SceneWin extends Phaser.Scene {
   constructor() {
     super('SceneWin');
@@ -11,14 +7,11 @@ class SceneWin extends Phaser.Scene {
     /** @type {Player} */
     this.player1;
 
-    /* START-USER-CTR-CODE */
     this.mainMap = 'winMap';
-    // this.sceneName = this.scene.key
   }
 
   init(model) {
     this.model = model;
-    // console.log('sc1:', this.model);
   }
 
   create() {
@@ -34,7 +27,6 @@ class SceneWin extends Phaser.Scene {
     this.player1 = new Player(this);
     this.add.existing(this.player1);
 
-    // camera
     const camera = new GameCamera(this);
     this.cameras.main.fadeFrom(2000, Phaser.Math.Between(50, 255), Phaser.Math.Between(50, 255), Phaser.Math.Between(50, 255));
 
@@ -42,14 +34,12 @@ class SceneWin extends Phaser.Scene {
 
     this.fly = this.add.container(-20, 200);
 
-    // weaponsLightsaber_510
     const fly1 = this.add.image(0, 0, 'atlasPersonsObject', '948');
     const fly2 = this.add.image(32, 0, 'atlasPersonsObject', '949');
     const fly3 = this.add.image(0, 32, 'atlasPersonsObject', '950');
     const fly4 = this.add.image(32, 32, 'atlasPersonsObject', '951');
     this.fly.add([fly1, fly2, fly3, fly4]);
 
-    // this.dialog.initDialog()
   }
 
   update() {
