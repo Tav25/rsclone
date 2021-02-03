@@ -60,13 +60,11 @@ class world1scene4 extends Phaser.Scene {
     if (this.model.isWin) {
       this.scene.start('SceneWin', this.model);
       this.model.winGame();
-      console.log('Выиграл');
     }
 
     if (this.model.isLose) {
       this.scene.start('SceneDead', this.model);
       this.model.loseGame();
-      console.log('Проиграл');
     }
     this.player1.movePlayer(this.cursors);
 
@@ -80,13 +78,10 @@ class world1scene4 extends Phaser.Scene {
       this.gameSet.newScene = false;
     }
 
-    //! 777
     if (this.model.world.isChanged) {
       this.scene.restart();
       this.model.world.isRendered();
-      console.log('restart();');
     }
-    //!
   }
 
   stopScene(scene, x, y) {

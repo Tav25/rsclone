@@ -15,7 +15,6 @@ class ObjectInBox extends Phaser.GameObjects.Image {
   }
 
   replaceObjectImage() {
-    console.log('BOX3');
     const image = 'medkitsRebelFirstAidKit_505';
     this.setTexture('atlasPersonsObject', image);
   }

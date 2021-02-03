@@ -17,8 +17,6 @@ class Player extends Phaser.GameObjects.Sprite {
 
     this.setTexture('atlas', this.scene.model.world.mainCharacter.icon);
 
-    // console.log(this.scene.model.world.mainCharacter);
-
     this.weaponOfAttack = this.scene.add.sprite(this.x, this.y);
     new Physics(this.weaponOfAttack);
     this.i = 0;
