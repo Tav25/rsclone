@@ -12,9 +12,9 @@ class HealthСircle extends Phaser.GameObjects.Container {
     ellipse.isFilled = true;
 
     const herosLifePoints = this.scene.model.world.mainCharacter.health.maxHealth - this.scene.model.world.mainCharacter.health.currentHealth;
-    if (herosLifePoints < 32) { this.vbn(herosLifePoints, 0x69FF57, 0xF8FF18, this.scene); }
-    if (herosLifePoints > 32) { this.vbn(herosLifePoints - 32, 0xF8FF18, 0xFF1F18, this.scene); }
-    if (herosLifePoints > 64) { this.vbn(herosLifePoints - 64, 0xFF1F18, 0x000000, this.scene); }
+    if (herosLifePoints < 16) { this.vbn(herosLifePoints, 0x69FF57, 0xF8FF18, this.scene); }
+    if (herosLifePoints > 16) { this.vbn(herosLifePoints - 16, 0xF8FF18, 0xFF1F18, this.scene); }
+    if (herosLifePoints > 32) { this.vbn(herosLifePoints - 32, 0xFF1F18, 0x000000, this.scene); }
   }
 
   vbn(herosLifePoints, color0, color1, scene) {
@@ -22,7 +22,7 @@ class HealthСircle extends Phaser.GameObjects.Container {
     ellipse.isFilled = true;
     ellipse.fillColor = color1;
     ellipse.smoothness = 32;
-    const circleMultiplier = 11.25;
+    const circleMultiplier = 22.5;
 
     const graphics = scene.add.graphics();
     graphics.fillStyle(color0, 1);
