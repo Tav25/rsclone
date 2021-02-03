@@ -59,20 +59,16 @@ class world1scene1 extends Phaser.Scene {
     this.lay3 = this.map.createLayer('topLayer', ['sprites'], 0, 0);
 
     this.add.existing(this.dialog);
-    console.log(this.model)
 
     this.tr = false;
   }
 
   update() {
     if (this.model.isWin) {
-
-      if (!this.tr)
-      {
+      if (!this.tr) {
         this.scene.start('SceneWin', this.model);
         this.model.winGame();
-        console.log(this.model);
-        this.tr = true
+        this.tr = true;
       }
     }
 
